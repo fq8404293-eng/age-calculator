@@ -18,20 +18,32 @@
     </script>
 
     <style>
+        :root {
+            --bg: linear-gradient(135deg, #74ebd5, #acb6e5);
+            --text: white;
+            --card: rgba(255, 255, 255, 0.2);
+        }
+
+        body.dark {
+            --bg: #121212;
+            --text: #ffffff;
+            --card: rgba(255, 255, 255, 0.08);
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            background: var(--bg);
             margin: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
+            color: var(--text);
         }
 
         header {
             text-align: center;
             margin-top: 30px;
-            color: white;
         }
 
         header h1 {
@@ -47,7 +59,7 @@
 
         .container {
             margin-top: 40px;
-            background: rgba(255,255,255,0.2);
+            background: var(--card);
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 20px;
@@ -70,20 +82,26 @@
 
         section {
             margin-top: 25px;
-            color: white;
             max-width: 500px;
             text-align: center;
         }
 
         a {
-            color: white;
+            color: var(--text);
             text-decoration: underline;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
         footer {
             margin-top: auto;
             padding: 15px;
-            color: white;
             font-size: 12px;
         }
     </style>
@@ -94,6 +112,8 @@
 <header>
     <h1>Age Calculator Online</h1>
     <p>Find your exact age in years, months, and days instantly</p>
+
+    <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
 </header>
 
 <main class="container">
@@ -107,7 +127,7 @@
 <section>
     <h3>About This Tool</h3>
     <p>
-        This free age calculator helps you find your exact age in years, months, and days instantly.
+        This free age calculator helps you calculate your exact age in years, months, and days instantly.
         It also shows your next birthday countdown and total days lived.
     </p>
 </section>
@@ -115,15 +135,15 @@
 <!-- FAQ -->
 <section>
     <h3>FAQ</h3>
-    <p><b>How do I calculate my exact age?</b><br>Enter your date of birth and get results instantly.</p>
-    <p><b>Is this accurate?</b><br>Yes, it calculates exact age including months and days.</p>
+    <p><b>How do I calculate my age?</b><br>Enter your date of birth.</p>
+    <p><b>Is this accurate?</b><br>Yes, it calculates exact age.</p>
     <p><b>Can I use it in USA?</b><br>Yes, it works globally.</p>
 </section>
 
 <!-- LINKS -->
 <section>
     <p>
-        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="privacy.html">Privacy Policy</a> |
         <a href="contact.html">Contact Us</a>
     </p>
 </section>
@@ -133,6 +153,7 @@
 </footer>
 
 <script>
+// AGE CALCULATOR
 document.getElementById("dob").addEventListener("input", function () {
     if (!this.value) return;
 
@@ -171,6 +192,25 @@ document.getElementById("dob").addEventListener("input", function () {
     document.getElementById("lived").innerText =
         `📊 You have lived approximately ${daysLived} days`;
 });
+
+
+// DARK MODE
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+}
+
+// LOAD SAVED THEME
+window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+    }
+};
 </script>
 
 </body>
