@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator Online</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 30px;
+            color: white;
+        }
+
+        .container {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 350px;
+        }
+
+        input {
+            padding: 12px;
+            width: 90%;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+        }
+
+        #result, #birthday, #lived {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 15px;
+            color: white;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Age Calculator Online</h1>
+    <p>Find your exact age instantly</p>
+</header>
+
+<main class="container">
+    <input type="date" id="dob">
+    <h2 id="result"></h2>
+    <p id="birthday"></p>
+    <p id="lived"></p>
+</main>
+
+<footer>
+    Free online tool
+</footer>
+
+<script>
+document.getElementById("dob").addEventListener("input", function () {
+    if (!this.value) return;
+
+    let dob = new Date(this.value);
+    let today = new Date();
+
+    // Age
+    let years = today.getFullYear() - dob.getFullYear();
+    let months = today.getMonth() - dob.getMonth();
+    let days = today.getDate() - dob.getDate();
+
+    if (days < 0) {
+        months--;
+        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    document.getElementById("result").innerText =
+        `You are ${years} years, ${months} months and ${days} days old`;
+
+    // Next birthday
+    let nextBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
+
+    if (nextBirthday < today) {
+        nextBirthday = new Date(today.getFullYear() + 1, dob.getMonth(), dob.getDate());
+    }
+
+    let diff = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
+
+    document.getElementById("birthday").innerText =
+        `🎉 Next birthday in ${diff} days`;
+
+    // Days lived
+    let diffTime = today - dob;
+    let daysLived = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    document.getElementById("lived").innerText =
+        `📊 You have lived ${daysLived} days`;
+});
+</script>
+
+</body>
+</html>
