@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Free Age Calculator Online - Exact Age in Years, Months & Days</title>
 
-    <meta name="description" content="Free online age calculator to find your exact age in years, months, days, and total days lived instantly.">
+    <meta name="description" content="Free online age calculator to find your exact age in years, months, days, total days lived, and next birthday countdown instantly.">
+    <meta name="keywords" content="age calculator, how old am i, birthday calculator, exact age calculator">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Analytics -->
@@ -34,14 +35,26 @@
             color: white;
         }
 
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
         .container {
             margin-top: 40px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 20px;
-            width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             text-align: center;
+            width: 350px;
         }
 
         input {
@@ -57,6 +70,13 @@
             font-weight: bold;
         }
 
+        section {
+            margin-top: 30px;
+            color: white;
+            max-width: 500px;
+            text-align: center;
+        }
+
         footer {
             margin-top: auto;
             padding: 15px;
@@ -70,6 +90,7 @@
 
 <header>
     <h1>Age Calculator Online</h1>
+    <p>Find your exact age in years, months, and days instantly</p>
 </header>
 
 <main class="container">
@@ -78,6 +99,33 @@
     <p id="birthday"></p>
     <p id="lived"></p>
 </main>
+
+<!-- ABOUT SECTION -->
+<section>
+    <h3>About This Tool</h3>
+    <p>
+        This free age calculator helps you find your exact age in years, months, and days.
+        It also shows your next birthday countdown and total days lived. Works worldwide including USA.
+    </p>
+</section>
+
+<!-- FAQ SECTION -->
+<section>
+    <h3>FAQ</h3>
+
+    <p><b>Q: How do I calculate my exact age?</b><br>
+    Just enter your date of birth and get instant results.</p>
+
+    <p><b>Q: Is this age calculator accurate?</b><br>
+    Yes, it calculates exact age including months and days.</p>
+
+    <p><b>Q: Can I use this in USA?</b><br>
+    Yes, it works globally including USA.</p>
+</section>
+
+<footer>
+    Free Age Calculator Tool © 2026
+</footer>
 
 <script>
 document.getElementById("dob").addEventListener("input", function () {
