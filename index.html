@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Age Calculator Online</title>
+    <meta charset="UTF-8">
+
+    <title>Free Age Calculator Online - Exact Age in Years, Months & Days</title>
+
+    <meta name="description" content="Free online age calculator to find your exact age in years, months, days, total days lived, and next birthday countdown instantly. Works worldwide including USA.">
+
+    <meta name="keywords" content="age calculator, how old am i, birthday calculator, exact age calculator, age calculator online usa">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,12 +28,24 @@
             color: white;
         }
 
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
         .container {
             margin-top: 40px;
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             text-align: center;
             width: 350px;
         }
@@ -36,13 +54,21 @@
             padding: 12px;
             width: 90%;
             margin: 10px 0;
-            border-radius: 8px;
             border: none;
+            border-radius: 8px;
         }
 
         #result, #birthday, #lived {
             margin-top: 10px;
             font-weight: bold;
+        }
+
+        section {
+            margin-top: 20px;
+            color: white;
+            text-align: center;
+            max-width: 500px;
+            padding: 10px;
         }
 
         footer {
@@ -58,7 +84,7 @@
 
 <header>
     <h1>Age Calculator Online</h1>
-    <p>Find your exact age instantly</p>
+    <p>Find your exact age in years, months, and days instantly</p>
 </header>
 
 <main class="container">
@@ -68,8 +94,32 @@
     <p id="lived"></p>
 </main>
 
+<!-- ABOUT SECTION (US TARGETED) -->
+<section>
+    <h3>Free Age Calculator Tool</h3>
+    <p>
+        Use this free age calculator to find your exact age in years, months, and days instantly. 
+        You can also check your next birthday countdown and total days lived. 
+        This tool works worldwide including the United States and is mobile friendly.
+    </p>
+</section>
+
+<!-- FAQ SECTION (SEO BOOST) -->
+<section>
+    <h3>FAQ</h3>
+
+    <p><b>Q: How do I calculate my exact age?</b><br>
+    Enter your date of birth and get instant results.</p>
+
+    <p><b>Q: Is this age calculator accurate?</b><br>
+    Yes, it calculates exact age in years, months, and days.</p>
+
+    <p><b>Q: Can I use this in the USA?</b><br>
+    Yes, this tool works worldwide including the United States.</p>
+</section>
+
 <footer>
-    Free online tool
+    Free online age calculator tool
 </footer>
 
 <script>
@@ -79,7 +129,7 @@ document.getElementById("dob").addEventListener("input", function () {
     let dob = new Date(this.value);
     let today = new Date();
 
-    // Age
+    // AGE CALCULATION
     let years = today.getFullYear() - dob.getFullYear();
     let months = today.getMonth() - dob.getMonth();
     let days = today.getDate() - dob.getDate();
@@ -97,7 +147,7 @@ document.getElementById("dob").addEventListener("input", function () {
     document.getElementById("result").innerText =
         `You are ${years} years, ${months} months and ${days} days old`;
 
-    // Next birthday
+    // NEXT BIRTHDAY
     let nextBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
 
     if (nextBirthday < today) {
@@ -109,12 +159,12 @@ document.getElementById("dob").addEventListener("input", function () {
     document.getElementById("birthday").innerText =
         `🎉 Next birthday in ${diff} days`;
 
-    // Days lived
+    // DAYS LIVED
     let diffTime = today - dob;
     let daysLived = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
     document.getElementById("lived").innerText =
-        `📊 You have lived ${daysLived} days`;
+        `📊 You have lived approximately ${daysLived} days`;
 });
 </script>
 
