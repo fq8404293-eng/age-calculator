@@ -1,7 +1,7 @@
 :root {
     --bg: linear-gradient(135deg, #74ebd5, #acb6e5);
     --text: #000;
-    --card: rgba(255, 255, 255, 0.2);
+    --card: rgba(255, 255, 255, 0.25);
     --btn: #4CAF50;
     --btn-hover: #45a049;
     --error: #d60000;
@@ -17,17 +17,23 @@ body.dark {
     --error: #ff4d4d;
 }
 
+/* RESET (IMPORTANT FIX) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* BASE */
 body {
     font-family: Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
-    margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
     padding: 20px;
 }
 
@@ -41,11 +47,11 @@ header {
 .container {
     margin-top: 30px;
     background: var(--card);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     padding: 30px;
     border-radius: 20px;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
@@ -70,14 +76,15 @@ button {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 button:hover {
     background: var(--btn-hover);
+    transform: scale(1.03);
 }
 
-/* OUTPUT */
+/* OUTPUT TEXT */
 #result,
 #birthday,
 #lived {
@@ -86,7 +93,7 @@ button:hover {
     font-size: 16px;
 }
 
-/* ERROR MESSAGE */
+/* ERROR */
 #error {
     color: var(--error);
     font-weight: bold;
