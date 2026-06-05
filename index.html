@@ -94,6 +94,14 @@ footer {
     padding: 15px;
     font-size: 12px;
 }
+
+button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
 </style>
 </head>
 
@@ -102,10 +110,13 @@ footer {
 <header>
     <h1>Age Calculator Online</h1>
     <p>Find your exact age in years, months, and days instantly</p>
+
+    <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
 </header>
 
 <main class="container">
     <input type="date" id="dob">
+
     <p id="error"></p>
 
     <h2 id="result"></h2>
@@ -116,15 +127,16 @@ footer {
 <section>
     <h2>Free Age Calculator Online</h2>
     <p>
-        Use this tool to calculate your exact age in years, months, days and total days lived.
+        Calculate your exact age in years, months, days and total days lived instantly.
+        Fast, accurate and free tool.
     </p>
 </section>
 
 <section>
     <h3>FAQ</h3>
     <p><b>How do I calculate my age?</b><br>Enter your date of birth.</p>
-    <p><b>Is it accurate?</b><br>Yes, it calculates exact age.</p>
-    <p><b>Can I calculate days lived?</b><br>Yes.</p>
+    <p><b>Is it accurate?</b><br>Yes, it is fully accurate.</p>
+    <p><b>Can I calculate days lived?</b><br>Yes, it shows total days lived.</p>
 </section>
 
 <section>
@@ -138,69 +150,7 @@ footer {
     © 2026 Age Calculator Tool
 </footer>
 
-<script>
-document.getElementById("dob").addEventListener("input", function () {
-
-    let dobInput = this.value;
-
-    let resultEl = document.getElementById("result");
-    let birthdayEl = document.getElementById("birthday");
-    let livedEl = document.getElementById("lived");
-    let errorEl = document.getElementById("error");
-
-    errorEl.innerText = "";
-
-    if (!dobInput) {
-        resultEl.innerText = "";
-        birthdayEl.innerText = "";
-        livedEl.innerText = "";
-        return;
-    }
-
-    let dob = new Date(dobInput);
-    let today = new Date();
-
-    // 🚨 future date check
-    if (dob > today) {
-        errorEl.innerText = "⚠️ Date of birth cannot be in the future!";
-        resultEl.innerText = "";
-        birthdayEl.innerText = "";
-        livedEl.innerText = "";
-        return;
-    }
-
-    let years = today.getFullYear() - dob.getFullYear();
-    let months = today.getMonth() - dob.getMonth();
-    let days = today.getDate() - dob.getDate();
-
-    if (days < 0) {
-        months--;
-        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
-    }
-
-    if (months < 0) {
-        years--;
-        months += 12;
-    }
-
-    resultEl.innerText =
-        `You are ${years} years, ${months} months and ${days} days old`;
-
-    let nextBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
-
-    if (nextBirthday < today) {
-        nextBirthday = new Date(today.getFullYear() + 1, dob.getMonth(), dob.getDate());
-    }
-
-    let diff = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
-
-    birthdayEl.innerText = `🎉 Next birthday in ${diff} days`;
-
-    let daysLived = Math.floor((today - dob) / (1000 * 60 * 60 * 24));
-
-    livedEl.innerText = `📊 You have lived approximately ${daysLived} days`;
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
