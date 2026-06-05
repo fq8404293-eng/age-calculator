@@ -1,33 +1,33 @@
 document.getElementById("dob").addEventListener("input", calculateAge);
 
 function calculateAge() {
-    let dobInput = document.getElementById("dob").value;
+    const dobInput = document.getElementById("dob").value;
 
-    let resultEl = document.getElementById("result");
-    let birthdayEl = document.getElementById("birthday");
-    let livedEl = document.getElementById("lived");
-    let errorEl = document.getElementById("error");
+    const resultEl = document.getElementById("result");
+    const birthdayEl = document.getElementById("birthday");
+    const livedEl = document.getElementById("lived");
+    const errorEl = document.getElementById("error");
 
+    // reset
     errorEl.innerText = "";
+    resultEl.innerText = "";
+    birthdayEl.innerText = "";
+    livedEl.innerText = "";
 
-    if (!dobInput) {
-        resultEl.innerText = "";
-        birthdayEl.innerText = "";
-        livedEl.innerText = "";
+    if (!dobInput) return;
+
+    const dob = new Date(dobInput);
+    const today = new Date();
+
+    // safety check
+    if (isNaN(dob.getTime())) {
+        errorEl.innerText = "⚠️ Invalid date selected!";
         return;
     }
 
-    let dob = new Date(dobInput);
-    let today = new Date();
-
-    if (isNaN(dob.getTime())) return;
-
-    // 🚨 Future date check
+    // future date check
     if (dob > today) {
         errorEl.innerText = "⚠️ Date of birth cannot be in the future!";
-        resultEl.innerText = "";
-        birthdayEl.innerText = "";
-        livedEl.innerText = "";
         return;
     }
 
@@ -48,17 +48,19 @@ function calculateAge() {
     resultEl.innerText =
         `You are ${years} years, ${months} months and ${days} days old`;
 
+    // next birthday
     let nextBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
 
     if (nextBirthday < today) {
         nextBirthday = new Date(today.getFullYear() + 1, dob.getMonth(), dob.getDate());
     }
 
-    let diff = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
+    const diff = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
 
     birthdayEl.innerText = `🎉 Next birthday in ${diff} days`;
 
-    let daysLived = Math.floor((today - dob) / (1000 * 60 * 60 * 24));
+    // days lived
+    const daysLived = Math.floor((today - dob) / (1000 * 60 * 60 * 24));
 
     livedEl.innerText = `📊 You have lived approximately ${daysLived} days`;
 }
@@ -73,8 +75,9 @@ function toggleDarkMode() {
     );
 }
 
-window.onload = function () {
+/* load theme safely */
+window.addEventListener("load", () => {
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark");
     }
-};
+});
