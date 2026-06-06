@@ -17,14 +17,14 @@ body.dark {
     --error: #ff4d4d;
 }
 
-/* RESET (IMPORTANT FIX) */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BASE */
+/* BODY */
 body {
     font-family: Arial, sans-serif;
     background: var(--bg);
@@ -32,7 +32,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     transition: background 0.3s ease, color 0.3s ease;
     padding: 20px;
 }
@@ -43,9 +42,17 @@ header {
     margin-top: 20px;
 }
 
-/* MAIN CARD */
+header h1 {
+    margin-bottom: 10px;
+}
+
+header p {
+    margin-bottom: 15px;
+}
+
+/* CALCULATOR CARD */
 .container {
-    margin-top: 30px;
+    margin: 30px auto;
     background: var(--card);
     backdrop-filter: blur(12px);
     padding: 30px;
@@ -81,23 +88,45 @@ button {
 
 button:hover {
     background: var(--btn-hover);
-    transform: scale(1.03);
 }
 
-/* OUTPUT TEXT */
+/* RESULTS */
 #result,
 #birthday,
-#lived {
-    margin-top: 12px;
+#lived,
+#error {
+    margin-top: 15px;
     font-weight: bold;
-    font-size: 16px;
 }
 
-/* ERROR */
 #error {
     color: var(--error);
-    font-weight: bold;
-    margin-top: 10px;
+}
+
+/* CONTENT SECTIONS */
+section {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    line-height: 1.8;
+}
+
+section h2,
+section h3 {
+    margin-bottom: 15px;
+}
+
+section p {
+    margin-bottom: 15px;
+}
+
+section ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+section li {
+    margin-bottom: 10px;
 }
 
 /* LINKS */
@@ -112,16 +141,24 @@ a:hover {
 
 /* FOOTER */
 footer {
-    margin-top: auto;
-    padding: 15px;
-    font-size: 12px;
+    margin-top: 40px;
     text-align: center;
+    padding: 20px;
+    font-size: 12px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 500px) {
+/* MOBILE */
+@media (max-width: 768px) {
     .container {
-        width: 90%;
+        width: 95%;
         padding: 20px;
+    }
+
+    section {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 30px;
     }
 }
