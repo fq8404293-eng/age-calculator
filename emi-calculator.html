@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EMI Calculator India | Loan EMI Calculator Online</title>
+
+<meta name="description" content="Free EMI Calculator India. Calculate monthly EMI, total interest, and total payment for home loans, personal loans, and car loans.">
+
+<link rel="stylesheet" href="emi-style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>EMI Calculator</h1>
+
+    <p class="subtext">
+        Calculate your monthly loan EMI instantly.
+    </p>
+
+    <input type="number" id="loanAmount" placeholder="Loan Amount (₹)">
+
+    <input type="number" id="interestRate" placeholder="Annual Interest Rate (%)">
+
+    <input type="number" id="loanTenure" placeholder="Loan Tenure (Years)">
+
+    <button onclick="calculateEMI()">Calculate EMI</button>
+
+    <div class="result">
+        <p>Monthly EMI: ₹<span id="emi">0</span></p>
+        <p>Total Interest: ₹<span id="interest">0</span></p>
+        <p>Total Payment: ₹<span id="total">0</span></p>
+    </div>
+
+</div>
+
+<script src="emi-script.js"></script>
+
+</body>
+</html>
