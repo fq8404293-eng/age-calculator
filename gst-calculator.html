@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GST Calculator India | Calculate GST Online</title>
+  <meta name="description" content="Free GST Calculator India. Calculate GST instantly - add or remove GST from any amount. Supports 5%, 12%, 18%, 28%.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="gst-style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>GST Calculator India</h1>
+
+  <p class="subtext">
+    Calculate GST instantly - Add or Remove GST from any amount
+  </p>
+
+  <!-- INPUT -->
+  <input type="number" id="amount" placeholder="Enter Amount (₹)">
+
+  <!-- GST RATE -->
+  <select id="gstRate">
+    <option value="5">5% GST</option>
+    <option value="12">12% GST</option>
+    <option value="18" selected>18% GST</option>
+    <option value="28">28% GST</option>
+  </select>
+
+  <!-- BUTTONS -->
+  <div class="btn-group">
+    <button onclick="addGST()">Add GST</button>
+    <button onclick="removeGST()">Remove GST</button>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result">
+    <p>Base Price: ₹<span id="base">0</span></p>
+    <p>GST Amount: ₹<span id="gst">0</span></p>
+    <p class="total">Total Price: ₹<span id="total">0</span></p>
+  </div>
+
+</div>
+
+<script src="gst-script.js"></script>
+</body>
+</html>
