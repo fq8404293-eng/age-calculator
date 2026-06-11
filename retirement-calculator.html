@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Retirement Calculator | Calculate Retirement Savings</title>
+
+<meta name="description" content="Free Retirement Calculator. Estimate your retirement savings and future retirement fund instantly.">
+
+<link rel="stylesheet" href="retirement-style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Retirement Calculator</h1>
+
+    <p class="subtext">
+        Estimate how much money you could have at retirement.
+    </p>
+
+    <input type="number" id="currentSavings" placeholder="Current Savings ($)">
+
+    <input type="number" id="monthlyContribution" placeholder="Monthly Contribution ($)">
+
+    <input type="number" id="annualReturn" placeholder="Expected Annual Return (%)">
+
+    <input type="number" id="yearsToRetirement" placeholder="Years Until Retirement">
+
+    <button onclick="calculateRetirement()">
+        Calculate Retirement Savings
+    </button>
+
+    <div class="result">
+        <p>Estimated Retirement Fund: $<span id="retirementFund">0</span></p>
+    </div>
+
+</div>
+
+<script src="retirement-script.js"></script>
+
+</body>
+</html>
