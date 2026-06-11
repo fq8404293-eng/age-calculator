@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tip Calculator | Calculate Restaurant Tips Online</title>
+
+<meta name="description" content="Free Tip Calculator. Calculate tips and split bills instantly for restaurants, cafes, and services.">
+
+<link rel="stylesheet" href="tip-style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Tip Calculator</h1>
+
+    <p class="subtext">
+        Calculate tips and total bill amount instantly.
+    </p>
+
+    <input type="number" id="billAmount" placeholder="Bill Amount ($)">
+
+    <input type="number" id="tipPercent" placeholder="Tip Percentage (%)">
+
+    <button onclick="calculateTip()">
+        Calculate Tip
+    </button>
+
+    <div class="result">
+        <p>Tip Amount: $<span id="tip">0</span></p>
+        <p>Total Bill: $<span id="total">0</span></p>
+    </div>
+
+</div>
+
+<script src="tip-script.js"></script>
+
+</body>
+</html>
