@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mortgage Calculator | Calculate Monthly Mortgage Payment</title>
+
+<meta name="description" content="Free Mortgage Calculator. Calculate monthly mortgage payments, total interest, and total repayment instantly.">
+
+<link rel="stylesheet" href="mortgage-style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Mortgage Calculator</h1>
+
+    <p class="subtext">
+        Calculate your monthly mortgage payment instantly.
+    </p>
+
+    <input type="number" id="loanAmount" placeholder="Mortgage Amount ($)">
+
+    <input type="number" id="interestRate" placeholder="Interest Rate (%)">
+
+    <input type="number" id="loanTerm" placeholder="Loan Term (Years)">
+
+    <button onclick="calculateMortgage()">
+        Calculate Mortgage
+    </button>
+
+    <div class="result">
+        <p>Monthly Payment: $<span id="payment">0</span></p>
+        <p>Total Interest: $<span id="interest">0</span></p>
+        <p>Total Cost: $<span id="total">0</span></p>
+    </div>
+
+</div>
+
+<script src="mortgage-script.js"></script>
+
+</body>
+</html>
