@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Retirement Calculator | Calculate Retirement Savings</title>
+<title>Retirement Calculator | Plan Your Future Savings</title>
 
-<meta name="description" content="Free Retirement Calculator. Estimate your retirement savings and future retirement fund instantly.">
+<meta name="description" content="Free Retirement Calculator. Estimate your future retirement savings based on current savings, monthly contributions, return rate, and time.">
 
 <link rel="stylesheet" href="retirement-style.css">
-
 </head>
+
 <body>
 
 <div class="container">
@@ -18,23 +18,24 @@
     <h1>Retirement Calculator</h1>
 
     <p class="subtext">
-        Estimate how much money you could have at retirement.
+        Calculate how much money you may have when you retire.
     </p>
 
-    <input type="number" id="currentSavings" placeholder="Current Savings ($)">
+    <input type="number" id="currentSavings" placeholder="Current Savings ($)" />
 
-    <input type="number" id="monthlyContribution" placeholder="Monthly Contribution ($)">
+    <input type="number" id="monthlyContribution" placeholder="Monthly Contribution ($)" />
 
-    <input type="number" id="annualReturn" placeholder="Expected Annual Return (%)">
+    <input type="number" id="annualReturn" placeholder="Expected Annual Return (%)" />
 
-    <input type="number" id="yearsToRetirement" placeholder="Years Until Retirement">
+    <input type="number" id="yearsToRetirement" placeholder="Years Until Retirement" />
 
     <button onclick="calculateRetirement()">
         Calculate Retirement Savings
     </button>
 
     <div class="result">
-        <p>Estimated Retirement Fund: $<span id="retirementFund">0</span></p>
+        <p>Estimated Retirement Fund:</p>
+        <p>$<span id="retirementFund">0</span></p>
     </div>
 
 </div>
