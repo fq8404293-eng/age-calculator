@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Compound Interest Calculator | Investment Growth Calculator</title>
+
+<meta name="description" content="Free Compound Interest Calculator. Calculate investment growth, future value, and total earnings instantly.">
+
+<link rel="stylesheet" href="compound-interest-style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Compound Interest Calculator</h1>
+
+    <p class="subtext">
+        Calculate how your investment grows over time.
+    </p>
+
+    <input type="number" id="principal" placeholder="Initial Investment ($)">
+
+    <input type="number" id="rate" placeholder="Annual Interest Rate (%)">
+
+    <input type="number" id="years" placeholder="Investment Period (Years)">
+
+    <button onclick="calculateCompoundInterest()">
+        Calculate Growth
+    </button>
+
+    <div class="result">
+        <p>Future Value: $<span id="futureValue">0</span></p>
+        <p>Total Interest Earned: $<span id="interestEarned">0</span></p>
+    </div>
+
+</div>
+
+<script src="compound-interest-script.js"></script>
+
+</body>
+</html>
