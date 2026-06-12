@@ -45,8 +45,12 @@ function calculateAge() {
         months += 12;
     }
 
-    resultEl.innerText =
-        `You are ${years} years, ${months} months and ${days} days old`;
+   const yearText = years === 1 ? "year" : "years";
+const monthText = months === 1 ? "month" : "months";
+const dayText = days === 1 ? "day" : "days";
+
+resultEl.innerText =
+    `You are ${years} ${yearText}, ${months} ${monthText} and ${days} ${dayText} old`;
 
     // next birthday
     let nextBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
