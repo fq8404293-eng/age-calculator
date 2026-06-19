@@ -9,7 +9,7 @@
 
 /* 🌙 DARK MODE */
 body.dark {
-    --bg: #121212;
+   --bg: linear-gradient(135deg, #0f172a, #1e293b);
     --text: #ffffff;
     --card: rgba(255, 255, 255, 0.08);
     --btn: #2e7d32;
@@ -222,4 +222,25 @@ footer {
 #category {
     text-align: center;
     font-weight: bold;
+}/* DARK MODE FIX */
+body.dark .container,
+body.dark .bmi-box {
+    background: rgba(30, 30, 30, 0.95);
+    color: #ffffff;
+}
+
+body.dark input {
+    background: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+body.dark a {
+    color: #66b3ff;
+}
+
+body.dark section,
+body.dark footer,
+body.dark header {
+    color: #ffffff;
 }
