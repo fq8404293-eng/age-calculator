@@ -1,3 +1,4 @@
+```css
 :root {
     --bg: linear-gradient(135deg, #74ebd5, #acb6e5);
     --text: #000;
@@ -50,6 +51,13 @@ header p {
     margin-bottom: 15px;
 }
 
+/* HEADINGS */
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
 /* CALCULATOR CARD */
 .container {
     margin: 30px auto;
@@ -90,6 +98,12 @@ button:hover {
     background: var(--btn-hover);
 }
 
+/* ACCESSIBILITY */
+input:focus,
+button:focus {
+    outline: 2px solid #4CAF50;
+}
+
 /* RESULTS */
 #result,
 #birthday,
@@ -106,7 +120,7 @@ button:hover {
 /* CONTENT SECTIONS */
 section {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 40px auto;
     line-height: 1.8;
 }
@@ -118,6 +132,7 @@ section h3 {
 
 section p {
     margin-bottom: 15px;
+    font-size: 17px;
 }
 
 section ul {
@@ -161,47 +176,50 @@ footer {
     header h1 {
         font-size: 30px;
     }
-}/* BMI Calculator */
-
-.bmi-box{
-    max-width:500px;
-    margin:40px auto;
-    background:#fff;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
 
-.bmi-box label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
+/* BMI Calculator */
+
+.bmi-box {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.bmi-box input{
-    width:100%;
-    padding:12px;
-    margin-top:5px;
-    border:1px solid #ccc;
-    border-radius:8px;
+.bmi-box label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
 }
 
-.bmi-box button{
-    width:100%;
-    margin-top:20px;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
+.bmi-box input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
-#result{
-    margin-top:20px;
-    text-align:center;
+.bmi-box button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-#category{
-    text-align:center;
-    font-weight:bold;
+#result {
+    margin-top: 20px;
+    text-align: center;
 }
+
+#category {
+    text-align: center;
+    font-weight: bold;
+}
+```
