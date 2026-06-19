@@ -3,9 +3,9 @@ function calculateBMI() {
     let weight = parseFloat(document.getElementById("weight").value);
     let height = parseFloat(document.getElementById("height").value);
 
-    if (!weight || !height) {
+  if (!weight || !height || weight <= 0 || height <= 0) {
         document.getElementById("result").innerText =
-        "Please enter valid values.";
+       "Please enter a valid weight and height.";
 
         document.getElementById("category").innerText = "";
         return;
