@@ -55,7 +55,7 @@ resultEl.innerText =
     // next birthday
     let nextBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
 
-    if (nextBirthday < today) {
+    if (nextBirthday <= today) {
         nextBirthday = new Date(today.getFullYear() + 1, dob.getMonth(), dob.getDate());
     }
 
