@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fq8404293-eng.github.io/age-calculator/sitemap.xml
+Sitemap: https://calclyworld.com/sitemap.xml
