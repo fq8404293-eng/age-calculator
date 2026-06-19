@@ -28,7 +28,7 @@ body.dark {
 /* BODY */
 body {
     font-family: Arial, sans-serif;
-    background: var(--bg);
+    background: red;
     color: var(--text);
     min-height: 100vh;
     display: flex;
