@@ -1,6 +1,6 @@
 ```css
 :root {
-    --bg: linear-gradient(135deg, #74ebd5, #acb6e5);
+    --bg: linear-gradient(135deg, #4facfe, #00f2fe);
     --text: #000;
     --card: rgba(255, 255, 255, 0.25);
     --btn: #4CAF50;
@@ -61,7 +61,7 @@ h3 {
 /* CALCULATOR CARD */
 .container {
     margin: 30px auto;
-    background: var(--card);
+    background: rgba(255,255,255,0.75);
     backdrop-filter: blur(12px);
     padding: 30px;
     border-radius: 20px;
@@ -87,8 +87,11 @@ button {
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
-    background: var(--btn);
+    background: #4CAF50;
     color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s ease;
@@ -211,6 +214,8 @@ footer {
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    background: #4CAF50;
+    color: white;
 }
 
 #result {
