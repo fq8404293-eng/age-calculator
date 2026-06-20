@@ -6,90 +6,111 @@
 
 <title>CalclyWorld | Free Online Calculators (Age, EMI, GST, BMI & More)</title>
 
-<meta name="description" content="CalclyWorld offers free online calculators like Age Calculator, EMI Calculator, GST Calculator, BMI Calculator, Mortgage Calculator, Percentage Calculator and more. Fast and accurate tools.">
+<meta name="description" content="CalclyWorld offers free online calculators like Age Calculator, EMI Calculator, GST Calculator, BMI Calculator, Mortgage Calculator, Percentage Calculator and more. Fast, accurate and mobile friendly tools.">
 
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://calclyworld.com/">
 
-<meta property="og:title" content="CalclyWorld | Free Online Calculators">
-<meta property="og:description" content="Free calculators for age, EMI, GST, BMI, mortgage, percentage and more.">
-<meta property="og:type" content="website">
-
-<meta name="theme-color" content="#0f172a">
-
 <link rel="icon" type="image/png" href="https://calclyworld.com/favicon.png">
 
 <style>
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
-  background: #f5f7fa;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
+body {
+  background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+  color: #222;
+}
+
+/* HEADER */
 header {
   text-align: center;
-  padding: 30px 15px;
-  background: white;
+  padding: 40px 20px;
+  background: #0f172a;
+  color: white;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 32px;
+  font-size: 36px;
 }
 
 header p {
-  color: #555;
+  margin-top: 8px;
+  opacity: 0.8;
 }
 
+/* CONTAINER */
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-  padding: 20px;
+  padding: 30px 20px;
 }
 
+/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
-.grid a {
+/* CARDS */
+.card {
   background: white;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
+  border-radius: 15px;
   text-decoration: none;
-  border-radius: 12px;
-  color: #222;
+  color: #111;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: 0.2s;
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.2s ease;
 }
 
-.grid a:hover {
-  transform: translateY(-3px);
-  background: #f0f0f0;
+.card:hover {
+  transform: translateY(-5px);
+  background: #f1f5ff;
 }
 
+/* SECTIONS */
 section {
   max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  color: #333;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
+section h2 {
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  background: #eee;
+  padding: 25px;
+  background: #111827;
+  color: white;
   margin-top: 40px;
 }
 
 footer a {
-  margin: 0 5px;
-  color: #333;
+  color: #93c5fd;
+  margin: 0 8px;
   text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 28px;
+  }
 }
 </style>
 
@@ -99,24 +120,22 @@ footer a {
 
 <header>
   <h1>CalclyWorld</h1>
-  <p>Free Online Calculators – Fast, Simple & Accurate</p>
+  <p>Free Online Calculators – Fast, Accurate & Mobile Friendly</p>
 </header>
 
 <div class="container">
 
-  <h2>All Calculators</h2>
-
   <div class="grid">
 
-    <a href="age-calculator.html">Age Calculator</a>
-    <a href="emi-calculator.html">EMI Calculator</a>
-    <a href="gst-calculator.html">GST Calculator</a>
-    <a href="bmi-calculator.html">BMI Calculator</a>
-    <a href="mortgage-calculator.html">Mortgage Calculator</a>
-    <a href="percentage-calculator.html">Percentage Calculator</a>
-    <a href="compound-interest-calculator.html">Compound Interest</a>
-    <a href="retirement-calculator.html">Retirement Calculator</a>
-    <a href="tip-calculator.html">Tip Calculator</a>
+    <a class="card" href="age-calculator.html">🧮 Age Calculator</a>
+    <a class="card" href="emi-calculator.html">🏦 EMI Calculator</a>
+    <a class="card" href="gst-calculator.html">🧾 GST Calculator</a>
+    <a class="card" href="bmi-calculator.html">⚖️ BMI Calculator</a>
+    <a class="card" href="mortgage-calculator.html">🏠 Mortgage Calculator</a>
+    <a class="card" href="percentage-calculator.html">📊 Percentage Calculator</a>
+    <a class="card" href="compound-interest-calculator.html">📈 Compound Interest</a>
+    <a class="card" href="retirement-calculator.html">👴 Retirement Calculator</a>
+    <a class="card" href="tip-calculator.html">💰 Tip Calculator</a>
 
   </div>
 
@@ -125,23 +144,22 @@ footer a {
 <section>
   <h2>About CalclyWorld</h2>
   <p>
-    CalclyWorld is a free online calculator website that helps you calculate age, loans, GST, BMI, savings, and more.
-    All tools are fast, mobile-friendly, and easy to use.
+    CalclyWorld is a free online calculator platform that helps you solve everyday calculations like age, GST, EMI, BMI, loans, and investments quickly and accurately.
   </p>
 </section>
 
 <section>
-  <h2>Why Use This Website?</h2>
+  <h2>Why Use CalclyWorld?</h2>
   <ul>
-    <li>100% Free Tools</li>
+    <li>100% Free Calculators</li>
     <li>No Login Required</li>
     <li>Fast & Mobile Friendly</li>
-    <li>Accurate Calculations</li>
+    <li>Accurate Results</li>
   </ul>
 </section>
 
 <footer>
-  <p><strong>CalclyWorld</strong> © 2026</p>
+  <p>CalclyWorld © 2026</p>
   <p>
     <a href="/about.html">About</a> |
     <a href="/privacy.html">Privacy</a> |
