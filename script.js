@@ -81,5 +81,7 @@ function toggleDarkMode() {
 
 /* load theme safely */
 window.addEventListener("load", () => {
-    localStorage.removeItem("theme");
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+    }
 });
