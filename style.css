@@ -244,3 +244,12 @@ body.dark footer,
 body.dark header {
     color: #ffffff;
 }
+/* AGE CALCULATOR FOOTER DARK MODE FIX */
+body.dark footer {
+    background: #1e293b !important;
+    color: #ffffff;
+}
+
+body.dark footer a {
+    color: #66b3ff !important;
+}
