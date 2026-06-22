@@ -65,8 +65,7 @@ h3 {
     padding: 30px;
     border-radius: 20px;
     width: 100%;
- max-width: 1000px;
-    text-align: center;
+    max-width: 900px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
@@ -252,4 +251,9 @@ body.dark footer {
 
 body.dark footer a {
     color: #66b3ff !important;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
 }
