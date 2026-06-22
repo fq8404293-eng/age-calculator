@@ -14,12 +14,15 @@
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
+<!-- IMPORTANT: your updated CSS -->
 <link rel="stylesheet" href="tip-style.css">
 </head>
 
 <body>
 
-<a href="/" style="text-decoration:none; font-weight:bold;">← Back to Home</a>
+<a href="/" style="text-decoration:none; font-weight:bold; display:inline-block; margin-bottom:15px;">
+← Back to Home
+</a>
 
 <div class="container">
 
@@ -29,41 +32,45 @@
         Calculate restaurant tips, split bills, and total payment instantly.
     </p>
 
+    <!-- INPUT SECTION -->
+    <h2>Enter Bill Details</h2>
+
     <input type="number" id="billAmount" placeholder="Bill Amount ($)">
     <input type="number" id="tipPercent" placeholder="Tip Percentage (%)">
 
     <button onclick="calculateTip()">Calculate Tip</button>
 
+    <!-- RESULT -->
     <div class="result">
         <p>Tip Amount: $<span id="tip">0</span></p>
         <p>Total Bill: $<span id="total">0</span></p>
     </div>
 
-    <!-- WHAT IS TIP -->
+</div>
+
+<!-- CONTENT SECTION -->
+<div class="container">
+
     <h2>What is a Tip?</h2>
     <p>
         A tip is an extra payment given to service staff for good service in restaurants, cafes, hotels, and delivery services. It is commonly used in countries like the USA, Canada, and many others.
     </p>
 
-    <!-- WHO USES THIS -->
     <h2>Who Uses This Tip Calculator?</h2>
     <p>
-        This tip calculator is widely used by people in the USA, Canada, UK, and other countries where tipping in restaurants is common. It is also useful for travelers and tourists.
+        This tool is used by people in the USA, Canada, UK, and worldwide for splitting bills and calculating restaurant tips easily.
     </p>
 
-    <!-- HOW IT WORKS -->
     <h2>How Tip Calculator Works</h2>
     <p>
         Enter the bill amount and tip percentage. The calculator instantly shows the tip amount and total bill including tip.
     </p>
 
-    <!-- FORMULA -->
     <h2>Formula</h2>
     <p>
         Tip = (Bill Amount × Tip %) ÷ 100
     </p>
 
-    <!-- USE CASES -->
     <h2>Where is Tip Calculator Used?</h2>
     <ul>
         <li>Restaurants and cafes</li>
@@ -72,28 +79,25 @@
         <li>Travel and tourism expenses</li>
     </ul>
 
-    <!-- FAQ -->
     <h2>FAQs</h2>
 
     <h3>How much tip should I give in the USA?</h3>
-    <p>In the USA, a typical tip ranges from 15% to 20% depending on service quality.</p>
+    <p>Usually 15% to 20% depending on service quality.</p>
 
-    <h3>Is tipping mandatory in restaurants?</h3>
-    <p>No, tipping is not mandatory, but it is commonly expected in countries like the USA.</p>
+    <h3>Is tipping mandatory?</h3>
+    <p>No, but it is commonly expected in many countries.</p>
 
-    <h3>Can I split the bill using this calculator?</h3>
-    <p>Yes, you can divide the total bill among multiple people easily.</p>
+    <h3>Can I split the bill?</h3>
+    <p>Yes, you can divide total cost among people easily.</p>
 
-    <h3>Is this tip calculator free to use?</h3>
-    <p>Yes, it is completely free and works instantly online.</p>
-
-    <h3>Is this calculator accurate?</h3>
-    <p>Yes, it uses standard mathematical formulas for accurate results.</p>
+    <h3>Is this calculator free?</h3>
+    <p>Yes, it is completely free.</p>
 
 </div>
 
 <!-- INTERNAL LINKS -->
 <div class="container">
+
     <h2>Other Calculators</h2>
     <ul>
         <li><a href="/gst-calculator.html">GST Calculator</a></li>
@@ -102,6 +106,7 @@
         <li><a href="/age-calculator.html">Age Calculator</a></li>
         <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
     </ul>
+
 </div>
 
 <footer>
