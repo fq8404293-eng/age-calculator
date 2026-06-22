@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f4f6f9;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
     margin: 0;
     padding: 20px;
 }
@@ -44,6 +44,11 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    opacity: 0.9;
+}
+
+
 .result {
     margin-top: 20px;
     padding: 15px;
@@ -53,4 +58,10 @@ button {
 
 .result p {
     margin: 10px 0;
+}
+.content {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+    line-height: 1.8;
 }
