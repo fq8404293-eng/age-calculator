@@ -257,3 +257,40 @@ body.dark footer a {
         padding: 20px;
     }
 }
+/* Privacy, Terms, About, Contact Pages */
+
+.policy-page .container {
+    max-width: 900px;
+    text-align: left;
+    padding: 40px;
+}
+
+.policy-page h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.policy-page h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.policy-page p,
+.policy-page li {
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: normal;
+}
+
+@media (max-width: 768px) {
+
+    .policy-page h1 {
+        font-size: 32px;
+    }
+
+    .policy-page p,
+    .policy-page li {
+        font-size: 16px;
+    }
+
+}
