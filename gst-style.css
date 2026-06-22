@@ -85,10 +85,10 @@ button:nth-child(2) {
 /* CONTENT AREA */
 .content {
   max-width: 900px;
-  margin: 40px auto;
-  line-height: 1.6;
+  margin: 50px auto;
+  padding: 0 20px;
+  line-height: 1.8;
 }
-
 /* HEADINGS */
 h2 {
   margin-top: 35px;
