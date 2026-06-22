@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f4f6f9;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
     margin: 0;
     padding: 20px;
 }
@@ -130,4 +130,8 @@ footer {
     h1 {
         font-size: 28px;
     }
+}
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
 }
