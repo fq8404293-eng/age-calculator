@@ -16,12 +16,21 @@ function calculateCompoundInterest() {
         return;
     }
 
-    let futureValue = principal * Math.pow((1 + rate / 100), years);
-    let interestEarned = futureValue - principal;
+  let futureValue = principal * Math.pow((1 + rate / 100), years);
 
-    document.getElementById("futureValue").innerText =
-        futureValue.toFixed(2);
+let interestEarned = futureValue - principal;
 
-    document.getElementById("interestEarned").innerText =
-        interestEarned.toFixed(2);
+let multiplier = futureValue / principal;
+
+document.getElementById("futureValue").innerText =
+    futureValue.toFixed(2);
+
+document.getElementById("totalInvestment").innerText =
+    principal.toFixed(2);
+
+document.getElementById("interestEarned").innerText =
+    interestEarned.toFixed(2);
+
+document.getElementById("multiplier").innerText =
+    multiplier.toFixed(2);
 }
