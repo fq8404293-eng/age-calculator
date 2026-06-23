@@ -18,6 +18,24 @@ function calculateRetirement() {
         futureValue += monthlyContribution * Math.pow((1 + monthlyRate), (totalMonths - i));
     }
 
-    document.getElementById("retirementFund").innerText =
-        futureValue.toFixed(2);
+   let totalContributions =
+    currentSavings + (monthlyContribution * totalMonths);
+
+let investmentGrowth =
+    futureValue - totalContributions;
+
+let monthlyIncome =
+    (futureValue * 0.04) / 12;
+
+document.getElementById("retirementFund").innerText =
+    futureValue.toFixed(2);
+
+document.getElementById("totalContributions").innerText =
+    totalContributions.toFixed(2);
+
+document.getElementById("investmentGrowth").innerText =
+    investmentGrowth.toFixed(2);
+
+document.getElementById("monthlyIncome").innerText =
+    monthlyIncome.toFixed(2);
 }
