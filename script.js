@@ -14,10 +14,15 @@ function calculateAge() {
     birthdayEl.innerText = "";
     livedEl.innerText = "";
 
-    if (!dobInput) return;
+   if (!dobInput) {
+    errorEl.innerText = "⚠️ Please select your date of birth";
+    return;
+}
+   const dob = new Date(dobInput);
+const today = new Date();
 
-    const dob = new Date(dobInput);
-    const today = new Date();
+dob.setHours(0,0,0,0);
+today.setHours(0,0,0,0);
 
     // safety check
     if (isNaN(dob.getTime())) {
@@ -59,14 +64,12 @@ resultEl.innerText =
         nextBirthday = new Date(today.getFullYear() + 1, dob.getMonth(), dob.getDate());
     }
 
-    const diff = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
+   const diff = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
 
+if (diff === 0) {
+    birthdayEl.innerText = "🎉 Happy Birthday! Today is your birthday!";
+} else {
     birthdayEl.innerText = `🎉 Next birthday in ${diff} days`;
-
-    // days lived
-    const daysLived = Math.floor((today - dob) / (1000 * 60 * 60 * 24));
-
-    livedEl.innerText = `📊 You have lived approximately ${daysLived} days`;
 }
 
 /* 🌙 DARK MODE */
