@@ -33,18 +33,35 @@
     </p>
 
     <!-- INPUT SECTION -->
-    <h2>Enter Bill Details</h2>
+   <!-- INPUT SECTION -->
+<h2>Enter Bill Details</h2>
 
-    <input type="number" id="billAmount" placeholder="Bill Amount ($)">
-    <input type="number" id="tipPercent" placeholder="Tip Percentage (%)">
+<label for="billAmount">Bill Amount ($)</label>
+<input type="number" id="billAmount" placeholder="Enter Bill Amount">
 
-    <button onclick="calculateTip()">Calculate Tip</button>
+<label for="tipPercent">Tip Percentage (%)</label>
+<input type="number" id="tipPercent" placeholder="Enter Tip Percentage">
 
-    <!-- RESULT -->
-    <div class="result">
-        <p>Tip Amount: $<span id="tip">0</span></p>
-        <p>Total Bill: $<span id="total">0</span></p>
-    </div>
+<div class="quick-tips">
+    <button type="button" onclick="setTip(10)">10%</button>
+    <button type="button" onclick="setTip(15)">15%</button>
+    <button type="button" onclick="setTip(18)">18%</button>
+    <button type="button" onclick="setTip(20)">20%</button>
+</div>
+
+<label for="people">Number of People</label>
+<input type="number" id="people" placeholder="How many people?" min="1">
+
+<button class="calculate-btn" onclick="calculateTip()">
+    Calculate Tip
+</button>
+
+<!-- RESULT -->
+<div class="result">
+    <p>Tip Amount: $<span id="tip">0.00</span></p>
+    <p>Total Bill: $<span id="total">0.00</span></p>
+    <p>Per Person: $<span id="perPerson">0.00</span></p>
+</div>
 
 </div>
 
