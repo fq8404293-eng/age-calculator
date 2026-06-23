@@ -28,15 +28,46 @@
 
 <div class="container">
 
-    <label>Percentage (%)</label>
-    <input type="number" id="percent" placeholder="Enter percentage">
+<h2>What is X% of Y?</h2>
 
-    <label>Number</label>
-    <input type="number" id="number" placeholder="Enter number">
+<label>Percentage (%)</label>
+<input type="number" id="percent" placeholder="Enter percentage">
 
-    <button onclick="calculatePercentage()">Calculate</button>
+<label>Number</label>
+<input type="number" id="number" placeholder="Enter number">
 
-    <h2 id="result"></h2>
+<button onclick="calculatePercentage()">Calculate</button>
+
+<h2 id="result"></h2>
+
+<hr>
+
+<h2>X is What % of Y?</h2>
+
+<label>Value X</label>
+<input type="number" id="valueX" placeholder="Enter first number">
+
+<label>Value Y</label>
+<input type="number" id="valueY" placeholder="Enter second number">
+
+<button onclick="calculatePercentOf()">Calculate</button>
+
+<h2 id="result2"></h2>
+
+<hr>
+
+<h2>Percentage Increase / Decrease</h2>
+
+<label>Old Value</label>
+<input type="number" id="oldValue" placeholder="Enter old value">
+
+<label>New Value</label>
+<input type="number" id="newValue" placeholder="Enter new value">
+
+<button onclick="calculateChange()">Calculate</button>
+
+<h2 id="result3"></h2>
+
 </div>
     <!-- WHAT IS PERCENTAGE -->
     <h2>What is a Percentage?</h2>
