@@ -21,12 +21,20 @@ function calculateEMI() {
     let totalPayment = emi * months;
     let totalInterest = totalPayment - principal;
 
-    document.getElementById("emi").innerText =
-        emi.toFixed(2);
+   let interestPercent = (totalInterest / principal) * 100;
 
-    document.getElementById("interest").innerText =
-        totalInterest.toFixed(2);
+document.getElementById("emi").innerText =
+    emi.toFixed(2);
 
-    document.getElementById("total").innerText =
-        totalPayment.toFixed(2);
+document.getElementById("principal").innerText =
+    principal.toFixed(2);
+
+document.getElementById("interest").innerText =
+    totalInterest.toFixed(2);
+
+document.getElementById("total").innerText =
+    totalPayment.toFixed(2);
+
+document.getElementById("interestPercent").innerText =
+    interestPercent.toFixed(2);
 }
