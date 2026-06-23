@@ -26,7 +26,20 @@ function calculateMortgage() {
     let totalPayment = payment * months;
     let totalInterest = totalPayment - principal;
 
-    document.getElementById("payment").innerText = payment.toFixed(2);
-    document.getElementById("interest").innerText = totalInterest.toFixed(2);
-    document.getElementById("total").innerText = totalPayment.toFixed(2);
+  let interestPercent = (totalInterest / principal) * 100;
+
+document.getElementById("payment").innerText =
+    payment.toFixed(2);
+
+document.getElementById("loanPrincipal").innerText =
+    principal.toFixed(2);
+
+document.getElementById("interest").innerText =
+    totalInterest.toFixed(2);
+
+document.getElementById("total").innerText =
+    totalPayment.toFixed(2);
+
+document.getElementById("interestPercent").innerText =
+    interestPercent.toFixed(2);
 }
