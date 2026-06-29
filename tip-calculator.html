@@ -12,10 +12,31 @@
 
 <link rel="canonical" href="https://calclyworld.com/tip-calculator.html">
 
+<meta property="og:title" content="Free Tip Calculator | CalclyWorld">
+<meta property="og:description" content="Calculate restaurant tips, split bills, and total payment per person instantly online.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+<meta name="theme-color" content="#0f172a">
+
 <link rel="icon" type="image/png" href="/favicon.png">
 
-<!-- IMPORTANT: your updated CSS -->
 <link rel="stylesheet" href="tip-style.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BSQETZ21ZZ');
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
+crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -26,14 +47,12 @@
 
 <div class="container">
 
-    <h1>Tip Calculator</h1>
+<h1>Tip Calculator</h1>
 
-    <p class="subtext">
-        Calculate restaurant tips, split bills, and total payment instantly.
-    </p>
+<p class="subtext">
+Calculate restaurant tips, split bills, and total payment instantly.
+</p>
 
-    <!-- INPUT SECTION -->
-   <!-- INPUT SECTION -->
 <h2>Enter Bill Details</h2>
 
 <label for="billAmount">Bill Amount ($)</label>
@@ -43,70 +62,74 @@
 <input type="number" id="tipPercent" placeholder="Enter Tip Percentage">
 
 <div class="quick-tips">
-    <button type="button" onclick="setTip(10)">10%</button>
-    <button type="button" onclick="setTip(15)">15%</button>
-    <button type="button" onclick="setTip(18)">18%</button>
-    <button type="button" onclick="setTip(20)">20%</button>
+<button type="button" onclick="setTip(10)">10%</button>
+<button type="button" onclick="setTip(15)">15%</button>
+<button type="button" onclick="setTip(18)">18%</button>
+<button type="button" onclick="setTip(20)">20%</button>
 </div>
 
 <label for="people">Number of People</label>
 <input type="number" id="people" placeholder="How many people?" min="1">
 
 <button class="calculate-btn" onclick="calculateTip()">
-    Calculate Tip
+Calculate Tip
 </button>
 
-<!-- RESULT -->
 <div class="result">
-    <p>Tip Amount: $<span id="tip">0.00</span></p>
-    <p>Total Bill: $<span id="total">0.00</span></p>
-    <p>Per Person: $<span id="perPerson">0.00</span></p>
+<p>Tip Amount: $<span id="tip">0.00</span></p>
+<p>Total Bill: $<span id="total">0.00</span></p>
+<p>Per Person: $<span id="perPerson">0.00</span></p>
 </div>
 
 </div>
 
-<!-- CONTENT SECTION -->
 <div class="container">
 
-    <h2>What is a Tip?</h2>
-    <p>
-        A tip is an extra payment given to service staff for good service in restaurants, cafes, hotels, and delivery services. It is commonly used in countries like the USA, Canada, and many others.
-    </p>
+<h2>What is a Tip?</h2>
 
-    <h2>Who Uses This Tip Calculator?</h2>
-    <p>
-        This tool is used by people in the USA, Canada, UK, and worldwide for splitting bills and calculating restaurant tips easily.
-    </p>
-
-    <h2>How Tip Calculator Works</h2>
-  <p>
-    Enter the bill amount, tip percentage, and number of people. The calculator instantly calculates the tip amount, total bill, and how much each person should pay when splitting the bill.
+<p>
+A tip is an extra payment given to service staff for good service in restaurants, cafes, hotels, and delivery services. It is commonly used in countries like the USA, Canada, and many others.
 </p>
 
-    <h2>Formula</h2>
-   <p>
-    Tip = (Bill Amount × Tip %) ÷ 100<br>
-    Total Bill = Bill Amount + Tip<br>
-    Per Person = Total Bill ÷ Number of People
+<h2>Who Uses This Tip Calculator?</h2>
+
+<p>
+This tool is used by people in the USA, Canada, UK, and worldwide for splitting bills and calculating restaurant tips easily.
 </p>
-    <h2>Where is Tip Calculator Used?</h2>
-    <ul>
-        <li>Restaurants and cafes</li>
-        <li>Hotels and food delivery services</li>
-        <li>Splitting bills among friends</li>
-        <li>Travel and tourism expenses</li>
-    </ul>
 
-    <h2>FAQs</h2>
+<h2>How Tip Calculator Works</h2>
 
-    <h3>How much tip should I give in the USA?</h3>
-    <p>Usually 15% to 20% depending on service quality.</p>
+<p>
+Enter the bill amount, tip percentage, and number of people. The calculator instantly calculates the tip amount, total bill, and how much each person should pay when splitting the bill.
+</p>
 
-    <h3>Is tipping mandatory?</h3>
-    <p>No, but it is commonly expected in many countries.</p>
+<h2>Formula</h2>
 
-    <h3>Can I split the bill?</h3>
-    <p>Yes, you can divide total cost among people easily.</p>
+<p>
+Tip = (Bill Amount × Tip %) ÷ 100<br>
+Total Bill = Bill Amount + Tip<br>
+Per Person = Total Bill ÷ Number of People
+</p>
+
+<h2>Where is Tip Calculator Used?</h2>
+
+<ul>
+<li>Restaurants and cafes</li>
+<li>Hotels and food delivery services</li>
+<li>Splitting bills among friends</li>
+<li>Travel and tourism expenses</li>
+</ul>
+
+<h2>FAQs</h2>
+
+<h3>How much tip should I give in the USA?</h3>
+<p>Usually 15% to 20% depending on service quality.</p>
+
+<h3>Is tipping mandatory?</h3>
+<p>No, but it is commonly expected in many countries.</p>
+
+<h3>Can I split the bill?</h3>
+<p>Yes, you can divide total cost among people easily.</p>
 
 <h3>How do I split a restaurant bill?</h3>
 <p>Enter the number of people sharing the bill. The calculator will divide the total bill including tip and show how much each person should pay.</p>
@@ -114,36 +137,41 @@
 <h3>Can I calculate tips for groups?</h3>
 <p>Yes. The calculator supports bill splitting and shows the per-person amount after adding the tip.</p>
 
-    <h3>Is this calculator free?</h3>
-    <p>Yes, it is completely free.</p>
+<h3>Is this calculator free?</h3>
+<p>Yes, this Tip Calculator is completely free to use online without registration or downloads.</p>
 
 </div>
 
-<!-- INTERNAL LINKS -->
 <div class="container">
 
-    <h2>Other Calculators</h2>
-    <ul>
-        <li><a href="/gst-calculator.html">GST Calculator</a></li>
-        <li><a href="/percentage-calculator.html">Percentage Calculator</a></li>
-        <li><a href="/emi-calculator.html">EMI Calculator</a></li>
-        <li><a href="/age-calculator.html">Age Calculator</a></li>
-        <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
-    </ul>
+<h2>More Free Online Calculators</h2>
+
+<ul>
+<li><a href="/age-calculator.html">Age Calculator</a></li>
+<li><a href="/bmi-calculator.html">BMI Calculator</a></li>
+<li><a href="/emi-calculator.html">EMI Calculator</a></li>
+<li><a href="/gst-calculator.html">GST Calculator</a></li>
+<li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+<li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+<li><a href="/retirement-calculator.html">Retirement Calculator</a></li>
+<li><a href="/percentage-calculator.html">Percentage Calculator</a></li>
+</ul>
 
 </div>
 
 <footer>
-    <p><strong>CalclyWorld</strong> – Free Online Calculators</p>
 
-    <p>
-        <a href="/about.html">About Us</a> |
-        <a href="/privacy.html">Privacy Policy</a> |
-        <a href="/terms.html">Terms & Conditions</a> |
-        <a href="/contact.html">Contact Us</a>
-    </p>
+<p><strong>CalclyWorld</strong> – Free Online Calculators</p>
 
-    <p>© 2026 CalclyWorld. All rights reserved.</p>
+<p>
+<a href="/about.html">About Us</a> |
+<a href="/privacy.html">Privacy Policy</a> |
+<a href="/terms.html">Terms & Conditions</a> |
+<a href="/contact.html">Contact Us</a>
+</p>
+
+<p>© 2026 CalclyWorld. All rights reserved.</p>
+
 </footer>
 
 <script src="tip-script.js"></script>
