@@ -3,9 +3,9 @@ function calculateBMI() {
     let weight = parseFloat(document.getElementById("weight").value);
     let height = parseFloat(document.getElementById("height").value);
 
-  if (!weight || !height || weight <= 0 || height <= 0) {
+    if (!weight || !height || weight <= 0 || height <= 0) {
         document.getElementById("result").innerText =
-       "Please enter a valid weight and height.";
+            "Please enter a valid weight and height.";
 
         document.getElementById("category").innerText = "";
         return;
@@ -31,8 +31,26 @@ function calculateBMI() {
     }
 
     document.getElementById("result").innerText =
-    "Your BMI: " + bmi.toFixed(1);
+        "Your BMI: " + bmi.toFixed(1);
 
     document.getElementById("category").innerText =
-    "Category: " + category;
+        "Category: " + category;
 }
+
+// Focus on Weight input when page loads
+window.addEventListener("load", function () {
+    document.getElementById("weight").focus();
+});
+
+// Press Enter to calculate BMI
+document.getElementById("weight").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        calculateBMI();
+    }
+});
+
+document.getElementById("height").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        calculateBMI();
+    }
+});
