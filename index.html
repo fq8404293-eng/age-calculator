@@ -8,13 +8,16 @@
 <title>CalclyWorld | Free Online Calculators for Age, EMI, GST, BMI, Mortgage & More</title>
 
 <meta name="description" content="CalclyWorld offers free online calculators for age, EMI, GST, BMI, mortgage, retirement, compound interest, percentage, tips, and more. Simple, accurate, mobile-friendly tools that help you calculate with confidence.">
-
+<meta property="og:image:alt" content="CalclyWorld - Free Online Calculators">
+<meta name="twitter:image:alt" content="CalclyWorld - Free Online Calculators">
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://calclyworld.com/">
 
 <meta name="theme-color" content="#0f172a">
 <meta name="author" content="CalclyWorld">
+<meta name="application-name" content="CalclyWorld">
+<meta name="color-scheme" content="light dark">
 <!-- Open Graph -->
 <meta property="og:title" content="CalclyWorld | Free Online Calculators">
 <meta property="og:site_name" content="CalclyWorld">
@@ -22,6 +25,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://calclyworld.com/">
 <meta property="og:image" content="https://calclyworld.com/favicon.png">
+<meta property="og:locale" content="en_US">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
@@ -54,21 +58,52 @@ src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pu
 crossorigin="anonymous"></script>
 
 <!-- Structured Data -->
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"CalclyWorld",
+  "url":"https://calclyworld.com/",
+  "logo":{
+    "@type":"ImageObject",
+    "url":"https://calclyworld.com/apple-touch-icon.png"
+  }
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"WebSite",
   "name":"CalclyWorld",
   "url":"https://calclyworld.com/",
-  "description":"CalclyWorld provides free online calculators for finance, health and everyday calculations with accurate and easy-to-use tools.",
+  "description":"CalclyWorld provides free online calculators for finance, health, education, and everyday calculations with accurate and easy-to-use tools.",
   "inLanguage":"en",
- "publisher":{
-  "@type":"Organization",
-  "name":"CalclyWorld",
-  "url":"https://calclyworld.com/"
-}
+  "publisher":{
+    "@type":"Organization",
+    "name":"CalclyWorld",
+    "url":"https://calclyworld.com/"
+  }
+ 
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"CalclyWorld",
+  "url":"https://calclyworld.com/",
+  "description":"Free online calculators for age, EMI, GST, BMI, mortgage, retirement, compound interest, percentage, tips and more.",
+  "isPartOf":{
+    "@type":"WebSite",
+    "url":"https://calclyworld.com/"
+  },
+  "inLanguage":"en"
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -109,11 +144,27 @@ crossorigin="anonymous"></script>
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Home",
+      "item":"https://calclyworld.com/"
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
-
-<header style="text-align:center;padding:35px 20px;">
+<a href="#main-content" class="skip-link">
+Skip to main content
+</a>
+<header>
 
 <h1>CalclyWorld</h1>
 
@@ -127,10 +178,16 @@ Welcome to CalclyWorld, your trusted place for free online calculators designed 
 Every calculator is designed with a clean interface, works smoothly on desktop and mobile devices, and requires no registration or downloads. Simply enter your values and receive instant results.
 </p>
 
+<button
+type="button"
+onclick="toggleDarkMode()"
+aria-label="Toggle dark mode">
+🌙 Toggle Dark Mode
+</button>
+
 </header>
 
-<section style="text-align:center;padding:15px 20px;max-width:900px;margin:auto;">
-
+<section>
 <h2>Explore Our Free Calculators</h2>
 
 <p>
@@ -143,32 +200,51 @@ Whether you're calculating your age, planning a loan, checking your BMI, estimat
 
 </section>
 
-<main class="container">
+<main id="main-content" class="container">
 
-<div class="grid">
+<nav class="grid" aria-label="Calculator navigation">
 
-<a href="/age-calculator.html">🧮 Age Calculator</a>
+<a href="/age-calculator.html" aria-label="Open Age Calculator">
+🧮 Age Calculator
+</a>
 
-<a href="/emi-calculator.html">🏦 EMI Calculator</a>
+<a href="/emi-calculator.html" aria-label="Open EMI Calculator">
+🏦 EMI Calculator
+</a>
 
-<a href="/gst-calculator.html">🧾 GST Calculator</a>
+<a href="/gst-calculator.html" aria-label="Open GST Calculator">
+🧾 GST Calculator
+</a>
 
-<a href="/bmi-calculator.html">⚖️ BMI Calculator</a>
+<a href="/bmi-calculator.html" aria-label="Open BMI Calculator">
+⚖️ BMI Calculator
+</a>
 
-<a href="/mortgage-calculator.html">🏠 Mortgage Calculator</a>
+<a href="/mortgage-calculator.html" aria-label="Open Mortgage Calculator">
+🏠 Mortgage Calculator
+</a>
 
-<a href="/percentage-calculator.html">📊 Percentage Calculator</a>
+<a href="/percentage-calculator.html" aria-label="Open Percentage Calculator">
+📊 Percentage Calculator
+</a>
 
-<a href="/compound-interest-calculator.html">📈 Compound Interest Calculator</a>
+<a href="/compound-interest-calculator.html" aria-label="Open Compound Interest Calculator">
+📈 Compound Interest Calculator
+</a>
 
-<a href="/retirement-calculator.html">👴 Retirement Calculator</a>
+<a href="/retirement-calculator.html" aria-label="Open Retirement Calculator">
+👴 Retirement Calculator
+</a>
 
-<a href="/tip-calculator.html">💰 Tip Calculator</a>
-
-</div>
+<a href="/tip-calculator.html" aria-label="Open Tip Calculator">
+💰 Tip Calculator
+</a>
+</nav>
 
 </main>
-<section style="max-width:900px;margin:auto;padding:25px 20px;">
+
+
+<section>
 
 <h2>About CalclyWorld</h2>
 
@@ -182,7 +258,8 @@ Every calculator is designed with usability in mind. We focus on clear inputs, i
 
 </section>
 
-<section style="max-width:900px;margin:auto;padding:25px 20px;">
+
+<section>
 
 <h2>Why Choose CalclyWorld?</h2>
 
@@ -197,7 +274,8 @@ Every calculator is designed with usability in mind. We focus on clear inputs, i
 
 </section>
 
-<section style="max-width:900px;margin:auto;padding:25px 20px;">
+
+<section>
 
 <h2>Calculator Categories</h2>
 
@@ -221,7 +299,8 @@ The Age Calculator and Percentage Calculator simplify common calculations used b
 
 </section>
 
-<section style="max-width:900px;margin:auto;padding:25px 20px;">
+
+<section>
 
 <h2>Our Commitment to Accuracy</h2>
 
@@ -231,7 +310,8 @@ We carefully design every calculator to provide dependable results based on the 
 
 </section>
 
-<section style="max-width:900px;margin:auto;padding:25px 20px;">
+
+<section>
 
 <h2>Frequently Asked Questions</h2>
 
@@ -252,34 +332,57 @@ We carefully design every calculator to provide dependable results based on the 
 <p>Yes. We regularly expand our collection to provide more useful calculators covering finance, health, mathematics, and everyday needs.</p>
 
 </section>
-
-<footer style="margin-top:40px;padding:25px;text-align:center;background:#f5f5f5;">
+<footer>
 
 <p><strong>CalclyWorld</strong> – Free Online Calculators</p>
 
+<nav aria-label="Footer navigation">
+
 <p>
-<a href="/about.html">About Us</a> |
-<a href="/privacy.html">Privacy Policy</a> |
-<a href="/terms.html">Terms & Conditions</a> |
-<a href="/contact.html">Contact Us</a>
+<a href="/"
+   aria-label="Go to Home page"
+   aria-current="page">
+Home
+</a> |
+<a href="/about.html" aria-label="Learn more About CalclyWorld">About Us</a> |
+<a href="/privacy.html" aria-label="Read our Privacy Policy">Privacy Policy</a> |
+<a href="/terms.html" aria-label="Read our Terms and Conditions">Terms & Conditions</a> |
+<a href="/contact.html" aria-label="Contact CalclyWorld">Contact Us</a>
 </p>
+
+</nav>
+
+<nav aria-label="Footer calculator links">
 
 <p>
 Explore our calculators:
-<a href="/age-calculator.html">Age</a> |
-<a href="/bmi-calculator.html">BMI</a> |
-<a href="/emi-calculator.html">EMI</a> |
-<a href="/gst-calculator.html">GST</a> |
-<a href="/mortgage-calculator.html">Mortgage</a> |
-<a href="/compound-interest-calculator.html">Compound Interest</a> |
-<a href="/retirement-calculator.html">Retirement</a> |
-<a href="/percentage-calculator.html">Percentage</a> |
-<a href="/tip-calculator.html">Tip</a>
+
+<a href="/age-calculator.html" aria-label="Open Age Calculator">Age</a> |
+
+<a href="/bmi-calculator.html" aria-label="Open BMI Calculator">BMI</a> |
+
+<a href="/emi-calculator.html" aria-label="Open EMI Calculator">EMI</a> |
+
+<a href="/gst-calculator.html" aria-label="Open GST Calculator">GST</a> |
+
+<a href="/mortgage-calculator.html" aria-label="Open Mortgage Calculator">Mortgage</a> |
+
+<a href="/compound-interest-calculator.html" aria-label="Open Compound Interest Calculator">Compound Interest</a> |
+
+<a href="/retirement-calculator.html" aria-label="Open Retirement Calculator">Retirement</a> |
+
+<a href="/percentage-calculator.html" aria-label="Open Percentage Calculator">Percentage</a> |
+
+<a href="/tip-calculator.html" aria-label="Open Tip Calculator">Tip</a>
+
 </p>
 
-<p>© 2026 CalclyWorld. All rights reserved.</p>
+</nav>
 
+<p>&copy; 2026 CalclyWorld. All rights reserved.</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
