@@ -119,6 +119,10 @@ if (date > today) {
 
 function calculateAge() {
 
+    console.log("calculateAge called");
+
+    clearResults();
+
     clearResults();
 
     if (!dobInput.value) {
