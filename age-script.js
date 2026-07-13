@@ -20,33 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const lived = document.getElementById("lived");
 
-    /* =========================
-       Dark Mode
-    ========================== */
-
-    function toggleDarkMode() {
-
-        document.body.classList.toggle("dark-mode");
-
-        localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark-mode")
-                ? "dark"
-                : "light"
-        );
-
-    }
-
-    window.toggleDarkMode = toggleDarkMode;
-
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-
-        document.body.classList.add("dark-mode");
-
-    }
-
+    
 
     /* =========================
        Helper Functions
@@ -223,11 +197,7 @@ dobInput.addEventListener("input", calculateAge);
    PREVENT FUTURE DATES
 ========================= */
 
-const today = new Date();
-
-const maxDate = today.toISOString().split("T")[0];
-
-dobInput.setAttribute("max", maxDate);
+dobInput.max = new Date().toISOString().split("T")[0];
 
 /* =========================
    RESTORE LAST DATE
@@ -248,12 +218,7 @@ if (savedDOB) {
 ========================= */
 
 dobInput.addEventListener("change", () => {
-
-    localStorage.setItem(
-        "ageCalculatorDOB",
-        dobInput.value
-    );
-
+    localStorage.setItem("ageCalculatorDOB", dobInput.value);
 });
 
 /* =========================
