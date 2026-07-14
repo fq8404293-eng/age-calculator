@@ -1,0 +1,823 @@
+/* ==========================================================
+   CalclyWorld BMI Calculator
+   Part 1
+   Calculator Layout • Inputs • Results • Tables • Info Boxes
+========================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+*,
+*::before,
+*::after{
+
+    box-sizing:border-box;
+
+}
+
+/* ===========================
+   Calculator Card
+=========================== */
+
+.bmi-box{
+
+    max-width:700px;
+
+    margin:0 auto;
+
+    padding:35px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.bmi-box h2{
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+}
+
+/* ===========================
+   Labels
+=========================== */
+
+.bmi-box label{
+
+    display:block;
+
+    font-weight:700;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* ===========================
+   Unit Selector
+=========================== */
+
+.unit-selector{
+
+    display:flex;
+
+    gap:20px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    margin:20px 0 30px;
+
+}
+
+.unit-selector label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin:0;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.unit-selector input[type="radio"]{
+
+    width:auto;
+
+    cursor:pointer;
+
+}
+
+/* ===========================
+   Calculator Inputs
+=========================== */
+
+#metricInputs,
+#imperialInputs{
+
+    margin-top:10px;
+
+}
+
+#metricInputs input,
+#imperialInputs input{
+
+    width:100%;
+
+    margin-bottom:16px;
+
+    padding:12px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:var(--card);
+
+    color:var(--text);
+
+    appearance:none;
+
+   -webkit-appearance:none;
+
+    transition:border-color .2s ease, box-shadow .2s ease;
+
+}
+
+#metricInputs input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+#imperialInputs input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+/* ===========================
+   Calculate Button
+=========================== */
+
+.bmi-box button{
+
+    width:100%;
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    transition:
+        background .25s ease,
+        transform .15s ease;
+
+}
+
+.bmi-box button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.bmi-box button:active{
+
+    transform:translateY(0);
+
+}
+
+/* ===========================
+   Result Card
+=========================== */
+
+.result-card{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    background:rgba(37,99,235,.08);
+
+    border:1px solid rgba(37,99,235,.20);
+
+    text-align:center;
+
+}
+
+.result-card h2{
+
+    margin-bottom:10px;
+
+    font-size:34px;
+
+    color:var(--primary);
+
+}
+
+.result-card p{
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+   BMI Categories Box
+=========================== */
+
+.bmi-info{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    background:rgba(16,185,129,.08);
+
+    border:1px solid rgba(16,185,129,.18);
+
+}
+
+.bmi-info h3{
+
+    margin-bottom:15px;
+
+}
+
+.bmi-info ul{
+
+    padding-left:22px;
+
+}
+
+.bmi-info li{
+
+    margin-bottom:10px;
+
+}
+
+/* ===========================
+   Info Boxes
+=========================== */
+
+.info-box{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    background:rgba(99,102,241,.08);
+
+    border:1px solid rgba(99,102,241,.18);
+
+}
+
+.info-box h3{
+
+    margin-bottom:15px;
+
+}
+
+.info-box ul{
+
+    padding-left:22px;
+
+}
+
+.info-box li{
+
+    margin-bottom:10px;
+
+}
+/* ===========================
+   Content Sections
+=========================== */
+
+.content-section{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:25px 20px;
+
+}
+
+.toc-section{
+
+    max-width:900px;
+
+    margin:35px auto;
+
+    padding:20px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:var(--card);
+
+}
+/* ===========================
+   On This Page
+=========================== */
+
+.on-this-page{
+
+    text-align:left;
+
+}
+
+/* ===========================
+   Tables
+=========================== */
+
+table{
+
+    width:100%;
+
+    display:block;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+}
+
+th{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    padding:14px;
+
+    text-align:left;
+
+}
+
+td{
+
+    padding:14px;
+
+    border:1px solid #d1d5db;
+
+}
+
+body.dark-mode th,
+body.dark-mode td{
+
+    border-color:#374151;
+
+}
+
+/* ===========================
+   "On This Page" Card
+=========================== */
+
+.on-this-page a{
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   Formula Box
+=========================== */
+
+.formula{
+
+    background:rgba(37,99,235,.08);
+
+    border:1px solid rgba(37,99,235,.20);
+
+    border-radius:12px;
+
+    padding:18px;
+
+    margin:20px auto;
+
+    text-align:center;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+}
+
+/* ===========================
+   Dark Mode Adjustments
+=========================== */
+
+body.dark-mode .result-card{
+
+    background:rgba(59,130,246,.12);
+
+    border-color:rgba(59,130,246,.30);
+
+}
+
+body.dark-mode .bmi-info{
+
+    background:rgba(16,185,129,.10);
+
+    border-color:rgba(16,185,129,.25);
+
+}
+
+body.dark-mode .info-box{
+
+    background:rgba(99,102,241,.10);
+
+    border-color:rgba(99,102,241,.25);
+
+}
+
+body.dark-mode table{
+
+    background:#1f2937;
+
+    color:#f3f4f6;
+
+}
+
+body.dark-mode th{
+
+    color:#ffffff;
+
+}
+/* ==========================================================
+   CalclyWorld BMI Calculator
+   Part 2
+   Responsive • Accessibility • Polish
+========================================================== */
+
+/* ===========================
+   Anchor Offset
+=========================== */
+
+section[id]{
+    scroll-margin-top:90px;
+}
+
+/* ===========================
+   Calculator Features
+=========================== */
+
+.bmi-box > p:last-child{
+    margin-top:30px;
+    line-height:1.9;
+}
+
+.bmi-box > p:last-child br{
+    margin-bottom:8px;
+}
+
+/* ===========================
+   Tables
+=========================== */
+
+table tr:nth-child(even){
+    background:rgba(0,0,0,.03);
+}
+
+body.dark-mode table tr:nth-child(even){
+    background:rgba(255,255,255,.03);
+}
+
+table tr:hover{
+    background:rgba(37,99,235,.05);
+}
+
+body.dark-mode table tr:hover{
+    background:rgba(59,130,246,.10);
+}
+
+/* ===========================
+   Hover Effects
+=========================== */
+
+.result-card,
+.bmi-info,
+.info-box{
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.result-card:hover,
+.bmi-info:hover,
+.info-box:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+
+}
+
+body.dark-mode .result-card:hover,
+body.dark-mode .bmi-info:hover,
+body.dark-mode .info-box:hover{
+
+    box-shadow:0 12px 28px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   Focus States
+=========================== */
+
+input:focus-visible,
+button:focus-visible,
+a:focus-visible,
+select:focus-visible{
+
+    outline:3px solid var(--primary);
+
+    outline-offset:3px;
+
+}
+
+/* ===========================
+   Smooth Transitions
+=========================== */
+
+.bmi-box,
+.result-card,
+.bmi-info,
+.info-box,
+table{
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:900px){
+
+    .bmi-box{
+
+        padding:28px;
+
+    }
+
+    .result-card h2{
+
+        font-size:30px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .bmi-box{
+
+        padding:22px;
+
+    }
+
+    .unit-selector{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+    .result-card{
+
+        padding:20px;
+
+    }
+
+    .result-card h2{
+
+        font-size:28px;
+
+    }
+
+    .result-card p{
+
+        font-size:16px;
+
+    }
+
+    .bmi-info,
+    .info-box{
+
+        padding:20px;
+
+    }
+
+   table{
+
+    display:block;
+
+    width:100%;
+
+    overflow-x:auto;
+
+    -webkit-overflow-scrolling:touch;
+
+    white-space:nowrap;
+
+}
+}
+
+@media (max-width:480px){
+
+    .bmi-box{
+
+        padding:18px;
+
+    }
+
+    .result-card{
+
+        padding:18px;
+
+    }
+
+    .result-card h2{
+
+        font-size:24px;
+
+    }
+
+    .result-card p{
+
+        font-size:15px;
+
+    }
+
+    .bmi-info,
+    .info-box{
+
+        padding:18px;
+
+    }
+
+    th,
+    td{
+
+        padding:10px;
+
+        font-size:14px;
+
+    }
+
+}
+/* ===========================
+   Header
+=========================== */
+
+.page-header{
+
+    text-align:center;
+
+    padding:35px 20px;
+
+}
+
+.last-updated{
+
+    font-size:14px;
+
+    color:#666;
+
+    margin-top:10px;
+
+}
+
+body.dark-mode .last-updated{
+
+    color:#9ca3af;
+
+}
+
+
+/* ===========================
+   Print
+=========================== */
+
+@media print{
+
+    button,
+    footer{
+
+        display:none;
+
+    }
+
+    body{
+
+        background:#ffffff;
+
+        color:#000000;
+
+    }
+
+    .container,
+    .bmi-box{
+
+        box-shadow:none;
+
+        border:1px solid #cccccc;
+
+    }
+    
+    a{
+
+    color:#000;
+
+    text-decoration:none;
+
+}
+
+}
+
+ /* ===========================
+   Back Home Link
+=========================== */
+
+.back-home{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.back-home a{
+
+    font-weight:600;
+
+}
+
+
+/* ===========================
+   Footer
+=========================== */
+
+.site-footer{
+
+    margin-top:40px;
+
+    padding:20px;
+
+    text-align:center;
+
+    background:#f5f5f5;
+
+}
+
+body.dark-mode .site-footer{
+
+    background:#111827;
+
+}
+
+.footer-description{
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    max-width:850px;
+
+    margin:20px auto 0;
+
+}
+/* ===========================
+   Responsive Images
+=========================== */
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
