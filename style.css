@@ -578,6 +578,17 @@ img{
     z-index:9999;
 
 }
+.calculator-note{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    font-size:15px;
+
+    opacity:.85;
+
+}
 
 /* ==========================================
    Responsive
