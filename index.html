@@ -180,15 +180,19 @@ Every calculator is designed with a clean interface, works smoothly on desktop a
 
 <button
 type="button"
+id="theme-toggle"
 onclick="toggleDarkMode()"
-aria-label="Toggle dark mode">
+aria-label="Toggle dark mode"
+aria-pressed="false">
 🌙 Toggle Dark Mode
 </button>
 
 </header>
 
-<section>
-<h2>Explore Our Free Calculators</h2>
+<section aria-labelledby="calculator-heading">
+<h2 id="calculator-heading">
+Explore Our Free Calculators
+</h2>
 
 <p>
 CalclyWorld brings together useful calculators in one place so you don't have to search across multiple websites. Our growing collection includes finance, health and everyday utility calculators that are easy to understand and completely free to use.
@@ -205,39 +209,48 @@ Whether you're calculating your age, planning a loan, checking your BMI, estimat
 <nav class="grid" aria-label="Calculator navigation">
 
 <a href="/age-calculator.html" aria-label="Open Age Calculator">
-🧮 Age Calculator
+    <span class="card-title">🧮 Age Calculator</span>
+    <span class="card-desc">Calculate your exact age in years, months, days, hours, and more.</span>
 </a>
 
 <a href="/emi-calculator.html" aria-label="Open EMI Calculator">
-🏦 EMI Calculator
+    <span class="card-title">🏦 EMI Calculator</span>
+    <span class="card-desc">Estimate monthly loan EMIs with interest and total repayment.</span>
 </a>
 
 <a href="/gst-calculator.html" aria-label="Open GST Calculator">
-🧾 GST Calculator
+    <span class="card-title">🧾 GST Calculator</span>
+    <span class="card-desc">Add or remove GST instantly with accurate tax calculations.</span>
 </a>
 
 <a href="/bmi-calculator.html" aria-label="Open BMI Calculator">
-⚖️ BMI Calculator
+    <span class="card-title">⚖️ BMI Calculator</span>
+    <span class="card-desc">Check your Body Mass Index and healthy weight range.</span>
 </a>
 
 <a href="/mortgage-calculator.html" aria-label="Open Mortgage Calculator">
-🏠 Mortgage Calculator
+    <span class="card-title">🏠 Mortgage Calculator</span>
+    <span class="card-desc">Estimate mortgage payments, interest, and loan costs.</span>
 </a>
 
 <a href="/percentage-calculator.html" aria-label="Open Percentage Calculator">
-📊 Percentage Calculator
+    <span class="card-title">📊 Percentage Calculator</span>
+    <span class="card-desc">Solve percentage increase, decrease, difference, and more.</span>
 </a>
 
 <a href="/compound-interest-calculator.html" aria-label="Open Compound Interest Calculator">
-📈 Compound Interest Calculator
+    <span class="card-title">📈 Compound Interest Calculator</span>
+    <span class="card-desc">Calculate investment growth with compound interest.</span>
 </a>
 
 <a href="/retirement-calculator.html" aria-label="Open Retirement Calculator">
-👴 Retirement Calculator
+    <span class="card-title">👴 Retirement Calculator</span>
+    <span class="card-desc">Plan your retirement savings and future financial goals.</span>
 </a>
 
 <a href="/tip-calculator.html" aria-label="Open Tip Calculator">
-💰 Tip Calculator
+    <span class="card-title">💰 Tip Calculator</span>
+    <span class="card-desc">Calculate tips, split restaurant bills, and save time.</span>
 </a>
 </nav>
 
