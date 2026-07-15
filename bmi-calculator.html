@@ -164,6 +164,28 @@ crossorigin="anonymous"></script>
 }
 }
 </script>
+<!-- SoftwareApplication Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "BMI Calculator",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "url": "https://calclyworld.com/bmi-calculator.html",
+  "description": "Free online BMI Calculator that calculates Body Mass Index using Metric and Imperial units.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CalclyWorld",
+    "url": "https://calclyworld.com/"
+  }
+}
+</script>
 <!-- Breadcrumb Structured Data -->
 <script type="application/ld+json">
 {
@@ -208,8 +230,8 @@ crossorigin="anonymous"></script>
   "name":"CalclyWorld",
   "url":"https://calclyworld.com/",
   "logo":"https://calclyworld.com/favicon.png",
-  "description":"CalclyWorld provides free online calculators for health, finance, education, mathematics, and everyday calculations."
- 
+  "description":"CalclyWorld provides free online calculators for health, finance, education, mathematics, and everyday calculations.",
+  "inLanguage":"en"
 }
 </script>
 <!-- Author Structured Data -->
@@ -222,7 +244,8 @@ crossorigin="anonymous"></script>
     "@type":"Organization",
     "name":"CalclyWorld"
   },
-  "url":"https://calclyworld.com/about.html"
+  "url":"https://calclyworld.com/about.html",
+  "inLanguage":"en"
 }
 </script>
 <!-- Article Structured Data -->
@@ -261,12 +284,13 @@ crossorigin="anonymous"></script>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="page-header">
-<h1>Free BMI Calculator (Metric & Imperial) – Calculate Your Body Mass Index</h1>
+<h1>Free BMI Calculator – Calculate Your Body Mass Index (Metric & Imperial)</h1>
 
 <p><strong>Calculate Your BMI Instantly Using Metric or Imperial Units</strong></p>
 
 <p class="last-updated">
-Last updated: July 12, 2026
+Last updated:
+<time datetime="2026-07-12">July 12, 2026</time>
 <br>
 By <strong>CalclyWorld Editorial Team</strong>
 </p>
@@ -279,8 +303,8 @@ Designed for users in the <strong>United States</strong> and around the world, t
 </p>
 
 <button
+id="darkModeToggle"
 type="button"
-onclick="toggleDarkMode()"
 aria-label="Toggle dark mode">
 🌙 Toggle Dark Mode
 </button>
@@ -292,15 +316,18 @@ aria-label="Toggle dark mode">
 <a href="/">← Back to Home</a>
 </p>
 
-<section class="bmi-box" aria-labelledby="calculator-heading">
+<section
+class="bmi-box"
+aria-labelledby="calculator-heading"
+aria-describedby="calculator-description">
 
 <h2 id="calculator-heading">Calculate Your BMI</h2>
 <p class="visually-hidden">
 Use this BMI calculator to calculate your Body Mass Index using either Metric or Imperial units.
 </p>
 
-<p class="bmi-intro">
-Choose your preferred measurement system and enter your height and weight below.
+<p class="bmi-intro" id="calculator-description">
+Choose your preferred measurement system, enter your height and weight, and click <strong>Calculate BMI</strong> to instantly see your Body Mass Index (BMI), weight category, and healthy weight range.
 </p>
 
 <fieldset class="unit-selector">
@@ -338,7 +365,7 @@ id="weight"
 placeholder="Example: 70"
 min="1"
 step="0.1"
-autocomplete="off"
+autocomplete="weight"
 aria-label="Weight in kilograms"
 >
 <label for="height">Height (cm)</label>
@@ -349,7 +376,7 @@ id="height"
 placeholder="Example: 175"
 min="30"
 step="0.1"
-autocomplete="off"
+autocomplete="height"
 aria-label="Height in centimeters"
 >
 </div>
@@ -364,7 +391,7 @@ id="weightLb"
 placeholder="Example: 154"
 min="1"
 step="0.1"
-autocomplete="off"
+autocomplete="weight"
 aria-label="Weight in pounds"
 >
 
@@ -375,7 +402,7 @@ type="number"
 id="feet"
 placeholder="Example: 5"
 min="1"
-autocomplete="off"
+autocomplete="height"
 aria-label="Height in feet"
 >
 
@@ -386,7 +413,7 @@ type="number"
 id="inches"
 placeholder="Example: 9"
 min="0"
-autocomplete="off"
+autocomplete="height"
 max="11"
 aria-label="Additional height in inches"
 >
@@ -396,7 +423,7 @@ aria-label="Additional height in inches"
 <button
 id="calculateBtn"
 type="button"
-aria-label="Calculate Body Mass Index">
+aria-label="Calculate your Body Mass Index (BMI)">
 Calculate BMI
 </button>
 
@@ -408,13 +435,15 @@ aria-live="polite"
 aria-atomic="true"
 tabindex="-1">
 
-<div id="result" class="result-value">
+<p id="result" class="result-value"></p>
 
 <p id="category"></p>
 
 <p id="healthyWeight"></p>
 
-</div>
+<p class="bmi-reminder">
+  <strong>Health Reminder:</strong> BMI is a useful screening tool but does not directly measure body fat or diagnose health conditions. For a complete health assessment, consult a qualified healthcare professional.
+</p>
 
 <aside class="bmi-info" aria-labelledby="bmi-categories-heading">
 
@@ -951,71 +980,48 @@ Your BMI category should always be considered alongside other factors such as ag
 <caption>BMI Categories and Their General Meanings</caption>
 
 <thead>
-
 <tr>
-
 <th>BMI Range</th>
-
-<th style="border:1px solid #ddd;padding:12px;">Category</th>
-
-<th style="border:1px solid #ddd;padding:12px;">General Meaning</th>
-
+<th>Category</th>
+<th>General Meaning</th>
 </tr>
-
 </thead>
 
 <tbody>
 
 <tr>
-
 <td>Below 18.5</td>
-
-<td style="border:1px solid #ddd;padding:12px;">Underweight</td>
-
-<td style="border:1px solid #ddd;padding:12px;">
+<td>Underweight</td>
+<td>
 Your weight may be lower than recommended for your height. In some cases, this could be linked to poor nutrition, illness, or other health conditions.
 </td>
-
 </tr>
 
 <tr>
-
-<td style="border:1px solid #ddd;padding:12px;">18.5 – 24.9</td>
-
-<td style="border:1px solid #ddd;padding:12px;">Healthy Weight</td>
-
-<td style="border:1px solid #ddd;padding:12px;">
+<td>18.5 – 24.9</td>
+<td>Healthy Weight</td>
+<td>
 This range is generally associated with the lowest risk of many weight-related health conditions for most adults.
 </td>
-
 </tr>
 
 <tr>
-
-<td style="border:1px solid #ddd;padding:12px;">25.0 – 29.9</td>
-
-<td style="border:1px solid #ddd;padding:12px;">Overweight</td>
-
-<td style="border:1px solid #ddd;padding:12px;">
+<td>25.0 – 29.9</td>
+<td>Overweight</td>
+<td>
 A BMI in this range may increase the risk of certain health problems. Healthy lifestyle changes may help reduce those risks.
 </td>
-
 </tr>
 
 <tr>
-
-<td style="border:1px solid #ddd;padding:12px;">30.0 or Above</td>
-
-<td style="border:1px solid #ddd;padding:12px;">Obesity</td>
-
-<td style="border:1px solid #ddd;padding:12px;">
+<td>30.0 or Above</td>
+<td>Obesity</td>
+<td>
 This category is associated with a higher risk of several chronic health conditions. Professional medical guidance can help create a safe and effective plan for improving overall health.
 </td>
-
 </tr>
 
 </tbody>
-
 </table>
 
 <h3>What Does Your BMI Result Mean?</h3>
@@ -1277,11 +1283,12 @@ Looking for more tools? Visit our homepage to explore all free calculators avail
 </p>
 
 </section>
+
+<section class="content-section">
+
 <p>
 We're continually adding new calculators to help students, professionals, families, business owners, and anyone who needs quick, accurate online calculations.
 </p>
-
-<section class="content-section">
 
 <h2>Content Review & Accuracy</h2>
 
