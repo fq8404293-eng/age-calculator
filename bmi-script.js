@@ -290,4 +290,41 @@ document.querySelectorAll("input[type='number']").forEach(function (input) {
     });
 
 });
+/* ==========================
+   Dark Mode
+========================== */
+
+const darkModeButton = document.getElementById("darkModeToggle");
+
+function applyTheme(theme) {
+
+    if (theme === "dark") {
+
+        document.body.classList.add("dark-mode");
+        darkModeButton.textContent = "☀️ Light Mode";
+
+    } else {
+
+        document.body.classList.remove("dark-mode");
+        darkModeButton.textContent = "🌙 Dark Mode";
+
+    }
+
+}
+
+const savedTheme = localStorage.getItem("theme");
+
+applyTheme(savedTheme === "dark" ? "dark" : "light");
+
+darkModeButton.addEventListener("click", function () {
+
+    const isDark = document.body.classList.contains("dark-mode");
+
+    const newTheme = isDark ? "light" : "dark";
+
+    localStorage.setItem("theme", newTheme);
+
+    applyTheme(newTheme);
+
+});
 
