@@ -343,15 +343,13 @@ table{
 
     width:100%;
 
-    display:block;
-
     border-collapse:collapse;
 
     margin-top:20px;
 
-    overflow:hidden;
-
     border-radius:12px;
+
+    overflow-x:auto;
 
 }
 
@@ -380,6 +378,10 @@ body.dark-mode td{
 
     border-color:#374151;
 
+}
+.table-cell {
+    border: 1px solid #ddd;
+    padding: 12px;
 }
 
 /* ===========================
@@ -820,4 +822,13 @@ img{
 
     display:block;
 
+}
+.bmi-reminder {
+    margin-top: 15px;
+    padding: 12px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    background: #f8f9fa;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
 }
