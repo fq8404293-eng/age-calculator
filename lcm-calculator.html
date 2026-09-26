@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LCM Calculator - Find the Least Common Multiple | CalclyWorld</title>
+
+  <meta name="description" content="Use our free LCM Calculator to find the least common multiple of two or more whole numbers. Get the LCM, multiples, and calculation explanation instantly.">
+  <meta name="keywords" content="LCM calculator, least common multiple calculator, find LCM, LCM of two numbers, least common multiple">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/lcm-calculator.html">
+
+  <meta property="og:title" content="LCM Calculator - CalclyWorld">
+  <meta property="og:description" content="Find the least common multiple of two whole numbers quickly and accurately with our free online LCM Calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/lcm-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "LCM Calculator",
+    "url": "https://calclyworld.com/lcm-calculator.html",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "description": "A free online calculator for finding the least common multiple of two positive whole numbers.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container content">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#math">Math</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">LCM Calculator</span>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>LCM Calculator</h1>
+
+        <p>
+          Find the least common multiple of two positive whole numbers
+          quickly and accurately with our free LCM Calculator.
+        </p>
+
+        <p>
+          Enter two numbers to calculate their LCM and see the multiples
+          and calculation details behind the result.
+        </p>
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate the LCM</h2>
+
+          <p class="text-center small-text">
+            Enter two positive whole numbers below.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+              <label for="lcm-first-number">First Number</label>
+
+              <input
+                type="number"
+                id="lcm-first-number"
+                min="1"
+                step="1"
+                inputmode="numeric"
+                placeholder="Example: 12"
+                aria-describedby="lcm-first-help"
+              >
+
+              <small id="lcm-first-help" class="small-text">
+                Enter a positive whole number.
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="lcm-second-number">Second Number</label>
+
+              <input
+                type="number"
+                id="lcm-second-number"
+                min="1"
+                step="1"
+                inputmode="numeric"
+                placeholder="Example: 18"
+                aria-describedby="lcm-second-help"
+              >
+
+              <small id="lcm-second-help" class="small-text">
+                Enter a positive whole number.
+              </small>
+            </div>
+
+            <div
+              id="lcm-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-lcm"
+                class="btn"
+                type="button"
+              >
+                Calculate LCM
+              </button>
+
+              <button
+                id="reset-lcm"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="lcm-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">LCM Result</h2>
+
+          <div id="lcm-result-content"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What Is LCM -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is the Least Common Multiple?</h2>
+
+          <p>
+            The <strong>least common multiple (LCM)</strong> of two
+            positive whole numbers is the smallest positive number that
+            is a multiple of both numbers.
+          </p>
+
+          <p>
+            For example, the multiples of 4 include 4, 8, 12, 16, 20,
+            and so on. The multiples of 6 include 6, 12, 18, 24,
+            and so on.
+          </p>
+
+          <p>
+            The first positive number that appears in both lists is
+            <strong>12</strong>, so the LCM of 4 and 6 is 12.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Visual Explanation -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Example: LCM of 4 and 6</h2>
+
+          <p>
+            The multiples of 4 are:
+          </p>
+
+          <p>
+            <strong>4, 8, 12, 16, 20, 24...</strong>
+          </p>
+
+          <p>
+            The multiples of 6 are:
+          </p>
+
+          <p>
+            <strong>6, 12, 18, 24, 30...</strong>
+          </p>
+
+          <p>
+            The first positive multiple shared by both lists is
+            <strong>12</strong>.
+          </p>
+
+          <p>
+            Therefore:
+          </p>
+
+          <div class="info-box">
+            <p class="text-center">
+              <strong>LCM(4, 6) = 12</strong>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Formula -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>LCM Formula Using GCD</h2>
+
+          <p>
+            The LCM of two positive integers can also be calculated
+            using their greatest common divisor (GCD).
+          </p>
+
+          <div class="info-box">
+            <p class="text-center">
+              <strong>
+                LCM(a, b) = |a × b| ÷ GCD(a, b)
+              </strong>
+            </p>
+          </div>
+
+          <p>
+            For example, consider 12 and 18.
+          </p>
+
+          <p>
+            The GCD of 12 and 18 is 6.
+          </p>
+
+          <p>
+            Therefore:
+          </p>
+
+          <p>
+            <strong>
+              LCM(12, 18) = (12 × 18) ÷ 6 = 36
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Common Examples -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Common LCM Examples</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>First Number</th>
+                  <th>Second Number</th>
+                  <th>LCM</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>6</td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>6</td>
+                  <td>12</td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>10</td>
+                  <td>10</td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td>8</td>
+                  <td>24</td>
+                </tr>
+
+                <tr>
+                  <td>8</td>
+                  <td>12</td>
+                  <td>24</td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+                  <td>15</td>
+                  <td>45</td>
+                </tr>
+
+                <tr>
+                  <td>12</td>
+                  <td>18</td>
+                  <td>36</td>
+                </tr>
+
+                <tr>
+                  <td>15</td>
+                  <td>20</td>
+                  <td>60</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the LCM Calculator</h2>
+
+          <ol>
+            <li>Enter the first positive whole number.</li>
+            <li>Enter the second positive whole number.</li>
+            <li>Click <strong>Calculate LCM</strong>.</li>
+            <li>Review the LCM and calculation details.</li>
+            <li>Click <strong>Reset</strong> to perform another calculation.</li>
+          </ol>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LCM Uses -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>When Is LCM Useful?</h2>
+
+          <p>
+            The least common multiple is useful whenever repeating
+            schedules, cycles, or groups need to line up at the same
+            point.
+          </p>
+
+          <p>
+            For example, if one event happens every 4 days and another
+            happens every 6 days, their schedules will coincide again
+            after 12 days, assuming they start together.
+          </p>
+
+          <p>
+            LCM is also commonly used when working with fractions,
+            multiples, number patterns, and other mathematical problems.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What does LCM stand for?</h3>
+          <p>
+            LCM stands for <strong>Least Common Multiple</strong>.
+          </p>
+
+          <h3>What is the LCM of 4 and 6?</h3>
+          <p>
+            The LCM of 4 and 6 is 12 because 12 is the smallest positive
+            number divisible by both 4 and 6.
+          </p>
+
+          <h3>What is the LCM of 12 and 18?</h3>
+          <p>
+            The LCM of 12 and 18 is 36.
+          </p>
+
+          <h3>Can the LCM be the same as one of the numbers?</h3>
+          <p>
+            Yes. If one number is already a multiple of the other, the
+            larger number is the LCM. For example, the LCM of 5 and 10
+            is 10.
+          </p>
+
+          <h3>What is the difference between LCM and GCD?</h3>
+          <p>
+            The LCM is the smallest positive number that is a multiple
+            of both numbers, while the GCD is the largest positive
+            number that divides both numbers evenly.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators
+          designed to make everyday calculations simple, fast,
+          and easy to understand.
+        </p>
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/lcm-calculator.js"></script>
+
+</body>
+</html>

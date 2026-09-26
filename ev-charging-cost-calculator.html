@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EV Charging Cost Calculator - Calculate Electric Vehicle Charging Cost | CalclyWorld</title>
+
+  <meta name="description" content="Use our free EV Charging Cost Calculator to estimate the electricity needed and cost to charge an electric vehicle. Calculate charging costs from battery capacity, charge level, electricity price, and charging efficiency.">
+
+  <meta name="keywords" content="EV charging cost calculator, electric vehicle charging cost calculator, EV charging calculator, EV electricity cost calculator, electric car charging cost, EV battery charging cost">
+
+  <link rel="canonical" href="https://calclyworld.com/ev-charging-cost-calculator.html">
+
+  <meta property="og:title" content="EV Charging Cost Calculator - Calculate Electric Vehicle Charging Cost | CalclyWorld">
+  <meta property="og:description" content="Calculate the estimated electricity required and cost to charge an electric vehicle based on battery capacity, charge level, electricity price, and charging efficiency.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/ev-charging-cost-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EV Charging Cost Calculator",
+    "url": "https://calclyworld.com/ev-charging-cost-calculator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "A free online calculator for estimating electric vehicle charging energy and electricity cost.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="breadcrumb">
+      <div class="content">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">EV Charging Cost Calculator</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+
+        <h1>EV Charging Cost Calculator</h1>
+
+        <p>
+          Estimate how much electricity your electric vehicle needs and
+          how much it will cost to charge.
+        </p>
+
+        <p>
+          Enter your battery capacity, current and target charge levels,
+          electricity price, and charging efficiency to estimate the
+          total charging cost.
+        </p>
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate EV Charging Cost</h2>
+
+          <p class="text-center small-text">
+            Enter your EV battery capacity and charging information.
+            Charging efficiency accounts for electricity lost during
+            the charging process.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+
+              <label for="ev-battery-capacity">
+                Battery Capacity
+              </label>
+
+              <input
+                type="number"
+                id="ev-battery-capacity"
+                min="0"
+                step="any"
+                placeholder="Example: 60"
+                inputmode="decimal"
+              >
+
+              <small>
+                Enter the usable or rated battery capacity in kWh.
+              </small>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="ev-start-charge">
+                Current Charge (%)
+              </label>
+
+              <input
+                type="number"
+                id="ev-start-charge"
+                min="0"
+                max="100"
+                step="any"
+                value="20"
+                placeholder="Example: 20"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="ev-target-charge">
+                Target Charge (%)
+              </label>
+
+              <input
+                type="number"
+                id="ev-target-charge"
+                min="0"
+                max="100"
+                step="any"
+                value="80"
+                placeholder="Example: 80"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="ev-electricity-price">
+                Electricity Price
+              </label>
+
+              <input
+                type="number"
+                id="ev-electricity-price"
+                min="0"
+                step="any"
+                placeholder="Example: 0.15"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="ev-currency">
+                Currency
+              </label>
+
+              <select id="ev-currency">
+
+                <option value="$">USD ($)</option>
+                <option value="₹">INR (₹)</option>
+                <option value="£">GBP (£)</option>
+                <option value="€">EUR (€)</option>
+                <option value="C$">CAD (C$)</option>
+                <option value="A$">AUD (A$)</option>
+                <option value="¥">JPY (¥)</option>
+                <option value="¥">CNY (¥)</option>
+                <option value="د.إ">AED (د.إ)</option>
+                <option value="S$">SGD (S$)</option>
+                <option value="CHF">CHF</option>
+                <option value="custom">Other</option>
+
+              </select>
+
+            </div>
+
+            <div
+              class="form-group"
+              id="ev-custom-currency-group"
+              hidden
+            >
+
+              <label for="ev-custom-currency">
+                Custom Currency Symbol
+              </label>
+
+              <input
+                type="text"
+                id="ev-custom-currency"
+                maxlength="10"
+                placeholder="Example: ₱"
+                autocomplete="off"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="ev-charging-efficiency">
+                Charging Efficiency (%)
+              </label>
+
+              <input
+                type="number"
+                id="ev-charging-efficiency"
+                min="1"
+                max="100"
+                step="any"
+                value="90"
+                placeholder="Example: 90"
+                inputmode="decimal"
+              >
+
+              <small>
+                Typical charging efficiency is below 100% because some
+                electricity is lost as heat and through charging equipment.
+              </small>
+
+            </div>
+
+            <div
+              id="ev-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-ev"
+                class="btn"
+                type="button"
+              >
+                Calculate Charging Cost
+              </button>
+
+              <button
+                id="reset-ev"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="ev-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>EV Charging Cost Result</h2>
+
+          <div id="ev-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">EV Charging Summary</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Battery Capacity</h3>
+              <p id="ev-summary-battery">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Energy Stored</h3>
+              <p id="ev-summary-energy">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Energy From Grid</h3>
+              <p id="ev-summary-grid">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Charging Cost</h3>
+              <p id="ev-summary-cost">—</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Is an EV Charging Cost Calculator?</h2>
+
+          <p>
+            An EV Charging Cost Calculator estimates the electricity
+            required to charge an electric vehicle and the approximate
+            cost of that electricity. It can be useful for electric cars,
+            SUVs, vans, motorcycles, and other battery-powered vehicles.
+          </p>
+
+          <p>
+            The calculation uses the vehicle's battery capacity, the
+            percentage of the battery being charged, the local electricity
+            price, and an estimated charging efficiency.
+          </p>
+
+          <p>
+            Because charging is not perfectly efficient, the amount of
+            electricity drawn from the grid can be greater than the amount
+            of energy actually stored in the battery.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>How EV Charging Cost Is Calculated</h2>
+
+          <p>
+            First, the calculator determines how much battery capacity
+            needs to be added between the starting and target charge
+            levels.
+          </p>
+
+          <div class="info-box">
+
+            <h3>Battery Energy Required</h3>
+
+            <p>
+              <strong>
+                Energy Stored = Battery Capacity ×
+                (Target Charge − Starting Charge) ÷ 100
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            The calculator then accounts for charging losses by dividing
+            the energy stored by the charging efficiency.
+          </p>
+
+          <div class="info-box">
+
+            <h3>Grid Energy Required</h3>
+
+            <p>
+              <strong>
+                Grid Energy = Energy Stored ÷
+                (Charging Efficiency ÷ 100)
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            Finally, the estimated grid energy is multiplied by the
+            electricity price.
+          </p>
+
+          <div class="info-box">
+
+            <h3>Charging Cost</h3>
+
+            <p>
+              <strong>
+                Charging Cost = Grid Energy ×
+                Electricity Price per kWh
+              </strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Example EV Charging Cost Calculation</h2>
+
+          <p>
+            Suppose an electric vehicle has a 60 kWh battery and you want
+            to charge it from 20% to 80%. If electricity costs $0.15 per
+            kWh and charging efficiency is 90%, the calculation works as
+            follows.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Calculation</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Battery Capacity</td>
+                  <td>60 kWh</td>
+                </tr>
+
+                <tr>
+                  <td>Charge Added</td>
+                  <td>60%</td>
+                </tr>
+
+                <tr>
+                  <td>Energy Stored</td>
+                  <td>36 kWh</td>
+                </tr>
+
+                <tr>
+                  <td>Charging Efficiency</td>
+                  <td>90%</td>
+                </tr>
+
+                <tr>
+                  <td>Energy From Grid</td>
+                  <td>40 kWh</td>
+                </tr>
+
+                <tr>
+                  <td>Electricity Price</td>
+                  <td>$0.15/kWh</td>
+                </tr>
+
+                <tr>
+                  <td>Estimated Charging Cost</td>
+                  <td>$6.00</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Affects EV Charging Cost?</h2>
+
+          <p>
+            The cost of charging an EV can vary depending on several
+            factors:
+          </p>
+
+          <ul>
+            <li>Local electricity price</li>
+            <li>Vehicle battery capacity</li>
+            <li>Starting and target battery percentage</li>
+            <li>Charging efficiency</li>
+            <li>Home charging equipment</li>
+            <li>Time-of-use electricity rates</li>
+            <li>Public charging station pricing</li>
+            <li>Taxes, fees, or charging-network charges</li>
+          </ul>
+
+          <p>
+            Home charging is often priced by the amount of electricity
+            consumed, while public charging stations may use different
+            pricing models, including per-kWh, per-minute, session, or
+            subscription-based charges.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>EV Charging Cost FAQ</h2>
+
+          <h3>How much electricity does an EV use when charging?</h3>
+
+          <p>
+            The amount depends on the battery size, how much the battery
+            is charged, and charging losses. A larger battery or a larger
+            increase in battery percentage generally requires more
+            electricity.
+          </p>
+
+          <h3>Why is grid electricity higher than battery energy?</h3>
+
+          <p>
+            Charging systems are not perfectly efficient. Some electricity
+            is lost through the charger, battery management system,
+            wiring, and heat. This means the grid may supply more energy
+            than is ultimately stored in the battery.
+          </p>
+
+          <h3>Can I use this calculator for an electric motorcycle or scooter?</h3>
+
+          <p>
+            Yes. The calculation works for any rechargeable electric
+            vehicle when you know its battery capacity and the relevant
+            electricity price.
+          </p>
+
+          <h3>What electricity price should I enter?</h3>
+
+          <p>
+            Enter the price you actually pay per kWh. Check your electricity
+            bill for the applicable energy rate. If your bill includes
+            additional charges, your effective cost per kWh may be higher
+            than the basic energy rate.
+          </p>
+
+          <h3>Does charging from 20% to 80% use 60% of the battery?</h3>
+
+          <p>
+            The energy stored in the battery is approximately 60% of its
+            stated capacity for a 20% to 80% charge. The electricity drawn
+            from the grid can be higher because of charging losses.
+          </p>
+
+          <h3>Is EV charging cheaper than gasoline or diesel?</h3>
+
+          <p>
+            The answer depends on electricity prices, fuel prices, vehicle
+            efficiency, charging costs, and driving conditions. Comparing
+            the energy cost per distance can provide a more useful
+            comparison than looking only at the cost of one charging
+            session.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators for
+          finance, everyday calculations, mathematics, construction,
+          automotive, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/ev-charging-cost-calculator.js"></script>
+
+</body>
+</html>

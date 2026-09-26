@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fuel Cost Calculator - Calculate Trip Fuel Cost | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Use our free global Fuel Cost Calculator to estimate fuel consumption and trip cost. Supports kilometers, miles, km/L, L/100 km, MPG, fuel price per liter or US gallon, and multiple currencies."
+  >
+
+  <meta
+    name="keywords"
+    content="fuel cost calculator, trip fuel cost calculator, fuel calculator, gas cost calculator, petrol cost calculator, fuel expense calculator, road trip fuel cost"
+  >
+
+  <link
+    rel="canonical"
+    href="https://calclyworld.com/fuel-cost-calculator.html"
+  >
+
+  <meta
+    property="og:title"
+    content="Fuel Cost Calculator | CalclyWorld"
+  >
+
+  <meta
+    property="og:description"
+    content="Calculate estimated fuel consumption and trip fuel cost using distance, fuel economy, fuel price, and your preferred currency."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://calclyworld.com/fuel-cost-calculator.html"
+  >
+
+  <link
+    rel="icon"
+    href="/favicon.png"
+    type="image/png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="/apple-touch-icon.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/style-v2.css"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Fuel Cost Calculator",
+    "url": "https://calclyworld.com/fuel-cost-calculator.html",
+    "description": "A free global calculator for estimating fuel consumption and trip fuel cost.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to main content
+  </a>
+
+
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a
+        href="/"
+        class="logo"
+      >
+
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+        <span>CalclyWorld</span>
+
+      </a>
+
+
+      <nav
+        class="main-nav"
+        aria-label="Primary Navigation"
+      >
+
+        <a href="/">Home</a>
+
+        <a href="/#calculator-directory">
+          Calculators
+        </a>
+
+        <a href="/about.html">
+          About
+        </a>
+
+        <a href="/contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <main id="main-content">
+
+
+    <!-- Breadcrumb -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="breadcrumb">
+
+          <a href="/">
+            Home
+          </a>
+
+          <span aria-hidden="true">
+            ›
+          </span>
+
+          <span aria-current="page">
+            Fuel Cost Calculator
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>
+          Fuel Cost Calculator
+        </h1>
+
+        <p>
+          Estimate how much fuel your vehicle will use and how much
+          your trip will cost based on distance, fuel economy, and
+          fuel price.
+        </p>
+
+        <p>
+          Supports kilometers, miles, km/L, L/100 km, MPG, fuel prices
+          per liter or US gallon, and multiple currencies.
+        </p>
+
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Calculator -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Your Fuel Cost
+          </h2>
+
+          <p class="text-center small-text">
+            Enter your trip distance, vehicle fuel economy, fuel price,
+            and currency.
+          </p>
+
+
+          <div class="calculator-form">
+
+
+            <!-- Distance -->
+
+            <div class="form-group">
+
+              <label for="fuel-distance">
+                Trip Distance
+              </label>
+
+              <input
+                type="number"
+                id="fuel-distance"
+                min="0"
+                step="any"
+                placeholder="Example: 500"
+                inputmode="decimal"
+              >
+
+            </div>
+
+
+            <!-- Distance Unit -->
+
+            <div class="form-group">
+
+              <label for="fuel-distance-unit">
+                Distance Unit
+              </label>
+
+              <select id="fuel-distance-unit">
+
+                <option value="km">
+                  Kilometers (km)
+                </option>
+
+                <option value="mi">
+                  Miles (mi)
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Fuel Economy -->
+
+            <div class="form-group">
+
+              <label for="fuel-economy">
+                Fuel Economy
+              </label>
+
+              <input
+                type="number"
+                id="fuel-economy"
+                min="0"
+                step="any"
+                placeholder="Example: 15"
+                inputmode="decimal"
+              >
+
+            </div>
+
+
+            <!-- Fuel Economy Unit -->
+
+            <div class="form-group">
+
+              <label for="fuel-economy-unit">
+                Fuel Economy Unit
+              </label>
+
+              <select id="fuel-economy-unit">
+
+                <option value="kmpl">
+                  Kilometers per Liter (km/L)
+                </option>
+
+                <option value="l100km">
+                  Liters per 100 Kilometers (L/100 km)
+                </option>
+
+                <option value="mpg">
+                  Miles per US Gallon (MPG)
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Fuel Price -->
+
+            <div class="form-group">
+
+              <label for="fuel-price">
+                Fuel Price
+              </label>
+
+              <input
+                type="number"
+                id="fuel-price"
+                min="0"
+                step="any"
+                placeholder="Example: 100"
+                inputmode="decimal"
+              >
+
+            </div>
+
+
+            <!-- Fuel Price Unit -->
+
+            <div class="form-group">
+
+              <label for="fuel-price-unit">
+                Fuel Price Unit
+              </label>
+
+              <select id="fuel-price-unit">
+
+                <option value="liter">
+                  Price per Liter
+                </option>
+
+                <option value="gallon">
+                  Price per US Gallon
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Currency -->
+
+            <div class="form-group">
+
+              <label for="fuel-currency">
+                Currency
+              </label>
+
+              <select id="fuel-currency">
+
+                <option value="USD|$">
+                  USD — $
+                </option>
+
+                <option value="INR|₹">
+                  INR — ₹
+                </option>
+
+                <option value="GBP|£">
+                  GBP — £
+                </option>
+
+                <option value="EUR|€">
+                  EUR — €
+                </option>
+
+                <option value="CAD|C$">
+                  CAD — C$
+                </option>
+
+                <option value="AUD|A$">
+                  AUD — A$
+                </option>
+
+                <option value="JPY|¥">
+                  JPY — ¥
+                </option>
+
+                <option value="CNY|¥">
+                  CNY — ¥
+                </option>
+
+                <option value="AED|د.إ">
+                  AED — د.إ
+                </option>
+
+                <option value="SGD|S$">
+                  SGD — S$
+                </option>
+
+                <option value="CHF|CHF">
+                  CHF — CHF
+                </option>
+
+                <option value="OTHER|">
+                  Other Currency
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Custom Currency -->
+
+            <div
+              class="form-group"
+              id="custom-currency-group"
+              hidden
+            >
+
+              <label for="custom-currency">
+                Custom Currency Symbol
+              </label>
+
+              <input
+                type="text"
+                id="custom-currency"
+                maxlength="8"
+                placeholder="Example: ₱"
+                autocomplete="off"
+              >
+
+            </div>
+
+
+            <!-- Error -->
+
+            <div
+              id="fuel-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+
+            <!-- Actions -->
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-fuel"
+                class="btn"
+                type="button"
+              >
+                Calculate Fuel Cost
+              </button>
+
+              <button
+                id="reset-fuel"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="fuel-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>
+            Fuel Cost Estimate
+          </h2>
+
+          <div id="fuel-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Fuel Cost Calculation Summary
+          </h2>
+
+
+          <div class="calculator-results-grid">
+
+
+            <div class="result-card">
+
+              <h3>
+                Distance
+              </h3>
+
+              <p
+                id="summary-fuel-distance"
+                class="result-value"
+              >
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Fuel Economy
+              </h3>
+
+              <p
+                id="summary-fuel-mileage"
+                class="result-value"
+              >
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Fuel Price
+              </h3>
+
+              <p
+                id="summary-fuel-price"
+                class="result-value"
+              >
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Estimated Cost
+              </h3>
+
+              <p
+                id="summary-fuel-cost"
+                class="result-value"
+              >
+                —
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- What Is Fuel Cost -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            What Is Fuel Cost?
+          </h2>
+
+          <p>
+            Fuel cost is the estimated amount spent on gasoline, petrol,
+            diesel, or another vehicle fuel during a trip. The total
+            depends mainly on the distance traveled, the vehicle's fuel
+            economy, and the local fuel price.
+          </p>
+
+          <p>
+            Calculating fuel costs before a journey can help with travel
+            budgeting, vehicle comparisons, commuting expenses, and
+            road-trip planning.
+          </p>
+
+          <p>
+            Fuel prices are entered in the currency and price unit
+            applicable to your location. This calculator does not perform
+            currency exchange or predict future fuel prices.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Formula -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            Fuel Cost Formula
+          </h2>
+
+          <p>
+            When fuel economy is expressed in kilometers per liter,
+            estimated fuel consumption is:
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>
+                Fuel Used = Distance ÷ Fuel Economy
+              </strong>
+            </p>
+
+            <p>
+              <strong>
+                Fuel Cost = Fuel Used × Fuel Price
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            When fuel economy is expressed as L/100 km, fuel consumption
+            is calculated by multiplying the distance by the liters
+            consumed per 100 kilometers and dividing by 100.
+          </p>
+
+          <p>
+            When fuel economy is expressed in MPG, the calculator converts
+            the distance and fuel economy to compatible units before
+            calculating the required fuel.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Examples -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            Fuel Cost Examples
+          </h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Distance
+                  </th>
+
+                  <th>
+                    Fuel Economy
+                  </th>
+
+                  <th>
+                    Fuel Price
+                  </th>
+
+                  <th>
+                    Estimated Cost
+                  </th>
+
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+
+                  <td>
+                    100 km
+                  </td>
+
+                  <td>
+                    15 km/L
+                  </td>
+
+                  <td>
+                    ₹100/L
+                  </td>
+
+                  <td>
+                    ₹666.67
+                  </td>
+
+                </tr>
+
+                <tr>
+
+                  <td>
+                    500 km
+                  </td>
+
+                  <td>
+                    15 km/L
+                  </td>
+
+                  <td>
+                    $1.50/L
+                  </td>
+
+                  <td>
+                    $50.00
+                  </td>
+
+                </tr>
+
+                <tr>
+
+                  <td>
+                    300 mi
+                  </td>
+
+                  <td>
+                    30 MPG
+                  </td>
+
+                  <td>
+                    $3.50/gal
+                  </td>
+
+                  <td>
+                    $35.00
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Tips -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            Tips for Estimating Fuel Costs
+          </h2>
+
+          <p>
+            Use your vehicle's actual fuel economy when possible.
+            Real-world mileage can differ from manufacturer estimates
+            because of traffic, driving style, speed, weather, road
+            conditions, vehicle load, and tire pressure.
+          </p>
+
+          <p>
+            For a round trip, enter the total distance for both directions
+            rather than entering only the distance to your destination.
+          </p>
+
+          <p>
+            If fuel prices vary substantially along your route, use a
+            reasonable average fuel price to produce a more useful
+            estimate.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            Fuel Cost Calculator FAQ
+          </h2>
+
+
+          <h3>
+            How do I calculate fuel cost for a trip?
+          </h3>
+
+          <p>
+            Estimate the amount of fuel your vehicle will use and multiply
+            that amount by the fuel price. The calculator performs these
+            steps automatically after you enter your distance, fuel
+            economy, and fuel price.
+          </p>
+
+
+          <h3>
+            Can I use kilometers and km/L?
+          </h3>
+
+          <p>
+            Yes. Select kilometers and km/L for the metric fuel-economy
+            system commonly used in many countries.
+          </p>
+
+
+          <h3>
+            Can I use L/100 km?
+          </h3>
+
+          <p>
+            Yes. L/100 km expresses how many liters of fuel a vehicle
+            consumes to travel 100 kilometers. A lower L/100 km value
+            represents better fuel efficiency.
+          </p>
+
+
+          <h3>
+            Can I use miles and MPG?
+          </h3>
+
+          <p>
+            Yes. Select miles and MPG to calculate fuel consumption using
+            miles per US gallon.
+          </p>
+
+
+          <h3>
+            Can I enter fuel price per gallon?
+          </h3>
+
+          <p>
+            Yes. Select Price per US Gallon when your local fuel price
+            is quoted in gallons.
+          </p>
+
+
+          <h3>
+            Does the calculator support currencies other than dollars?
+          </h3>
+
+          <p>
+            Yes. You can select several common currencies including USD,
+            INR, GBP, EUR, CAD, AUD, JPY, CNY, AED, SGD, and CHF.
+            A custom currency symbol can also be entered.
+          </p>
+
+
+          <h3>
+            Does this calculator convert currencies?
+          </h3>
+
+          <p>
+            No. Currency selection only determines how your fuel price
+            and estimated cost are displayed. Enter the fuel price in
+            the currency used where you are purchasing fuel.
+          </p>
+
+
+          <h3>
+            Will the actual fuel cost be exactly the same?
+          </h3>
+
+          <p>
+            Not necessarily. Actual fuel consumption can vary because
+            of traffic, speed, weather, road conditions, vehicle load,
+            maintenance, tire pressure, and driving habits.
+          </p>
+
+
+          <h3>
+            Does the calculator include tolls or parking?
+          </h3>
+
+          <p>
+            No. The result represents estimated fuel cost only. Tolls,
+            parking, accommodation, food, and other travel expenses are
+            not included.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <div class="footer-column">
+
+        <h3>
+          CalclyWorld
+        </h3>
+
+        <p>
+          Free online calculators designed to make everyday calculations
+          simple, clear, and useful.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="/about.html">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact.html">
+              Contact Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="/terms.html">
+              Terms &amp; Conditions
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Popular Calculators
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Calculator Categories
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">
+              Finance
+            </a>
+          </li>
+
+          <li>
+            <a href="/#everyday">
+              Everyday
+            </a>
+          </li>
+
+          <li>
+            <a href="/#math">
+              Math
+            </a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">
+              Automotive
+            </a>
+          </li>
+
+          <li>
+            <a href="/#technology">
+              Technology
+            </a>
+          </li>
+
+          <li>
+            <a href="/#conversion">
+              Conversion
+            </a>
+          </li>
+
+          <li>
+            <a href="/#travel">
+              Travel
+            </a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">
+              Lifestyle
+            </a>
+          </li>
+
+          <li>
+            <a href="/#utility">
+              Utility
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span>
+        CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/fuel-cost-calculator.js"></script>
+
+</body>
+</html>

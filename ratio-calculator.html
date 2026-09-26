@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ratio Calculator - Simplify Ratios & Find Equivalent Ratios | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Ratio Calculator to simplify ratios, find equivalent ratios, and calculate missing values. Enter two numbers to quickly understand their ratio.">
+
+  <link rel="canonical" href="https://calclyworld.com/ratio-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:title" content="Ratio Calculator - Simplify Ratios | CalclyWorld">
+  <meta property="og:description" content="Simplify ratios and calculate equivalent ratios quickly with our free online Ratio Calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/ratio-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BSQETZ21ZZ');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <!-- Structured Data: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Ratio Calculator",
+    "url": "https://calclyworld.com/ratio-calculator.html",
+    "description": "Calculate and simplify ratios and find equivalent ratios.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Ratio Calculator",
+        "item": "https://calclyworld.com/ratio-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A ratio compares two quantities by showing how much of one quantity there is relative to another. Ratios can be written using a colon, such as 2:3, or as a fraction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you simplify a ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To simplify a ratio, divide both parts by their greatest common divisor. For example, 12:18 simplifies to 2:3 because both numbers can be divided by 6."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an equivalent ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Equivalent ratios represent the same relationship. Multiplying or dividing both parts of a ratio by the same non-zero number creates an equivalent ratio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can ratios contain decimals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A ratio can contain decimal values. The values can often be multiplied by a common factor to convert them into whole numbers before simplifying."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+        🌙 Dark Mode
+      </button>
+
+    </div>
+
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="breadcrumb">
+
+          <a href="/">Home</a>
+
+          <span aria-hidden="true">›</span>
+
+          <span aria-current="page">
+            Ratio Calculator
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>Ratio Calculator</h1>
+
+        <p>
+          Calculate, simplify, and understand the relationship between two numbers with our free Ratio Calculator.
+        </p>
+
+        <p>
+          Enter two values to find their simplified ratio, decimal ratio, and equivalent ratio.
+        </p>
+
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: GPA, Grade, Age)"
+            autocomplete="off"
+            aria-label="Search calculators">
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate a Ratio
+          </h2>
+
+          <p class="text-center small-text">
+            Enter two positive numbers to calculate and simplify their ratio.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+
+              <label for="ratio-a">
+                First Value
+              </label>
+
+              <input
+                type="number"
+                id="ratio-a"
+                min="0"
+                step="any"
+                placeholder="Example: 12"
+                inputmode="decimal">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="ratio-b">
+                Second Value
+              </label>
+
+              <input
+                type="number"
+                id="ratio-b"
+                min="0"
+                step="any"
+                placeholder="Example: 18"
+                inputmode="decimal">
+
+            </div>
+
+
+            <div
+              id="ratio-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden>
+            </div>
+
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-ratio"
+                class="btn"
+                type="button">
+                Calculate Ratio
+              </button>
+
+              <button
+                id="reset-ratio"
+                class="btn btn-secondary"
+                type="button">
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Result -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="ratio-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true">
+
+          <h2>
+            Ratio Calculation Result
+          </h2>
+
+          <div id="ratio-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>
+            How the Ratio Calculator Works
+          </h2>
+
+          <p>
+            A ratio compares two quantities and shows the relationship between them.
+            For example, a ratio of 2:3 means that for every 2 units of the first quantity,
+            there are 3 units of the second quantity.
+          </p>
+
+          <p>
+            When the two values have a common factor, the ratio can be simplified.
+            The calculator finds the greatest common divisor of the values and uses it
+            to produce the simplest whole-number ratio whenever possible.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>
+                Simplified Ratio = First Value ÷ GCD : Second Value ÷ GCD
+              </strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Ratio Example -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>
+            Ratio Calculator Example
+          </h2>
+
+          <p>
+            Suppose there are 12 red objects and 18 blue objects.
+            Their ratio is 12:18.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Step</th>
+                  <th>Calculation</th>
+                  <th>Result</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Original Ratio</td>
+                  <td>12 : 18</td>
+                  <td>12 : 18</td>
+                </tr>
+
+                <tr>
+                  <td>Greatest Common Divisor</td>
+                  <td>GCD(12, 18)</td>
+                  <td>6</td>
+                </tr>
+
+                <tr>
+                  <td>First Part</td>
+                  <td>12 ÷ 6</td>
+                  <td>2</td>
+                </tr>
+
+                <tr>
+                  <td>Second Part</td>
+                  <td>18 ÷ 6</td>
+                  <td>3</td>
+                </tr>
+
+                <tr>
+                  <td>Simplified Ratio</td>
+                  <td>2 : 3</td>
+                  <td>2 : 3</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            Therefore, the simplified ratio of 12 to 18 is <strong>2:3</strong>.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Equivalent Ratios -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>
+            Understanding Equivalent Ratios
+          </h2>
+
+          <p>
+            Equivalent ratios describe the same relationship even when their numbers are different.
+            You can create an equivalent ratio by multiplying both parts by the same non-zero number.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Ratio</th>
+                  <th>Multiplier</th>
+                  <th>Equivalent Ratio</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>2 : 3</td>
+                  <td>× 2</td>
+                  <td>4 : 6</td>
+                </tr>
+
+                <tr>
+                  <td>2 : 3</td>
+                  <td>× 3</td>
+                  <td>6 : 9</td>
+                </tr>
+
+                <tr>
+                  <td>2 : 3</td>
+                  <td>× 5</td>
+                  <td>10 : 15</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Common Uses -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>
+            Common Uses of Ratios
+          </h2>
+
+          <p>
+            Ratios are used in many everyday and mathematical situations, including:
+          </p>
+
+          <ul>
+
+            <li>Comparing quantities</li>
+
+            <li>Recipes and ingredient measurements</li>
+
+            <li>Maps and scale drawings</li>
+
+            <li>Mixing materials or solutions</li>
+
+            <li>Comparing financial or business figures</li>
+
+            <li>Understanding proportions and relationships</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <h3>
+            What is a ratio?
+          </h3>
+
+          <p>
+            A ratio compares two quantities by showing how much of one quantity
+            there is relative to another. A ratio can be written as 2:3 or as a fraction.
+          </p>
+
+
+          <h3>
+            How do you simplify a ratio?
+          </h3>
+
+          <p>
+            Divide both parts of the ratio by their greatest common divisor.
+            For example, 12:18 becomes 2:3 after dividing both values by 6.
+          </p>
+
+
+          <h3>
+            What is an equivalent ratio?
+          </h3>
+
+          <p>
+            Equivalent ratios have the same relationship between their two parts.
+            Multiplying both parts by the same non-zero number produces an equivalent ratio.
+          </p>
+
+
+          <h3>
+            Can ratios contain decimals?
+          </h3>
+
+          <p>
+            Yes. Ratios can contain decimal values. They can often be converted into
+            whole-number ratios by multiplying both parts by an appropriate factor.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>
+          CalclyWorld
+        </h3>
+
+        <p>
+          Free online calculators designed to make everyday calculations simple,
+          fast, and easy to understand.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          <li>
+            <a href="/about.html">About Us</a>
+          </li>
+
+          <li>
+            <a href="/contact.html">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="/terms.html">Terms &amp; Conditions</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Popular Calculators
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Calculator Categories
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">Finance</a>
+          </li>
+
+          <li>
+            <a href="/#everyday">Everyday</a>
+          </li>
+
+          <li>
+            <a href="/#math">Math</a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">Automotive</a>
+          </li>
+
+          <li>
+            <a href="/#technology">Technology</a>
+          </li>
+
+          <li>
+            <a href="/#conversion">Conversion</a>
+          </li>
+
+          <li>
+            <a href="/#travel">Travel</a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">Lifestyle</a>
+          </li>
+
+          <li>
+            <a href="/#utility">Utility</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/ratio-calculator.js"></script>
+
+</body>
+</html>

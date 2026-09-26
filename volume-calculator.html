@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Volume Converter - Convert Volume Units Online | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Convert volume measurements between milliliters, liters, cubic centimeters, cubic meters, US fluid ounces, cups, pints, quarts, and gallons with CalclyWorld's free Volume Converter."
+  >
+
+  <meta
+    name="keywords"
+    content="volume converter, volume conversion, liters to gallons, gallons to liters, ml to liters, liters to ml, cubic meters to liters, volume calculator"
+  >
+
+  <link rel="canonical" href="https://calclyworld.com/volume-calculator.html">
+
+  <meta property="og:title" content="Volume Converter - Convert Volume Units Online | CalclyWorld">
+  <meta
+    property="og:description"
+    content="Convert common volume units including liters, milliliters, cubic meters, US fluid ounces, cups, pints, quarts, and gallons."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/volume-calculator.html">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Volume Converter",
+    "url": "https://calclyworld.com/volume-calculator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "A free online volume converter for converting between common metric and US volume units.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Volume Converter",
+        "item": "https://calclyworld.com/volume-calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- Search -->
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+        </div>
+
+        <h1>Volume Converter</h1>
+
+        <p>
+          Convert volume measurements quickly and accurately between common
+          metric and US customary units.
+        </p>
+
+        <p>
+          Convert liters, milliliters, cubic meters, US fluid ounces, cups,
+          pints, quarts, and gallons in seconds.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Breadcrumb -->
+
+    <section class="section-small">
+      <div class="container">
+
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Volume Converter</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Convert Volume
+          </h2>
+
+          <p class="text-center small-text">
+            Enter a volume and select the unit you want to convert from.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+
+              <label for="volume-value">
+                Volume
+              </label>
+
+              <input
+                type="number"
+                id="volume-value"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 1"
+                aria-describedby="volume-value-help"
+              >
+
+              <small id="volume-value-help">
+                Enter a positive volume value.
+              </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="volume-unit">
+                Convert From
+              </label>
+
+              <select id="volume-unit">
+
+                <option value="ml">
+                  Milliliters (mL)
+                </option>
+
+                <option value="l">
+                  Liters (L)
+                </option>
+
+                <option value="cm3">
+                  Cubic Centimeters (cm³)
+                </option>
+
+                <option value="m3">
+                  Cubic Meters (m³)
+                </option>
+
+                <option value="floz">
+                  US Fluid Ounces (fl oz)
+                </option>
+
+                <option value="cup">
+                  US Cups
+                </option>
+
+                <option value="pint">
+                  US Pints
+                </option>
+
+                <option value="quart">
+                  US Quarts
+                </option>
+
+                <option value="gallon">
+                  US Gallons
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div
+              id="volume-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+
+            <div class="calculator-actions">
+
+              <button
+                id="volume-calculate"
+                class="btn"
+                type="button"
+              >
+                Convert Volume
+              </button>
+
+              <button
+                id="volume-reset"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="volume-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>
+            Volume Conversion Results
+          </h2>
+
+          <div id="volume-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Volume Conversion Summary
+          </h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+
+              <h3>Input Volume</h3>
+
+              <p id="volume-summary-input">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Liters</h3>
+
+              <p id="volume-summary-liters">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Milliliters</h3>
+
+              <p id="volume-summary-milliliters">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>US Gallons</h3>
+
+              <p id="volume-summary-gallons">—</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Is a Volume Converter?</h2>
+
+          <p>
+            A volume converter changes a measurement from one volume unit
+            into another equivalent unit. This is useful when working with
+            cooking measurements, beverages, fuel, liquids, containers,
+            construction materials, science, and everyday measurements.
+          </p>
+
+          <p>
+            CalclyWorld's Volume Converter supports several commonly used
+            metric and US customary units, allowing you to compare
+            measurements without performing the conversion manually.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Supported Units -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Volume Units Supported</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Unit</th>
+                  <th>Symbol</th>
+                  <th>Description</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Milliliter</td>
+                  <td>mL</td>
+                  <td>One-thousandth of a liter.</td>
+                </tr>
+
+                <tr>
+                  <td>Liter</td>
+                  <td>L</td>
+                  <td>A standard metric unit of volume.</td>
+                </tr>
+
+                <tr>
+                  <td>Cubic Centimeter</td>
+                  <td>cm³</td>
+                  <td>Equal in volume to one milliliter.</td>
+                </tr>
+
+                <tr>
+                  <td>Cubic Meter</td>
+                  <td>m³</td>
+                  <td>A metric unit commonly used for larger volumes.</td>
+                </tr>
+
+                <tr>
+                  <td>US Fluid Ounce</td>
+                  <td>fl oz</td>
+                  <td>A US customary liquid volume unit.</td>
+                </tr>
+
+                <tr>
+                  <td>US Cup</td>
+                  <td>cup</td>
+                  <td>A common US cooking volume measurement.</td>
+                </tr>
+
+                <tr>
+                  <td>US Pint</td>
+                  <td>pt</td>
+                  <td>A US customary volume unit equal to two US cups.</td>
+                </tr>
+
+                <tr>
+                  <td>US Quart</td>
+                  <td>qt</td>
+                  <td>A US customary volume unit equal to four US cups.</td>
+                </tr>
+
+                <tr>
+                  <td>US Gallon</td>
+                  <td>gal</td>
+                  <td>A US customary volume unit equal to four US quarts.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Formula -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>How Volume Conversion Works</h2>
+
+          <p>
+            The calculator first converts the entered value into a common
+            base volume and then converts that base value into each supported
+            unit.
+          </p>
+
+          <p>
+            For example, one liter is equal to 1,000 milliliters. Therefore,
+            converting liters to milliliters involves multiplying the number
+            of liters by 1,000.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Example:</strong>
+              2 liters × 1,000 = 2,000 milliliters.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Common Conversions -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Common Volume Conversions</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Conversion</th>
+                  <th>Equivalent</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>1 liter</td>
+                  <td>1,000 mL</td>
+                </tr>
+
+                <tr>
+                  <td>1 cubic meter</td>
+                  <td>1,000 liters</td>
+                </tr>
+
+                <tr>
+                  <td>1 US gallon</td>
+                  <td>3.785411784 liters</td>
+                </tr>
+
+                <tr>
+                  <td>1 US quart</td>
+                  <td>0.946352946 liters</td>
+                </tr>
+
+                <tr>
+                  <td>1 US pint</td>
+                  <td>0.473176473 liters</td>
+                </tr>
+
+                <tr>
+                  <td>1 US cup</td>
+                  <td>0.2365882365 liters</td>
+                </tr>
+
+                <tr>
+                  <td>1 US fluid ounce</td>
+                  <td>0.0295735295625 liters</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How many milliliters are in one liter?</h3>
+
+          <p>
+            One liter contains 1,000 milliliters.
+          </p>
+
+
+          <h3>How many liters are in a US gallon?</h3>
+
+          <p>
+            One US gallon equals approximately 3.78541 liters.
+          </p>
+
+
+          <h3>Is a cubic centimeter the same as a milliliter?</h3>
+
+          <p>
+            Yes. One cubic centimeter (cm³) has the same volume as one
+            milliliter (mL).
+          </p>
+
+
+          <h3>Does this calculator use US gallons?</h3>
+
+          <p>
+            Yes. The gallon, quart, pint, cup, and fluid-ounce conversions
+            on this page use US customary liquid-volume units.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          Free online calculators and conversion tools designed to provide
+          useful, accurate, and easy-to-understand results.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/volume-calculator.js"></script>
+
+</body>
+</html>

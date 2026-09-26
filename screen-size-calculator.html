@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Screen Size Calculator - Calculate Screen Dimensions &amp; Aspect Ratio | CalclyWorld</title>
+
+  <meta name="description" content="Use the free Screen Size Calculator to calculate screen width, height, diagonal, area and aspect ratio. Enter screen dimensions or diagonal size and compare display measurements.">
+
+  <meta name="keywords" content="screen size calculator, screen dimensions calculator, monitor size calculator, display size calculator, screen diagonal calculator, aspect ratio calculator">
+
+  <link rel="canonical" href="https://calclyworld.com/screen-size-calculator.html">
+
+  <meta property="og:title" content="Screen Size Calculator - Calculate Screen Dimensions | CalclyWorld">
+  <meta property="og:description" content="Calculate screen width, height, diagonal, area and aspect ratio for monitors, laptops, TVs and other displays.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/screen-size-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Screen Size Calculator",
+    "url": "https://calclyworld.com/screen-size-calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "description": "Free online screen size calculator for calculating display dimensions, diagonal, area and aspect ratio.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-container">
+
+    <a href="/" class="logo">
+      <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+      <span>CalclyWorld</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <a href="/">Home</a>
+      <a href="/#calculator-directory">Calculators</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      🌙 Dark Mode
+    </button>
+
+  </div>
+</header>
+
+
+<main id="main-content">
+
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Screen Size Calculator</span>
+    </div>
+  </div>
+
+
+  <section class="hero">
+    <div class="container">
+
+      <h1>Screen Size Calculator</h1>
+
+      <p>
+        Calculate the physical dimensions, diagonal size, screen area and
+        aspect ratio of a display.
+      </p>
+
+      <p>
+        Useful for monitors, laptops, televisions, phones and other
+        rectangular screens.
+      </p>
+
+      <div class="hero-search">
+        <input
+          type="search"
+          id="calculator-search"
+          class="calculator-search"
+          placeholder="Search calculators... (Example: BMI, EMI, Age)"
+          autocomplete="off"
+          aria-label="Search calculators"
+        >
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Calculator -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">Calculate Screen Size</h2>
+
+        <p class="text-center small-text">
+          Enter the screen diagonal and aspect ratio to calculate the
+          display's width and height.
+        </p>
+
+
+        <div class="calculator-form">
+
+          <div class="form-group">
+
+            <label for="screen-diagonal">
+              Screen Diagonal
+            </label>
+
+            <input
+              type="number"
+              id="screen-diagonal"
+              min="0.01"
+              step="any"
+              placeholder="27"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="screen-diagonal-unit">
+              Diagonal Unit
+            </label>
+
+            <select id="screen-diagonal-unit">
+
+              <option value="in" selected>
+                Inches
+              </option>
+
+              <option value="cm">
+                Centimeters
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="screen-aspect-width">
+              Aspect Ratio - Width
+            </label>
+
+            <input
+              type="number"
+              id="screen-aspect-width"
+              min="0.01"
+              step="any"
+              value="16"
+              placeholder="16"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="screen-aspect-height">
+              Aspect Ratio - Height
+            </label>
+
+            <input
+              type="number"
+              id="screen-aspect-height"
+              min="0.01"
+              step="any"
+              value="9"
+              placeholder="9"
+              inputmode="decimal"
+            >
+
+            <small class="small-text">
+              Example: 16:9, 16 is width and 9 is height.
+            </small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="screen-resolution-width">
+              Horizontal Resolution
+            </label>
+
+            <input
+              type="number"
+              id="screen-resolution-width"
+              min="1"
+              step="1"
+              placeholder="1920"
+              inputmode="numeric"
+            >
+
+            <small class="small-text">
+              Optional. Used to calculate pixel density.
+            </small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="screen-resolution-height">
+              Vertical Resolution
+            </label>
+
+            <input
+              type="number"
+              id="screen-resolution-height"
+              min="1"
+              step="1"
+              placeholder="1080"
+              inputmode="numeric"
+            >
+
+            <small class="small-text">
+              Optional. Used to calculate pixel density.
+            </small>
+
+          </div>
+
+
+          <div
+            id="screen-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              id="screen-calculate"
+              class="btn"
+              type="button"
+            >
+              Calculate Screen Size
+            </button>
+
+            <button
+              id="screen-reset"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Results -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div
+        id="screen-result"
+        class="content-card"
+        hidden
+        aria-live="polite"
+        aria-atomic="true"
+      >
+
+        <h2>Screen Size Results</h2>
+
+        <div id="screen-result-content"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Summary -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">Screen Size Summary</h2>
+
+        <div class="calculator-results-grid">
+
+          <div class="result-card">
+            <h3>Diagonal</h3>
+            <p id="screen-summary-diagonal">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Width</h3>
+            <p id="screen-summary-width">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Height</h3>
+            <p id="screen-summary-height">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Aspect Ratio</h3>
+            <p id="screen-summary-aspect">—</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- How it works -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>How Screen Size Is Calculated</h2>
+
+        <p>
+          Screen size is normally specified by the diagonal distance from
+          one corner of the display to the opposite corner.
+        </p>
+
+        <p>
+          The physical width and height can be calculated when the diagonal
+          measurement and aspect ratio are known.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              Diagonal² = Width² + Height²
+            </strong>
+          </p>
+
+          <p>
+            The aspect ratio determines the relationship between width and
+            height.
+          </p>
+
+        </div>
+
+        <p>
+          For a 16:9 display, the screen is 16 units wide for every
+          9 units of height.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Aspect ratio -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>What Is Screen Aspect Ratio?</h2>
+
+        <p>
+          Aspect ratio describes the proportional relationship between a
+          screen's width and height.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+              <tr>
+                <th>Aspect Ratio</th>
+                <th>Common Use</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>16:9</td>
+                <td>Modern TVs, monitors and laptops</td>
+              </tr>
+
+              <tr>
+                <td>16:10</td>
+                <td>Many productivity monitors and laptops</td>
+              </tr>
+
+              <tr>
+                <td>21:9</td>
+                <td>Ultrawide monitors</td>
+              </tr>
+
+              <tr>
+                <td>32:9</td>
+                <td>Super-ultrawide displays</td>
+              </tr>
+
+              <tr>
+                <td>4:3</td>
+                <td>Older monitors and some specialized displays</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Example -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Screen Size Example</h2>
+
+        <p>
+          Consider a <strong>27-inch</strong> display with a
+          <strong>16:9</strong> aspect ratio.
+        </p>
+
+        <p>
+          The diagonal is 27 inches, while the width-to-height relationship
+          is 16 to 9.
+        </p>
+
+        <p>
+          The resulting physical dimensions are approximately
+          <strong>23.53 inches wide</strong> and
+          <strong>13.24 inches high</strong>.
+        </p>
+
+        <p>
+          This gives a screen area of approximately
+          <strong>311.5 square inches</strong>.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Pixel density -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Screen Size and Pixel Density</h2>
+
+        <p>
+          Pixel density, commonly expressed as pixels per inch (PPI),
+          describes how many pixels are packed into each inch of the display.
+        </p>
+
+        <p>
+          Two screens can have the same physical size but different
+          resolutions. The higher-resolution screen will generally have
+          greater pixel density.
+        </p>
+
+        <p>
+          If you enter both horizontal and vertical resolution, this
+          calculator can estimate PPI using the calculated diagonal
+          dimension.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How is monitor size measured?</h3>
+
+        <p>
+          Monitor and television screen sizes are normally measured
+          diagonally from one corner of the visible display to the opposite
+          corner.
+        </p>
+
+        <h3>How wide is a 27-inch 16:9 monitor?</h3>
+
+        <p>
+          A 27-inch 16:9 display is approximately 23.53 inches wide and
+          13.24 inches high, excluding the bezel.
+        </p>
+
+        <h3>What is the most common screen aspect ratio?</h3>
+
+        <p>
+          16:9 is widely used for modern televisions, monitors, laptops
+          and other consumer displays.
+        </p>
+
+        <h3>Does screen size include the bezel?</h3>
+
+        <p>
+          Screen size generally refers to the diagonal measurement of the
+          display itself, not the external dimensions of the monitor or
+          television housing.
+        </p>
+
+        <h3>What is PPI?</h3>
+
+        <p>
+          PPI means pixels per inch. It indicates the number of display
+          pixels contained within each inch of the screen.
+        </p>
+
+        <h3>Can I use centimeters instead of inches?</h3>
+
+        <p>
+          Yes. Enter the diagonal in centimeters and the calculator will
+          provide the equivalent dimensions in centimeters and inches.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-column">
+
+      <h3>CalclyWorld</h3>
+
+      <p>
+        Free online calculators designed to provide clear,
+        practical and easy-to-understand results for everyday decisions.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Popular Calculators</h3>
+
+      <ul>
+        <li><a href="/age-calculator.html">Age Calculator</a></li>
+        <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+        <li><a href="/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Calculator Categories</h3>
+
+      <ul>
+        <li><a href="/#finance">Finance</a></li>
+        <li><a href="/#everyday">Everyday</a></li>
+        <li><a href="/#math">Math</a></li>
+        <li><a href="/#home-construction">Home &amp; Construction</a></li>
+        <li><a href="/#automotive">Automotive</a></li>
+        <li><a href="/#technology">Technology</a></li>
+        <li><a href="/#conversion">Conversion</a></li>
+        <li><a href="/#travel">Travel</a></li>
+        <li><a href="/#lifestyle">Lifestyle</a></li>
+        <li><a href="/#utility">Utility</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span> CalclyWorld. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="/script-v2.js"></script>
+<script src="/screen-size-calculator.js"></script>
+
+</body>
+</html>

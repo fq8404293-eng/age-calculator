@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mortgage Calculator – Calculate Monthly Mortgage Payments | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Use CalclyWorld's free Mortgage Calculator to estimate monthly mortgage payments, total interest, total repayment and loan amortization. Explore mortgage formulas, down payments, loan terms, examples and FAQs."
+  >
+
+  <meta
+    name="keywords"
+    content="mortgage calculator, mortgage payment calculator, home loan calculator, monthly mortgage payment, mortgage amortization calculator, mortgage interest calculator, house payment calculator"
+  >
+
+  <link
+    rel="canonical"
+    href="https://calclyworld.com/mortgage-calculator.html"
+  >
+
+  <meta
+    property="og:title"
+    content="Mortgage Calculator – Calculate Monthly Mortgage Payments | CalclyWorld"
+  >
+
+  <meta
+    property="og:description"
+    content="Estimate monthly mortgage payments, total interest and total repayment with CalclyWorld's free Mortgage Calculator."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://calclyworld.com/mortgage-calculator.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://calclyworld.com/favicon.png"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Mortgage Calculator – CalclyWorld"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Calculate estimated monthly mortgage payments, total interest and total repayment."
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="/favicon.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="/apple-touch-icon.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/style-v2.css"
+  >
+
+
+  <!-- WebApplication Schema -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mortgage Calculator",
+    "url": "https://calclyworld.com/mortgage-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "description": "Free online mortgage calculator for estimating monthly mortgage payments, total interest, total repayment and amortization.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+
+  <!-- FAQ Schema -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a mortgage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A mortgage is a loan commonly used to finance the purchase of a home or other real estate, with the property typically serving as security for the loan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is a mortgage payment calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard fixed-rate mortgage payment can be calculated using the loan principal, monthly interest rate and total number of monthly payments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a larger down payment reduce the mortgage payment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generally, a larger down payment reduces the amount borrowed, which can reduce the scheduled principal-and-interest mortgage payment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a longer mortgage term reduce the monthly payment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A longer mortgage term generally reduces the scheduled monthly principal-and-interest payment, but it can increase the total interest paid over the life of the loan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is mortgage amortization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mortgage amortization is the process of gradually repaying the mortgage balance through scheduled payments over the loan term."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator include property taxes and insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This calculator focuses on the mortgage principal and interest unless additional costs are specifically included."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why can my lender's mortgage payment be different?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Actual mortgage payments can differ because of lender-specific terms, fees, taxes, insurance, payment timing, rate changes, rounding and other costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this calculator for a home loan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The calculator can be used to estimate payments for a standard fixed-rate home loan or mortgage using the entered assumptions."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+
+<body>
+
+
+  <!-- SKIP LINK -->
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to main content
+  </a>
+
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="container header-container">
+
+
+      <a
+        href="/"
+        class="logo"
+      >
+
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+        <span>
+          CalclyWorld
+        </span>
+
+      </a>
+
+
+      <nav
+        class="main-nav"
+        aria-label="Primary Navigation"
+      >
+
+        <a href="/">
+          Home
+        </a>
+
+        <a href="/#calculator-directory">
+          Calculators
+        </a>
+
+        <a href="/about.html">
+          About
+        </a>
+
+        <a href="/contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+
+    </div>
+
+  </header>
+
+
+  <!-- MAIN -->
+
+  <main id="main-content">
+
+
+    <!-- BREADCRUMB -->
+
+    <div class="container">
+
+      <nav
+        class="breadcrumb"
+        aria-label="Breadcrumb"
+      >
+
+        <a href="/">
+          Home
+        </a>
+
+        <span aria-hidden="true">
+          ›
+        </span>
+
+        <a href="/#finance">
+          Finance
+        </a>
+
+        <span aria-hidden="true">
+          ›
+        </span>
+
+        <span aria-current="page">
+          Mortgage Calculator
+        </span>
+
+      </nav>
+
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container">
+
+
+        <h1>
+          Mortgage Calculator
+        </h1>
+
+
+        <p>
+          Estimate your monthly mortgage payment, total interest,
+          total repayment and loan amortization using your home price,
+          down payment, interest rate and loan term.
+        </p>
+
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- CALCULATOR -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+
+          <h2 class="text-center">
+            Calculate Your Mortgage Payment
+          </h2>
+
+
+          <p class="text-center">
+            Enter the home price, down payment, interest rate and
+            mortgage term to estimate your monthly principal-and-interest
+            payment.
+          </p>
+
+
+          <form
+            id="mortgage-form"
+            class="calculator-form"
+            novalidate
+          >
+
+
+            <!-- HOME PRICE -->
+
+            <div class="form-group">
+
+              <label for="home-price">
+                Home Price
+              </label>
+
+              <input
+                type="number"
+                id="home-price"
+                name="home-price"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                placeholder="Example: 400000"
+                required
+                aria-describedby="home-price-error"
+              >
+
+              <div
+                id="home-price-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+              <p class="form-help">
+                Enter the purchase price of the home or property.
+              </p>
+
+            </div>
+
+
+            <!-- DOWN PAYMENT -->
+
+            <div class="form-group">
+
+              <label for="down-payment">
+                Down Payment
+              </label>
+
+              <input
+                type="number"
+                id="down-payment"
+                name="down-payment"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                placeholder="Example: 80000"
+                value="0"
+                aria-describedby="down-payment-error"
+              >
+
+              <div
+                id="down-payment-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+              <p class="form-help">
+                Enter the amount you plan to pay upfront.
+              </p>
+
+            </div>
+
+
+            <!-- INTEREST RATE -->
+
+            <div class="form-group">
+
+              <label for="interest-rate">
+                Annual Interest Rate (%)
+              </label>
+
+              <input
+                type="number"
+                id="interest-rate"
+                name="interest-rate"
+                min="0"
+                max="100"
+                step="0.01"
+                inputmode="decimal"
+                placeholder="Example: 6.5"
+                required
+                aria-describedby="interest-rate-error"
+              >
+
+              <div
+                id="interest-rate-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+              <p class="form-help">
+                Enter the annual mortgage interest rate.
+              </p>
+
+            </div>
+
+
+            <!-- LOAN TERM -->
+
+            <div class="form-group">
+
+              <label for="loan-term">
+                Mortgage Term
+              </label>
+
+              <input
+                type="number"
+                id="loan-term"
+                name="loan-term"
+                min="1"
+                max="50"
+                step="1"
+                inputmode="numeric"
+                placeholder="Example: 30"
+                required
+                aria-describedby="loan-term-error"
+              >
+
+              <div
+                id="loan-term-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+              <p class="form-help">
+                Enter the mortgage term in years.
+              </p>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="calculator-actions">
+
+              <button
+                type="submit"
+                class="btn"
+              >
+                Calculate Mortgage
+              </button>
+
+
+              <button
+                type="button"
+                id="clear-mortgage"
+                class="btn btn-secondary"
+              >
+                Clear
+              </button>
+
+            </div>
+
+
+          </form>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESULTS -->
+
+    <section
+      class="section-small"
+      id="mortgage-result"
+      hidden
+      aria-live="polite"
+      aria-atomic="true"
+    >
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+
+          <h2 class="text-center">
+            Your Mortgage Payment
+          </h2>
+
+
+          <div class="result-highlight text-center">
+
+            <h3>
+              Monthly Mortgage Payment
+            </h3>
+
+            <p id="monthly-payment">
+              $0.00
+            </p>
+
+          </div>
+
+
+          <div class="calculator-results-grid">
+
+
+            <div class="result-card">
+
+              <h3>
+                Home Price
+              </h3>
+
+              <p id="result-home-price">
+                $0.00
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Down Payment
+              </h3>
+
+              <p id="result-down-payment">
+                $0.00
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Loan Amount
+              </h3>
+
+              <p id="result-loan-amount">
+                $0.00
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Down Payment %
+              </h3>
+
+              <p id="result-down-payment-percent">
+                0%
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Total Interest
+              </h3>
+
+              <p id="total-interest">
+                $0.00
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Total Payment
+              </h3>
+
+              <p id="total-payment">
+                $0.00
+              </p>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              type="button"
+              id="copy-mortgage-result"
+              class="btn"
+            >
+              Copy Result
+            </button>
+
+
+            <span
+              id="mortgage-copy-status"
+              aria-live="polite"
+            ></span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- AMORTIZATION -->
+
+    <section
+      class="section-small"
+      id="mortgage-breakdown"
+      hidden
+    >
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+
+          <h2 class="text-center">
+            Mortgage Amortization Schedule
+          </h2>
+
+
+          <p class="text-center">
+            See how your yearly mortgage payments are divided between
+            principal and interest and how the remaining loan balance
+            changes over time.
+          </p>
+
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+
+                  <th scope="col">
+                    Year
+                  </th>
+
+                  <th scope="col">
+                    Principal Paid
+                  </th>
+
+                  <th scope="col">
+                    Interest Paid
+                  </th>
+
+                  <th scope="col">
+                    Total Payment
+                  </th>
+
+                  <th scope="col">
+                    Remaining Balance
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody id="mortgage-table-body">
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHAT IS MORTGAGE -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            What Is a Mortgage?
+          </h2>
+
+
+          <p>
+            A mortgage is a loan commonly used to purchase a home or
+            other real estate. The borrower repays the loan over an
+            agreed period, usually through regular payments that
+            include principal and interest.
+          </p>
+
+
+          <p>
+            The property generally serves as security for the mortgage.
+            If the borrower does not meet the terms of the loan,
+            the lender may have rights relating to the property,
+            depending on local law and the loan agreement.
+          </p>
+
+
+          <p>
+            Mortgage products vary by country and lender. Interest
+            rates, fees, taxes, insurance requirements, repayment
+            structures and other terms can differ significantly.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW MORTGAGE CALCULATION WORKS -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            How Is a Mortgage Payment Calculated?
+          </h2>
+
+
+          <p>
+            A standard fixed-rate mortgage payment can be calculated
+            using the amount borrowed, the monthly interest rate and
+            the total number of monthly payments.
+          </p>
+
+
+          <p>
+            The calculation used by this calculator is based on a
+            standard reducing-balance loan. The monthly payment is
+            designed to repay the principal and interest over the
+            selected term, assuming the interest rate remains unchanged.
+          </p>
+
+
+          <p>
+            The monthly payment shown by the calculator represents
+            principal and interest. It does not automatically include
+            property taxes, homeowners insurance, mortgage insurance,
+            homeowners association fees or other property-related costs.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FORMULA -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            Mortgage Payment Formula
+          </h2>
+
+
+          <p>
+            The standard fixed-rate mortgage payment formula is:
+          </p>
+
+
+          <div class="result-highlight text-center">
+
+            <p>
+              <strong>
+                M = P × r × (1 + r)<sup>n</sup>
+                ÷ ((1 + r)<sup>n</sup> − 1)
+              </strong>
+            </p>
+
+          </div>
+
+
+          <p>
+            Where:
+          </p>
+
+
+          <ul>
+
+            <li>
+              <strong>M</strong> = monthly principal-and-interest payment
+            </li>
+
+            <li>
+              <strong>P</strong> = mortgage principal
+            </li>
+
+            <li>
+              <strong>r</strong> = monthly interest rate expressed as a decimal
+            </li>
+
+            <li>
+              <strong>n</strong> = total number of monthly payments
+            </li>
+
+          </ul>
+
+
+          <p>
+            The mortgage principal is generally the home price minus
+            the down payment, assuming there are no other financed
+            amounts.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DOWN PAYMENT -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            How Does a Down Payment Affect a Mortgage?
+          </h2>
+
+
+          <p>
+            A down payment is money paid toward the purchase price
+            upfront. A larger down payment generally means you borrow
+            less money.
+          </p>
+
+
+          <p>
+            Borrowing less can reduce the scheduled principal-and-
+            interest payment and can also reduce the total interest
+            calculated over the life of the mortgage, assuming the
+            interest rate and term remain the same.
+          </p>
+
+
+          <p>
+            The amount of down payment that makes sense depends on
+            factors such as available savings, lender requirements,
+            other costs of buying a home and the borrower's financial
+            circumstances.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LOAN TERM -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            How Does Mortgage Term Affect the Cost?
+          </h2>
+
+
+          <p>
+            The mortgage term determines how long the loan is scheduled
+            to be repaid.
+          </p>
+
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+
+                  <th scope="col">
+                    Term
+                  </th>
+
+                  <th scope="col">
+                    Monthly Payment
+                  </th>
+
+                  <th scope="col">
+                    Total Interest
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody>
+
+                <tr>
+
+                  <td>
+                    Shorter term
+                  </td>
+
+                  <td>
+                    Generally higher
+                  </td>
+
+                  <td>
+                    Generally lower
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    Longer term
+                  </td>
+
+                  <td>
+                    Generally lower
+                  </td>
+
+                  <td>
+                    Generally higher
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <p>
+            These are general mathematical effects for the same loan
+            amount and interest rate. Actual mortgage products can
+            have additional terms that affect the final cost.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRINCIPAL VS INTEREST -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            Principal vs. Interest
+          </h2>
+
+
+          <p>
+            Each scheduled mortgage payment can be divided into
+            principal and interest.
+          </p>
+
+
+          <ul>
+
+            <li>
+              <strong>Principal:</strong> reduces the amount still owed.
+            </li>
+
+            <li>
+              <strong>Interest:</strong> represents the cost of borrowing
+              money for that period.
+            </li>
+
+          </ul>
+
+
+          <p>
+            At the beginning of a typical amortizing mortgage, the
+            outstanding balance is at its highest. Because interest
+            is calculated using that balance, the interest portion
+            can represent a larger part of early payments.
+          </p>
+
+
+          <p>
+            As the balance decreases, the interest charged during
+            each period generally decreases and a larger portion of
+            the scheduled payment goes toward principal.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WORKED EXAMPLE -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            Mortgage Calculation Example
+          </h2>
+
+
+          <p>
+            Consider a home with these assumptions:
+          </p>
+
+
+          <ul>
+
+            <li>
+              Home price: <strong>$400,000</strong>
+            </li>
+
+            <li>
+              Down payment: <strong>$80,000</strong>
+            </li>
+
+            <li>
+              Mortgage amount: <strong>$320,000</strong>
+            </li>
+
+            <li>
+              Annual interest rate: <strong>6.5%</strong>
+            </li>
+
+            <li>
+              Mortgage term: <strong>30 years</strong>
+            </li>
+
+          </ul>
+
+
+          <p>
+            The calculator uses the $320,000 mortgage principal,
+            converts the annual interest rate to a monthly rate and
+            calculates the scheduled monthly principal-and-interest
+            payment over 360 monthly payments.
+          </p>
+
+
+          <p>
+            You can enter these values into the calculator above to
+            see the estimated payment and complete amortization
+            schedule.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- OTHER COSTS -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            Costs That May Be Separate From the Mortgage Payment
+          </h2>
+
+
+          <p>
+            A mortgage payment shown by a basic calculator is not
+            necessarily the same as the complete monthly cost of
+            owning a home.
+          </p>
+
+
+          <p>
+            Depending on the property, lender and location, additional
+            costs may include:
+          </p>
+
+
+          <ul>
+
+            <li>
+              Property taxes
+            </li>
+
+            <li>
+              Homeowners insurance
+            </li>
+
+            <li>
+              Mortgage insurance
+            </li>
+
+            <li>
+              Homeowners association or community fees
+            </li>
+
+            <li>
+              Maintenance and repairs
+            </li>
+
+            <li>
+              Lender and closing costs
+            </li>
+
+          </ul>
+
+
+          <p>
+            These costs vary and are not included in the basic
+            principal-and-interest calculation on this page.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW TO USE -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            How to Use the Mortgage Calculator
+          </h2>
+
+
+          <ol>
+
+            <li>
+              Enter the purchase price of the property.
+            </li>
+
+            <li>
+              Enter the amount you plan to pay as a down payment.
+            </li>
+
+            <li>
+              Enter the annual mortgage interest rate.
+            </li>
+
+            <li>
+              Enter the mortgage term in years.
+            </li>
+
+            <li>
+              Select <strong>Calculate Mortgage</strong>.
+            </li>
+
+          </ol>
+
+
+          <p>
+            The calculator will show the estimated monthly
+            principal-and-interest payment, loan amount, total interest,
+            total payment and down-payment percentage.
+          </p>
+
+
+          <p>
+            The amortization schedule provides a year-by-year view
+            of principal, interest, total payments and remaining
+            balance.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMMON MISTAKES -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            Common Mortgage Calculation Mistakes
+          </h2>
+
+
+          <h3>
+            Looking only at the monthly payment
+          </h3>
+
+          <p>
+            A lower monthly payment can result from a longer repayment
+            period. Compare the total interest and total repayment as
+            well as the monthly amount.
+          </p>
+
+
+          <h3>
+            Forgetting the down payment
+          </h3>
+
+          <p>
+            The amount borrowed is generally different from the home's
+            purchase price when a down payment is made.
+          </p>
+
+
+          <h3>
+            Ignoring additional housing costs
+          </h3>
+
+          <p>
+            Taxes, insurance, maintenance and other expenses can affect
+            the actual cost of owning a home.
+          </p>
+
+
+          <h3>
+            Assuming the interest rate will never change
+          </h3>
+
+          <p>
+            This calculator assumes the entered interest rate remains
+            unchanged. Variable-rate mortgages can have different
+            payments when the rate changes.
+          </p>
+
+
+          <h3>
+            Treating the estimate as a lender quote
+          </h3>
+
+          <p>
+            A calculator provides a mathematical estimate. A lender's
+            official payment and loan terms should be used when making
+            a borrowing decision.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <details>
+
+            <summary>
+              What is a mortgage?
+            </summary>
+
+            <p>
+              A mortgage is a loan commonly used to finance the purchase
+              of a home or other real estate. The property typically
+              serves as security for the loan, subject to the applicable
+              loan agreement and local law.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              How is a mortgage payment calculated?
+            </summary>
+
+            <p>
+              A standard fixed-rate mortgage payment is calculated
+              using the mortgage principal, monthly interest rate and
+              total number of monthly payments.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does a larger down payment reduce the mortgage payment?
+            </summary>
+
+            <p>
+              Generally, yes. A larger down payment means less money
+              needs to be borrowed, which can reduce the scheduled
+              principal-and-interest payment.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does a longer mortgage term reduce the monthly payment?
+            </summary>
+
+            <p>
+              Generally, yes. Spreading repayment over more months can
+              reduce the scheduled monthly payment. However, the total
+              interest paid can be higher.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              What is mortgage amortization?
+            </summary>
+
+            <p>
+              Mortgage amortization is the process of gradually paying
+              down a mortgage balance through scheduled payments over
+              the loan term.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does this calculator include property taxes and insurance?
+            </summary>
+
+            <p>
+              No. The basic calculation focuses on mortgage principal
+              and interest. Property taxes, homeowners insurance,
+              mortgage insurance and other costs are not automatically
+              included.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Can I use this calculator for a home loan?
+            </summary>
+
+            <p>
+              Yes. It can be used to estimate payments for a standard
+              fixed-rate home loan using the assumptions you enter.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Why can my lender's payment be different?
+            </summary>
+
+            <p>
+              Actual payments can differ because lenders may use
+              different terms, payment dates, rounding methods, fees,
+              insurance, taxes or interest-rate structures.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does this calculator include closing costs?
+            </summary>
+
+            <p>
+              No. Closing costs and other one-time purchase expenses
+              are not included in the basic mortgage payment calculation.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does a higher interest rate increase the mortgage payment?
+            </summary>
+
+            <p>
+              With the same mortgage amount and loan term, a higher
+              interest rate generally results in a higher monthly
+              principal-and-interest payment and more total interest.
+            </p>
+
+          </details>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPORTANT INFORMATION -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            Important Information
+          </h2>
+
+
+          <p>
+            This mortgage calculator is provided for educational and
+            planning purposes. It estimates principal-and-interest
+            payments using the assumptions entered by the user.
+          </p>
+
+
+          <p>
+            Actual mortgage costs can differ because of lender-specific
+            terms, interest-rate changes, taxes, insurance, mortgage
+            insurance, fees, payment timing, rounding and other costs.
+          </p>
+
+
+          <p>
+            Review the complete loan estimate or mortgage agreement
+            from the relevant lender before making a financial decision.
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RELATED CALCULATORS -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+
+          <h2>
+            Related Calculators
+          </h2>
+
+
+          <p>
+            Explore other CalclyWorld calculators for loans,
+            investments and financial planning.
+          </p>
+
+
+          <div class="calculator-results-grid">
+
+
+            <div class="result-card">
+
+              <h3>
+                <a href="/emi-calculator.html">
+                  EMI Calculator
+                </a>
+              </h3>
+
+              <p>
+                Calculate monthly payments, total interest and total
+                repayment for a standard loan.
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                <a href="/compound-interest-calculator.html">
+                  Compound Interest Calculator
+                </a>
+              </h3>
+
+              <p>
+                Estimate how an initial amount and regular contributions
+                can grow through compound interest.
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                <a href="/investment-return-calculator.html">
+                  Investment Return Calculator
+                </a>
+              </h3>
+
+              <p>
+                Explore hypothetical investment growth and returns.
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                <a href="/age-calculator.html">
+                  Age Calculator
+                </a>
+              </h3>
+
+              <p>
+                Calculate exact age and explore additional age-related
+                information.
+              </p>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+
+    <div class="container footer-grid">
+
+
+      <div class="footer-column">
+
+        <h3>
+          CalclyWorld
+        </h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="/about.html">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact.html">
+              Contact Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="/terms.html">
+              Terms &amp; Conditions
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Popular Calculators
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Calculator Categories
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">
+              Finance
+            </a>
+          </li>
+
+          <li>
+            <a href="/#everyday">
+              Everyday
+            </a>
+          </li>
+
+          <li>
+            <a href="/#math">
+              Math
+            </a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">
+              Automotive
+            </a>
+          </li>
+
+          <li>
+            <a href="/#technology">
+              Technology
+            </a>
+          </li>
+
+          <li>
+            <a href="/#conversion">
+              Conversion
+            </a>
+          </li>
+
+          <li>
+            <a href="/#travel">
+              Travel
+            </a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">
+              Lifestyle
+            </a>
+          </li>
+
+          <li>
+            <a href="/#utility">
+              Utility
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span>
+        CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+
+  </footer>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="/script-v2.js"></script>
+
+  <script src="/mortgage-calculator.js"></script>
+
+
+</body>
+</html>

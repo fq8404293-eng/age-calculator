@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fuel Consumption Calculator - Calculate Fuel Economy | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Use our free Fuel Consumption Calculator to calculate vehicle fuel economy and fuel consumption in km/L, L/100 km, and MPG. Enter distance and fuel used to find your vehicle's efficiency."
+  >
+
+  <meta
+    name="keywords"
+    content="fuel consumption calculator, fuel economy calculator, km per liter calculator, km/L calculator, L/100 km calculator, MPG calculator, fuel efficiency calculator"
+  >
+
+  <link
+    rel="canonical"
+    href="https://calclyworld.com/fuel-consumption-calculator.html"
+  >
+
+  <meta
+    property="og:title"
+    content="Fuel Consumption Calculator | CalclyWorld"
+  >
+
+  <meta
+    property="og:description"
+    content="Calculate vehicle fuel consumption and fuel economy in km/L, L/100 km, and MPG."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://calclyworld.com/fuel-consumption-calculator.html"
+  >
+
+  <link
+    rel="icon"
+    href="/favicon.png"
+    type="image/png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="/apple-touch-icon.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/style-v2.css"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Fuel Consumption Calculator",
+    "url": "https://calclyworld.com/fuel-consumption-calculator.html",
+    "description": "A free calculator for calculating vehicle fuel consumption and fuel economy.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to main content
+  </a>
+
+
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a
+        href="/"
+        class="logo"
+      >
+
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+        <span>CalclyWorld</span>
+
+      </a>
+
+
+      <nav
+        class="main-nav"
+        aria-label="Primary Navigation"
+      >
+
+        <a href="/">Home</a>
+
+        <a href="/#calculator-directory">
+          Calculators
+        </a>
+
+        <a href="/about.html">
+          About
+        </a>
+
+        <a href="/contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <main id="main-content">
+
+
+    <!-- Breadcrumb -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="breadcrumb">
+
+          <a href="/">
+            Home
+          </a>
+
+          <span aria-hidden="true">
+            ›
+          </span>
+
+          <span aria-current="page">
+            Fuel Consumption Calculator
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>
+          Fuel Consumption Calculator
+        </h1>
+
+        <p>
+          Calculate your vehicle's fuel consumption and fuel economy
+          using the distance traveled and amount of fuel used.
+        </p>
+
+        <p>
+          Get results in km/L, L/100 km, and MPG so you can compare
+          vehicle efficiency using different fuel-economy standards.
+        </p>
+
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Calculator -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Fuel Consumption
+          </h2>
+
+          <p class="text-center small-text">
+            Enter the distance traveled and the amount of fuel used.
+          </p>
+
+
+          <div class="calculator-form">
+
+
+            <!-- Distance -->
+
+            <div class="form-group">
+
+              <label for="consumption-distance">
+                Distance Traveled
+              </label>
+
+              <input
+                type="number"
+                id="consumption-distance"
+                min="0"
+                step="any"
+                placeholder="Example: 500"
+                inputmode="decimal"
+              >
+
+            </div>
+
+
+            <!-- Distance Unit -->
+
+            <div class="form-group">
+
+              <label for="consumption-distance-unit">
+                Distance Unit
+              </label>
+
+              <select id="consumption-distance-unit">
+
+                <option value="km">
+                  Kilometers (km)
+                </option>
+
+                <option value="mi">
+                  Miles (mi)
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Fuel Used -->
+
+            <div class="form-group">
+
+              <label for="consumption-fuel">
+                Fuel Used
+              </label>
+
+              <input
+                type="number"
+                id="consumption-fuel"
+                min="0"
+                step="any"
+                placeholder="Example: 40"
+                inputmode="decimal"
+              >
+
+            </div>
+
+
+            <!-- Fuel Unit -->
+
+            <div class="form-group">
+
+              <label for="consumption-fuel-unit">
+                Fuel Unit
+              </label>
+
+              <select id="consumption-fuel-unit">
+
+                <option value="liter">
+                  Liters (L)
+                </option>
+
+                <option value="gallon">
+                  US Gallons (gal)
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Error -->
+
+            <div
+              id="consumption-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+
+            <!-- Actions -->
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-consumption"
+                class="btn"
+                type="button"
+              >
+                Calculate Fuel Consumption
+              </button>
+
+              <button
+                id="reset-consumption"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="consumption-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>
+            Fuel Consumption Result
+          </h2>
+
+          <div id="consumption-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Fuel Consumption Summary
+          </h2>
+
+
+          <div class="calculator-results-grid">
+
+
+            <div class="result-card">
+
+              <h3>
+                Distance
+              </h3>
+
+              <p
+                id="summary-consumption-distance"
+                class="result-value"
+              >
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Fuel Used
+              </h3>
+
+              <p
+                id="summary-consumption-fuel"
+                class="result-value"
+              >
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Fuel Economy
+              </h3>
+
+              <p
+                id="summary-consumption-economy"
+                class="result-value"
+              >
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Consumption
+              </h3>
+
+              <p
+                id="summary-consumption-rate"
+                class="result-value"
+              >
+                —
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- What Is Fuel Consumption -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            What Is Fuel Consumption?
+          </h2>
+
+          <p>
+            Fuel consumption describes how much fuel a vehicle uses
+            to travel a particular distance. It is commonly expressed
+            as liters per 100 kilometers (L/100 km), while fuel economy
+            may be expressed as kilometers per liter (km/L) or miles
+            per gallon (MPG).
+          </p>
+
+          <p>
+            The amount of fuel a vehicle consumes depends on factors
+            such as engine efficiency, vehicle weight, speed, traffic,
+            road conditions, tire pressure, weather, and driving style.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Formula -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            Fuel Consumption Formulas
+          </h2>
+
+          <div class="info-box">
+
+            <p>
+              <strong>
+                Fuel Economy (km/L) =
+                Distance (km) ÷ Fuel Used (L)
+              </strong>
+            </p>
+
+            <p>
+              <strong>
+                Fuel Consumption (L/100 km) =
+                Fuel Used (L) ÷ Distance (km) × 100
+              </strong>
+            </p>
+
+            <p>
+              <strong>
+                MPG =
+                Miles Traveled ÷ US Gallons Used
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            The calculator converts your entered distance and fuel
+            quantity into compatible units before calculating the
+            different fuel-efficiency measurements.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Examples -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            Fuel Consumption Examples
+          </h2>
+
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Distance
+                  </th>
+
+                  <th>
+                    Fuel Used
+                  </th>
+
+                  <th>
+                    Fuel Economy
+                  </th>
+
+                  <th>
+                    Consumption
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody>
+
+                <tr>
+
+                  <td>
+                    100 km
+                  </td>
+
+                  <td>
+                    5 L
+                  </td>
+
+                  <td>
+                    20.00 km/L
+                  </td>
+
+                  <td>
+                    5.00 L/100 km
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    500 km
+                  </td>
+
+                  <td>
+                    33.33 L
+                  </td>
+
+                  <td>
+                    15.00 km/L
+                  </td>
+
+                  <td>
+                    6.67 L/100 km
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    300 mi
+                  </td>
+
+                  <td>
+                    10 gal
+                  </td>
+
+                  <td>
+                    30.00 MPG
+                  </td>
+
+                  <td>
+                    7.84 L/100 km
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Understanding Measurements -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            Understanding Fuel Economy Measurements
+          </h2>
+
+          <h3>
+            Kilometers per Liter (km/L)
+          </h3>
+
+          <p>
+            km/L tells you how many kilometers a vehicle can travel
+            using one liter of fuel. A higher km/L number generally
+            means better fuel economy.
+          </p>
+
+
+          <h3>
+            Liters per 100 Kilometers (L/100 km)
+          </h3>
+
+          <p>
+            L/100 km tells you how many liters of fuel a vehicle uses
+            to travel 100 kilometers. Unlike km/L, a lower L/100 km
+            number indicates better fuel efficiency.
+          </p>
+
+
+          <h3>
+            Miles per Gallon (MPG)
+          </h3>
+
+          <p>
+            MPG measures how many miles a vehicle can travel using
+            one US gallon of fuel. A higher MPG value generally means
+            better fuel economy.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Tips -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            Tips for Measuring Real-World Fuel Economy
+          </h2>
+
+          <p>
+            For a useful real-world estimate, record the distance
+            traveled and fuel added over several trips instead of
+            relying on a single short journey.
+          </p>
+
+          <p>
+            Keeping tire pressure at the recommended level and avoiding
+            unnecessary vehicle weight can help maintain efficient fuel
+            consumption.
+          </p>
+
+          <p>
+            Comparing fuel economy under similar driving conditions
+            gives a more meaningful picture of vehicle efficiency.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>
+            Fuel Consumption Calculator FAQ
+          </h2>
+
+
+          <h3>
+            How do I calculate fuel consumption?
+          </h3>
+
+          <p>
+            Divide the amount of fuel used by the distance traveled
+            and multiply by 100 when calculating L/100 km. The
+            calculator performs the conversion automatically.
+          </p>
+
+
+          <h3>
+            What is the difference between km/L and L/100 km?
+          </h3>
+
+          <p>
+            km/L measures how far a vehicle travels per liter, so
+            higher values are better. L/100 km measures how much fuel
+            is needed for 100 kilometers, so lower values are better.
+          </p>
+
+
+          <h3>
+            Can I calculate MPG?
+          </h3>
+
+          <p>
+            Yes. Enter your distance in miles and fuel used in US
+            gallons to calculate MPG.
+          </p>
+
+
+          <h3>
+            Does higher MPG mean better fuel economy?
+          </h3>
+
+          <p>
+            Yes. A higher MPG value means the vehicle can travel
+            farther using the same amount of fuel.
+          </p>
+
+
+          <h3>
+            Does lower L/100 km mean better fuel economy?
+          </h3>
+
+          <p>
+            Yes. A lower L/100 km value means the vehicle uses less
+            fuel to travel 100 kilometers.
+          </p>
+
+
+          <h3>
+            Why can my real-world fuel economy differ?
+          </h3>
+
+          <p>
+            Actual fuel economy can vary because of traffic, speed,
+            weather, road conditions, vehicle load, tire pressure,
+            maintenance, and driving style.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <div class="footer-column">
+
+        <h3>
+          CalclyWorld
+        </h3>
+
+        <p>
+          Free online calculators designed to make everyday calculations
+          simple, clear, and useful.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="/about.html">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact.html">
+              Contact Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="/terms.html">
+              Terms &amp; Conditions
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Popular Calculators
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Calculator Categories
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">
+              Finance
+            </a>
+          </li>
+
+          <li>
+            <a href="/#everyday">
+              Everyday
+            </a>
+          </li>
+
+          <li>
+            <a href="/#math">
+              Math
+            </a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">
+              Automotive
+            </a>
+          </li>
+
+          <li>
+            <a href="/#technology">
+              Technology
+            </a>
+          </li>
+
+          <li>
+            <a href="/#conversion">
+              Conversion
+            </a>
+          </li>
+
+          <li>
+            <a href="/#travel">
+              Travel
+            </a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">
+              Lifestyle
+            </a>
+          </li>
+
+          <li>
+            <a href="/#utility">
+              Utility
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span>
+        CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/fuel-consumption-calculator.js"></script>
+
+</body>
+</html>

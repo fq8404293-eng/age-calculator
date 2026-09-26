@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade Calculator - Calculate Your Grade and Percentage | CalclyWorld</title>
+
+<meta name="description" content="Use our free Grade Calculator to calculate your percentage, letter grade, and average score from your assignments, tests, or exams.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://calclyworld.com/grade-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calclyworld.com/grade-calculator.html">
+<meta property="og:title" content="Grade Calculator - Calculate Your Grade and Percentage | CalclyWorld">
+<meta property="og:description" content="Calculate your percentage, average score, and letter grade with our free online Grade Calculator.">
+<meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Grade Calculator - Calculate Your Grade and Percentage | CalclyWorld">
+<meta name="twitter:description" content="Calculate your percentage, average score, and letter grade with our free online Grade Calculator.">
+<meta name="twitter:image" content="https://calclyworld.com/favicon.png">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/style-v2.css">
+
+
+<!-- Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+
+<script>
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+  dataLayer.push(arguments);
+}
+
+gtag("js", new Date());
+
+gtag("config", "G-BSQETZ21ZZ");
+
+</script>
+
+
+<!-- Google AdSense -->
+
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
+crossorigin="anonymous"></script>
+
+
+<!-- Structured Data -->
+
+<script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "WebPage",
+      "@id": "https://calclyworld.com/grade-calculator.html#webpage",
+      "url": "https://calclyworld.com/grade-calculator.html",
+      "name": "Grade Calculator",
+      "description": "Free online Grade Calculator for calculating percentage, average score, and letter grade.",
+      "isPartOf": {
+        "@id": "https://calclyworld.com/#website"
+      },
+      "inLanguage": "en"
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://calclyworld.com/grade-calculator.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://calclyworld.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grade Calculator",
+          "item": "https://calclyworld.com/grade-calculator.html"
+        }
+      ]
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://calclyworld.com/grade-calculator.html#faq",
+      "mainEntity": [
+
+        {
+          "@type": "Question",
+          "name": "What does a Grade Calculator calculate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Grade Calculator can calculate your average score, percentage, and corresponding letter grade from the scores you enter."
+          }
+        },
+
+        {
+          "@type": "Question",
+          "name": "How is the percentage calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The percentage is calculated by dividing the total points earned by the total possible points and multiplying the result by 100."
+          }
+        },
+
+        {
+          "@type": "Question",
+          "name": "Can I enter different assignments or exams?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can enter multiple assessments with the points earned and points possible for each assessment."
+          }
+        },
+
+        {
+          "@type": "Question",
+          "name": "Does the calculator require registration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The Grade Calculator can be used directly in your browser without registration."
+          }
+        }
+
+      ]
+    }
+
+  ]
+}
+
+</script>
+
+</head>
+
+
+<body>
+
+
+<a href="#main-content" class="skip-link">
+Skip to main content
+</a>
+
+
+<header class="site-header">
+
+  <div class="container header-container">
+
+    <a href="/" class="logo">
+
+      <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async">
+
+      <span>CalclyWorld</span>
+
+    </a>
+
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+
+      <a href="/">
+        Home
+      </a>
+
+      <a href="/#calculator-directory">
+        Calculators
+      </a>
+
+      <a href="/about.html">
+        About
+      </a>
+
+      <a href="/contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false">
+
+      🌙 Dark Mode
+
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- Calculator Search -->
+
+<section class="calculator-search-section">
+
+  <div class="container">
+
+    <div class="hero-search">
+
+      <input
+        type="search"
+        id="calculator-search"
+        class="calculator-search"
+        placeholder="Search calculators... (Example: GPA, Grade, Age)"
+        autocomplete="off"
+        aria-label="Search calculators">
+
+      <div
+        id="search-results"
+        class="search-results"
+        hidden>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<main id="main-content">
+
+
+<!-- Breadcrumb -->
+
+<nav
+  aria-label="Breadcrumb"
+  class="breadcrumb">
+
+  <div class="content">
+
+    <a href="/">
+      Home
+    </a>
+
+    <span aria-hidden="true">
+      ›
+    </span>
+
+    <span aria-current="page">
+      Grade Calculator
+    </span>
+
+  </div>
+
+</nav>
+
+
+<!-- Hero -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <h1>
+      Grade Calculator
+    </h1>
+
+    <p>
+      Calculate your average score, percentage, and letter grade
+      from your assignments, tests, quizzes, or exams.
+    </p>
+
+    <p>
+      Enter the points you earned and the points possible for each
+      assessment to calculate your overall grade.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- Calculator -->
+
+<section class="section-small">
+
+  <div class="calculator-container">
+
+    <div class="content-card">
+
+      <h2 class="text-center">
+        Calculate Your Grade
+      </h2>
+
+      <p class="text-center small-text">
+        Add each assignment, test, quiz, or exam below.
+      </p>
+
+
+      <div class="calculator-form">
+
+
+        <div id="grade-items">
+
+
+          <!-- Assessment 1 -->
+
+          <div class="grade-item">
+
+            <div class="form-group">
+
+              <label for="assessment-name-1">
+                Assessment Name
+              </label>
+
+              <input
+                type="text"
+                id="assessment-name-1"
+                class="grade-name"
+                placeholder="Example: Math Test 1"
+                autocomplete="off">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="points-earned-1">
+                Points Earned
+              </label>
+
+              <input
+                type="number"
+                id="points-earned-1"
+                class="points-earned"
+                min="0"
+                step="any"
+                placeholder="80">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="points-possible-1">
+                Points Possible
+              </label>
+
+              <input
+                type="number"
+                id="points-possible-1"
+                class="points-possible"
+                min="0"
+                step="any"
+                placeholder="100">
+
+            </div>
+
+          </div>
+
+
+          <!-- Assessment 2 -->
+
+          <div class="grade-item">
+
+            <div class="form-group">
+
+              <label for="assessment-name-2">
+                Assessment Name
+              </label>
+
+              <input
+                type="text"
+                id="assessment-name-2"
+                class="grade-name"
+                placeholder="Example: Science Quiz"
+                autocomplete="off">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="points-earned-2">
+                Points Earned
+              </label>
+
+              <input
+                type="number"
+                id="points-earned-2"
+                class="points-earned"
+                min="0"
+                step="any"
+                placeholder="45">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="points-possible-2">
+                Points Possible
+              </label>
+
+              <input
+                type="number"
+                id="points-possible-2"
+                class="points-possible"
+                min="0"
+                step="any"
+                placeholder="50">
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <div
+          id="grade-error"
+          class="error-message"
+          role="alert"
+          aria-live="assertive"
+          hidden>
+        </div>
+
+
+        <div class="calculator-actions">
+
+          <button
+            type="button"
+            id="add-assessment"
+            class="btn">
+
+            Add Assessment
+
+          </button>
+
+          <button
+            type="button"
+            id="calculate-grade"
+            class="btn">
+
+            Calculate Grade
+
+          </button>
+
+          <button
+            type="button"
+            id="reset-grade"
+            class="btn btn-secondary">
+
+            Reset
+
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Results -->
+
+<section class="section-small">
+
+  <div class="calculator-container">
+
+    <div
+      id="grade-result"
+      class="content-card"
+      hidden
+      aria-live="polite"
+      aria-atomic="true">
+
+      <h2>
+        Grade Calculation Result
+      </h2>
+
+      <div id="grade-result-content">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- How Grade Calculation Works -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        How the Grade Calculator Works
+      </h2>
+
+      <p>
+        The Grade Calculator adds the points you earned across
+        your assessments and compares them with the total points
+        possible.
+      </p>
+
+      <p>
+        The basic percentage formula is:
+      </p>
+
+      <div class="info-box">
+
+        <strong>
+          Percentage = (Total Points Earned ÷ Total Points Possible) × 100
+        </strong>
+
+      </div>
+
+      <p>
+        For example, if you earn 85 points out of 100 possible
+        points, your percentage is 85%.
+      </p>
+
+      <p>
+        When assessments have different point values, the calculator
+        uses the total points earned and total points possible.
+        This means an assessment worth more points has a greater
+        effect on the overall percentage.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Letter Grade Scale -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        Common Letter Grade Scale
+      </h2>
+
+      <p>
+        Letter-grade boundaries can vary between schools, colleges,
+        universities, and instructors. The following is a commonly
+        used percentage-based scale.
+      </p>
+
+
+      <div class="table-wrapper">
+
+        <table class="amortization-table">
+
+          <thead>
+
+            <tr>
+
+              <th>
+                Percentage
+              </th>
+
+              <th>
+                Letter Grade
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>90% – 100%</td>
+              <td>A</td>
+            </tr>
+
+            <tr>
+              <td>80% – 89.99%</td>
+              <td>B</td>
+            </tr>
+
+            <tr>
+              <td>70% – 79.99%</td>
+              <td>C</td>
+            </tr>
+
+            <tr>
+              <td>60% – 69.99%</td>
+              <td>D</td>
+            </tr>
+
+            <tr>
+              <td>Below 60%</td>
+              <td>F</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <p class="small-text">
+        Check your school's grading policy if it uses different
+        percentage boundaries or plus/minus grades.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Example -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        Grade Calculator Example
+      </h2>
+
+      <p>
+        Suppose you have three assessments:
+      </p>
+
+      <div class="table-wrapper">
+
+        <table class="amortization-table">
+
+          <thead>
+
+            <tr>
+
+              <th>
+                Assessment
+              </th>
+
+              <th>
+                Points Earned
+              </th>
+
+              <th>
+                Points Possible
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>
+                Test 1
+              </td>
+
+              <td>
+                85
+              </td>
+
+              <td>
+                100
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                Quiz
+              </td>
+
+              <td>
+                45
+              </td>
+
+              <td>
+                50
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                Assignment
+              </td>
+
+              <td>
+                90
+              </td>
+
+              <td>
+                100
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <p>
+        Total points earned = 220.
+        Total points possible = 250.
+      </p>
+
+      <p>
+        Percentage = (220 ÷ 250) × 100 = 88%.
+      </p>
+
+      <p>
+        Using the common scale above, an 88% score corresponds
+        to a B.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq" class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What does the Grade Calculator calculate?
+        </h3>
+
+        <p>
+          It calculates your total points earned, total points
+          possible, overall percentage, and an estimated letter grade.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          How is the overall percentage calculated?
+        </h3>
+
+        <p>
+          The calculator divides your total points earned by your
+          total points possible and multiplies the result by 100.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Can I add multiple assessments?
+        </h3>
+
+        <p>
+          Yes. Use the Add Assessment button to include additional
+          assignments, quizzes, tests, or exams.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Does every school use the same letter-grade scale?
+        </h3>
+
+        <p>
+          No. Grading scales can vary between schools and instructors.
+          The calculator uses a common percentage-based scale as an
+          estimate.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Do I need to register to use the calculator?
+        </h3>
+
+        <p>
+          No. You can use the Grade Calculator directly in your
+          browser without registration.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+
+    <div class="footer-column">
+
+      <h3>
+        CalclyWorld
+      </h3>
+
+      <p>
+        CalclyWorld provides free online calculators for finance,
+        everyday life, math, home construction, automotive,
+        technology, conversion, travel, lifestyle, and utility needs.
+        Every calculator is designed to be simple, useful, and easy to use.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Quick Links
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="/about.html">
+            About Us
+          </a>
+        </li>
+
+        <li>
+          <a href="/contact.html">
+            Contact Us
+          </a>
+        </li>
+
+        <li>
+          <a href="/privacy.html">
+            Privacy Policy
+          </a>
+        </li>
+
+        <li>
+          <a href="/terms.html">
+            Terms &amp; Conditions
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Popular Calculators
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="/age-calculator.html">
+            Age Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="/emi-calculator.html">
+            EMI Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="/gst-calculator.html">
+            GST Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="/mortgage-calculator.html">
+            Mortgage Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="/compound-interest-calculator.html">
+            Compound Interest Calculator
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Calculator Categories
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="/#finance">
+            Finance
+          </a>
+        </li>
+
+        <li>
+          <a href="/#everyday">
+            Everyday
+          </a>
+        </li>
+
+        <li>
+          <a href="/#math">
+            Math
+          </a>
+        </li>
+
+        <li>
+          <a href="/#home-construction">
+            Home &amp; Construction
+          </a>
+        </li>
+
+        <li>
+          <a href="/#automotive">
+            Automotive
+          </a>
+        </li>
+
+        <li>
+          <a href="/#technology">
+            Technology
+          </a>
+        </li>
+
+        <li>
+          <a href="/#conversion">
+            Conversion
+          </a>
+        </li>
+
+        <li>
+          <a href="/#travel">
+            Travel
+          </a>
+        </li>
+
+        <li>
+          <a href="/#lifestyle">
+            Lifestyle
+          </a>
+        </li>
+
+        <li>
+          <a href="/#utility">
+            Utility
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span>
+      CalclyWorld. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="/script-v2.js"></script>
+
+<script src="/grade-calculator.js"></script>
+
+
+</body>
+
+</html>

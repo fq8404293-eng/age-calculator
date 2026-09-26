@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+/* PAGE WRAPPER */
+.page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* CALCULATOR BOX */
+.container {
+  background: #ffffff;
+  padding: 25px;
+  max-width: 420px;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* TITLE */
+h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+/* SUBTEXT */
+.subtext {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* BUTTON GROUP */
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* BUTTONS */
+button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* GREEN */
+button:nth-child(1) {
+  background: #28a745;
+  color: white;
+}
+
+/* RED */
+button:nth-child(2) {
+  background: #dc3545;
+  color: white;
+}
+
+/* RESULT */
+.result {
+  margin-top: 20px;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* CONTENT AREA */
+.content {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+}
+/* HEADINGS */
+h2 {
+  margin-top: 35px;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+/* LINKS */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .container {
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}

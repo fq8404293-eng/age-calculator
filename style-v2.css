@@ -1,0 +1,1525 @@
+/* ==========================================================
+   CalclyWorld
+   Global Styles
+   Version 2.0
+========================================================== */
+
+/* ===========================
+   CSS Variables
+=========================== */
+
+:root{
+
+    --primary:#2563eb;
+    --primary-hover:#1d4ed8;
+
+    --success:#16a34a;
+    --warning:#ea580c;
+    --danger:#dc2626;
+
+    --background:#f8fafc;
+    --card:#ffffff;
+
+    --text:#111827;
+    --text-light:#6b7280;
+
+    --border:#e5e7eb;
+
+    --shadow:0 8px 24px rgba(0,0,0,.08);
+
+    --radius:16px;
+
+    --container-width:1200px;
+    --content-width:900px;
+    --calculator-width:760px;
+
+}
+
+/* ===========================
+   Dark Mode Variables
+=========================== */
+
+[data-theme="dark"]{
+
+    --background:#0f172a;
+
+    --card:#1e293b;
+
+    --text:#f8fafc;
+
+    --text-light:#cbd5e1;
+
+    --border:#334155;
+
+    --shadow:0 10px 28px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   Reset
+=========================== */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+/* ===========================
+   HTML
+=========================== */
+
+html{
+
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+    scroll-padding-top:90px;
+
+}
+
+/* ===========================
+   Body
+=========================== */
+
+body{
+
+    background:var(--background);
+
+    color:var(--text);
+
+    font-family:Inter, Arial, Helvetica, sans-serif;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+
+}
+
+/* ===========================
+   Images
+=========================== */
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+/* ===========================
+   Links
+=========================== */
+
+a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    transition:color .2s ease;
+
+}
+
+a:hover{
+
+    color:var(--primary-hover);
+
+}
+
+a:focus-visible{
+
+    outline:3px solid var(--primary);
+
+    outline-offset:3px;
+
+    border-radius:6px;
+
+}
+
+/* ===========================
+   Lists
+=========================== */
+
+ul,
+ol{
+
+    padding-left:24px;
+
+}
+
+li{
+
+    margin-bottom:10px;
+
+}
+
+/* ===========================
+   Text Selection
+=========================== */
+
+::selection{
+
+    background:#bfdbfe;
+
+    color:#111827;
+
+}
+/* ==========================================================
+   Layout
+========================================================== */
+
+/* ===========================
+   Main Containers
+=========================== */
+
+.container{
+
+    width:100%;
+
+    max-width:var(--container-width);
+
+    margin:0 auto;
+
+    padding:0 20px;
+
+}
+
+.content{
+
+    width:100%;
+
+    max-width:var(--content-width);
+
+    margin:0 auto;
+
+}
+
+.calculator-container{
+
+    width:100%;
+
+    max-width:var(--calculator-width);
+
+    margin:0 auto;
+
+}
+
+/* ===========================
+   Sections
+=========================== */
+
+section{
+
+    padding:70px 0;
+
+}
+
+section:first-of-type{
+
+    padding-top:50px;
+
+}
+
+section:last-of-type{
+
+    padding-bottom:80px;
+
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.hero-header{
+
+    padding:80px 20px 60px;
+
+    text-align:center;
+
+}
+
+/* ===========================
+   Typography
+=========================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    color:var(--text);
+
+    font-weight:700;
+
+    line-height:1.25;
+
+    margin-bottom:20px;
+
+}
+
+h1{
+
+    font-size:44px;
+
+}
+
+h2{
+
+    font-size:34px;
+
+}
+
+h3{
+
+    font-size:26px;
+
+}
+
+h4{
+
+    font-size:22px;
+
+}
+
+p{
+
+    color:var(--text);
+
+    margin-bottom:20px;
+
+}
+
+small{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+}
+
+/* ===========================
+   Text Alignment Helpers
+=========================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+/* ==========================================================
+   Utility Sections
+========================================================== */
+
+
+/* ===========================
+   Sections
+=========================== */
+
+.section-small{
+
+    padding:45px 0;
+
+}
+
+
+/* ===========================
+   Small Text
+=========================== */
+
+.small-text{
+
+    font-size:.95rem;
+
+    color:var(--text-light);
+
+}
+/* ==========================================================
+   Header
+========================================================== */
+
+.site-header{
+
+    background:var(--card);
+
+    border-bottom:1px solid var(--border);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    backdrop-filter:blur(12px);
+
+}
+.header-scrolled{
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.header-container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:16px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:1.5rem;
+    font-weight:700;
+
+    color:var(--text);
+
+    flex-shrink:0;
+}
+
+.logo img{
+
+    width:42px;
+
+    height:42px;
+
+}
+
+.main-nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    margin-left:auto;
+}
+
+.main-nav a{
+    color:var(--text);
+    text-decoration:none;
+    font-weight:600;
+    padding:8px 0;
+    transition:color .2s ease;
+}
+
+.main-nav a:hover{
+
+    color:var(--primary);
+
+}
+.main-nav a[aria-current="page"]{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero{
+
+    padding:80px 0 60px;
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    max-width:900px;
+
+    margin:0 auto 25px;
+
+}
+
+.hero p{
+
+    max-width:760px;
+
+    margin:0 auto 20px;
+
+    font-size:1.1rem;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+
+}
+/* ==========================================================
+   Buttons
+========================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        background .25s ease,
+        transform .20s ease,
+        box-shadow .25s ease;
+
+}
+
+.btn:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 24px rgba(37,99,235,.25);
+
+}
+.btn:focus-visible{
+
+    outline:3px solid var(--primary);
+
+    outline-offset:3px;
+
+}
+
+.btn:active{
+
+    transform:translateY(0);
+
+}
+
+.btn-secondary{
+
+    background:transparent;
+
+    color:var(--primary);
+
+    border:1px solid var(--border);
+
+}
+
+.btn-secondary:hover{
+
+    background:rgba(37,99,235,.08);
+
+}
+
+/* ==========================================================
+   Calculator Grid
+========================================================== */
+
+.calculator-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+
+    gap:24px;
+
+    margin-top:40px;
+
+}
+/* ==========================================================
+   Features Grid
+========================================================== */
+
+.features-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:24px;
+
+    margin-top:40px;
+
+}
+
+.feature-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.feature-card h3{
+
+    margin-bottom:14px;
+
+}
+
+.feature-card p{
+
+    margin-bottom:0;
+
+}
+
+/* ==========================================================
+   Calculator Card
+========================================================== */
+
+.calculator-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:28px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+}
+
+.calculator-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 12px 32px rgba(0,0,0,.10);
+
+}
+
+.calculator-card h4{
+
+    margin-bottom:12px;
+
+    color:var(--text);
+
+    font-size:1.35rem;
+
+    line-height:1.35;
+
+}
+
+.calculator-card p{
+
+    flex:1;
+
+    margin-bottom:22px;
+
+}
+
+.calculator-card a{
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+.calculator-card a:hover{
+
+    color:var(--primary-hover);
+
+}
+
+/* ==========================================================
+   Card Icon
+========================================================== */
+
+.card-icon{
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(37,99,235,.08);
+
+    font-size:1.6rem;
+
+    margin-bottom:20px;
+
+}
+/* ==========================================================
+   Content Sections
+========================================================== */
+
+.section-title{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:0 auto 18px;
+
+}
+
+.section-description{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:0 auto 50px;
+
+}
+
+/* ==========================================================
+   Content Card
+========================================================== */
+
+.content-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    margin-bottom:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.content-card h2{
+
+    margin-bottom:18px;
+
+}
+
+.content-card h3{
+
+    margin-top:28px;
+
+}
+
+/* ==========================================================
+   Information Box
+========================================================== */
+
+.info-box{
+
+    padding:25px;
+
+    margin:30px 0;
+
+    border-left:5px solid var(--primary);
+
+    border-radius:14px;
+
+    background:rgba(37,99,235,.05);
+
+}
+
+.info-box p:last-child{
+
+    margin-bottom:0;
+
+}
+
+/* ==========================================================
+   Success Box
+========================================================== */
+
+.success-box{
+
+    padding:25px;
+
+    margin:30px 0;
+
+    border-left:5px solid var(--success);
+
+    border-radius:14px;
+
+    background:rgba(22,163,74,.08);
+
+}
+
+/* ==========================================================
+   Warning Box
+========================================================== */
+
+.warning-box{
+
+    padding:25px;
+
+    margin:30px 0;
+
+    border-left:5px solid var(--warning);
+
+    border-radius:14px;
+
+    background:rgba(234,88,12,.08);
+
+}
+
+/* ==========================================================
+   Formula Box
+========================================================== */
+
+.formula-box{
+
+    margin:35px 0;
+
+    padding:24px;
+
+    text-align:center;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    background:rgba(37,99,235,.06);
+
+    font-weight:700;
+
+    font-size:1.2rem;
+
+}
+
+/* ==========================================================
+   Highlight Text
+========================================================== */
+
+.highlight{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+/* ==========================================================
+   Tables
+========================================================== */
+
+.table-wrapper{
+
+    overflow-x:auto;
+
+    margin:35px 0;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+}
+
+th{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    text-align:left;
+
+    padding:16px;
+
+    font-weight:600;
+
+}
+
+td{
+
+    padding:16px;
+
+    border-top:1px solid var(--border);
+
+}
+
+tbody tr:nth-child(even){
+
+    background:rgba(0,0,0,.025);
+
+}
+
+[data-theme="dark"] tbody tr:nth-child(even){
+
+    background:rgba(255,255,255,.03);
+
+}
+
+/* ==========================================================
+   FAQ
+========================================================== */
+
+.faq{
+
+    margin-top:30px;
+
+}
+
+.faq-item{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    margin-bottom:18px;
+
+    overflow:hidden;
+
+}
+
+.faq-question{
+
+    padding:20px 24px;
+
+    font-weight:700;
+
+}
+
+.faq-answer{
+
+    padding:0 24px 24px;
+
+}
+
+/* ==========================================================
+   On This Page
+========================================================== */
+
+.toc{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:25px;
+
+    margin:35px 0;
+
+}
+
+.toc ul{
+
+    margin-top:15px;
+
+}
+
+.toc li{
+
+    margin-bottom:12px;
+
+}
+
+/* ==========================================================
+   Footer
+========================================================== */
+
+.site-footer{
+
+    margin-top:80px;
+
+    padding:60px 0 25px;
+
+    background:var(--card);
+
+    border-top:1px solid var(--border);
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:40px;
+
+}
+
+.footer-column h3{
+
+    margin-bottom:18px;
+
+}
+
+.footer-column p{
+
+    color:var(--text-light);
+
+    margin-bottom:0;
+
+}
+
+.footer-column ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.footer-column li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-column a{
+
+    color:var(--text-light);
+
+    transition:color .2s ease;
+
+}
+
+.footer-column a:hover{
+
+    color:var(--primary);
+
+}
+
+.footer-bottom{
+
+    margin-top:45px;
+
+    padding-top:25px;
+
+    border-top:1px solid var(--border);
+
+    text-align:center;
+
+}
+
+.footer-bottom p{
+
+    margin:0;
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================================
+   Skip Link
+========================================================== */
+
+.skip-link{
+
+    position:absolute;
+
+    left:-9999px;
+
+}
+
+.skip-link:focus{
+
+    left:20px;
+
+    top:20px;
+
+    z-index:9999;
+
+    background:#ffffff;
+
+    color:#000000;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width:992px){
+
+    section{
+
+        padding:60px 0;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    body{
+
+        font-size:17px;
+
+    }
+
+   
+
+    .main-nav{
+
+        justify-content:center;
+
+        gap:18px;
+
+    }
+
+    .calculator-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .content-card{
+
+        padding:28px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    body{
+
+        font-size:16px;
+
+    }
+
+    h1{
+
+        font-size:2.2rem;
+
+    }
+
+    h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .content-card{
+
+        padding:22px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==========================================================
+   Print
+========================================================== */
+
+@media print{
+
+    .site-header,
+    .site-footer,
+    .btn{
+
+        display:none;
+
+    }
+
+    body{
+
+        background:#ffffff;
+
+        color:#000000;
+
+    }
+
+}
+
+/* ==========================================================
+   Utilities
+========================================================== */
+
+
+
+.mt-1{
+
+    margin-top:20px;
+
+}
+
+.mt-2{
+
+    margin-top:40px;
+
+}
+
+.mb-1{
+
+    margin-bottom:20px;
+
+}
+
+.mb-2{
+
+    margin-bottom:40px;
+
+}
+/* ==========================================================
+   Accessibility Focus Styles
+========================================================== */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.calculator-card:focus-visible,
+.btn:focus-visible{
+
+    outline:3px solid var(--primary);
+
+    outline-offset:3px;
+
+}
+
+input,
+select,
+textarea{
+
+    font:inherit;
+
+}
+
+/* ==========================================================
+   HERO SEARCH
+========================================================== */
+
+.hero-search {
+    max-width: 700px;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.calculator-search {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    outline: none;
+    background: var(--card);
+    color: var(--text);
+    transition: all .25s ease;
+    box-sizing: border-box;
+}
+
+.calculator-search:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(37,99,235,.15);
+}
+
+.search-results {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    z-index: 2000;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.search-result-item {
+    display: block;
+    padding: 14px 18px;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background .2s ease;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover,
+.search-result-item:focus {
+    background: rgba(37,99,235,.08);
+}
+
+.search-result-title {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.search-result-category {
+    margin-top: 4px;
+    font-size: .85rem;
+    color: var(--text-light);
+}
+[data-theme="dark"] .calculator-search {
+
+    background:#1f2937;
+    color:#fff;
+    border-color:#374151;
+
+}
+
+[data-theme="dark"] .search-results {
+
+    background:#1f2937;
+
+}
+
+[data-theme="dark"] .search-result-item {
+
+    border-color:#374151;
+
+}
+
+[data-theme="dark"] .search-result-item:hover {
+
+    background:#374151;
+
+}
+
+
+/* ==========================================================
+   Calculator Forms
+========================================================== */
+
+label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+input,
+select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    margin-bottom:20px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--card);
+
+    color:var(--text);
+
+    font-size:1rem;
+
+    transition:border-color .25s ease,
+               box-shadow .25s ease;
+
+}
+
+input:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+input::placeholder{
+
+    color:var(--text-light);
+
+}
+/* ==========================================================
+   Breadcrumb
+========================================================== */
+
+.breadcrumb{
+
+    padding:20px 0 0;
+
+    font-size:.95rem;
+
+}
+
+.breadcrumb .content{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.breadcrumb a{
+
+    color:var(--primary);
+
+    font-weight:500;
+
+}
+
+.breadcrumb span{
+
+    color:var(--text-light);
+
+}
+/* ==========================================================
+   Calculator Form
+========================================================== */
+
+.calculator-container label{
+    display:block;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.calculator-container input,
+.calculator-container select{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--card);
+    color:var(--text);
+    font-size:1rem;
+    transition:border-color .2s ease, box-shadow .2s ease;
+}
+
+.calculator-container input:focus,
+.calculator-container select:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+    outline:none;
+}
+
+.calculator-container .btn{
+    margin-top:12px;
+    margin-right:10px;
+}

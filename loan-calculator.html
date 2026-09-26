@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Loan Calculator | Monthly Payment, Interest & Total Cost | CalclyWorld</title>
+
+<meta
+    name="description"
+    content="Use the free CalclyWorld Loan Calculator to estimate monthly payments, total interest, and total repayment for personal, home, car, education, and other fixed-rate loans.">
+
+<meta name="robots" content="index, follow">
+
+<link
+    rel="canonical"
+    href="https://calclyworld.com/loan-calculator.html">
+
+<link
+    rel="icon"
+    href="favicon.png"
+    type="image/png">
+
+<link
+    rel="apple-touch-icon"
+    href="apple-touch-icon.png">
+
+<link
+    rel="stylesheet"
+    href="style-v2.css">
+
+
+
+
+<!-- WebPage Schema -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Free Loan Calculator",
+  "url": "https://calclyworld.com/loan-calculator.html",
+  "description": "A free online loan calculator that estimates monthly payments, total interest, and total repayment for fixed-rate loans.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "CalclyWorld",
+    "url": "https://calclyworld.com/"
+  }
+}
+</script>
+
+
+<!-- Breadcrumb Schema -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calclyworld.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loan Calculator",
+      "item": "https://calclyworld.com/loan-calculator.html"
+    }
+  ]
+}
+</script>
+
+
+<!-- FAQ Schema -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a loan calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A loan calculator is an online financial tool that estimates monthly loan payments, total interest, and total repayment based on the loan amount, interest rate, and repayment period."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this loan calculator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The CalclyWorld Loan Calculator is free to use without registration or personal information. You can calculate different loan scenarios as often as you need."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of loans can I calculate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use this calculator to estimate payments for many fixed-rate loans, including personal loans, car loans, education loans, home loans, and other installment loans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator include lender fees and taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The calculator estimates principal and interest payments. Actual borrowing costs may also include lender fees, taxes, insurance, and other charges that are not included in the calculation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are the loan calculator results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The calculation is mathematically accurate based on the information entered and assumes a fixed interest rate with regular monthly payments. Actual loan costs may differ because of lender terms, fees, taxes, insurance, and other charges."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+
+<script>
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){dataLayer.push(arguments);}
+
+gtag("js", new Date());
+
+gtag("config","G-BSQETZ21ZZ");
+
+</script>
+
+<!-- Google AdSense -->
+
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
+crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<a
+    class="skip-link"
+    href="#main-content">
+
+    Skip to main content
+
+</a>
+<header class="site-header">
+
+    <div class="container header-container">
+
+        <a
+            href="index-v2.html"
+            class="logo">
+
+            <img
+                src="favicon.png"
+                alt="CalclyWorld Logo"
+                width="42"
+                height="42">
+
+            <span>CalclyWorld</span>
+
+        </a>
+
+
+        <nav
+            class="main-nav"
+            aria-label="Primary Navigation">
+
+            <a href="index-v2.html">
+                Home
+            </a>
+
+            <a href="index-v2.html#calculator-directory">
+                Calculators
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <button
+            id="theme-toggle"
+            class="btn btn-secondary"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false">
+
+            🌙 Dark Mode
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- Calculator Search -->
+
+<section class="calculator-search-section">
+
+    <div class="container">
+
+        <div class="hero-search">
+
+            <input
+                type="search"
+                id="calculator-search"
+                class="calculator-search"
+                placeholder="Search calculators... (Example: BMI, EMI, Age)"
+                autocomplete="off"
+                aria-label="Search calculators">
+
+            <div
+                id="search-results"
+                class="search-results"
+                hidden>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main id="main-content">
+
+
+<!-- Breadcrumb -->
+
+<nav
+    aria-label="Breadcrumb"
+    class="breadcrumb">
+
+    <div class="content">
+
+        <a href="index-v2.html">
+            Home
+        </a>
+
+        <span aria-hidden="true">
+            ›
+        </span>
+
+        <span aria-current="page">
+            Loan Calculator
+        </span>
+
+    </div>
+
+</nav>
+
+
+<!-- Hero -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>
+            Free Loan Calculator
+        </h1>
+
+        <p>
+
+            Plan your borrowing with a clearer picture of what your loan could cost.
+            The CalclyWorld Loan Calculator estimates your monthly payment, total
+            interest, and total repayment based on the amount you borrow, your
+            interest rate, and the length of the loan.
+
+        </p>
+
+        <p>
+
+            Choose your currency, enter your loan details, and calculate your
+            estimated repayment in seconds. You can use it to explore personal,
+            home, car, education, business, and other fixed-rate installment loans
+            before comparing your options with a lender.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Loan Calculator -->
+
+<section class="section-small">
+
+    <div class="calculator-container">
+
+        <div class="content-card">
+
+            <h2 class="text-center">
+                Calculate Your Loan Payment
+            </h2>
+
+            <p class="text-center small-text">
+
+                Enter your loan details below to estimate your monthly payment,
+                total interest, and total repayment.
+
+            </p>
+
+
+            <!-- Currency -->
+
+            <label for="loan-currency">
+
+                Currency
+
+            </label>
+
+            <select
+                id="loan-currency"
+                name="loan-currency">
+
+                <option value="USD" selected>
+                    USD — US Dollar ($)
+                </option>
+
+                <option value="INR">
+                    INR — Indian Rupee (₹)
+                </option>
+
+                <option value="GBP">
+                    GBP — British Pound (£)
+                </option>
+
+                <option value="EUR">
+                    EUR — Euro (€)
+                </option>
+
+            </select>
+
+
+            <!-- Loan Amount -->
+
+            <label for="loan-amount">
+
+                Loan Amount
+
+            </label>
+
+            <input
+                type="number"
+                id="loan-amount"
+                name="loan-amount"
+                placeholder="e.g. 50000"
+                min="0.01"
+                step="0.01"
+                required
+                inputmode="decimal"
+                autocomplete="off">
+
+
+            <!-- Interest Rate -->
+
+            <label for="interest-rate">
+
+                Annual Interest Rate (%)
+
+            </label>
+
+            <input
+                type="number"
+                id="interest-rate"
+                name="interest-rate"
+                placeholder="e.g. 8.5"
+                min="0"
+                max="100"
+                step="0.01"
+                required
+                inputmode="decimal"
+                autocomplete="off">
+
+
+            <!-- Loan Term -->
+
+            <label for="loan-years">
+
+                Loan Term (Years)
+
+            </label>
+
+            <input
+                type="number"
+                id="loan-years"
+                name="loan-years"
+                placeholder="e.g. 20"
+                min="0.25"
+                max="100"
+                step="0.25"
+                required
+                inputmode="decimal"
+                autocomplete="off">
+
+
+            <div class="calculator-actions">
+
+                <button
+                    type="button"
+                    id="calculate-loan"
+                    class="btn">
+
+                    Calculate Loan
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="reset-loan"
+                    class="btn btn-secondary">
+
+                    Reset
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Calculation Results -->
+
+<section class="section-small">
+
+    <div class="calculator-container">
+
+        <div
+            id="loan-result"
+            class="content-card"
+            hidden
+            aria-live="polite"
+            aria-atomic="true">
+
+            <h2>
+                Your Loan Results
+            </h2>
+
+            <div id="loan-result-content"></div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Loan Summary -->
+
+<section class="section-small">
+
+    <div class="calculator-container">
+
+        <div class="content-card">
+
+            <h2 class="text-center">
+                Loan Summary
+            </h2>
+
+            <div class="info-box">
+
+                <p>
+
+                    <strong>
+                        Monthly Payment
+                    </strong>
+
+                    <br>
+
+                    <span id="monthly-payment">
+                        $0.00
+                    </span>
+
+                </p>
+
+                <hr>
+
+                <p>
+
+                    <strong>
+                        Total Interest
+                    </strong>
+
+                    <br>
+
+                    <span id="total-interest">
+                        $0.00
+                    </span>
+
+                </p>
+
+                <hr>
+
+                <p>
+
+                    <strong>
+                        Total Repayment
+                    </strong>
+
+                    <br>
+
+                    <span id="total-payment">
+                        $0.00
+                    </span>
+
+                </p>
+
+            </div>
+
+
+            <p class="small-text">
+
+                These figures are estimates based on the information you provide.
+                Actual loan repayments may vary depending on the lender's terms,
+                interest rate, fees, taxes, insurance, and other costs.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Loan Payment Formula -->
+
+<section class="section-small">
+
+    <div class="content">
+
+        <div class="content-card">
+
+            <h2>
+                How Is a Loan Payment Calculated?
+            </h2>
+
+            <p>
+
+                For a fixed-rate loan with regular monthly payments, the monthly
+                payment is calculated using the amount borrowed, the monthly
+                interest rate, and the total number of monthly payments. Each
+                payment typically includes both principal and interest.
+
+            </p>
+
+
+            <div class="formula-box">
+
+                Monthly Payment =
+                P × r × (1 + r)<sup>n</sup>
+                ÷
+                ((1 + r)<sup>n</sup> − 1)
+
+            </div>
+
+
+            <ul>
+
+                <li>
+
+                    <strong>P</strong> =
+                    Total amount borrowed.
+
+                </li>
+
+                <li>
+
+                    <strong>r</strong> =
+                    Monthly interest rate, calculated by dividing the annual
+                    interest rate by 12.
+
+                </li>
+
+                <li>
+
+                    <strong>n</strong> =
+                    Total number of monthly payments over the loan term.
+
+                </li>
+
+            </ul>
+
+
+            <p>
+
+                The calculator applies this formula automatically after you enter
+                your loan details. The estimated total repayment is calculated
+                from the monthly payment multiplied by the number of payments,
+                while the estimated total interest is the difference between
+                the total repayment and the original loan amount.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- How to Use -->
+
+<section class="section-small">
+
+    <div class="content">
+
+        <div class="content-card">
+
+            <h2>
+                How to Use This Loan Calculator
+            </h2>
+
+            <ol>
+
+                <li>
+
+                    Select the currency you want to use for your calculation.
+
+                </li>
+
+                <li>
+
+                    Enter the amount you plan to borrow.
+
+                </li>
+
+                <li>
+
+                    Enter the annual interest rate offered by the lender.
+
+                </li>
+
+                <li>
+
+                    Enter the length of the loan in years.
+
+                </li>
+
+                <li>
+
+                    Click <strong>Calculate Loan</strong> to view your estimated
+                    monthly payment, total interest, and total repayment.
+
+                </li>
+
+            </ol>
+
+
+            <p>
+
+                Try different loan amounts, interest rates, and repayment periods
+                to compare possible scenarios. A longer loan term can reduce the
+                monthly payment, but it may also increase the total interest paid
+                over the life of the loan.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Frequently Asked Questions -->
+
+<section class="section-small">
+
+    <div class="content">
+
+        <div class="content-card">
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+
+            <div class="faq">
+
+
+                <div class="faq-item">
+
+                    <div class="faq-question">
+
+                        What is a loan calculator?
+
+                    </div>
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            A loan calculator is an online financial tool that
+                            estimates your monthly loan payment, total interest,
+                            and total repayment based on the loan amount, interest
+                            rate, and repayment period. It can help you compare
+                            different borrowing scenarios and understand the
+                            potential cost of a loan before making a financial
+                            decision.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <div class="faq-question">
+
+                        Is this loan calculator free?
+
+                    </div>
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            Yes. The CalclyWorld Loan Calculator is free to use
+                            without registration or personal information. You can
+                            calculate different loan scenarios as often as you
+                            need.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <div class="faq-question">
+
+                        What types of loans can I calculate?
+
+                    </div>
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            You can use this calculator to estimate payments for
+                            many fixed-rate installment loans, including personal
+                            loans, car loans, education loans, home loans, and
+                            other loans that use regular monthly repayments.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <div class="faq-question">
+
+                        Does the calculator include lender fees and taxes?
+
+                    </div>
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            No. The calculator estimates the principal and interest
+                            portion of a loan payment. Actual borrowing costs may
+                            also include lender fees, taxes, insurance, origination
+                            charges, and other expenses that are not included in
+                            this calculation.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <div class="faq-question">
+
+                        How accurate are the loan calculator results?
+
+                    </div>
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            The calculation is mathematically accurate based on
+                            the information entered and assumes a fixed interest
+                            rate with regular monthly payments. Actual loan costs
+                            may differ because of lender terms, fees, taxes,
+                            insurance, payment schedules, or other charges.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Related Calculators -->
+
+<section class="section-small">
+
+    <div class="content">
+
+        <h2 class="section-title">
+
+            Related Calculators
+
+        </h2>
+
+
+        <p class="section-description">
+
+            If you're comparing loans or planning your finances, these free
+            calculators can help you estimate monthly payments, compare borrowing
+            costs, calculate interest, and better understand your financial
+            commitments.
+
+        </p>
+
+
+        <div class="calculator-grid">
+
+
+            <article class="calculator-card">
+
+                <h3>
+                    EMI Calculator
+                </h3>
+
+                <p>
+
+                    Calculate monthly EMI payments for home, personal, and vehicle
+                    loans.
+
+                </p>
+
+                <a href="emi-calculator.html">
+
+                    Open Calculator →
+
+                </a>
+
+            </article>
+
+
+            <article class="calculator-card">
+
+                <h3>
+                    Mortgage Calculator
+                </h3>
+
+                <p>
+
+                    Estimate mortgage payments and explore the total cost of
+                    borrowing over the life of a mortgage.
+
+                </p>
+
+                <a href="mortgage-calculator.html">
+
+                    Open Calculator →
+
+                </a>
+
+            </article>
+
+
+            <article class="calculator-card">
+
+                <h3>
+                    Compound Interest Calculator
+                </h3>
+
+                <p>
+
+                    See how savings and investments can grow over time with
+                    compound interest.
+
+                </p>
+
+                <a href="compound-interest-calculator.html">
+
+                    Open Calculator →
+
+                </a>
+
+            </article>
+
+
+            <article class="calculator-card">
+
+                <h3>
+                    Percentage Calculator
+                </h3>
+
+                <p>
+
+                    Calculate percentages, percentage increases, decreases, and
+                    percentage differences for everyday financial calculations.
+
+                </p>
+
+                <a href="percentage-calculator.html">
+
+                    Open Calculator →
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Additional Loan Information -->
+
+<section class="section-small">
+
+    <div class="content">
+
+        <div class="content-card">
+
+            <h2>
+                Understanding Your Loan Payment
+            </h2>
+
+
+            <p>
+
+                The monthly payment is only one part of the cost of borrowing.
+                The interest rate and loan term can have a significant effect on
+                how much you pay over time. Two loans with the same borrowed
+                amount can have very different total costs if their interest rates
+                or repayment periods are different.
+
+            </p>
+
+
+            <p>
+
+                A longer repayment period may make monthly payments more
+                manageable, but it can also result in more interest being paid
+                over the life of the loan. A shorter term often increases the
+                monthly payment while reducing the amount of interest paid over
+                time.
+
+            </p>
+
+
+            <h3>
+                What This Calculator Does Not Include
+            </h3>
+
+
+            <p>
+
+                This calculator estimates principal and interest for a fixed-rate
+                loan with regular monthly payments. It does not account for
+                lender-specific fees, taxes, insurance, penalties, changing
+                interest rates, or other charges. Always review the terms provided
+                by your lender before making a borrowing decision.
+
+            </p>
+
+
+            <p>
+
+                Use the results as a planning estimate rather than a loan offer
+                or financial recommendation.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+</main>
+
+
+<!-- Site Footer -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-column">
+
+            <h3>
+                CalclyWorld
+            </h3>
+
+            <p>
+
+                CalclyWorld provides free online calculators for finance, health,
+                home improvement, technology, education, and everyday life.
+                Every calculator is designed to be simple, accurate, and easy
+                to use.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index-v2.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="privacy.html">
+                        Privacy Policy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="terms.html">
+                        Terms &amp; Conditions
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Popular Calculators
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="age-calculator.html">
+                        Age Calculator
+                    </a>
+                </li>
+
+                <li>
+                    <a href="emi-calculator.html">
+                        EMI Calculator
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bmi-calculator.html">
+                        BMI Calculator
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gst-calculator.html">
+                        GST Calculator
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mortgage-calculator.html">
+                        Mortgage Calculator
+                    </a>
+                </li>
+
+                <li>
+                    <a href="compound-interest-calculator.html">
+                        Compound Interest Calculator
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+       <div class="footer-column">
+
+  <h3>Calculator Categories</h3>
+
+  <ul>
+    <li>
+      <a href="/#finance">
+        Finance
+      </a>
+    </li>
+
+    <li>
+      <a href="/#everyday">
+        Everyday
+      </a>
+    </li>
+
+    <li>
+      <a href="/#math">
+        Math
+      </a>
+    </li>
+
+    <li>
+      <a href="/#home-construction">
+        Home &amp; Construction
+      </a>
+    </li>
+
+    <li>
+      <a href="/#automotive">
+        Automotive
+      </a>
+    </li>
+
+    <li>
+      <a href="/#technology">
+        Technology
+      </a>
+    </li>
+
+    <li>
+      <a href="/#conversion">
+        Conversion
+      </a>
+    </li>
+
+    <li>
+      <a href="/#travel">
+        Travel
+      </a>
+    </li>
+
+    <li>
+      <a href="/#lifestyle">
+        Lifestyle
+      </a>
+    </li>
+
+    <li>
+      <a href="/#utility">
+        Utility
+      </a>
+    </li>
+  </ul>
+
+</div>
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+
+            ©
+            <span data-current-year></span>
+            CalclyWorld. All rights reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="script-v2.js"></script>
+
+<script src="loan-calculator.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Roofing Calculator - Calculate Roof Area &amp; Roofing Materials | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Roofing Calculator to estimate roof area and roofing material requirements. Enter roof dimensions, pitch, and waste allowance to calculate the actual sloped roof area.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://calclyworld.com/roofing-calculator.html">
+
+  <meta property="og:title" content="Roofing Calculator - Calculate Roof Area &amp; Materials">
+  <meta property="og:description" content="Estimate roof area and roofing material requirements using roof dimensions, pitch, and waste allowance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/roofing-calculator.html">
+  <meta property="og:site_name" content="CalclyWorld">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Roofing Calculator",
+    "url": "https://calclyworld.com/roofing-calculator.html",
+    "description": "A free online roofing calculator for estimating roof area and roofing material requirements.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a roofing calculator calculate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A roofing calculator estimates the actual roof surface area from the roof dimensions and pitch, then applies a waste allowance to estimate the roofing material area needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does roof pitch affect the roof area?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A sloped roof has a larger surface area than the horizontal footprint of the building. The steeper the roof, the greater the actual roofing surface area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the roofing calculator include waste?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can enter a waste allowance to account for cutting, overlaps, damaged materials, and installation losses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this calculator calculate both single-slope and gable roofs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator uses the roof footprint and pitch to estimate the total sloped roof surface. For a symmetrical gable roof, the roof width represents the full horizontal building width."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Search -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="container">
+
+        <a href="/">Home</a>
+
+        <span aria-hidden="true">›</span>
+
+        <span aria-current="page">Roofing Calculator</span>
+
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Roofing Calculator</h1>
+
+        <p>
+          Estimate your roof surface area and the amount of roofing material
+          needed based on roof dimensions, pitch, and waste allowance.
+        </p>
+
+        <p>
+          Enter the horizontal roof dimensions and roof pitch below to
+          calculate the actual sloped roofing area.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate Roof Area</h2>
+
+          <p class="text-center small-text">
+            Enter the roof footprint, pitch, and waste allowance to estimate
+            the roofing surface area.
+          </p>
+
+          <div class="calculator-form">
+
+            <!-- Roof Length -->
+            <div class="form-group">
+
+              <label for="roof-length">
+                Roof Length (ft)
+              </label>
+
+              <input
+                type="number"
+                id="roof-length"
+                min="0"
+                step="any"
+                placeholder="Example: 40"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <!-- Roof Width -->
+            <div class="form-group">
+
+              <label for="roof-width">
+                Roof Width (ft)
+              </label>
+
+              <input
+                type="number"
+                id="roof-width"
+                min="0"
+                step="any"
+                placeholder="Example: 30"
+                inputmode="decimal"
+              >
+
+              <small class="small-text">
+                Enter the full horizontal roof width.
+              </small>
+
+            </div>
+
+            <!-- Pitch Rise -->
+            <div class="form-group">
+
+              <label for="pitch-rise">
+                Roof Pitch Rise
+              </label>
+
+              <input
+                type="number"
+                id="pitch-rise"
+                min="0"
+                step="any"
+                placeholder="Example: 6"
+                inputmode="decimal"
+                aria-describedby="pitch-rise-help"
+              >
+
+              <small id="pitch-rise-help" class="small-text">
+                For a 6:12 pitch, enter 6.
+              </small>
+
+            </div>
+
+            <!-- Pitch Run -->
+            <div class="form-group">
+
+              <label for="pitch-run">
+                Roof Pitch Run
+              </label>
+
+              <input
+                type="number"
+                id="pitch-run"
+                min="0.01"
+                step="any"
+                value="12"
+                inputmode="decimal"
+                aria-describedby="pitch-run-help"
+              >
+
+              <small id="pitch-run-help" class="small-text">
+                A standard roof pitch commonly uses a 12-inch run.
+              </small>
+
+            </div>
+
+            <!-- Overhang -->
+            <div class="form-group">
+
+              <label for="roof-overhang">
+                Total Overhang Per Side (ft)
+              </label>
+
+              <input
+                type="number"
+                id="roof-overhang"
+                min="0"
+                step="any"
+                value="0"
+                placeholder="Example: 1"
+                inputmode="decimal"
+                aria-describedby="overhang-help"
+              >
+
+              <small id="overhang-help" class="small-text">
+                Optional horizontal overhang added to each side of the roof.
+              </small>
+
+            </div>
+
+            <!-- Waste -->
+            <div class="form-group">
+
+              <label for="roof-waste">
+                Waste Allowance (%)
+              </label>
+
+              <input
+                type="number"
+                id="roof-waste"
+                min="0"
+                max="100"
+                step="any"
+                value="10"
+                placeholder="Example: 10"
+                inputmode="decimal"
+                aria-describedby="roof-waste-help"
+              >
+
+              <small id="roof-waste-help" class="small-text">
+                Allowance for cutting, overlaps, and installation losses.
+              </small>
+
+            </div>
+
+            <!-- Error -->
+            <div
+              id="roofing-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <!-- Actions -->
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-roofing"
+                class="btn"
+                type="button"
+              >
+                Calculate Roof Area
+              </button>
+
+              <button
+                id="reset-roofing"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="roofing-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>Roofing Requirement</h2>
+
+          <div id="roofing-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Summary -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Roofing Calculation Summary</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Roof Footprint</h3>
+              <p id="summary-roof-footprint">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Roof Pitch</h3>
+              <p id="summary-roof-pitch">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Roof Surface Area</h3>
+              <p id="summary-roof-area">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>With Waste</h3>
+              <p id="summary-roof-waste">—</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- How It Works -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Roofing Calculator</h2>
+
+          <p>
+            Enter the horizontal length and width of the roof footprint. Then
+            enter the roof pitch using the rise and run values.
+          </p>
+
+          <p>
+            If your roof has an overhang, enter the horizontal overhang per
+            side. Finally, enter a waste allowance to account for cutting,
+            overlaps, and installation losses.
+          </p>
+
+          <ol>
+            <li>Enter the roof length.</li>
+            <li>Enter the full horizontal roof width.</li>
+            <li>Enter the roof pitch rise.</li>
+            <li>Enter the roof pitch run.</li>
+            <li>Enter the optional overhang.</li>
+            <li>Enter a waste allowance.</li>
+            <li>Click <strong>Calculate Roof Area</strong>.</li>
+          </ol>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Formula -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Roofing Calculator Formula</h2>
+
+          <p>
+            A pitched roof has a larger surface area than its horizontal
+            footprint. The roof pitch is used to determine the sloped length.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Roof Footprint Area</strong> =
+              Roof Length × Roof Width
+            </p>
+
+            <p>
+              <strong>Pitch Factor</strong> =
+              √(1 + (Rise ÷ Run)²)
+            </p>
+
+            <p>
+              <strong>Sloped Roof Area</strong> =
+              Adjusted Footprint Area × Pitch Factor
+            </p>
+
+            <p>
+              <strong>Roofing Area With Waste</strong> =
+              Sloped Roof Area × (1 + Waste % ÷ 100)
+            </p>
+
+          </div>
+
+          <p>
+            The calculation provides an estimate of the roofing surface area.
+            Actual material requirements depend on the roofing product,
+            installation pattern, overlaps, valleys, hips, ridges, flashing,
+            and other roof details.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Roofing Calculation Example</h2>
+
+          <p>
+            Suppose a roof has a horizontal footprint of 40 feet by 30 feet
+            and a 6:12 pitch. The calculator uses the pitch to determine the
+            actual sloped roof surface rather than simply using the flat
+            footprint area.
+          </p>
+
+          <p>
+            If a 10% waste allowance is selected, the calculator adds that
+            allowance to the calculated sloped area to provide a practical
+            roofing material estimate.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Important Information -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Important Information About Roofing Estimates</h2>
+
+          <p>
+            Roof measurements should ideally be taken from the actual roof
+            structure or accurate building plans. Measuring only the interior
+            dimensions may produce an underestimate.
+          </p>
+
+          <p>
+            Roofs with hips, valleys, dormers, multiple sections, unusual
+            shapes, or complex flashing require additional measurements beyond
+            a simple length, width, and pitch calculation.
+          </p>
+
+          <p>
+            Different roofing materials also require different overlap and
+            installation allowances. Always check the manufacturer's
+            installation instructions when ordering materials.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What does a roofing calculator calculate?</h3>
+
+          <p>
+            It estimates the actual roof surface area from the roof dimensions
+            and pitch and then applies a waste allowance to estimate the
+            required roofing material area.
+          </p>
+
+          <h3>Why does roof pitch affect the roof area?</h3>
+
+          <p>
+            A sloped roof has a greater surface area than its horizontal
+            footprint. Increasing the pitch increases the amount of roofing
+            surface.
+          </p>
+
+          <h3>Does the roofing calculator include waste?</h3>
+
+          <p>
+            Yes. You can enter a waste allowance for cutting, overlaps,
+            damaged materials, and installation losses.
+          </p>
+
+          <h3>Can this calculator calculate a gable roof?</h3>
+
+          <p>
+            Yes. For a symmetrical gable roof, enter the full horizontal
+            building width and the roof pitch. The pitch factor is then applied
+            to the horizontal roof footprint.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, easy-to-use online calculators for
+          everyday decisions, financial planning, construction projects,
+          conversions, travel, technology, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/roofing-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pet Age Calculator | CalclyWorld</title>
+
+  <meta name="description" content="Calculate your pet's approximate human-equivalent age with the CalclyWorld Pet Age Calculator. Estimate age for dogs and cats based on pet type and age.">
+
+  <meta name="keywords" content="pet age calculator, dog age calculator, cat age calculator, pet human age calculator, dog years calculator, cat years calculator">
+
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/pet-age-calculator.html">
+
+  <meta property="og:title" content="Pet Age Calculator | CalclyWorld">
+  <meta property="og:description" content="Estimate your pet's approximate human-equivalent age with the CalclyWorld Pet Age Calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/pet-age-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pet Age Calculator | CalclyWorld">
+  <meta name="twitter:description" content="Estimate your pet's approximate human-equivalent age.">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Pet Age Calculator",
+    "url": "https://calclyworld.com/pet-age-calculator.html",
+    "description": "A pet age calculator for estimating approximate human-equivalent ages for dogs and cats.",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- Main -->
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="content">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Pet Age Calculator</span>
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Pet Age Calculator</h1>
+
+        <p>
+          Estimate your pet's approximate human-equivalent age based on
+          their type and age.
+        </p>
+
+        <p>
+          Choose a dog or cat, enter the pet's age, and get an easy-to-read
+          estimate. Pet aging varies by species, breed, size, and individual
+          health, so the result is an approximate comparison rather than an
+          exact biological age.
+        </p>
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators">
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Pet Age Calculator</h2>
+
+          <p class="text-center small-text">
+            Select your pet type and enter its age to estimate an
+            approximate human-equivalent age.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <!-- Pet Type -->
+            <div class="form-group">
+
+              <label for="pet-type">
+                Pet Type
+              </label>
+
+              <select id="pet-type">
+
+                <option value="dog" selected>
+                  Dog
+                </option>
+
+                <option value="cat">
+                  Cat
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Pet Age -->
+            <div class="form-group">
+
+              <label for="pet-age">
+                Pet Age (Years)
+              </label>
+
+              <input
+                type="number"
+                id="pet-age"
+                min="0"
+                max="30"
+                step="0.1"
+                value="5"
+                placeholder="Enter pet age"
+                inputmode="decimal">
+
+            </div>
+
+
+            <!-- Error -->
+            <div
+              id="pet-age-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden>
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="calculator-actions">
+
+              <button
+                type="button"
+                id="calculate-pet-age"
+                class="btn">
+                Calculate Pet Age
+              </button>
+
+              <button
+                type="button"
+                id="clear-pet-age"
+                class="btn btn-secondary">
+                Clear
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Result -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="pet-age-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true">
+
+          <h2>Pet Age Result</h2>
+
+          <div id="pet-age-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Pet Age Summary</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Pet Type</h3>
+              <p id="summary-pet-type">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Pet Age</h3>
+              <p id="summary-pet-age">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Human-Equivalent Age</h3>
+              <p id="summary-human-age">—</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- What Is Pet Age -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is a Pet Age Calculator?</h2>
+
+          <p>
+            A pet age calculator provides an approximate comparison between
+            a pet's age and a human-equivalent age. The comparison helps
+            explain how pets can mature and age differently from people.
+          </p>
+
+          <p>
+            The traditional idea that one pet year always equals seven human
+            years is a simple rule of thumb and does not accurately describe
+            how dogs and cats age throughout their lives.
+          </p>
+
+          <p>
+            Pet aging can vary based on species, breed, body size, genetics,
+            lifestyle, and overall health. This calculator therefore provides
+            an estimate rather than a medical or biological measurement.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How to Use -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Pet Age Calculator</h2>
+
+          <ol>
+
+            <li>
+              Select whether your pet is a dog or cat.
+            </li>
+
+            <li>
+              Enter your pet's age in years.
+            </li>
+
+            <li>
+              Click <strong>Calculate Pet Age</strong>.
+            </li>
+
+            <li>
+              Review the estimated human-equivalent age in the result section.
+            </li>
+
+          </ol>
+
+          <p>
+            The result is intended as a general age comparison and should
+            not be used to determine your pet's health or medical condition.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Pet Aging -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How Pets Age</h2>
+
+          <p>
+            Dogs and cats generally mature much faster than humans during
+            their early years. Their rate of aging is not constant throughout
+            their lives.
+          </p>
+
+          <p>
+            For dogs, adult size and breed can influence aging patterns.
+            Smaller dogs and larger dogs can have different life-stage
+            patterns, so a single conversion formula cannot perfectly
+            represent every dog.
+          </p>
+
+          <p>
+            Cats also mature quickly during their early years, followed by
+            a slower aging pattern during adulthood. Individual cats can
+            differ based on genetics, nutrition, lifestyle, and health.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Pet Age vs Human Age -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Pet Age vs. Human Age</h2>
+
+          <p>
+            Human-equivalent age is a comparison rather than a direct
+            biological conversion. A pet that is several years old is not
+            simply the same number of times older than a human.
+          </p>
+
+          <p>
+            The first years of a dog's or cat's life generally represent
+            rapid physical and developmental changes. Later life stages
+            progress differently, which is why simple multiplication methods
+            can be misleading.
+          </p>
+
+          <p>
+            Use the calculator as a convenient way to understand an
+            approximate life-stage comparison, while remembering that each
+            pet ages individually.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Is one dog year equal to seven human years?</h3>
+
+          <p>
+            Not exactly. The seven-year rule is a simple approximation.
+            Dogs age at different rates during different life stages, and
+            breed and size can also affect aging patterns.
+          </p>
+
+
+          <h3>Do cats age seven years for every human year?</h3>
+
+          <p>
+            No. Cats also age more quickly during their early life and then
+            follow a different aging pattern during adulthood.
+          </p>
+
+
+          <h3>Why is the human-equivalent age only an estimate?</h3>
+
+          <p>
+            Pets of the same age can have different biological and life-stage
+            characteristics. Species, breed, size, genetics, lifestyle, and
+            health can all influence aging.
+          </p>
+
+
+          <h3>Can this calculator determine my pet's health?</h3>
+
+          <p>
+            No. The calculator provides an age comparison only. It cannot
+            diagnose health conditions or replace advice from a veterinarian.
+          </p>
+
+
+          <h3>Can I use this calculator for puppies or kittens?</h3>
+
+          <p>
+            Yes. You can enter a young pet's age, but remember that early
+            development can vary considerably between individual animals.
+          </p>
+
+
+          <h3>Can I use the result for veterinary decisions?</h3>
+
+          <p>
+            No. The result is an educational estimate and should not be used
+            as a substitute for professional veterinary advice.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/pet-age-calculator.js"></script>
+
+</body>
+</html>

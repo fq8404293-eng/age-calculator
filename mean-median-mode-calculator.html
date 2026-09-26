@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mean Median Mode Calculator - Find Mean, Median & Mode | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Mean Median Mode Calculator to find the mean, median, mode, range, sum, and count of a dataset. Enter numbers and get accurate results instantly.">
+  <meta name="keywords" content="mean median mode calculator, mean calculator, median calculator, mode calculator, average calculator, statistics calculator">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/mean-median-mode-calculator.html">
+
+  <meta property="og:title" content="Mean Median Mode Calculator - CalclyWorld">
+  <meta property="og:description" content="Calculate the mean, median, mode, range, and other statistics from a dataset with our free online calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/mean-median-mode-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mean Median Mode Calculator",
+    "url": "https://calclyworld.com/mean-median-mode-calculator.html",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "description": "A free online calculator for finding the mean, median, mode, range, sum, and count of a numerical dataset.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container content">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#math">Math</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Mean Median Mode Calculator</span>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Mean Median Mode Calculator</h1>
+
+        <p>
+          Calculate the mean, median, and mode of a dataset quickly and
+          accurately with our free statistics calculator.
+        </p>
+
+        <p>
+          Enter your numbers to find the average, middle value, most
+          frequent value, range, sum, and number of values.
+        </p>
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Mean, Median &amp; Mode
+          </h2>
+
+          <p class="text-center small-text">
+            Enter numbers separated by commas, spaces, or line breaks.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+
+              <label for="mean-median-mode-data">
+                Dataset
+              </label>
+
+              <textarea
+                id="mean-median-mode-data"
+                rows="5"
+                placeholder="Example: 2, 4, 4, 6, 8"
+                aria-describedby="mean-median-mode-data-help"
+              ></textarea>
+
+              <small
+                id="mean-median-mode-data-help"
+                class="small-text"
+              >
+                Enter at least 1 numerical value. Example:
+                2, 4, 4, 6, 8
+              </small>
+
+            </div>
+
+            <div
+              id="mean-median-mode-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-mean-median-mode"
+                class="btn"
+                type="button"
+              >
+                Calculate Statistics
+              </button>
+
+              <button
+                id="reset-mean-median-mode"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="mean-median-mode-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">
+            Statistics Result
+          </h2>
+
+          <div id="mean-median-mode-result-content"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What Is Mean Median Mode -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Are Mean, Median, and Mode?</h2>
+
+          <p>
+            Mean, median, and mode are three common ways of describing
+            the center or typical value of a dataset.
+          </p>
+
+          <p>
+            The <strong>mean</strong> is the arithmetic average of all
+            values. The <strong>median</strong> is the middle value when
+            the numbers are arranged in order. The <strong>mode</strong>
+            is the value that occurs most frequently.
+          </p>
+
+          <p>
+            These measures can describe the same dataset in different
+            ways, so looking at all three can provide a better
+            understanding of the data.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mean -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is the Mean?</h2>
+
+          <p>
+            The mean is calculated by adding all values in a dataset
+            and dividing the total by the number of values.
+          </p>
+
+          <div class="info-box">
+
+            <p class="text-center">
+              <strong>
+                Mean = Sum of Values ÷ Number of Values
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            For example, for the numbers 10, 20, and 30:
+          </p>
+
+          <p>
+            <strong>
+              Mean = (10 + 20 + 30) ÷ 3 = 20
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Median -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is the Median?</h2>
+
+          <p>
+            The median is the middle value of a dataset after the
+            numbers have been arranged from smallest to largest.
+          </p>
+
+          <p>
+            When there is an odd number of values, there is one middle
+            value.
+          </p>
+
+          <p>
+            When there is an even number of values, the median is the
+            average of the two middle values.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              Odd example:
+              <strong>3, 5, 7, 9, 11</strong>
+            </p>
+
+            <p>
+              Median = <strong>7</strong>
+            </p>
+
+            <p>
+              Even example:
+              <strong>3, 5, 7, 9</strong>
+            </p>
+
+            <p>
+              Median = (5 + 7) ÷ 2 = <strong>6</strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mode -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is the Mode?</h2>
+
+          <p>
+            The mode is the value that appears most frequently in a
+            dataset.
+          </p>
+
+          <p>
+            For example, in the dataset
+            <strong>2, 3, 3, 5, 7</strong>, the number 3 occurs twice,
+            while the other values occur once. Therefore, the mode is
+            <strong>3</strong>.
+          </p>
+
+          <p>
+            A dataset can have one mode, multiple modes, or no mode when
+            every value occurs with the same frequency.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Mean vs. Median vs. Mode</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Measure</th>
+                  <th>Meaning</th>
+                  <th>How It Is Found</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Mean</td>
+                  <td>Arithmetic average</td>
+                  <td>Sum ÷ Count</td>
+                </tr>
+
+                <tr>
+                  <td>Median</td>
+                  <td>Middle value</td>
+                  <td>Arrange values and find the center</td>
+                </tr>
+
+                <tr>
+                  <td>Mode</td>
+                  <td>Most frequent value</td>
+                  <td>Find the value appearing most often</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Example: 2, 4, 4, 6, 8</h2>
+
+          <p>
+            Consider the dataset:
+          </p>
+
+          <p>
+            <strong>2, 4, 4, 6, 8</strong>
+          </p>
+
+          <p>
+            The sum is 24 and there are 5 values.
+          </p>
+
+          <p>
+            <strong>
+              Mean = 24 ÷ 5 = 4.8
+            </strong>
+          </p>
+
+          <p>
+            The middle value is 4, so:
+          </p>
+
+          <p>
+            <strong>Median = 4</strong>
+          </p>
+
+          <p>
+            The value 4 occurs twice, more often than any other value.
+          </p>
+
+          <p>
+            <strong>Mode = 4</strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Range -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is the Range?</h2>
+
+          <p>
+            The range describes the difference between the largest and
+            smallest values in a dataset.
+          </p>
+
+          <div class="info-box">
+
+            <p class="text-center">
+              <strong>
+                Range = Maximum Value − Minimum Value
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            For example, if the smallest value is 4 and the largest
+            value is 18:
+          </p>
+
+          <p>
+            <strong>
+              Range = 18 − 4 = 14
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Mean Median Mode Calculator</h2>
+
+          <ol>
+            <li>
+              Enter your numbers separated by commas, spaces, or
+              line breaks.
+            </li>
+
+            <li>
+              Click <strong>Calculate Statistics</strong>.
+            </li>
+
+            <li>
+              Review the mean, median, mode, range, sum, and count.
+            </li>
+
+            <li>
+              Review the sorted dataset shown in the result.
+            </li>
+
+            <li>
+              Click <strong>Reset</strong> to calculate another dataset.
+            </li>
+          </ol>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- When to Use -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>When Should You Use Mean, Median, or Mode?</h2>
+
+          <p>
+            The mean is useful when you want the arithmetic average and
+            the values do not contain unusually influential extremes.
+          </p>
+
+          <p>
+            The median can be useful when a dataset contains unusually
+            high or low values because it focuses on the middle position
+            rather than adding every value together.
+          </p>
+
+          <p>
+            The mode is useful when you want to know which value occurs
+            most frequently, especially when repeated values are
+            important.
+          </p>
+
+          <p>
+            The best measure depends on the dataset and what you are
+            trying to understand.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What is the mean?</h3>
+
+          <p>
+            The mean is the sum of all values divided by the number of
+            values.
+          </p>
+
+          <h3>What is the median?</h3>
+
+          <p>
+            The median is the middle value after a dataset is arranged
+            from smallest to largest. With an even number of values,
+            it is the average of the two middle values.
+          </p>
+
+          <h3>What is the mode?</h3>
+
+          <p>
+            The mode is the value or values that occur most frequently
+            in a dataset.
+          </p>
+
+          <h3>Can a dataset have more than one mode?</h3>
+
+          <p>
+            Yes. If multiple values share the highest frequency, the
+            dataset can have multiple modes.
+          </p>
+
+          <h3>Can a dataset have no mode?</h3>
+
+          <p>
+            Yes. If every value occurs the same number of times, there
+            is no unique mode.
+          </p>
+
+          <h3>Does the mean have to be one of the values?</h3>
+
+          <p>
+            No. The mean can be a value that does not appear anywhere
+            in the dataset.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators
+          designed to make everyday calculations simple, fast,
+          and easy to understand.
+        </p>
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/mean-median-mode-calculator.js"></script>
+
+</body>
+</html>

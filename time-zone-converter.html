@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Time Zone Converter - Convert Time Between Time Zones | CalclyWorld</title>
+
+    <meta name="description" content="Use the free Time Zone Converter to convert a date and time between different time zones around the world. Quickly find the corresponding local time in another location.">
+
+    <meta name="keywords" content="time zone converter, timezone converter, time converter, convert time zones, world time converter, international time converter">
+
+    <link rel="canonical" href="https://calclyworld.com/time-zone-converter.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Time Zone Converter | CalclyWorld">
+    <meta property="og:description" content="Convert a date and time between different time zones with the free Time Zone Converter.">
+    <meta property="og:url" content="https://calclyworld.com/time-zone-converter.html">
+    <meta property="og:site_name" content="CalclyWorld">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Time Zone Converter | CalclyWorld">
+    <meta name="twitter:description" content="Convert time between different time zones around the world.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-BSQETZ21ZZ');
+    </script>
+
+    <!-- Google AdSense -->
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
+        crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style-v2.css">
+
+    <!-- WebPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Time Zone Converter",
+        "url": "https://calclyworld.com/time-zone-converter.html",
+        "description": "Convert a date and time between different time zones.",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "CalclyWorld",
+            "url": "https://calclyworld.com/"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://calclyworld.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Time Zone Converter",
+                "item": "https://calclyworld.com/time-zone-converter.html"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="container header-container">
+
+            <a href="/" class="logo">
+
+                <img
+                    src="/favicon.png"
+                    alt="CalclyWorld Logo"
+                    width="42"
+                    height="42"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async">
+
+                <span>CalclyWorld</span>
+
+            </a>
+
+            <nav class="main-nav" aria-label="Primary Navigation">
+
+                <a href="/">Home</a>
+                <a href="/#calculator-directory">Calculators</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+
+            </nav>
+
+            <button
+                id="theme-toggle"
+                class="btn btn-secondary"
+                type="button"
+                aria-label="Toggle dark mode"
+                aria-pressed="false">
+
+                🌙 Dark Mode
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <main id="main-content">
+
+        <!-- Breadcrumb -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="breadcrumb">
+
+                    <a href="/">Home</a>
+
+                    <span aria-hidden="true">›</span>
+
+                    <span aria-current="page">
+                        Time Zone Converter
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="container">
+
+                <h1>Time Zone Converter</h1>
+
+                <p>
+                    Convert a date and time from one time zone to another
+                    quickly and accurately.
+                </p>
+
+                <p>
+                    Useful for international meetings, travel, remote work,
+                    calls, events, and coordinating schedules across countries.
+                </p>
+
+                <!-- Calculator Search -->
+                <div class="hero-search">
+
+                    <input
+                        type="search"
+                        id="calculator-search"
+                        class="calculator-search"
+                        placeholder="Search calculators... (Example: BMI, EMI, Age)"
+                        autocomplete="off"
+                        aria-label="Search calculators">
+
+                    <div
+                        id="search-results"
+                        class="search-results"
+                        hidden>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Calculator -->
+        <section class="section-small">
+
+            <div class="calculator-container">
+
+                <div class="content-card">
+
+                    <h2 class="text-center">
+                        Convert Time Between Time Zones
+                    </h2>
+
+                    <p class="text-center small-text">
+                        Enter the date, time, and source and destination
+                        time zones.
+                    </p>
+
+                    <div class="calculator-form">
+
+                        <!-- Date -->
+                        <div class="form-group">
+
+                            <label for="timezone-date">
+                                Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="timezone-date"
+                                name="timezone-date"
+                                required>
+
+                        </div>
+
+                        <!-- Time -->
+                        <div class="form-group">
+
+                            <label>
+                                Time
+                            </label>
+
+                            <div class="time-input-group">
+
+                                <select
+                                    id="timezone-hour"
+                                    name="timezone-hour"
+                                    aria-label="Hour">
+
+                                    <option value="">Hour</option>
+
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+
+                                </select>
+
+                                <select
+                                    id="timezone-minute"
+                                    name="timezone-minute"
+                                    aria-label="Minute">
+
+                                    <option value="">Minute</option>
+
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+
+                                </select>
+
+                                <select
+                                    id="timezone-period"
+                                    name="timezone-period"
+                                    aria-label="AM or PM">
+
+                                    <option value="">AM/PM</option>
+                                    <option value="AM">AM</option>
+                                    <option value="PM">PM</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <!-- From Time Zone -->
+                        <div class="form-group">
+
+                            <label for="from-timezone">
+                                From Time Zone
+                            </label>
+
+                            <select
+                                id="from-timezone"
+                                name="from-timezone"
+                                required>
+
+                                <option value="">
+                                    Select time zone
+                                </option>
+
+                                <option value="America/New_York">
+                                    Eastern Time (US & Canada)
+                                </option>
+
+                                <option value="America/Chicago">
+                                    Central Time (US & Canada)
+                                </option>
+
+                                <option value="America/Denver">
+                                    Mountain Time (US & Canada)
+                                </option>
+
+                                <option value="America/Los_Angeles">
+                                    Pacific Time (US & Canada)
+                                </option>
+
+                                <option value="America/Anchorage">
+                                    Alaska Time
+                                </option>
+
+                                <option value="Pacific/Honolulu">
+                                    Hawaii Time
+                                </option>
+
+                                <option value="America/Toronto">
+                                    Toronto
+                                </option>
+
+                                <option value="America/Vancouver">
+                                    Vancouver
+                                </option>
+
+                                <option value="America/Mexico_City">
+                                    Mexico City
+                                </option>
+
+                                <option value="America/Sao_Paulo">
+                                    São Paulo
+                                </option>
+
+                                <option value="America/Argentina/Buenos_Aires">
+                                    Buenos Aires
+                                </option>
+
+                                <option value="Europe/London">
+                                    London
+                                </option>
+
+                                <option value="Europe/Paris">
+                                    Paris
+                                </option>
+
+                                <option value="Europe/Berlin">
+                                    Berlin
+                                </option>
+
+                                <option value="Europe/Madrid">
+                                    Madrid
+                                </option>
+
+                                <option value="Europe/Rome">
+                                    Rome
+                                </option>
+
+                                <option value="Europe/Amsterdam">
+                                    Amsterdam
+                                </option>
+
+                                <option value="Europe/Moscow">
+                                    Moscow
+                                </option>
+
+                                <option value="Africa/Cairo">
+                                    Cairo
+                                </option>
+
+                                <option value="Africa/Johannesburg">
+                                    Johannesburg
+                                </option>
+
+                                <option value="Asia/Dubai">
+                                    Dubai
+                                </option>
+
+                                <option value="Asia/Kolkata">
+                                    India Standard Time
+                                </option>
+
+                                <option value="Asia/Singapore">
+                                    Singapore
+                                </option>
+
+                                <option value="Asia/Bangkok">
+                                    Bangkok
+                                </option>
+
+                                <option value="Asia/Shanghai">
+                                    China Standard Time
+                                </option>
+
+                                <option value="Asia/Hong_Kong">
+                                    Hong Kong
+                                </option>
+
+                                <option value="Asia/Tokyo">
+                                    Tokyo
+                                </option>
+
+                                <option value="Asia/Seoul">
+                                    Seoul
+                                </option>
+
+                                <option value="Australia/Sydney">
+                                    Sydney
+                                </option>
+
+                                <option value="Australia/Melbourne">
+                                    Melbourne
+                                </option>
+
+                                <option value="Pacific/Auckland">
+                                    Auckland
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- To Time Zone -->
+                        <div class="form-group">
+
+                            <label for="to-timezone">
+                                To Time Zone
+                            </label>
+
+                            <select
+                                id="to-timezone"
+                                name="to-timezone"
+                                required>
+
+                                <option value="">
+                                    Select time zone
+                                </option>
+
+                             <option value="America/New_York">New York (Eastern Time)</option>
+<option value="America/Chicago">Chicago (Central Time)</option>
+<option value="America/Denver">Denver (Mountain Time)</option>
+<option value="America/Los_Angeles">Los Angeles (Pacific Time)</option>
+<option value="America/Anchorage">Anchorage (Alaska Time)</option>
+<option value="Pacific/Honolulu">Honolulu (Hawaii Time)</option>
+<option value="America/Toronto">Toronto (Eastern Time)</option>
+<option value="America/Vancouver">Vancouver (Pacific Time)</option>
+<option value="America/Mexico_City">Mexico City</option>
+<option value="America/Sao_Paulo">São Paulo</option>
+<option value="America/Argentina/Buenos_Aires">Buenos Aires</option>
+<option value="Europe/London">London</option>
+<option value="Europe/Paris">Paris</option>
+<option value="Europe/Berlin">Berlin</option>
+<option value="Europe/Madrid">Madrid</option>
+<option value="Europe/Rome">Rome</option>
+<option value="Europe/Amsterdam">Amsterdam</option>
+<option value="Europe/Moscow">Moscow</option>
+<option value="Africa/Cairo">Cairo</option>
+<option value="Africa/Johannesburg">Johannesburg</option>
+<option value="Asia/Dubai">Dubai</option>
+<option value="Asia/Kolkata">India (IST)</option>
+<option value="Asia/Singapore">Singapore</option>
+<option value="Asia/Bangkok">Bangkok</option>
+<option value="Asia/Shanghai">Shanghai</option>
+<option value="Asia/Hong_Kong">Hong Kong</option>
+<option value="Asia/Tokyo">Tokyo</option>
+<option value="Asia/Seoul">Seoul</option>
+<option value="Australia/Sydney">Sydney</option>
+<option value="Australia/Melbourne">Melbourne</option>
+<option value="Pacific/Auckland">Auckland</option>
+
+                            </select>
+
+                        </div>
+
+                        <p class="small-text">
+                            Time zone conversion automatically accounts for
+                            daylight saving time where applicable.
+                        </p>
+
+                        <!-- Error -->
+                        <div
+                            id="timezone-error"
+                            class="error-message"
+                            role="alert"
+                            aria-live="assertive"
+                            hidden>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="calculator-actions">
+
+                            <button
+                                id="calculate-timezone"
+                                class="btn"
+                                type="button">
+                                Convert Time
+                            </button>
+
+                            <button
+                                id="reset-timezone"
+                                class="btn btn-secondary"
+                                type="button">
+                                Reset
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Result -->
+        <section class="section-small">
+
+            <div class="calculator-container">
+
+                <div
+                    id="timezone-result"
+                    class="content-card"
+                    hidden
+                    aria-live="polite"
+                    aria-atomic="true">
+
+                    <h2>Time Zone Conversion Result</h2>
+
+                    <div id="timezone-result-content"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- What Is Time Zone Conversion -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>What Is a Time Zone Converter?</h2>
+
+                    <p>
+                        A time zone converter changes a date and time from
+                        one geographic time zone to the corresponding local
+                        time in another time zone.
+                    </p>
+
+                    <p>
+                        Time zones are important because different parts of
+                        the world use different local times. Some locations
+                        also change their clocks seasonally because of
+                        daylight saving time.
+                    </p>
+
+                    <p>
+                        A time zone converter makes it easier to coordinate
+                        meetings, calls, travel plans, online events, and
+                        international work schedules.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- How to Use -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>How to Use the Time Zone Converter</h2>
+
+                    <ol>
+
+                        <li>
+                            Select the date you want to convert.
+                        </li>
+
+                        <li>
+                            Select the hour, minute, and AM/PM period.
+                        </li>
+
+                        <li>
+                            Select the original time zone.
+                        </li>
+
+                        <li>
+                            Select the destination time zone.
+                        </li>
+
+                        <li>
+                            Click <strong>Convert Time</strong>.
+                        </li>
+
+                    </ol>
+
+                    <p>
+                        The calculator displays the converted local date
+                        and time in the destination time zone.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Why Time Zones Matter -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Why Time Zone Conversion Matters</h2>
+
+                    <p>
+                        Scheduling an event across different countries can
+                        be confusing because the same moment can have a
+                        different local clock time in each location.
+                    </p>
+
+                    <p>
+                        For example, a business meeting scheduled in New
+                        York may occur at a different local hour in London,
+                        Mumbai, Tokyo, or Sydney.
+                    </p>
+
+                    <p>
+                        Time zone conversion helps prevent scheduling
+                        mistakes by showing the equivalent local time for
+                        the selected destination.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Daylight Saving -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Daylight Saving Time</h2>
+
+                    <p>
+                        Some time zones observe daylight saving time, while
+                        others remain on the same standard offset throughout
+                        the year.
+                    </p>
+
+                    <p>
+                        Because of this, the difference between two locations
+                        can change during the year. This calculator uses
+                        time zone rules provided by the browser to account
+                        for applicable daylight saving changes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Examples -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Time Zone Conversion Examples</h2>
+
+                    <p>
+                        Suppose a meeting is scheduled for 9:00 AM in New
+                        York. You can select New York as the source time zone
+                        and another location such as London or Mumbai as the
+                        destination.
+                    </p>
+
+                    <p>
+                        The calculator then shows the corresponding local
+                        date and time for the selected destination.
+                    </p>
+
+                    <p>
+                        If the conversion crosses midnight, the result will
+                        also show the appropriate date in the destination
+                        time zone.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FAQ -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Frequently Asked Questions</h2>
+
+                    <h3>What does a time zone converter do?</h3>
+
+                    <p>
+                        It converts a specific date and time from one time
+                        zone into the equivalent local date and time in
+                        another time zone.
+                    </p>
+
+                    <h3>Does it account for daylight saving time?</h3>
+
+                    <p>
+                        Yes. The calculator uses the selected time zones'
+                        built-in browser time zone rules, including applicable
+                        daylight saving changes.
+                    </p>
+
+                    <h3>Can the converted date change?</h3>
+
+                    <p>
+                        Yes. If the time difference crosses midnight, the
+                        destination location may have a different calendar
+                        date.
+                    </p>
+
+                    <h3>Can I convert between US and international time zones?</h3>
+
+                    <p>
+                        Yes. The calculator includes several US, European,
+                        Asian, Australian, African, and other international
+                        time zones.
+                    </p>
+
+                    <h3>What happens if I leave the minute blank?</h3>
+
+                    <p>
+                        An empty minute selection is treated as 00 minutes,
+                        so you only need to select a minute when you want
+                        something other than the hour.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-column">
+
+                <h3>CalclyWorld</h3>
+
+                <p>
+                    Free online calculators designed to provide clear,
+                    practical, and accurate results for everyday calculations.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Popular Calculators</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="/age-calculator.html">
+                            Age Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/emi-calculator.html">
+                            EMI Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/gst-calculator.html">
+                            GST Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/mortgage-calculator.html">
+                            Mortgage Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/compound-interest-calculator.html">
+                            Compound Interest Calculator
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+           <div class="footer-column">
+
+  <h3>Calculator Categories</h3>
+
+  <ul>
+    <li>
+      <a href="/#finance">
+        Finance
+      </a>
+    </li>
+
+    <li>
+      <a href="/#everyday">
+        Everyday
+      </a>
+    </li>
+
+    <li>
+      <a href="/#math">
+        Math
+      </a>
+    </li>
+
+    <li>
+      <a href="/#home-construction">
+        Home &amp; Construction
+      </a>
+    </li>
+
+    <li>
+      <a href="/#automotive">
+        Automotive
+      </a>
+    </li>
+
+    <li>
+      <a href="/#technology">
+        Technology
+      </a>
+    </li>
+
+    <li>
+      <a href="/#conversion">
+        Conversion
+      </a>
+    </li>
+
+    <li>
+      <a href="/#travel">
+        Travel
+      </a>
+    </li>
+
+    <li>
+      <a href="/#lifestyle">
+        Lifestyle
+      </a>
+    </li>
+
+    <li>
+      <a href="/#utility">
+        Utility
+      </a>
+    </li>
+  </ul>
+
+</div>
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span data-current-year></span>
+                CalclyWorld. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/script-v2.js"></script>
+    <script src="/time-zone-converter.js"></script>
+
+</body>
+</html>

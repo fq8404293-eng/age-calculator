@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Percentage Decrease Calculator - Calculate Percent Decrease | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Percentage Decrease Calculator to calculate the percentage decrease between an original value and a new value. Find the decrease amount and percentage change instantly.">
+
+  <link rel="canonical" href="https://calclyworld.com/percentage-decrease-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:title" content="Percentage Decrease Calculator | CalclyWorld">
+  <meta property="og:description" content="Calculate percentage decrease, decrease amount, and percentage change between two values.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/percentage-decrease-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BSQETZ21ZZ');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Percentage Decrease Calculator",
+    "url": "https://calclyworld.com/percentage-decrease-calculator.html",
+    "description": "Calculate the percentage decrease between an original value and a new value.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Percentage Decrease Calculator",
+        "item": "https://calclyworld.com/percentage-decrease-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate percentage decrease?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Subtract the new value from the original value, divide the difference by the original value, and multiply by 100. Percentage decrease = ((Original Value - New Value) / Original Value) × 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the percentage decrease from 100 to 80?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The percentage decrease from 100 to 80 is 20%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the percentage decrease be more than 100%?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For ordinary non-negative values, a decrease from a positive original value to zero is a 100% decrease. A decrease cannot exceed 100% when the new value remains non-negative."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between percentage decrease and percentage points?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Percentage decrease measures the relative reduction from the original value. Percentage points describe the direct difference between two percentages."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Percentage Decrease Calculator</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Percentage Decrease Calculator</h1>
+
+        <p>
+          Calculate the percentage decrease between an original value and a new value quickly and accurately.
+        </p>
+
+        <p>
+          Enter the starting value and ending value to find the decrease amount and percentage decrease.
+        </p>
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: GPA, Grade, Age)"
+            autocomplete="off"
+            aria-label="Search calculators">
+
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate Percentage Decrease</h2>
+
+          <p class="text-center small-text">
+            Enter the original value and the new value to calculate the percentage decrease.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+              <label for="original-value">Original Value</label>
+              <input
+                type="number"
+                id="original-value"
+                min="0"
+                step="any"
+                placeholder="Example: 100"
+                inputmode="decimal">
+            </div>
+
+            <div class="form-group">
+              <label for="new-value">New Value</label>
+              <input
+                type="number"
+                id="new-value"
+                min="0"
+                step="any"
+                placeholder="Example: 80"
+                inputmode="decimal">
+            </div>
+
+            <div
+              id="percentage-decrease-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden>
+            </div>
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-percentage-decrease"
+                class="btn"
+                type="button">
+                Calculate Decrease
+              </button>
+
+              <button
+                id="reset-percentage-decrease"
+                class="btn btn-secondary"
+                type="button">
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="percentage-decrease-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true">
+
+          <h2>Percentage Decrease Result</h2>
+
+          <div id="percentage-decrease-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Formula -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>How Percentage Decrease Is Calculated</h2>
+
+          <p>
+            Percentage decrease shows how much a value has fallen compared with its original value.
+            It can be useful for comparing price reductions, discounts, changes in measurements,
+            expenses, sales, and other numerical values.
+          </p>
+
+          <p>
+            The percentage decrease formula is:
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Percentage Decrease = ((Original Value − New Value) ÷ Original Value) × 100</strong>
+            </p>
+
+          </div>
+
+          <p>
+            First, subtract the new value from the original value to find the amount of decrease.
+            Then divide that amount by the original value and multiply by 100.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Percentage Decrease Example</h2>
+
+          <p>
+            Suppose a product originally costs $100 and its new price is $80.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Calculation</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Original Value</td>
+                  <td>100</td>
+                </tr>
+
+                <tr>
+                  <td>New Value</td>
+                  <td>80</td>
+                </tr>
+
+                <tr>
+                  <td>Decrease Amount</td>
+                  <td>20</td>
+                </tr>
+
+                <tr>
+                  <td>Percentage Decrease</td>
+                  <td>20%</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            The value decreased by 20, which represents a 20% decrease from the original value of 100.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Common Uses -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Common Uses for Percentage Decrease</h2>
+
+          <p>
+            Percentage decrease is useful whenever you need to understand how much a value has
+            fallen relative to where it started.
+          </p>
+
+          <ul>
+            <li>Comparing original and discounted prices</li>
+            <li>Measuring reductions in expenses</li>
+            <li>Comparing changes in sales or revenue</li>
+            <li>Tracking decreases in measurements or quantities</li>
+            <li>Analyzing changes in budgets and costs</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How do you calculate percentage decrease?</h3>
+
+          <p>
+            Subtract the new value from the original value, divide the difference by the original value,
+            and multiply by 100.
+          </p>
+
+          <h3>What is the percentage decrease from 100 to 80?</h3>
+
+          <p>
+            The decrease is 20. Since 20 is 20% of the original value of 100,
+            the percentage decrease is 20%.
+          </p>
+
+          <h3>Can the percentage decrease be more than 100%?</h3>
+
+          <p>
+            When the original value is positive and the new value is zero or greater,
+            the maximum percentage decrease is 100%.
+          </p>
+
+          <h3>What is the difference between percentage decrease and percentage points?</h3>
+
+          <p>
+            Percentage decrease measures relative reduction from the original value,
+            while percentage points measure the direct difference between two percentages.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          Free online calculators designed to make everyday calculations simple,
+          fast, and easy to understand.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/percentage-decrease-calculator.js"></script>
+
+</body>
+</html>

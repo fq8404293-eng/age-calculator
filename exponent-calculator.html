@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Exponent Calculator - Calculate Powers and Exponents | CalclyWorld</title>
+
+  <meta name="description" content="Use CalclyWorld's free exponent calculator to calculate powers, exponents, roots, negative exponents, and exponential expressions quickly and accurately.">
+
+  <meta name="keywords" content="exponent calculator, power calculator, powers calculator, calculate exponents, exponent solver, x to the power calculator">
+
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/exponent-calculator.html">
+
+  <meta property="og:title" content="Exponent Calculator - Calculate Powers and Exponents | CalclyWorld">
+  <meta property="og:description" content="Calculate powers, exponents, roots, and negative exponents with CalclyWorld's free online exponent calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/exponent-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+
+  <style>
+    .exponent-calculator {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .exponent-input-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      max-width: 620px;
+      margin: 0 auto 24px;
+    }
+
+    .exponent-input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .exponent-input-group input {
+      width: 100%;
+    }
+
+    .exponent-expression {
+      max-width: 620px;
+      margin: 0 auto 22px;
+      padding: 18px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      background: var(--secondary-bg);
+      color: var(--text-color);
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .exponent-result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .exponent-result-card {
+      padding: 18px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      background: var(--card-bg);
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    .exponent-result-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .exponent-result-value {
+      display: block;
+      font-size: 1.45rem;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .exponent-info {
+      margin-top: 22px;
+      padding: 16px;
+      border-radius: 10px;
+      background: var(--secondary-bg);
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    .exponent-info strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .exponent-formula {
+      margin-top: 20px;
+      padding: 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background: var(--card-bg);
+      color: var(--text-color);
+    }
+
+    @media (max-width: 650px) {
+      .exponent-input-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exponent-result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exponent-expression {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Exponent Calculator",
+    "url": "https://calclyworld.com/exponent-calculator.html",
+    "applicationCategory": "CalculatorApplication",
+    "operatingSystem": "Web",
+    "description": "Free online exponent calculator for calculating powers, exponents, roots, and negative exponents.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+</head>
+
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+        <span>CalclyWorld</span>
+
+      </a>
+
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+
+        <a href="/">Home</a>
+
+        <a href="/#calculator-directory">
+          Calculators
+        </a>
+
+        <a href="/about.html">
+          About
+        </a>
+
+        <a href="/contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >🌙 Dark Mode</button>
+
+    </div>
+
+  </header>
+
+
+  <main id="main-content">
+
+
+    <!-- Breadcrumb -->
+
+    <div class="container">
+
+      <div class="breadcrumb">
+
+        <a href="/">Home</a>
+
+        <span aria-hidden="true">›</span>
+
+        <a href="/#math">Math</a>
+
+        <span aria-hidden="true">›</span>
+
+        <span aria-current="page">
+          Exponent Calculator
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>Exponent Calculator</h1>
+
+        <p>
+          Calculate powers and exponents quickly using this free online
+          exponent calculator.
+        </p>
+
+        <p>
+          Enter a base and exponent to calculate the result, including
+          positive, negative, fractional, and zero exponents.
+        </p>
+
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Calculator -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card exponent-calculator">
+
+          <h2 class="text-center">
+            Calculate a Power
+          </h2>
+
+          <p class="text-center small-text">
+            Enter the base and exponent below.
+          </p>
+
+
+          <div class="exponent-input-grid">
+
+
+            <div class="exponent-input-group">
+
+              <label for="exponent-base">
+                Base
+              </label>
+
+              <input
+                type="number"
+                id="exponent-base"
+                inputmode="decimal"
+                step="any"
+                placeholder="Example: 2"
+                autocomplete="off"
+              >
+
+            </div>
+
+
+            <div class="exponent-input-group">
+
+              <label for="exponent-power">
+                Exponent
+              </label>
+
+              <input
+                type="number"
+                id="exponent-power"
+                inputmode="decimal"
+                step="any"
+                placeholder="Example: 8"
+                autocomplete="off"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div
+            id="exponent-preview"
+            class="exponent-expression"
+            aria-live="polite"
+          >
+            Enter values to see the expression.
+          </div>
+
+
+          <div
+            id="exponent-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              id="calculate-exponent"
+              class="btn"
+              type="button"
+            >
+              Calculate
+            </button>
+
+            <button
+              id="reset-exponent"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="exponent-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">
+            Exponent Calculation Result
+          </h2>
+
+
+          <div
+            id="exponent-equation"
+            class="exponent-expression"
+          ></div>
+
+
+          <div class="exponent-result-grid">
+
+
+            <div class="exponent-result-card">
+
+              <strong>
+                Result
+              </strong>
+
+              <span
+                id="exponent-result-value"
+                class="exponent-result-value"
+              ></span>
+
+            </div>
+
+
+            <div class="exponent-result-card">
+
+              <strong>
+                Base
+              </strong>
+
+              <span
+                id="exponent-base-result"
+                class="exponent-result-value"
+              ></span>
+
+            </div>
+
+
+            <div class="exponent-result-card">
+
+              <strong>
+                Exponent
+              </strong>
+
+              <span
+                id="exponent-power-result"
+                class="exponent-result-value"
+              ></span>
+
+            </div>
+
+          </div>
+
+
+          <div class="exponent-info">
+
+            <strong>
+              Calculation
+            </strong>
+
+            <span id="exponent-calculation-text"></span>
+
+          </div>
+
+
+          <div class="exponent-formula">
+
+            <h3>
+              Power Formula
+            </h3>
+
+            <p>
+              A number raised to a power is written as
+              <strong>a<sup>n</sup></strong>, where <strong>a</strong> is
+              the base and <strong>n</strong> is the exponent.
+            </p>
+
+            <p>
+              For example,
+              <strong>2<sup>3</sup> = 2 × 2 × 2 = 8</strong>.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- What Is an Exponent -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            What Is an Exponent?
+          </h2>
+
+          <p>
+            An exponent tells you how many times a number is multiplied by
+            itself. In the expression <strong>5<sup>3</sup></strong>, 5 is
+            the base and 3 is the exponent.
+          </p>
+
+          <p>
+            This means 5 is multiplied by itself three times:
+            <strong>5 × 5 × 5 = 125</strong>.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Types of Exponents -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Types of Exponents
+          </h2>
+
+
+          <h3>
+            Positive Exponents
+          </h3>
+
+          <p>
+            A positive exponent indicates repeated multiplication. For
+            example, 3<sup>4</sup> means 3 × 3 × 3 × 3, which equals 81.
+          </p>
+
+
+          <h3>
+            Zero Exponent
+          </h3>
+
+          <p>
+            Any nonzero number raised to the power of zero equals 1.
+            Therefore, 7<sup>0</sup> = 1.
+          </p>
+
+
+          <h3>
+            Negative Exponents
+          </h3>
+
+          <p>
+            A negative exponent represents the reciprocal of the
+            corresponding positive power. For example,
+            2<sup>−3</sup> = 1/2<sup>3</sup> = 1/8.
+          </p>
+
+
+          <h3>
+            Fractional Exponents
+          </h3>
+
+          <p>
+            A fractional exponent can represent a root. For example,
+            16<sup>1/2</sup> equals √16, which is 4.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Exponent Rules -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Common Exponent Rules
+          </h2>
+
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Rule</th>
+                  <th>Formula</th>
+                  <th>Example</th>
+                </tr>
+
+              </thead>
+
+
+              <tbody>
+
+                <tr>
+                  <td>Product of powers</td>
+                  <td>a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup></td>
+                  <td>2<sup>2</sup> × 2<sup>3</sup> = 2<sup>5</sup></td>
+                </tr>
+
+                <tr>
+                  <td>Quotient of powers</td>
+                  <td>a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m−n</sup></td>
+                  <td>2<sup>5</sup> ÷ 2<sup>2</sup> = 2<sup>3</sup></td>
+                </tr>
+
+                <tr>
+                  <td>Power of a power</td>
+                  <td>(a<sup>m</sup>)<sup>n</sup> = a<sup>mn</sup></td>
+                  <td>(2<sup>2</sup>)<sup>3</sup> = 2<sup>6</sup></td>
+                </tr>
+
+                <tr>
+                  <td>Zero exponent</td>
+                  <td>a<sup>0</sup> = 1</td>
+                  <td>10<sup>0</sup> = 1</td>
+                </tr>
+
+                <tr>
+                  <td>Negative exponent</td>
+                  <td>a<sup>−n</sup> = 1/a<sup>n</sup></td>
+                  <td>2<sup>−2</sup> = 1/4</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Examples -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Exponent Calculator Examples
+          </h2>
+
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Expression</th>
+                  <th>Result</th>
+                </tr>
+
+              </thead>
+
+
+              <tbody>
+
+                <tr>
+                  <td>2<sup>10</sup></td>
+                  <td>1,024</td>
+                </tr>
+
+                <tr>
+                  <td>5<sup>3</sup></td>
+                  <td>125</td>
+                </tr>
+
+                <tr>
+                  <td>10<sup>0</sup></td>
+                  <td>1</td>
+                </tr>
+
+                <tr>
+                  <td>2<sup>−3</sup></td>
+                  <td>0.125</td>
+                </tr>
+
+                <tr>
+                  <td>16<sup>1/2</sup></td>
+                  <td>4</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <h3>
+            What is an exponent?
+          </h3>
+
+          <p>
+            An exponent indicates how many times a base number is multiplied
+            by itself.
+          </p>
+
+
+          <h3>
+            What does a zero exponent mean?
+          </h3>
+
+          <p>
+            Any nonzero number raised to the power of zero equals 1.
+          </p>
+
+
+          <h3>
+            What does a negative exponent mean?
+          </h3>
+
+          <p>
+            A negative exponent represents a reciprocal. For example,
+            2<sup>−2</sup> equals 1/4.
+          </p>
+
+
+          <h3>
+            Can an exponent be a decimal?
+          </h3>
+
+          <p>
+            Yes. Fractional or decimal exponents can represent roots and
+            other real-number powers when the mathematical result is defined.
+          </p>
+
+
+          <h3>
+            Is this exponent calculator free?
+          </h3>
+
+          <p>
+            Yes. CalclyWorld's exponent calculator is free to use online.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <div class="footer-column">
+
+        <h3>
+          CalclyWorld
+        </h3>
+
+        <p>
+          Free online calculators designed to make everyday calculations,
+          financial planning, mathematics, conversions, and practical
+          decision-making easier.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          <li>
+            <a href="/about.html">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact.html">
+              Contact Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="/terms.html">
+              Terms &amp; Conditions
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Popular Calculators
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Calculator Categories
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">
+              Finance
+            </a>
+          </li>
+
+          <li>
+            <a href="/#everyday">
+              Everyday
+            </a>
+          </li>
+
+          <li>
+            <a href="/#math">
+              Math
+            </a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">
+              Automotive
+            </a>
+          </li>
+
+          <li>
+            <a href="/#technology">
+              Technology
+            </a>
+          </li>
+
+          <li>
+            <a href="/#conversion">
+              Conversion
+            </a>
+          </li>
+
+          <li>
+            <a href="/#travel">
+              Travel
+            </a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">
+              Lifestyle
+            </a>
+          </li>
+
+          <li>
+            <a href="/#utility">
+              Utility
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span>
+        CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/exponent-calculator.js"></script>
+
+</body>
+</html>

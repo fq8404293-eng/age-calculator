@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://calclyworld.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Finance Calculators -->
+  <url><loc>https://calclyworld.com/sip-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/savings-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/fixed-deposit-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/recurring-deposit-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/personal-loan-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/car-loan-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/home-loan-emi-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/credit-card-payoff-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/debt-payoff-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/investment-return-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/inflation-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/currency-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/tax-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/salary-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/net-worth-calculator.html</loc><priority>0.8</priority></url>
+
+  <!-- Everyday Calculators -->
+  <url><loc>https://calclyworld.com/date-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/time-duration-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/age-difference-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/countdown-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/work-hours-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/time-zone-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/unit-price-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/discount-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/average-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/gpa-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/grade-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/percentage-increase-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/percentage-decrease-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/ratio-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/random-number-generator.html</loc><priority>0.8</priority></url>
+
+  <!-- Math Calculators -->
+  <url><loc>https://calclyworld.com/scientific-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/fraction-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/decimal-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/exponent-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/square-root-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/prime-number-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/lcm-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/gcd-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/standard-deviation-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/mean-median-mode-calculator.html</loc><priority>0.8</priority></url>
+
+  <!-- Home & Construction -->
+  <url><loc>https://calclyworld.com/paint-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/tile-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/flooring-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/concrete-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/cement-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/brick-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/sand-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/gravel-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/roofing-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/square-foot-calculator.html</loc><priority>0.8</priority></url>
+
+  <!-- Automotive -->
+  <url><loc>https://calclyworld.com/fuel-cost-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/fuel-consumption-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/mileage-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/ev-charging-cost-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/road-trip-cost-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/car-depreciation-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/tire-size-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/engine-compression-ratio-calculator.html</loc><priority>0.8</priority></url>
+
+  <!-- Technology -->
+  <url><loc>https://calclyworld.com/download-time-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/file-size-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/battery-runtime-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/screen-size-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/tv-size-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/internet-speed-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/storage-converter.html</loc><priority>0.8</priority></url>
+
+  <!-- Conversion -->
+  <url><loc>https://calclyworld.com/length-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/weight-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/temperature-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/volume-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/speed-converter.html</loc><priority>0.8</priority></url>
+
+  <!-- Travel -->
+  <url><loc>https://calclyworld.com/travel-budget-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/hotel-cost-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/trip-fuel-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/flight-time-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/currency-exchange-calculator.html</loc><priority>0.8</priority></url>
+
+  <!-- Lifestyle -->
+  <url><loc>https://calclyworld.com/recipe-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/water-reminder.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/daily-habit-tracker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/reading-time-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/pet-age-calculator.html</loc><priority>0.8</priority></url>
+
+  <!-- Utility -->
+  <url><loc>https://calclyworld.com/password-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/qr-code-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/binary-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/hexadecimal-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/roman-numeral-converter.html</loc><priority>0.8</priority></url>
+
+  <!-- Additional Calculators -->
+  <url><loc>https://calclyworld.com/tip-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/age-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/compound-interest-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/emi-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/gst-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/mortgage-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/percentage-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://calclyworld.com/retirement-calculator.html</loc><priority>0.8</priority></url>
+
+  <!-- Existing BMI page -->
+  <url>
+    <loc>https://calclyworld.com/bmi-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Important Site Pages -->
+  <url>
+    <loc>https://calclyworld.com/about.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://calclyworld.com/contact.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://calclyworld.com/privacy.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://calclyworld.com/terms.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Binary Converter | Binary to Decimal & Decimal to Binary | CalclyWorld</title>
+
+  <meta name="description" content="Convert binary numbers to decimal and decimal numbers to binary instantly with CalclyWorld's free online Binary Converter. Simple, accurate, and easy to use.">
+  <meta name="keywords" content="binary converter, binary to decimal, decimal to binary, binary calculator, binary number converter">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/binary-converter.html">
+
+  <meta property="og:title" content="Binary Converter | CalclyWorld">
+  <meta property="og:description" content="Convert binary to decimal and decimal to binary instantly with CalclyWorld's free Binary Converter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/binary-converter.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Binary Converter | CalclyWorld">
+  <meta name="twitter:description" content="Convert binary numbers to decimal and decimal numbers to binary with CalclyWorld.">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Binary Converter",
+    "url": "https://calclyworld.com/binary-converter.html",
+    "description": "A free online calculator for converting binary numbers to decimal and decimal numbers to binary.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="/#utility">Utility</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Binary Converter</span>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Binary Converter</h1>
+
+        <p>
+          Convert binary numbers to decimal or decimal numbers to binary
+          quickly and accurately with our free online Binary Converter.
+        </p>
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Convert Binary and Decimal Numbers</h2>
+
+          <form id="binary-converter-form" class="calculator-form" novalidate>
+
+            <div class="form-group">
+
+              <label for="conversion-type">Conversion Type</label>
+
+              <select id="conversion-type" name="conversion-type">
+                <option value="binary-to-decimal">Binary to Decimal</option>
+                <option value="decimal-to-binary">Decimal to Binary</option>
+              </select>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="binary-input" id="binary-input-label">
+                Binary Number
+              </label>
+
+              <input
+                type="text"
+                id="binary-input"
+                name="binary-input"
+                inputmode="numeric"
+                autocomplete="off"
+                placeholder="Example: 101101"
+                aria-describedby="binary-input-help binary-input-error"
+              >
+
+              <p id="binary-input-help" class="form-help">
+                Enter a binary number using only 0 and 1.
+              </p>
+
+              <div
+                id="binary-input-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+            <div class="calculator-actions">
+
+              <button
+                type="submit"
+                id="calculate-binary"
+                class="btn"
+              >
+                Convert
+              </button>
+
+              <button
+                type="button"
+                id="clear-binary"
+                class="btn btn-secondary"
+              >
+                Clear
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="binary-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">Conversion Result</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Conversion</h3>
+              <p id="summary-binary-conversion">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Input</h3>
+              <p id="summary-binary-input">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Result</h3>
+              <p id="summary-binary-output">—</p>
+            </div>
+
+          </div>
+
+          <div class="result-highlight">
+
+            <h3>Your Converted Number</h3>
+
+            <p
+              id="binary-result-value"
+              class="result-value"
+            >
+              —
+            </p>
+
+            <div class="calculator-actions">
+
+              <button
+                type="button"
+                id="copy-binary-result"
+                class="btn btn-secondary"
+              >
+                Copy Result
+              </button>
+
+            </div>
+
+            <p
+              id="binary-copy-status"
+              class="form-help"
+              aria-live="polite"
+              hidden
+            >
+              Result copied to clipboard.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Binary Numbers -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is a Binary Number?</h2>
+
+          <p>
+            Binary is a number system that uses only two digits:
+            <strong>0</strong> and <strong>1</strong>. Unlike the decimal
+            number system, which uses ten digits from 0 to 9, binary
+            represents information using two possible states.
+          </p>
+
+          <p>
+            Binary is especially important in computing and digital
+            electronics because computers process information using
+            electrical states that can be represented as 0 and 1.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How Conversion Works -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How Binary to Decimal Conversion Works</h2>
+
+          <p>
+            Each position in a binary number represents a power of 2.
+            Starting from the right, the positions represent
+            2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>,
+            2<sup>3</sup>, and so on.
+          </p>
+
+          <p>
+            For example, the binary number <strong>1011</strong> can be
+            converted to decimal as follows:
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Binary Digit</th>
+                  <th>Power of 2</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>2<sup>3</sup></td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td>2<sup>2</sup></td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2<sup>1</sup></td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2<sup>0</sup></td>
+                  <td>1</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            Therefore:
+            <strong>8 + 0 + 2 + 1 = 11</strong>.
+            So, binary <strong>1011</strong> equals decimal
+            <strong>11</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Decimal to Binary -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How Decimal to Binary Conversion Works</h2>
+
+          <p>
+            To convert a positive decimal whole number to binary, the
+            number can be repeatedly divided by 2. The remainders are
+            then read from bottom to top to produce the binary number.
+          </p>
+
+          <p>
+            For example, decimal <strong>13</strong> is represented as
+            binary <strong>1101</strong>.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Calculation</th>
+                  <th>Quotient</th>
+                  <th>Remainder</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>13 ÷ 2</td>
+                  <td>6</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>6 ÷ 2</td>
+                  <td>3</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>3 ÷ 2</td>
+                  <td>1</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>1 ÷ 2</td>
+                  <td>0</td>
+                  <td>1</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            Reading the remainders from bottom to top gives
+            <strong>1101</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Common Examples -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Common Binary and Decimal Examples</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Binary</th>
+                  <th>Decimal</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>100</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>101</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>1010</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>1101</td>
+                  <td>13</td>
+                </tr>
+                <tr>
+                  <td>1111</td>
+                  <td>15</td>
+                </tr>
+                <tr>
+                  <td>10000</td>
+                  <td>16</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Uses -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Where Binary Numbers Are Used</h2>
+
+          <ul>
+            <li>Computer systems and processors</li>
+            <li>Programming and software development</li>
+            <li>Digital electronics</li>
+            <li>Networking and data communication</li>
+            <li>Computer science and information technology</li>
+            <li>Digital storage and data representation</li>
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What is binary?</h3>
+          <p>
+            Binary is a base-2 number system that uses only the digits
+            0 and 1.
+          </p>
+
+          <h3>What is 1010 in decimal?</h3>
+          <p>
+            Binary 1010 is equal to decimal 10.
+          </p>
+
+          <h3>What is 10 in binary?</h3>
+          <p>
+            Decimal 10 is equal to binary 1010.
+          </p>
+
+          <h3>Can this converter handle large numbers?</h3>
+          <p>
+            The converter is designed for normal whole-number conversions
+            that can be safely represented by JavaScript. The calculator
+            validates the input before performing the conversion.
+          </p>
+
+          <h3>Is this Binary Converter free?</h3>
+          <p>
+            Yes. CalclyWorld's Binary Converter is free to use and works
+            directly in your browser without requiring an account.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+        <h3>CalclyWorld</h3>
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/binary-converter.js"></script>
+
+</body>
+</html>

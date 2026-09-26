@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Random Number Generator - Generate Random Numbers | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Random Number Generator to generate random numbers within a range. Choose a minimum and maximum value, set how many numbers you need, and generate random results instantly.">
+
+  <link rel="canonical" href="https://calclyworld.com/random-number-generator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:title" content="Random Number Generator | CalclyWorld">
+  <meta property="og:description" content="Generate random numbers within a custom range quickly and easily with our free online Random Number Generator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/random-number-generator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BSQETZ21ZZ');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <!-- Structured Data: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Random Number Generator",
+    "url": "https://calclyworld.com/random-number-generator.html",
+    "description": "Generate random numbers within a custom range.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Random Number Generator",
+        "item": "https://calclyworld.com/random-number-generator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a random number generator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A random number generator produces numbers selected unpredictably within a specified range. This calculator can generate one or multiple random integers between a minimum and maximum value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I generate multiple random numbers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can choose how many random numbers to generate. You can also choose whether duplicate numbers are allowed when the selected range contains enough unique values."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if duplicates are not allowed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When duplicates are disabled, every generated number will be different. The requested quantity cannot exceed the number of unique integers available between the minimum and maximum values."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can a random number generator be used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Random numbers can be useful for games, simulations, selecting items from a list, classroom activities, testing, and other situations where an unpredictable number is needed."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+        🌙 Dark Mode
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="breadcrumb">
+
+          <a href="/">Home</a>
+
+          <span aria-hidden="true">›</span>
+
+          <span aria-current="page">
+            Random Number Generator
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>Random Number Generator</h1>
+
+        <p>
+          Generate random numbers within a custom range quickly and easily.
+        </p>
+
+        <p>
+          Choose your minimum and maximum values, select how many numbers you need,
+          and decide whether duplicate numbers are allowed.
+        </p>
+
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: GPA, Grade, Age)"
+            autocomplete="off"
+            aria-label="Search calculators">
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Generate Random Numbers
+          </h2>
+
+          <p class="text-center small-text">
+            Enter a range and choose how many random integers you want to generate.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+
+              <label for="minimum-value">
+                Minimum Value
+              </label>
+
+              <input
+                type="number"
+                id="minimum-value"
+                step="1"
+                placeholder="Example: 1"
+                inputmode="numeric">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="maximum-value">
+                Maximum Value
+              </label>
+
+              <input
+                type="number"
+                id="maximum-value"
+                step="1"
+                placeholder="Example: 100"
+                inputmode="numeric">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="number-count">
+                How Many Numbers?
+              </label>
+
+              <input
+                type="number"
+                id="number-count"
+                min="1"
+                max="1000"
+                step="1"
+                value="1"
+                inputmode="numeric">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="allow-duplicates">
+                Allow Duplicate Numbers
+              </label>
+
+              <select id="allow-duplicates">
+
+                <option value="yes">
+                  Yes
+                </option>
+
+                <option value="no">
+                  No
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div
+              id="random-number-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden>
+            </div>
+
+
+            <div class="calculator-actions">
+
+              <button
+                id="generate-random-numbers"
+                class="btn"
+                type="button">
+                Generate Numbers
+              </button>
+
+              <button
+                id="reset-random-number"
+                class="btn btn-secondary"
+                type="button">
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Result -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="random-number-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true">
+
+          <h2>
+            Random Number Result
+          </h2>
+
+          <div id="random-number-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>
+            How the Random Number Generator Works
+          </h2>
+
+          <p>
+            A random number generator selects numbers within the range you provide.
+            The minimum and maximum values define the available range, while the
+            number count determines how many results are generated.
+          </p>
+
+          <p>
+            This calculator generates random integers, so the results do not include
+            decimal values. For example, a range from 1 to 10 can produce any whole
+            number from 1 through 10.
+          </p>
+
+          <p>
+            You can also choose whether duplicate results are allowed. When duplicates
+            are disabled, every generated number is unique.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Example -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>
+            Random Number Generator Example
+          </h2>
+
+          <p>
+            Suppose you want to generate 5 random numbers between 1 and 50
+            without duplicates.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Setting</th>
+                  <th>Value</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Minimum Value</td>
+                  <td>1</td>
+                </tr>
+
+                <tr>
+                  <td>Maximum Value</td>
+                  <td>50</td>
+                </tr>
+
+                <tr>
+                  <td>Numbers Requested</td>
+                  <td>5</td>
+                </tr>
+
+                <tr>
+                  <td>Duplicates</td>
+                  <td>No</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            One possible result could be 7, 14, 23, 36, and 48.
+            A different set of numbers can be produced each time you generate a new result.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Duplicate Explanation -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>
+            Random Numbers With or Without Duplicates
+          </h2>
+
+          <p>
+            Allowing duplicates means the same number can appear more than once.
+            For example, generating five numbers between 1 and 10 could produce
+            3, 3, 7, 9, and 3.
+          </p>
+
+          <p>
+            When duplicates are not allowed, every number must be different.
+            If you request more unique numbers than are available in the selected
+            range, the calculator will ask you to reduce the number of results
+            or increase the range.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Common Uses -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>
+            Common Uses for Random Numbers
+          </h2>
+
+          <p>
+            Random number generation can be useful in many everyday and technical situations,
+            including:
+          </p>
+
+          <ul>
+
+            <li>
+              Selecting winners or participants
+            </li>
+
+            <li>
+              Games and activities
+            </li>
+
+            <li>
+              Classroom exercises
+            </li>
+
+            <li>
+              Simulations and experiments
+            </li>
+
+            <li>
+              Software testing
+            </li>
+
+            <li>
+              Selecting a random item from a range
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <h3>
+            What is a random number generator?
+          </h3>
+
+          <p>
+            A random number generator produces numbers selected unpredictably
+            within a specified range. This calculator generates random integers
+            between your chosen minimum and maximum values.
+          </p>
+
+
+          <h3>
+            Can I generate multiple random numbers?
+          </h3>
+
+          <p>
+            Yes. You can generate multiple random numbers by entering the number
+            of results you want.
+          </p>
+
+
+          <h3>
+            What happens if duplicates are not allowed?
+          </h3>
+
+          <p>
+            Every generated number will be unique. The number of requested results
+            cannot exceed the number of unique integers available in the selected range.
+          </p>
+
+
+          <h3>
+            What can a random number generator be used for?
+          </h3>
+
+          <p>
+            Random numbers can be useful for games, simulations, classroom activities,
+            selecting items, testing, and many other situations where an unpredictable
+            number is needed.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>
+          CalclyWorld
+        </h3>
+
+        <p>
+          Free online calculators designed to make everyday calculations simple,
+          fast, and easy to understand.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          <li>
+            <a href="/about.html">About Us</a>
+          </li>
+
+          <li>
+            <a href="/contact.html">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="/terms.html">Terms &amp; Conditions</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Popular Calculators
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Calculator Categories
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">
+              Finance
+            </a>
+          </li>
+
+          <li>
+            <a href="/#everyday">
+              Everyday
+            </a>
+          </li>
+
+          <li>
+            <a href="/#math">
+              Math
+            </a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">
+              Automotive
+            </a>
+          </li>
+
+          <li>
+            <a href="/#technology">
+              Technology
+            </a>
+          </li>
+
+          <li>
+            <a href="/#conversion">
+              Conversion
+            </a>
+          </li>
+
+          <li>
+            <a href="/#travel">
+              Travel
+            </a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">
+              Lifestyle
+            </a>
+          </li>
+
+          <li>
+            <a href="/#utility">
+              Utility
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/random-number-generator.js"></script>
+
+</body>
+</html>

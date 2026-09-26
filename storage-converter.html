@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Storage Converter - Convert GB, TB, MB, GiB &amp; More | CalclyWorld</title>
+
+  <meta name="description" content="Use the free Storage Converter to convert digital storage between bytes, KB, MB, GB, TB, KiB, MiB, GiB and TiB. Compare decimal and binary storage units easily.">
+
+  <meta name="keywords" content="storage converter, GB to MB, TB to GB, GB to GiB, GiB to GB, MB to GB, digital storage converter, data storage calculator, bytes converter">
+
+  <link rel="canonical" href="https://calclyworld.com/storage-converter.html">
+
+  <meta property="og:title" content="Storage Converter - Convert GB, TB, MB, GiB &amp; More | CalclyWorld">
+  <meta property="og:description" content="Convert digital storage between decimal and binary units including B, KB, MB, GB, TB, KiB, MiB, GiB and TiB.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/storage-converter.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Storage Converter",
+    "url": "https://calclyworld.com/storage-converter.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "description": "Free online storage converter for converting bytes, KB, MB, GB, TB, KiB, MiB, GiB and TiB.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+
+  <div class="container header-container">
+
+    <a href="/" class="logo">
+
+      <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+
+      <span>CalclyWorld</span>
+
+    </a>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+
+      <a href="/">Home</a>
+      <a href="/#calculator-directory">Calculators</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+
+    </nav>
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      🌙 Dark Mode
+    </button>
+
+  </div>
+
+</header>
+
+
+<main id="main-content">
+
+  <!-- Breadcrumb -->
+
+  <div class="breadcrumb">
+
+    <div class="container">
+
+      <a href="/">Home</a>
+
+      <span aria-hidden="true">›</span>
+
+      <span aria-current="page">
+        Storage Converter
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- Hero -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <h1>Storage Converter</h1>
+
+      <p>
+        Convert digital storage between bytes, kilobytes, megabytes,
+        gigabytes, terabytes and binary units such as KiB, MiB and GiB.
+      </p>
+
+      <p>
+        Compare decimal and binary storage measurements to understand
+        file sizes, drive capacities and device storage more clearly.
+      </p>
+
+
+      <div class="hero-search">
+
+        <input
+          type="search"
+          id="calculator-search"
+          class="calculator-search"
+          placeholder="Search calculators... (Example: BMI, EMI, Age)"
+          autocomplete="off"
+          aria-label="Search calculators"
+        >
+
+        <div
+          id="search-results"
+          class="search-results"
+          hidden
+        ></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Calculator -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">
+          Convert Storage Units
+        </h2>
+
+        <p class="text-center small-text">
+          Enter a storage value and choose its unit and measurement system.
+        </p>
+
+
+        <div class="calculator-form">
+
+          <div class="form-group">
+
+            <label for="storage-value">
+              Storage Value
+            </label>
+
+            <input
+              type="number"
+              id="storage-value"
+              min="0"
+              step="any"
+              placeholder="5"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="storage-unit">
+              Storage Unit
+            </label>
+
+            <select id="storage-unit">
+
+              <option value="B">
+                Bytes (B)
+              </option>
+
+              <option value="KB">
+                Kilobytes (KB)
+              </option>
+
+              <option value="MB">
+                Megabytes (MB)
+              </option>
+
+              <option value="GB" selected>
+                Gigabytes (GB)
+              </option>
+
+              <option value="TB">
+                Terabytes (TB)
+              </option>
+
+              <option value="KiB">
+                Kibibytes (KiB)
+              </option>
+
+              <option value="MiB">
+                Mebibytes (MiB)
+              </option>
+
+              <option value="GiB">
+                Gibibytes (GiB)
+              </option>
+
+              <option value="TiB">
+                Tebibytes (TiB)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="storage-system">
+              Measurement System
+            </label>
+
+            <select id="storage-system">
+
+              <option value="decimal" selected>
+                Decimal (SI)
+              </option>
+
+              <option value="binary">
+                Binary (IEC)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div
+            id="storage-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              id="storage-calculate"
+              class="btn"
+              type="button"
+            >
+              Convert Storage
+            </button>
+
+            <button
+              id="storage-reset"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Results -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div
+        id="storage-result"
+        class="content-card"
+        hidden
+        aria-live="polite"
+        aria-atomic="true"
+      >
+
+        <h2>Storage Conversion Results</h2>
+
+        <div id="storage-result-content"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Summary -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">
+          Storage Summary
+        </h2>
+
+        <div class="calculator-results-grid">
+
+          <div class="result-card">
+
+            <h3>Input Storage</h3>
+
+            <p id="storage-summary-input">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Megabytes</h3>
+
+            <p id="storage-summary-mb">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Gigabytes</h3>
+
+            <p id="storage-summary-gb">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Terabytes</h3>
+
+            <p id="storage-summary-tb">—</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Decimal vs Binary -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Decimal vs. Binary Storage Units</h2>
+
+        <p>
+          Digital storage can be expressed using decimal or binary units.
+          Decimal units use powers of 1,000, while binary units use powers
+          of 1,024.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>Decimal Unit</th>
+                <th>Decimal Value</th>
+                <th>Binary Unit</th>
+                <th>Binary Value</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>1 KB</td>
+                <td>1,000 bytes</td>
+                <td>1 KiB</td>
+                <td>1,024 bytes</td>
+              </tr>
+
+              <tr>
+                <td>1 MB</td>
+                <td>1,000,000 bytes</td>
+                <td>1 MiB</td>
+                <td>1,048,576 bytes</td>
+              </tr>
+
+              <tr>
+                <td>1 GB</td>
+                <td>1,000,000,000 bytes</td>
+                <td>1 GiB</td>
+                <td>1,073,741,824 bytes</td>
+              </tr>
+
+              <tr>
+                <td>1 TB</td>
+                <td>1,000,000,000,000 bytes</td>
+                <td>1 TiB</td>
+                <td>1,099,511,627,776 bytes</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Formula -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Storage Conversion Formula</h2>
+
+        <p>
+          The calculator first converts the entered value into bytes.
+          It then converts the byte value into each supported storage unit.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              1 KB = 1,000 bytes
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 MB = 1,000,000 bytes
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 GB = 1,000,000,000 bytes
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 KiB = 1,024 bytes
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 MiB = 1,048,576 bytes
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 GiB = 1,073,741,824 bytes
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Example -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Storage Conversion Example</h2>
+
+        <p>
+          Suppose you have a storage device advertised as
+          <strong>5 GB</strong>.
+        </p>
+
+        <p>
+          Using decimal units, 5 GB equals:
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              5 GB = 5,000 MB
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              5 GB = 5,000,000 KB
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              5 GB = 5,000,000,000 bytes
+            </strong>
+          </p>
+
+        </div>
+
+        <p>
+          The same number of bytes is approximately
+          <strong>4.66 GiB</strong> when expressed using binary
+          gibibytes.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Why sizes differ -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Why Storage Sizes Can Look Different</h2>
+
+        <p>
+          A storage device may be marketed using decimal units while an
+          operating system may display capacity using binary-based
+          calculations or different labeling conventions.
+        </p>
+
+        <p>
+          This can make a drive advertised as a certain number of
+          gigabytes appear to have a different numerical capacity when
+          viewed on a computer.
+        </p>
+
+        <p>
+          For example, a manufacturer using decimal units defines 1 GB as
+          1,000,000,000 bytes. A binary conversion expresses the same byte
+          count as approximately 0.93 GiB.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Common conversions -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Common Storage Conversions</h2>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>Storage</th>
+                <th>Decimal Equivalent</th>
+                <th>Approximate Binary Equivalent</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>1 GB</td>
+                <td>1,000 MB</td>
+                <td>0.9313 GiB</td>
+              </tr>
+
+              <tr>
+                <td>5 GB</td>
+                <td>5,000 MB</td>
+                <td>4.6566 GiB</td>
+              </tr>
+
+              <tr>
+                <td>10 GB</td>
+                <td>10,000 MB</td>
+                <td>9.3132 GiB</td>
+              </tr>
+
+              <tr>
+                <td>100 GB</td>
+                <td>100,000 MB</td>
+                <td>93.1323 GiB</td>
+              </tr>
+
+              <tr>
+                <td>1 TB</td>
+                <td>1,000 GB</td>
+                <td>0.9095 TiB</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How many MB are in 1 GB?</h3>
+
+        <p>
+          Using decimal storage units, 1 GB equals
+          <strong>1,000 MB</strong>.
+        </p>
+
+        <h3>How many GB are in 1 TB?</h3>
+
+        <p>
+          Using decimal units, 1 TB equals
+          <strong>1,000 GB</strong>.
+        </p>
+
+        <h3>What is the difference between GB and GiB?</h3>
+
+        <p>
+          GB is a decimal unit based on powers of 1,000, while GiB is a
+          binary unit based on powers of 1,024.
+        </p>
+
+        <h3>Is 1 GB equal to 1 GiB?</h3>
+
+        <p>
+          No. One GB contains 1,000,000,000 bytes, while one GiB contains
+          1,073,741,824 bytes.
+        </p>
+
+        <h3>Why does my hard drive show less space than advertised?</h3>
+
+        <p>
+          Storage manufacturers commonly use decimal units. The operating
+          system may present the capacity using a different unit or
+          convention, making the displayed number appear smaller.
+        </p>
+
+        <h3>What is the difference between MB and MiB?</h3>
+
+        <p>
+          MB is a decimal unit equal to 1,000,000 bytes, while MiB is a
+          binary unit equal to 1,048,576 bytes.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-column">
+
+      <h3>CalclyWorld</h3>
+
+      <p>
+        Free online calculators designed to provide clear,
+        practical and easy-to-understand results for everyday decisions.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Popular Calculators</h3>
+
+      <ul>
+        <li><a href="/age-calculator.html">Age Calculator</a></li>
+        <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+        <li><a href="/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Calculator Categories</h3>
+
+      <ul>
+        <li><a href="/#finance">Finance</a></li>
+        <li><a href="/#everyday">Everyday</a></li>
+        <li><a href="/#math">Math</a></li>
+        <li><a href="/#home-construction">Home &amp; Construction</a></li>
+        <li><a href="/#automotive">Automotive</a></li>
+        <li><a href="/#technology">Technology</a></li>
+        <li><a href="/#conversion">Conversion</a></li>
+        <li><a href="/#travel">Travel</a></li>
+        <li><a href="/#lifestyle">Lifestyle</a></li>
+        <li><a href="/#utility">Utility</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span> CalclyWorld. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="/script-v2.js"></script>
+<script src="/storage-converter.js"></script>
+
+</body>
+</html>

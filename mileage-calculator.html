@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mileage Calculator - Calculate Fuel Economy & MPG | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Mileage Calculator to calculate vehicle fuel economy in km/L, L/100 km, and US MPG. Calculate car, bike, and vehicle mileage from distance traveled and fuel used.">
+
+  <meta name="keywords" content="mileage calculator, fuel mileage calculator, car mileage calculator, bike mileage calculator, vehicle mileage calculator, km per liter calculator, MPG calculator, fuel economy calculator">
+
+  <link rel="canonical" href="https://calclyworld.com/mileage-calculator.html">
+
+  <meta property="og:title" content="Mileage Calculator - Calculate Fuel Economy & MPG | CalclyWorld">
+  <meta property="og:description" content="Calculate vehicle mileage and fuel economy in km/L, L/100 km, and US MPG using distance traveled and fuel consumed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/mileage-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mileage Calculator",
+    "url": "https://calclyworld.com/mileage-calculator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "A free online mileage calculator for calculating vehicle fuel economy in km/L, L/100 km, and US MPG.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="breadcrumb">
+      <div class="content">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Mileage Calculator</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+
+        <h1>Mileage Calculator</h1>
+
+        <p>
+          Calculate your vehicle's fuel mileage and fuel economy from
+          the distance traveled and fuel consumed.
+        </p>
+
+        <p>
+          Get results in <strong>km/L</strong>, <strong>L/100 km</strong>,
+          and <strong>US MPG</strong> for an easy way to understand
+          vehicle fuel efficiency.
+        </p>
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate Vehicle Mileage</h2>
+
+          <p class="text-center small-text">
+            Enter how far the vehicle traveled and how much fuel it used.
+            Choose kilometers or miles for distance and liters or US gallons
+            for fuel.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+              <label for="mileage-distance">
+                Distance Traveled
+              </label>
+
+              <input
+                type="number"
+                id="mileage-distance"
+                min="0"
+                step="any"
+                placeholder="Example: 500"
+                inputmode="decimal"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="mileage-distance-unit">
+                Distance Unit
+              </label>
+
+              <select id="mileage-distance-unit">
+                <option value="km">Kilometers (km)</option>
+                <option value="miles">Miles (mi)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mileage-fuel">
+                Fuel Used
+              </label>
+
+              <input
+                type="number"
+                id="mileage-fuel"
+                min="0"
+                step="any"
+                placeholder="Example: 33.33"
+                inputmode="decimal"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="mileage-fuel-unit">
+                Fuel Unit
+              </label>
+
+              <select id="mileage-fuel-unit">
+                <option value="liter">Liters (L)</option>
+                <option value="gallon">US Gallons (gal)</option>
+              </select>
+            </div>
+
+            <div
+              id="mileage-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-mileage"
+                class="btn"
+                type="button"
+              >
+                Calculate Mileage
+              </button>
+
+              <button
+                id="reset-mileage"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="mileage-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>Mileage Calculation Result</h2>
+
+          <div id="mileage-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Mileage Summary</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Distance</h3>
+              <p id="mileage-summary-distance">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Fuel Used</h3>
+              <p id="mileage-summary-fuel">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Fuel Economy</h3>
+              <p id="mileage-summary-economy">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Consumption</h3>
+              <p id="mileage-summary-consumption">—</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Is a Mileage Calculator?</h2>
+
+          <p>
+            A mileage calculator estimates how efficiently a vehicle uses
+            fuel based on the distance traveled and the amount of fuel
+            consumed. It can be used for cars, motorcycles, scooters,
+            trucks, vans, and other fuel-powered vehicles.
+          </p>
+
+          <p>
+            Mileage is commonly expressed as kilometers per liter (km/L)
+            in many countries, while fuel economy in the United States is
+            commonly expressed as miles per US gallon (MPG). Another widely
+            used measurement is liters per 100 kilometers (L/100 km).
+          </p>
+
+          <p>
+            By entering actual trip distance and fuel usage, you can
+            estimate your vehicle's real-world fuel economy instead of
+            relying only on the manufacturer's published figures.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>How to Calculate Mileage</h2>
+
+          <p>
+            The basic mileage calculation is straightforward: divide the
+            distance traveled by the amount of fuel consumed.
+          </p>
+
+          <div class="info-box">
+
+            <h3>Fuel Economy Formula</h3>
+
+            <p>
+              <strong>Fuel Economy (km/L) = Distance in kilometers ÷ Fuel used in liters</strong>
+            </p>
+
+            <p>
+              For example, if a vehicle travels 500 km using 33.33 liters
+              of fuel:
+            </p>
+
+            <p>
+              <strong>500 ÷ 33.33 = 15.00 km/L</strong>
+            </p>
+
+          </div>
+
+          <p>
+            For L/100 km, the calculation is reversed because a lower
+            number represents better fuel efficiency:
+          </p>
+
+          <div class="info-box">
+
+            <h3>L/100 km Formula</h3>
+
+            <p>
+              <strong>
+                Fuel Consumption (L/100 km) =
+                Fuel used in liters ÷ Distance in kilometers × 100
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            US MPG measures how many miles a vehicle can travel using
+            one US gallon of fuel. Higher MPG means better fuel economy.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Understanding Mileage Results</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Measurement</th>
+                  <th>Meaning</th>
+                  <th>Better Result</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>km/L</td>
+                  <td>Kilometers traveled per liter of fuel</td>
+                  <td>Higher</td>
+                </tr>
+
+                <tr>
+                  <td>L/100 km</td>
+                  <td>Liters of fuel used to travel 100 km</td>
+                  <td>Lower</td>
+                </tr>
+
+                <tr>
+                  <td>US MPG</td>
+                  <td>Miles traveled per US gallon</td>
+                  <td>Higher</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            These measurements describe the same basic concept from
+            different perspectives. A vehicle with higher km/L or MPG
+            generally uses less fuel for the same distance. A vehicle with
+            lower L/100 km generally uses less fuel as well.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Example Mileage Calculation</h2>
+
+          <p>
+            Suppose a car travels 500 kilometers and uses 33.33 liters
+            of fuel.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Calculation</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Distance</td>
+                  <td>500 km</td>
+                </tr>
+
+                <tr>
+                  <td>Fuel Used</td>
+                  <td>33.33 L</td>
+                </tr>
+
+                <tr>
+                  <td>Fuel Economy</td>
+                  <td>15.00 km/L</td>
+                </tr>
+
+                <tr>
+                  <td>Fuel Consumption</td>
+                  <td>6.67 L/100 km</td>
+                </tr>
+
+                <tr>
+                  <td>US Fuel Economy</td>
+                  <td>35.29 MPG</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            This means the vehicle travels approximately 15 kilometers
+            on one liter of fuel under the conditions represented by
+            this trip.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>How to Get an Accurate Real-World Mileage Reading</h2>
+
+          <p>
+            For a useful real-world mileage measurement, fill the fuel
+            tank to a consistent level and record the vehicle's odometer
+            reading. Drive normally and then refill the tank using the
+            same method.
+          </p>
+
+          <p>
+            Record the distance traveled and the amount of fuel added at
+            the next refill. Dividing the distance by the fuel consumed
+            gives an estimate of the vehicle's actual fuel economy.
+          </p>
+
+          <p>
+            Repeating this process over several fuel tanks can provide a
+            more representative average because one individual trip can
+            be affected by traffic, weather, road conditions, driving
+            style, load, and air-conditioning use.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Affects Vehicle Mileage?</h2>
+
+          <p>
+            Real-world fuel economy can vary considerably depending on
+            how and where a vehicle is driven.
+          </p>
+
+          <ul>
+            <li>Driving speed and acceleration</li>
+            <li>Traffic congestion and frequent stopping</li>
+            <li>Vehicle weight and cargo</li>
+            <li>Tyre pressure and tyre condition</li>
+            <li>Engine maintenance and vehicle condition</li>
+            <li>Road surface and terrain</li>
+            <li>Weather and temperature</li>
+            <li>Use of air conditioning or heating</li>
+            <li>Driving style</li>
+            <li>Fuel quality and vehicle specifications</li>
+          </ul>
+
+          <p>
+            Because of these factors, the mileage shown on a vehicle's
+            specifications or dashboard may differ from the mileage
+            calculated from actual fuel usage.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Mileage Calculator FAQ</h2>
+
+          <h3>What does km/L mean?</h3>
+
+          <p>
+            km/L means kilometers per liter. It tells you how many
+            kilometers a vehicle can travel using one liter of fuel.
+            A higher km/L value generally indicates better fuel economy.
+          </p>
+
+          <h3>What does L/100 km mean?</h3>
+
+          <p>
+            L/100 km means liters per 100 kilometers. It tells you how
+            much fuel a vehicle uses to travel 100 kilometers. Unlike
+            km/L, a lower L/100 km value generally indicates better
+            efficiency.
+          </p>
+
+          <h3>What does MPG mean?</h3>
+
+          <p>
+            MPG means miles per gallon. This calculator uses US gallons
+            when calculating US MPG. A higher MPG value generally means
+            better fuel economy.
+          </p>
+
+          <h3>Can I calculate motorcycle or scooter mileage?</h3>
+
+          <p>
+            Yes. The same basic calculation can be used for motorcycles,
+            scooters, cars, and other vehicles. Enter the distance traveled
+            and the amount of fuel consumed.
+          </p>
+
+          <h3>Why is my actual mileage different from the manufacturer's figure?</h3>
+
+          <p>
+            Published fuel-economy figures are measured under specified
+            testing conditions. Real-world mileage can vary because of
+            traffic, speed, driving style, road conditions, vehicle load,
+            weather, maintenance, and other factors.
+          </p>
+
+          <h3>Which is better, higher or lower mileage?</h3>
+
+          <p>
+            For km/L and MPG, a higher number generally indicates better
+            fuel economy. For L/100 km, a lower number indicates better
+            efficiency because it means less fuel is required to travel
+            the same distance.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators for
+          finance, everyday calculations, mathematics, construction,
+          automotive, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/mileage-calculator.js"></script>
+
+</body>
+</html>

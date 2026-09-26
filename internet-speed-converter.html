@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Internet Speed Converter - Convert Mbps, Gbps, MB/s &amp; More | CalclyWorld</title>
+
+  <meta name="description" content="Use the free Internet Speed Converter to convert internet speeds between bps, Kbps, Mbps, Gbps, MB/s and GB/s. Quickly convert megabits per second to megabytes per second and more.">
+
+  <meta name="keywords" content="internet speed converter, Mbps to MBps, Mbps to MB/s, Gbps to Mbps, internet speed calculator, download speed converter, megabit to megabyte converter">
+
+  <link rel="canonical" href="https://calclyworld.com/internet-speed-converter.html">
+
+  <meta property="og:title" content="Internet Speed Converter - Convert Mbps, Gbps, MB/s &amp; More | CalclyWorld">
+  <meta property="og:description" content="Convert internet connection speeds between bits per second and bytes per second with this free online converter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/internet-speed-converter.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Internet Speed Converter",
+    "url": "https://calclyworld.com/internet-speed-converter.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "description": "Free online internet speed converter for converting bps, Kbps, Mbps, Gbps, MB/s and GB/s.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+
+  <div class="container header-container">
+
+    <a href="/" class="logo">
+
+      <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+
+      <span>CalclyWorld</span>
+
+    </a>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+
+      <a href="/">Home</a>
+      <a href="/#calculator-directory">Calculators</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+
+    </nav>
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      🌙 Dark Mode
+    </button>
+
+  </div>
+
+</header>
+
+
+<main id="main-content">
+
+  <!-- Breadcrumb -->
+
+  <div class="breadcrumb">
+
+    <div class="container">
+
+      <a href="/">Home</a>
+
+      <span aria-hidden="true">›</span>
+
+      <span aria-current="page">
+        Internet Speed Converter
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- Hero -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <h1>Internet Speed Converter</h1>
+
+      <p>
+        Convert internet connection speeds between bits per second and
+        bytes per second using common units such as Mbps, Gbps and MB/s.
+      </p>
+
+      <p>
+        Quickly understand the difference between advertised internet
+        speeds and actual data transfer rates.
+      </p>
+
+
+      <div class="hero-search">
+
+        <input
+          type="search"
+          id="calculator-search"
+          class="calculator-search"
+          placeholder="Search calculators... (Example: BMI, EMI, Age)"
+          autocomplete="off"
+          aria-label="Search calculators"
+        >
+
+        <div
+          id="search-results"
+          class="search-results"
+          hidden
+        ></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Calculator -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">
+          Convert Internet Speed
+        </h2>
+
+        <p class="text-center small-text">
+          Enter a speed and select the unit you want to convert.
+        </p>
+
+
+        <div class="calculator-form">
+
+          <div class="form-group">
+
+            <label for="internet-speed-value">
+              Internet Speed
+            </label>
+
+            <input
+              type="number"
+              id="internet-speed-value"
+              min="0"
+              step="any"
+              placeholder="100"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="internet-speed-unit">
+              Speed Unit
+            </label>
+
+            <select id="internet-speed-unit">
+
+              <option value="bps">
+                Bits per second (bps)
+              </option>
+
+              <option value="Kbps">
+                Kilobits per second (Kbps)
+              </option>
+
+              <option value="Mbps" selected>
+                Megabits per second (Mbps)
+              </option>
+
+              <option value="Gbps">
+                Gigabits per second (Gbps)
+              </option>
+
+              <option value="Tbps">
+                Terabits per second (Tbps)
+              </option>
+
+              <option value="Bps">
+                Bytes per second (B/s)
+              </option>
+
+              <option value="KBps">
+                Kilobytes per second (KB/s)
+              </option>
+
+              <option value="MBps">
+                Megabytes per second (MB/s)
+              </option>
+
+              <option value="GBps">
+                Gigabytes per second (GB/s)
+              </option>
+
+              <option value="TBps">
+                Terabytes per second (TB/s)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div
+            id="internet-speed-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              id="internet-speed-calculate"
+              class="btn"
+              type="button"
+            >
+              Convert Speed
+            </button>
+
+            <button
+              id="internet-speed-reset"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Results -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div
+        id="internet-speed-result"
+        class="content-card"
+        hidden
+        aria-live="polite"
+        aria-atomic="true"
+      >
+
+        <h2>Internet Speed Conversion Results</h2>
+
+        <div id="internet-speed-result-content"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Summary -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">
+          Internet Speed Summary
+        </h2>
+
+        <div class="calculator-results-grid">
+
+          <div class="result-card">
+
+            <h3>Input Speed</h3>
+
+            <p id="internet-speed-summary-input">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Mbps</h3>
+
+            <p id="internet-speed-summary-mbps">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>MB/s</h3>
+
+            <p id="internet-speed-summary-mbps-byte">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Gbps</h3>
+
+            <p id="internet-speed-summary-gbps">—</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Bits vs Bytes -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Bits vs. Bytes</h2>
+
+        <p>
+          Internet service providers commonly advertise connection speeds
+          in <strong>bits per second</strong>, such as Mbps or Gbps.
+          Downloaded files are often displayed in <strong>bytes</strong>,
+          such as MB or GB.
+        </p>
+
+        <p>
+          A byte contains eight bits. Therefore, converting from megabits
+          per second to megabytes per second requires dividing by eight.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              1 byte = 8 bits
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              MB/s = Mbps ÷ 8
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              Mbps = MB/s × 8
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Common conversions -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Common Internet Speed Conversions</h2>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>Internet Speed</th>
+                <th>Approximate Data Rate</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>10 Mbps</td>
+                <td>1.25 MB/s</td>
+              </tr>
+
+              <tr>
+                <td>25 Mbps</td>
+                <td>3.125 MB/s</td>
+              </tr>
+
+              <tr>
+                <td>50 Mbps</td>
+                <td>6.25 MB/s</td>
+              </tr>
+
+              <tr>
+                <td>100 Mbps</td>
+                <td>12.5 MB/s</td>
+              </tr>
+
+              <tr>
+                <td>500 Mbps</td>
+                <td>62.5 MB/s</td>
+              </tr>
+
+              <tr>
+                <td>1 Gbps</td>
+                <td>125 MB/s</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Formula -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Internet Speed Conversion Formula</h2>
+
+        <p>
+          The calculator converts every speed into bits per second first.
+          It then converts that value into the requested units.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              1 Kbps = 1,000 bps
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 Mbps = 1,000,000 bps
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 Gbps = 1,000,000,000 bps
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 MB/s = 8 Mbps
+            </strong>
+          </p>
+
+        </div>
+
+        <p>
+          This calculator uses decimal networking units, where each
+          kilobit is 1,000 bits and each megabit is 1,000,000 bits.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Example -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Internet Speed Conversion Example</h2>
+
+        <p>
+          Suppose your internet plan provides a download speed of
+          <strong>100 Mbps</strong>.
+        </p>
+
+        <p>
+          Since one byte contains eight bits, divide 100 Mbps by 8:
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              100 Mbps ÷ 8 = 12.5 MB/s
+            </strong>
+          </p>
+
+        </div>
+
+        <p>
+          Therefore, a perfect 100 Mbps connection could theoretically
+          transfer about 12.5 megabytes per second before accounting for
+          protocol overhead, network conditions and server limitations.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Real world speed -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Why Actual Download Speeds Can Be Lower</h2>
+
+        <p>
+          The converted value represents the mathematical data rate.
+          Real-world download speeds can be lower than the theoretical
+          maximum.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>Factor</th>
+                <th>Possible Effect</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Wi-Fi Conditions</td>
+                <td>
+                  Signal strength and wireless interference can reduce speed.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Network Congestion</td>
+                <td>
+                  Busy networks can reduce available bandwidth.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Server Limitations</td>
+                <td>
+                  The remote server may not send data at your maximum speed.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Network Overhead</td>
+                <td>
+                  Some bandwidth is used by communication protocols.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Other Devices</td>
+                <td>
+                  Phones, computers, streaming devices and other equipment
+                  may share the connection.
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How many MB/s is 100 Mbps?</h3>
+
+        <p>
+          100 Mbps equals <strong>12.5 MB/s</strong> because one byte
+          contains eight bits.
+        </p>
+
+        <h3>How many Mbps is 1 Gbps?</h3>
+
+        <p>
+          Using decimal networking units, 1 Gbps equals
+          <strong>1,000 Mbps</strong>.
+        </p>
+
+        <h3>Is Mbps the same as MB/s?</h3>
+
+        <p>
+          No. Mbps means megabits per second, while MB/s means megabytes
+          per second. One byte equals eight bits.
+        </p>
+
+        <h3>Why do internet companies use Mbps?</h3>
+
+        <p>
+          Internet connection speeds are commonly specified in bits per
+          second because network data rates are traditionally measured
+          using bits.
+        </p>
+
+        <h3>What is a good internet speed?</h3>
+
+        <p>
+          The appropriate speed depends on the number of users, devices and
+          activities such as web browsing, video streaming, gaming and
+          large downloads.
+        </p>
+
+        <h3>Does this calculator show my actual internet speed?</h3>
+
+        <p>
+          No. This is a unit converter, not an internet speed test.
+          It converts a speed you provide between different measurement
+          units.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-column">
+
+      <h3>CalclyWorld</h3>
+
+      <p>
+        Free online calculators designed to provide clear,
+        practical and easy-to-understand results for everyday decisions.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Popular Calculators</h3>
+
+      <ul>
+        <li><a href="/age-calculator.html">Age Calculator</a></li>
+        <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+        <li><a href="/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Calculator Categories</h3>
+
+      <ul>
+        <li><a href="/#finance">Finance</a></li>
+        <li><a href="/#everyday">Everyday</a></li>
+        <li><a href="/#math">Math</a></li>
+        <li><a href="/#home-construction">Home &amp; Construction</a></li>
+        <li><a href="/#automotive">Automotive</a></li>
+        <li><a href="/#technology">Technology</a></li>
+        <li><a href="/#conversion">Conversion</a></li>
+        <li><a href="/#travel">Travel</a></li>
+        <li><a href="/#lifestyle">Lifestyle</a></li>
+        <li><a href="/#utility">Utility</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span> CalclyWorld. All rights reserved.
+    </p>
+  </div>
+
+</footer>
+
+
+<script src="/script-v2.js"></script>
+<script src="/internet-speed-converter.js"></script>
+
+</body>
+</html>

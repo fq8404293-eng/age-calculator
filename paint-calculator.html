@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Paint Calculator - Calculate Paint Needed for a Room | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Paint Calculator to estimate how much paint you need for walls, ceilings, doors, and windows. Calculate paint coverage, surface area, coats, and estimated paint quantity.">
+  <meta name="keywords" content="paint calculator, paint quantity calculator, how much paint do I need, wall paint calculator, room paint calculator, ceiling paint calculator">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/paint-calculator.html">
+
+  <meta property="og:title" content="Paint Calculator - Calculate How Much Paint You Need | CalclyWorld">
+  <meta property="og:description" content="Estimate the amount of paint needed for your walls or other surfaces based on dimensions, coverage, and number of coats.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/paint-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Paint Calculator",
+    "url": "https://calclyworld.com/paint-calculator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "A free online paint calculator for estimating paint quantity from surface dimensions, coverage, and number of coats.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container content">
+
+        <a href="/">Home</a>
+
+        <span aria-hidden="true">›</span>
+
+        <a href="/#home-construction">Home &amp; Construction</a>
+
+        <span aria-hidden="true">›</span>
+
+        <span aria-current="page">
+          Paint Calculator
+        </span>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Paint Calculator</h1>
+
+        <p>
+          Estimate how much paint you need for a room, wall, ceiling,
+          or other rectangular surface.
+        </p>
+
+        <p>
+          Enter your surface dimensions, subtract doors and windows,
+          choose the number of coats, and enter your paint coverage
+          to get an estimated paint quantity.
+        </p>
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Paint Needed
+          </h2>
+
+          <p class="text-center small-text">
+            Enter dimensions in feet and paint coverage in square feet
+            per gallon.
+          </p>
+
+          <div class="calculator-form">
+
+            <!-- Room / Surface Dimensions -->
+            <h3>Surface Dimensions</h3>
+
+            <div class="form-group">
+
+              <label for="paint-length">
+                Length (ft)
+              </label>
+
+              <input
+                type="number"
+                id="paint-length"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 20"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="paint-width">
+                Width (ft)
+              </label>
+
+              <input
+                type="number"
+                id="paint-width"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 15"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="paint-height">
+                Wall Height (ft)
+              </label>
+
+              <input
+                type="number"
+                id="paint-height"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 8"
+              >
+
+            </div>
+
+            <!-- Openings -->
+            <h3>Doors &amp; Windows</h3>
+
+            <p class="small-text">
+              Enter the total area of doors and windows that will not
+              be painted.
+            </p>
+
+            <div class="form-group">
+
+              <label for="paint-openings">
+                Doors &amp; Windows Area (sq ft)
+              </label>
+
+              <input
+                type="number"
+                id="paint-openings"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 40"
+                value="0"
+              >
+
+            </div>
+
+            <!-- Paint Settings -->
+            <h3>Paint Settings</h3>
+
+            <div class="form-group">
+
+              <label for="paint-coats">
+                Number of Coats
+              </label>
+
+              <input
+                type="number"
+                id="paint-coats"
+                min="1"
+                max="20"
+                step="1"
+                inputmode="numeric"
+                placeholder="Example: 2"
+                value="2"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="paint-coverage">
+                Paint Coverage (sq ft per gallon)
+              </label>
+
+              <input
+                type="number"
+                id="paint-coverage"
+                min="1"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 350"
+                value="350"
+              >
+
+              <small class="small-text">
+                Check the paint manufacturer's label for the actual
+                coverage of your paint.
+              </small>
+
+            </div>
+
+            <!-- Error -->
+            <div
+              id="paint-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <!-- Actions -->
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-paint"
+                class="btn"
+                type="button"
+              >
+                Calculate Paint
+              </button>
+
+              <button
+                id="reset-paint"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="paint-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">
+            Paint Estimate
+          </h2>
+
+          <div id="paint-result-content"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How Paint Quantity Is Calculated -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How Does the Paint Calculator Work?</h2>
+
+          <p>
+            The calculator first estimates the total wall area using
+            the room length, width, and wall height. It then subtracts
+            the area of doors and windows that will not be painted.
+          </p>
+
+          <p>
+            The remaining paintable area is multiplied by the number of
+            coats. Finally, the total coverage area is divided by the
+            coverage provided by one gallon of paint.
+          </p>
+
+          <div class="info-box">
+
+            <p class="text-center">
+              <strong>
+                Paint Needed = Paintable Area × Coats ÷ Coverage
+              </strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Wall Area -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Calculate Wall Area</h2>
+
+          <p>
+            For a rectangular room, the total wall area can be
+            calculated using the room perimeter and wall height.
+          </p>
+
+          <div class="info-box">
+
+            <p class="text-center">
+              <strong>
+                Wall Area = 2 × (Length + Width) × Height
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            For example, a room that is 20 feet long, 15 feet wide,
+            and 8 feet high has:
+          </p>
+
+          <p>
+            <strong>
+              2 × (20 + 15) × 8 = 560 sq ft
+            </strong>
+          </p>
+
+          <p>
+            If the room has 40 square feet of doors and windows,
+            the paintable wall area is:
+          </p>
+
+          <p>
+            <strong>
+              560 − 40 = 520 sq ft
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Paint Coverage -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Understanding Paint Coverage</h2>
+
+          <p>
+            Paint coverage tells you approximately how much surface
+            area one gallon of paint can cover. The actual coverage
+            depends on the specific product and the surface being
+            painted.
+          </p>
+
+          <p>
+            Always check the manufacturer's coverage information on
+            the paint container before purchasing paint.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Paint Coverage</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>300 sq ft/gal</td>
+                  <td>One gallon covers approximately 300 sq ft</td>
+                </tr>
+
+                <tr>
+                  <td>350 sq ft/gal</td>
+                  <td>One gallon covers approximately 350 sq ft</td>
+                </tr>
+
+                <tr>
+                  <td>400 sq ft/gal</td>
+                  <td>One gallon covers approximately 400 sq ft</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Paint Calculator Example</h2>
+
+          <p>
+            Suppose a room is 20 feet long, 15 feet wide, and 8 feet
+            high. The total wall area is:
+          </p>
+
+          <p>
+            <strong>
+              2 × (20 + 15) × 8 = 560 sq ft
+            </strong>
+          </p>
+
+          <p>
+            If doors and windows account for 40 square feet, the
+            paintable area becomes 520 square feet.
+          </p>
+
+          <p>
+            With 2 coats and paint coverage of 350 square feet per
+            gallon:
+          </p>
+
+          <p>
+            <strong>
+              520 × 2 ÷ 350 ≈ 2.97 gallons
+            </strong>
+          </p>
+
+          <p>
+            The calculator reports the mathematical estimate and can
+            help you determine an appropriate amount to purchase.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Factors -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Can Affect Paint Quantity?</h2>
+
+          <p>
+            The calculated quantity is an estimate. Actual paint usage
+            can vary depending on the surface and application.
+          </p>
+
+          <ul>
+
+            <li>
+              Surface texture and porosity
+            </li>
+
+            <li>
+              Paint type and product coverage
+            </li>
+
+            <li>
+              Number of coats required
+            </li>
+
+            <li>
+              Existing wall color
+            </li>
+
+            <li>
+              Application method
+            </li>
+
+            <li>
+              Doors, windows, and other unpainted areas
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Paint Calculator</h2>
+
+          <ol>
+
+            <li>
+              Enter the room length in feet.
+            </li>
+
+            <li>
+              Enter the room width in feet.
+            </li>
+
+            <li>
+              Enter the wall height in feet.
+            </li>
+
+            <li>
+              Enter the combined area of doors and windows.
+            </li>
+
+            <li>
+              Enter the number of coats you plan to apply.
+            </li>
+
+            <li>
+              Enter the paint coverage shown on the product label.
+            </li>
+
+            <li>
+              Click <strong>Calculate Paint</strong> to see the
+              estimated paint quantity.
+            </li>
+
+          </ol>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Important Note -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Important Note About Paint Estimates</h2>
+
+          <p>
+            Paint calculators provide an estimate rather than an exact
+            purchase requirement. Different paints can have different
+            coverage rates, and real-world application can use more or
+            less paint than the theoretical calculation.
+          </p>
+
+          <p>
+            For the most accurate estimate, use the coverage information
+            supplied by the paint manufacturer and account for the
+            actual condition of your surfaces.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How much paint do I need for a room?</h3>
+
+          <p>
+            It depends on the total paintable surface area, number of
+            coats, and paint coverage. Enter these values into the
+            calculator to get an estimate.
+          </p>
+
+          <h3>Does the calculator subtract doors and windows?</h3>
+
+          <p>
+            Yes. You can enter the combined area of doors and windows,
+            and that area is subtracted from the total wall area.
+          </p>
+
+          <h3>Should I include the ceiling?</h3>
+
+          <p>
+            The main calculation estimates wall paint. If you also
+            want to paint the ceiling, its area can be calculated
+            separately and added to the total paintable area.
+          </p>
+
+          <h3>How many coats of paint should I use?</h3>
+
+          <p>
+            The required number of coats depends on the paint product,
+            surface condition, existing color, and desired finish.
+            Follow the manufacturer's instructions for your specific
+            product.
+          </p>
+
+          <h3>Is the paint estimate exact?</h3>
+
+          <p>
+            No. It is a mathematical estimate based on the information
+            you provide. Actual paint usage can vary because of surface
+            texture, absorption, application technique, and product
+            coverage.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators
+          designed to make everyday calculations simple, fast,
+          and easy to understand.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/paint-calculator.js"></script>
+
+</body>
+</html>

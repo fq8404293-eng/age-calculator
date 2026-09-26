@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tip Calculator | Calculate Tip, Total & Split Bill | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Use CalclyWorld's free Tip Calculator to calculate your tip, total bill, and amount per person. Enter your bill, choose a tip percentage, and split the bill instantly."
+  >
+
+  <meta
+    name="keywords"
+    content="tip calculator, gratuity calculator, restaurant tip calculator, bill splitter, tip percentage calculator, split bill calculator"
+  >
+
+  <meta name="author" content="CalclyWorld">
+
+  <link
+    rel="canonical"
+    href="https://calclyworld.com/tip-calculator.html"
+  >
+
+  <meta property="og:title" content="Tip Calculator | CalclyWorld">
+  <meta
+    property="og:description"
+    content="Calculate restaurant tips, total bills, and split payments between people with CalclyWorld's free Tip Calculator."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:url"
+    content="https://calclyworld.com/tip-calculator.html"
+  >
+  <meta
+    property="og:image"
+    content="https://calclyworld.com/favicon.png"
+  >
+
+  <meta name="twitter:card" content="summary">
+  <meta
+    name="twitter:title"
+    content="Tip Calculator | CalclyWorld"
+  >
+  <meta
+    name="twitter:description"
+    content="Calculate tips, total bills, and per-person amounts with CalclyWorld's free Tip Calculator."
+  >
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tip Calculator",
+    "url": "https://calclyworld.com/tip-calculator.html",
+    "description": "A free online tip calculator for calculating tip amount, total bill, and per-person bill amounts.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="/#everyday">Everyday</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Tip Calculator</span>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Tip Calculator</h1>
+
+        <p>
+          Calculate a restaurant tip, total bill, and amount per person
+          quickly with our free online Tip Calculator.
+        </p>
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Your Tip
+          </h2>
+
+          <form
+            id="tip-calculator-form"
+            class="calculator-form"
+            novalidate
+          >
+
+            <div class="form-group">
+
+              <label for="bill-amount">
+                Bill Amount
+              </label>
+
+              <input
+                type="number"
+                id="bill-amount"
+                name="bill-amount"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                placeholder="Example: 100.00"
+                autocomplete="off"
+                aria-describedby="bill-amount-help bill-amount-error"
+              >
+
+              <p
+                id="bill-amount-help"
+                class="form-help"
+              >
+                Enter the amount of your bill before the tip.
+              </p>
+
+              <div
+                id="bill-amount-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="tip-percentage">
+                Tip Percentage
+              </label>
+
+              <input
+                type="number"
+                id="tip-percentage"
+                name="tip-percentage"
+                min="0"
+                max="100"
+                step="0.1"
+                inputmode="decimal"
+                value="15"
+                placeholder="Example: 15"
+                autocomplete="off"
+                aria-describedby="tip-percentage-help tip-percentage-error"
+              >
+
+              <p
+                id="tip-percentage-help"
+                class="form-help"
+              >
+                Enter the percentage you would like to leave as a tip.
+              </p>
+
+              <div
+                id="tip-percentage-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="number-of-people">
+                Number of People
+              </label>
+
+              <input
+                type="number"
+                id="number-of-people"
+                name="number-of-people"
+                min="1"
+                max="1000"
+                step="1"
+                inputmode="numeric"
+                value="1"
+                placeholder="Example: 2"
+                autocomplete="off"
+                aria-describedby="number-of-people-help number-of-people-error"
+              >
+
+              <p
+                id="number-of-people-help"
+                class="form-help"
+              >
+                Enter 1 if the bill is not being split.
+              </p>
+
+              <div
+                id="number-of-people-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+            <div class="calculator-actions">
+
+              <button
+                type="submit"
+                id="calculate-tip"
+                class="btn"
+              >
+                Calculate Tip
+              </button>
+
+              <button
+                type="button"
+                id="clear-tip"
+                class="btn btn-secondary"
+              >
+                Clear
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="tip-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">
+            Tip Calculation Result
+          </h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Tip Amount</h3>
+              <p id="summary-tip-amount">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Total Bill</h3>
+              <p id="summary-total-bill">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Per Person</h3>
+              <p id="summary-per-person">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Tip Per Person</h3>
+              <p id="summary-tip-per-person">—</p>
+            </div>
+
+          </div>
+
+          <div class="result-highlight">
+
+            <h3>Total to Pay</h3>
+
+            <p
+              id="tip-result-value"
+              class="result-value"
+            >
+              —
+            </p>
+
+            <div class="calculator-actions">
+
+              <button
+                type="button"
+                id="copy-tip-result"
+                class="btn btn-secondary"
+              >
+                Copy Result
+              </button>
+
+            </div>
+
+            <p
+              id="tip-copy-status"
+              class="form-help"
+              aria-live="polite"
+              hidden
+            >
+              Result copied to clipboard.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What Is a Tip? -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is a Tip?</h2>
+
+          <p>
+            A tip, also called gratuity, is an additional amount of money
+            given to a service worker to recognize the service provided.
+            Restaurant tipping practices vary by country, business, and
+            situation.
+          </p>
+
+          <p>
+            A tip is generally calculated as a percentage of the bill.
+            For example, a 15% tip on a $100 bill is $15, making the
+            total $115.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How Tip Is Calculated -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Calculate a Tip</h2>
+
+          <p>
+            The basic tip formula is:
+          </p>
+
+          <p>
+            <strong>Tip Amount = Bill Amount × Tip Percentage ÷ 100</strong>
+          </p>
+
+          <p>
+            For example, if your bill is $80 and you choose a 20% tip:
+          </p>
+
+          <p>
+            <strong>$80 × 20 ÷ 100 = $16</strong>
+          </p>
+
+          <p>
+            The total bill would therefore be:
+          </p>
+
+          <p>
+            <strong>$80 + $16 = $96</strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Splitting the Bill -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Split a Bill</h2>
+
+          <p>
+            When several people share a bill, the total amount including
+            the tip can be divided equally among the number of people.
+          </p>
+
+          <p>
+            <strong>
+              Amount Per Person = Total Bill ÷ Number of People
+            </strong>
+          </p>
+
+          <p>
+            For example, if a bill including tip is $120 and four people
+            are sharing it equally:
+          </p>
+
+          <p>
+            <strong>$120 ÷ 4 = $30 per person</strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Example Table -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Tip Examples</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Bill</th>
+                  <th>Tip</th>
+                  <th>Tip Amount</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>$50</td>
+                  <td>10%</td>
+                  <td>$5</td>
+                  <td>$55</td>
+                </tr>
+
+                <tr>
+                  <td>$50</td>
+                  <td>15%</td>
+                  <td>$7.50</td>
+                  <td>$57.50</td>
+                </tr>
+
+                <tr>
+                  <td>$50</td>
+                  <td>20%</td>
+                  <td>$10</td>
+                  <td>$60</td>
+                </tr>
+
+                <tr>
+                  <td>$100</td>
+                  <td>15%</td>
+                  <td>$15</td>
+                  <td>$115</td>
+                </tr>
+
+                <tr>
+                  <td>$100</td>
+                  <td>20%</td>
+                  <td>$20</td>
+                  <td>$120</td>
+                </tr>
+
+                <tr>
+                  <td>$150</td>
+                  <td>20%</td>
+                  <td>$30</td>
+                  <td>$180</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tipping Around the World -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Tipping Practices Vary by Location</h2>
+
+          <p>
+            Tipping customs are not the same everywhere. In some
+            countries, tipping is common in restaurants and other
+            service industries, while in other countries service
+            charges or different payment customs are more common.
+          </p>
+
+          <p>
+            Before deciding how much to tip, consider the local customs,
+            the restaurant's policies, and whether a service charge has
+            already been included in the bill.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How do I calculate a 20% tip?</h3>
+
+          <p>
+            Multiply the bill amount by 0.20. For example, a $100 bill
+            would have a $20 tip at 20%.
+          </p>
+
+          <h3>Can I split the bill between multiple people?</h3>
+
+          <p>
+            Yes. Enter the number of people sharing the bill and the
+            calculator will show the total amount and amount per person.
+          </p>
+
+          <h3>Does the calculator include the tip in the total?</h3>
+
+          <p>
+            Yes. The total bill includes the original bill amount plus
+            the calculated tip.
+          </p>
+
+          <h3>Can I enter a custom tip percentage?</h3>
+
+          <p>
+            Yes. You can enter any tip percentage from 0% to 100%.
+          </p>
+
+          <h3>Does the calculator require a currency?</h3>
+
+          <p>
+            No. The calculator works with the numerical value of your
+            bill, so you can use it with dollars, euros, pounds, rupees,
+            or another currency. The result uses the same currency as
+            your input.
+          </p>
+
+          <h3>Is this Tip Calculator free?</h3>
+
+          <p>
+            Yes. CalclyWorld's Tip Calculator is free to use directly
+            in your browser without requiring an account.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/tip-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Time Duration Calculator - Calculate Hours, Minutes & Seconds | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Use CalclyWorld's free Time Duration Calculator to calculate the exact time between two times in hours, minutes, and seconds. Easily calculate durations across midnight."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://calclyworld.com/time-duration-calculator.html"
+  >
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Time Duration Calculator - CalclyWorld">
+  <meta
+    property="og:description"
+    content="Calculate the duration between two times in hours, minutes, and seconds with CalclyWorld's free Time Duration Calculator."
+  >
+  <meta
+    property="og:url"
+    content="https://calclyworld.com/time-duration-calculator.html"
+  >
+  <meta property="og:site_name" content="CalclyWorld">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta
+    name="twitter:title"
+    content="Time Duration Calculator - CalclyWorld"
+  >
+  <meta
+    name="twitter:description"
+    content="Calculate the time between two times quickly and accurately in hours, minutes, and seconds."
+  >
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style-v2.css">
+
+  <!-- Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"
+  ></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-BSQETZ21ZZ');
+  </script>
+
+  <!-- Google AdSense -->
+  <meta
+    name="google-adsense-account"
+    content="ca-pub-9996577216569842"
+  >
+
+  <!-- WebPage Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Time Duration Calculator",
+    "url": "https://calclyworld.com/time-duration-calculator.html",
+    "description": "Calculate the duration between two times in hours, minutes, and seconds.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Time Duration Calculator",
+        "item": "https://calclyworld.com/time-duration-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body>
+
+  <!-- Skip Link -->
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <!-- Header -->
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+        <span>CalclyWorld</span>
+
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+
+        <a href="/">
+          Home
+        </a>
+
+        <a href="/#calculator-directory">
+          Calculators
+        </a>
+
+        <a href="/about.html">
+          About
+        </a>
+
+        <a href="/contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- Main -->
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+
+        <div class="content">
+
+          <a href="/">
+            Home
+          </a>
+
+          <span aria-hidden="true">
+            ›
+          </span>
+
+          <span aria-current="page">
+            Time Duration Calculator
+          </span>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>
+          Time Duration Calculator
+        </h1>
+
+        <p>
+          Calculate the exact amount of time between two times quickly and easily.
+        </p>
+
+        <p>
+          Find the duration in hours, minutes, and seconds, including time periods
+          that cross midnight.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Search -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Time Duration
+          </h2>
+
+          <p class="text-center small-text">
+            Select a start time and an end time to calculate the exact duration
+            between them.
+          </p>
+
+
+          <div class="calculator-form">
+
+
+            <!-- START TIME -->
+            <div class="form-group">
+
+              <label for="start-hour">
+                Start Time
+              </label>
+
+              <div class="time-input-group">
+
+                <select
+                  id="start-hour"
+                  aria-label="Start hour"
+                >
+                  <option value="">Hour</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+
+                <span aria-hidden="true">:</span>
+
+                <select
+                  id="start-minute"
+                  aria-label="Start minute"
+                >
+                  <option value="">Minute</option>
+                  <option value="00">00</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                  <option value="32">32</option>
+                  <option value="33">33</option>
+                  <option value="34">34</option>
+                  <option value="35">35</option>
+                  <option value="36">36</option>
+                  <option value="37">37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                  <option value="43">43</option>
+                  <option value="44">44</option>
+                  <option value="45">45</option>
+                  <option value="46">46</option>
+                  <option value="47">47</option>
+                  <option value="48">48</option>
+                  <option value="49">49</option>
+                  <option value="50">50</option>
+                  <option value="51">51</option>
+                  <option value="52">52</option>
+                  <option value="53">53</option>
+                  <option value="54">54</option>
+                  <option value="55">55</option>
+                  <option value="56">56</option>
+                  <option value="57">57</option>
+                  <option value="58">58</option>
+                  <option value="59">59</option>
+                </select>
+
+                <select
+                  id="start-period"
+                  aria-label="Start AM or PM"
+                >
+                  <option value="">AM/PM</option>
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+
+              </div>
+
+              <small class="form-help">
+                Select the hour, minute, and AM or PM.
+              </small>
+
+            </div>
+
+
+            <!-- END TIME -->
+            <div class="form-group">
+
+              <label for="end-hour">
+                End Time
+              </label>
+
+              <div class="time-input-group">
+
+                <select
+                  id="end-hour"
+                  aria-label="End hour"
+                >
+                  <option value="">Hour</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+
+                <span aria-hidden="true">:</span>
+
+                <select
+                  id="end-minute"
+                  aria-label="End minute"
+                >
+                  <option value="">Minute</option>
+                  <option value="00">00</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                  <option value="32">32</option>
+                  <option value="33">33</option>
+                  <option value="34">34</option>
+                  <option value="35">35</option>
+                  <option value="36">36</option>
+                  <option value="37">37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                  <option value="43">43</option>
+                  <option value="44">44</option>
+                  <option value="45">45</option>
+                  <option value="46">46</option>
+                  <option value="47">47</option>
+                  <option value="48">48</option>
+                  <option value="49">49</option>
+                  <option value="50">50</option>
+                  <option value="51">51</option>
+                  <option value="52">52</option>
+                  <option value="53">53</option>
+                  <option value="54">54</option>
+                  <option value="55">55</option>
+                  <option value="56">56</option>
+                  <option value="57">57</option>
+                  <option value="58">58</option>
+                  <option value="59">59</option>
+                </select>
+
+                <select
+                  id="end-period"
+                  aria-label="End AM or PM"
+                >
+                  <option value="">AM/PM</option>
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+
+              </div>
+
+              <small class="form-help">
+                Select the hour, minute, and AM or PM.
+              </small>
+
+            </div>
+
+
+            <!-- ERROR -->
+            <div
+              id="time-duration-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+
+            <!-- BUTTONS -->
+            <div class="calculator-actions">
+
+              <button
+                type="button"
+                id="calculate-time-duration"
+                class="btn"
+              >
+                Calculate Duration
+              </button>
+
+              <button
+                type="button"
+                id="reset-time-duration"
+                class="btn btn-secondary"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESULT -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="time-duration-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>
+            Time Duration Result
+          </h2>
+
+          <div id="time-duration-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            What Is Time Duration?
+          </h2>
+
+          <p>
+            Time duration is the amount of time between a starting point and an
+            ending point. It can be expressed in hours, minutes, seconds, or a
+            combination of these units.
+          </p>
+
+          <p>
+            A time duration calculator makes it easier to determine the elapsed
+            time between two times without having to perform the calculation
+            manually. It can be useful for work schedules, study sessions,
+            meetings, appointments, travel planning, exercise, and everyday
+            time management.
+          </p>
+
+          <p>
+            For example, if an activity starts at 9:15 AM and ends at 1:45 PM,
+            the total duration is 4 hours and 30 minutes.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW TO CALCULATE -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            How to Calculate Time Duration
+          </h2>
+
+          <p>
+            Calculating the duration between two times involves finding the
+            difference between the starting time and ending time.
+          </p>
+
+          <ol>
+
+            <li>
+              Select the starting hour, minute, and AM or PM.
+            </li>
+
+            <li>
+              Select the ending hour, minute, and AM or PM.
+            </li>
+
+            <li>
+              Select <strong>Calculate Duration</strong>.
+            </li>
+
+            <li>
+              Review the result in hours, minutes, and seconds.
+            </li>
+
+          </ol>
+
+          <p>
+            If the ending time occurs after midnight, the calculation continues
+            into the following day. For example, the period from 10:00 PM to
+            2:00 AM is 4 hours.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXAMPLES -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Time Duration Examples
+          </h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Start Time</th>
+                  <th>End Time</th>
+                  <th>Duration</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>9:00 AM</td>
+                  <td>5:00 PM</td>
+                  <td>8 hours</td>
+                </tr>
+
+                <tr>
+                  <td>9:15 AM</td>
+                  <td>1:45 PM</td>
+                  <td>4 hours 30 minutes</td>
+                </tr>
+
+                <tr>
+                  <td>2:30 PM</td>
+                  <td>6:45 PM</td>
+                  <td>4 hours 15 minutes</td>
+                </tr>
+
+                <tr>
+                  <td>10:00 PM</td>
+                  <td>2:00 AM</td>
+                  <td>4 hours</td>
+                </tr>
+
+                <tr>
+                  <td>11:30 PM</td>
+                  <td>6:15 AM</td>
+                  <td>6 hours 45 minutes</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMMON USES -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Common Uses for a Time Duration Calculator
+          </h2>
+
+          <p>
+            Calculating elapsed time is useful in many different situations,
+            including:
+          </p>
+
+          <ul>
+
+            <li>
+              Calculating work shifts and working hours
+            </li>
+
+            <li>
+              Tracking study and learning sessions
+            </li>
+
+            <li>
+              Measuring workout and exercise durations
+            </li>
+
+            <li>
+              Planning meetings and appointments
+            </li>
+
+            <li>
+              Calculating travel and journey durations
+            </li>
+
+            <li>
+              Tracking time spent on projects and tasks
+            </li>
+
+            <li>
+              Planning sleep and daily routines
+            </li>
+
+            <li>
+              Measuring the length of events and activities
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TIME UNITS -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Understanding Time Units
+          </h2>
+
+          <p>
+            Time can be represented using several common units. Knowing the
+            relationship between these units makes duration calculations easier.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Time Unit</th>
+                  <th>Equivalent</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>1 minute</td>
+                  <td>60 seconds</td>
+                </tr>
+
+                <tr>
+                  <td>1 hour</td>
+                  <td>60 minutes</td>
+                </tr>
+
+                <tr>
+                  <td>1 hour</td>
+                  <td>3,600 seconds</td>
+                </tr>
+
+                <tr>
+                  <td>1 day</td>
+                  <td>24 hours</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            A duration can therefore be converted between hours, minutes, and
+            seconds depending on how the result needs to be represented.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MIDNIGHT -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Calculating Time Across Midnight
+          </h2>
+
+          <p>
+            One of the most common difficulties when calculating time manually
+            occurs when a period begins before midnight and ends after midnight.
+          </p>
+
+          <p>
+            For example, suppose an activity begins at 10:30 PM and finishes at
+            6:30 AM the next morning. Although 6:30 AM appears earlier on a
+            standard clock, the actual elapsed time is 8 hours.
+          </p>
+
+          <p>
+            The calculator accounts for this overnight period so that the
+            duration is calculated correctly.
+          </p>
+
+          <div class="info-box">
+
+            <strong>
+              Example:
+            </strong>
+
+            <p>
+              10:30 PM → 6:30 AM = 8 hours
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MANUAL CALCULATION -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            How to Calculate Time Difference Manually
+          </h2>
+
+          <p>
+            One way to calculate a time difference manually is to convert each
+            time into the number of minutes since midnight.
+          </p>
+
+          <p>
+            For example, 3:30 PM is 15 hours and 30 minutes after midnight.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              15 × 60 = 900 minutes
+            </p>
+
+            <p>
+              900 + 30 = 930 minutes
+            </p>
+
+          </div>
+
+          <p>
+            After finding the difference between the two times in minutes, the
+            result can be converted back into hours and minutes. Using a
+            calculator can make this process faster and reduce arithmetic errors,
+            especially for overnight periods.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <h3>
+            What does a Time Duration Calculator do?
+          </h3>
+
+          <p>
+            It calculates the elapsed time between a starting time and an ending
+            time and provides the result in hours, minutes, and seconds.
+          </p>
+
+
+          <h3>
+            Can I calculate time across midnight?
+          </h3>
+
+          <p>
+            Yes. The calculator can calculate durations where the ending time
+            occurs after midnight on the following day.
+          </p>
+
+
+          <h3>
+            What is the duration from 10 PM to 6 AM?
+          </h3>
+
+          <p>
+            From 10:00 PM to 6:00 AM the next morning is 8 hours.
+          </p>
+
+
+          <h3>
+            How many minutes are in one hour?
+          </h3>
+
+          <p>
+            One hour contains 60 minutes.
+          </p>
+
+
+          <h3>
+            How many seconds are in one hour?
+          </h3>
+
+          <p>
+            One hour contains 3,600 seconds.
+          </p>
+
+
+          <h3>
+            Can I use this calculator for work hours?
+          </h3>
+
+          <p>
+            Yes. You can calculate the duration between the beginning and end of
+            a work period. If you have an unpaid break, calculate the total
+            duration first and subtract the break separately.
+          </p>
+
+
+          <h3>
+            Is the Time Duration Calculator free?
+          </h3>
+
+          <p>
+            Yes. CalclyWorld's Time Duration Calculator is free to use and does
+            not require an account.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <div class="footer-column">
+
+        <h3>
+          CalclyWorld
+        </h3>
+
+        <p>
+          CalclyWorld provides free online calculators
+          for finance, home improvement, technology,
+          education, and everyday life.
+          Every calculator is designed to be simple,
+          useful, and easy to understand.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="/about.html">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact.html">
+              Contact Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="/terms.html">
+              Terms &amp; Conditions
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Popular Calculators
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+     <div class="footer-column">
+
+  <h3>Calculator Categories</h3>
+
+  <ul>
+    <li>
+      <a href="/#finance">
+        Finance
+      </a>
+    </li>
+
+    <li>
+      <a href="/#everyday">
+        Everyday
+      </a>
+    </li>
+
+    <li>
+      <a href="/#math">
+        Math
+      </a>
+    </li>
+
+    <li>
+      <a href="/#home-construction">
+        Home &amp; Construction
+      </a>
+    </li>
+
+    <li>
+      <a href="/#automotive">
+        Automotive
+      </a>
+    </li>
+
+    <li>
+      <a href="/#technology">
+        Technology
+      </a>
+    </li>
+
+    <li>
+      <a href="/#conversion">
+        Conversion
+      </a>
+    </li>
+
+    <li>
+      <a href="/#travel">
+        Travel
+      </a>
+    </li>
+
+    <li>
+      <a href="/#lifestyle">
+        Lifestyle
+      </a>
+    </li>
+
+    <li>
+      <a href="/#utility">
+        Utility
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Shared JavaScript -->
+  <script src="/script-v2.js"></script>
+
+  <!-- Time Duration JavaScript -->
+  <script src="/time-duration-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GCD Calculator - Find the Greatest Common Divisor | CalclyWorld</title>
+
+  <meta name="description" content="Use our free GCD Calculator to find the greatest common divisor of two positive whole numbers. See the GCD, common factors, and calculation steps instantly.">
+  <meta name="keywords" content="GCD calculator, greatest common divisor calculator, greatest common factor calculator, GCD of two numbers, common divisor calculator">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/gcd-calculator.html">
+
+  <meta property="og:title" content="GCD Calculator - CalclyWorld">
+  <meta property="og:description" content="Find the greatest common divisor of two positive whole numbers with our free online GCD Calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/gcd-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GCD Calculator",
+    "url": "https://calclyworld.com/gcd-calculator.html",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "description": "A free online calculator for finding the greatest common divisor of two positive whole numbers.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container content">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#math">Math</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">GCD Calculator</span>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>GCD Calculator</h1>
+
+        <p>
+          Find the greatest common divisor of two positive whole numbers
+          quickly and accurately with our free GCD Calculator.
+        </p>
+
+        <p>
+          Enter two numbers to find their GCD, common factors, and a
+          clear explanation of how the result is calculated.
+        </p>
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate the GCD</h2>
+
+          <p class="text-center small-text">
+            Enter two positive whole numbers below.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+              <label for="gcd-first-number">First Number</label>
+
+              <input
+                type="number"
+                id="gcd-first-number"
+                min="1"
+                step="1"
+                inputmode="numeric"
+                placeholder="Example: 48"
+                aria-describedby="gcd-first-help"
+              >
+
+              <small id="gcd-first-help" class="small-text">
+                Enter a positive whole number.
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="gcd-second-number">Second Number</label>
+
+              <input
+                type="number"
+                id="gcd-second-number"
+                min="1"
+                step="1"
+                inputmode="numeric"
+                placeholder="Example: 18"
+                aria-describedby="gcd-second-help"
+              >
+
+              <small id="gcd-second-help" class="small-text">
+                Enter a positive whole number.
+              </small>
+            </div>
+
+            <div
+              id="gcd-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-gcd"
+                class="btn"
+                type="button"
+              >
+                Calculate GCD
+              </button>
+
+              <button
+                id="reset-gcd"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="gcd-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">GCD Result</h2>
+
+          <div id="gcd-result-content"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What Is GCD -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is the Greatest Common Divisor?</h2>
+
+          <p>
+            The <strong>greatest common divisor (GCD)</strong> is the
+            largest positive whole number that divides two numbers
+            evenly without leaving a remainder.
+          </p>
+
+          <p>
+            For example, the factors of 12 are 1, 2, 3, 4, 6, and 12.
+            The factors of 18 are 1, 2, 3, 6, and 18.
+          </p>
+
+          <p>
+            The common factors are 1, 2, and 6. The largest of these is
+            6, so the GCD of 12 and 18 is <strong>6</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GCD Example -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Example: GCD of 48 and 18</h2>
+
+          <p>
+            The factors of 48 include:
+          </p>
+
+          <p>
+            <strong>1, 2, 3, 4, 6, 8, 12, 16, 24, 48</strong>
+          </p>
+
+          <p>
+            The factors of 18 include:
+          </p>
+
+          <p>
+            <strong>1, 2, 3, 6, 9, 18</strong>
+          </p>
+
+          <p>
+            Their common factors are:
+          </p>
+
+          <p>
+            <strong>1, 2, 3, 6</strong>
+          </p>
+
+          <p>
+            The greatest common factor is <strong>6</strong>.
+          </p>
+
+          <div class="info-box">
+            <p class="text-center">
+              <strong>GCD(48, 18) = 6</strong>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Euclidean Algorithm -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>GCD Using the Euclidean Algorithm</h2>
+
+          <p>
+            The Euclidean algorithm is an efficient method for finding
+            the GCD of two whole numbers. It repeatedly divides the
+            larger number by the smaller number and uses the remainder
+            for the next step.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              For 48 and 18:
+            </p>
+
+            <p>
+              <strong>48 ÷ 18 = 2 remainder 12</strong>
+            </p>
+
+            <p>
+              <strong>18 ÷ 12 = 1 remainder 6</strong>
+            </p>
+
+            <p>
+              <strong>12 ÷ 6 = 2 remainder 0</strong>
+            </p>
+
+            <p>
+              When the remainder becomes 0, the last non-zero remainder
+              is the GCD.
+            </p>
+
+            <p class="text-center">
+              <strong>GCD = 6</strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Common Examples -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Common GCD Examples</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>First Number</th>
+                  <th>Second Number</th>
+                  <th>GCD</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>6</td>
+                  <td>9</td>
+                  <td>3</td>
+                </tr>
+
+                <tr>
+                  <td>8</td>
+                  <td>12</td>
+                  <td>4</td>
+                </tr>
+
+                <tr>
+                  <td>12</td>
+                  <td>18</td>
+                  <td>6</td>
+                </tr>
+
+                <tr>
+                  <td>15</td>
+                  <td>25</td>
+                  <td>5</td>
+                </tr>
+
+                <tr>
+                  <td>18</td>
+                  <td>24</td>
+                  <td>6</td>
+                </tr>
+
+                <tr>
+                  <td>20</td>
+                  <td>30</td>
+                  <td>10</td>
+                </tr>
+
+                <tr>
+                  <td>36</td>
+                  <td>48</td>
+                  <td>12</td>
+                </tr>
+
+                <tr>
+                  <td>48</td>
+                  <td>60</td>
+                  <td>12</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the GCD Calculator</h2>
+
+          <ol>
+            <li>Enter the first positive whole number.</li>
+            <li>Enter the second positive whole number.</li>
+            <li>Click <strong>Calculate GCD</strong>.</li>
+            <li>Review the GCD and common factors.</li>
+            <li>Click <strong>Reset</strong> to perform another calculation.</li>
+          </ol>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GCD Uses -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>When Is GCD Useful?</h2>
+
+          <p>
+            The greatest common divisor is useful for simplifying
+            fractions, dividing quantities into equal groups, and
+            solving problems involving common factors.
+          </p>
+
+          <p>
+            For example, if you have 48 items and want to divide them
+            into equal groups with 18 other items while using the
+            largest possible equal group size, the GCD can help identify
+            the appropriate common divisor.
+          </p>
+
+          <p>
+            GCD is also closely related to the least common multiple
+            (LCM). For two positive integers, their GCD and LCM can be
+            used together to describe important relationships between
+            the numbers.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What does GCD stand for?</h3>
+          <p>
+            GCD stands for <strong>Greatest Common Divisor</strong>.
+          </p>
+
+          <h3>What is the GCD of 12 and 18?</h3>
+          <p>
+            The GCD of 12 and 18 is 6 because 6 is the largest positive
+            number that divides both 12 and 18 evenly.
+          </p>
+
+          <h3>Is GCD the same as GCF?</h3>
+          <p>
+            Yes. Greatest Common Divisor (GCD) and Greatest Common
+            Factor (GCF) describe the same mathematical concept.
+          </p>
+
+          <h3>What is the GCD of two equal numbers?</h3>
+          <p>
+            When two positive numbers are equal, their GCD is that
+            number itself. For example, the GCD of 12 and 12 is 12.
+          </p>
+
+          <h3>What is the difference between GCD and LCM?</h3>
+          <p>
+            The GCD is the largest positive number that divides both
+            numbers evenly. The LCM is the smallest positive number
+            that is a multiple of both numbers.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators
+          designed to make everyday calculations simple, fast,
+          and easy to understand.
+        </p>
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/gcd-calculator.js"></script>
+
+</body>
+</html>

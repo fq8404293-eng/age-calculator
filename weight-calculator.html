@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Weight Converter - Convert kg, lb, oz, g &amp; More | CalclyWorld</title>
+
+  <meta name="description" content="Use the free Weight Converter to convert kilograms, grams, pounds, ounces, metric tons and more. Quickly convert kg to lb, lb to kg and other common weight units.">
+
+  <meta name="keywords" content="weight converter, weight calculator, kg to lb, lb to kg, kilograms to pounds, pounds to kilograms, grams to ounces, ounces to grams, weight conversion">
+
+  <link rel="canonical" href="https://calclyworld.com/weight-calculator.html">
+
+  <meta property="og:title" content="Weight Converter - Convert kg, lb, oz, g &amp; More | CalclyWorld">
+  <meta property="og:description" content="Convert kilograms, grams, pounds, ounces, metric tons and more with this free online weight converter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/weight-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Weight Converter",
+    "url": "https://calclyworld.com/weight-calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "description": "Free online weight converter for converting kilograms, grams, pounds, ounces and other common weight units.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+
+  <div class="container header-container">
+
+    <a href="/" class="logo">
+
+      <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+
+      <span>CalclyWorld</span>
+
+    </a>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+
+      <a href="/">Home</a>
+      <a href="/#calculator-directory">Calculators</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+
+    </nav>
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      🌙 Dark Mode
+    </button>
+
+  </div>
+
+</header>
+
+
+<main id="main-content">
+
+  <!-- Breadcrumb -->
+
+  <div class="breadcrumb">
+
+    <div class="container">
+
+      <a href="/">Home</a>
+
+      <span aria-hidden="true">›</span>
+
+      <span aria-current="page">
+        Weight Converter
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- Hero -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <h1>Weight Converter</h1>
+
+      <p>
+        Convert weight and mass between kilograms, grams, pounds, ounces,
+        metric tons and other common units.
+      </p>
+
+      <p>
+        Enter any value and instantly see its equivalent across metric
+        and US customary weight units.
+      </p>
+
+
+      <div class="hero-search">
+
+        <input
+          type="search"
+          id="calculator-search"
+          class="calculator-search"
+          placeholder="Search calculators... (Example: BMI, EMI, Age)"
+          autocomplete="off"
+          aria-label="Search calculators"
+        >
+
+        <div
+          id="search-results"
+          class="search-results"
+          hidden
+        ></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Calculator -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">
+          Convert Weight
+        </h2>
+
+        <p class="text-center small-text">
+          Enter a weight value and select the unit you want to convert.
+        </p>
+
+
+        <div class="calculator-form">
+
+          <div class="form-group">
+
+            <label for="weight-value">
+              Weight Value
+            </label>
+
+            <input
+              type="number"
+              id="weight-value"
+              min="0"
+              step="any"
+              placeholder="70"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="weight-unit">
+              Weight Unit
+            </label>
+
+            <select id="weight-unit">
+
+              <option value="mg">
+                Milligrams (mg)
+              </option>
+
+              <option value="g">
+                Grams (g)
+              </option>
+
+              <option value="kg" selected>
+                Kilograms (kg)
+              </option>
+
+              <option value="t">
+                Metric Tons (t)
+              </option>
+
+              <option value="oz">
+                Ounces (oz)
+              </option>
+
+              <option value="lb">
+                Pounds (lb)
+              </option>
+
+              <option value="st">
+                Stones (st)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div
+            id="weight-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              id="weight-calculate"
+              class="btn"
+              type="button"
+            >
+              Convert Weight
+            </button>
+
+            <button
+              id="weight-reset"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Results -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div
+        id="weight-result"
+        class="content-card"
+        hidden
+        aria-live="polite"
+        aria-atomic="true"
+      >
+
+        <h2>Weight Conversion Results</h2>
+
+        <div id="weight-result-content"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Summary -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">
+          Weight Conversion Summary
+        </h2>
+
+        <div class="calculator-results-grid">
+
+          <div class="result-card">
+
+            <h3>Input Weight</h3>
+
+            <p id="weight-summary-input">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Kilograms</h3>
+
+            <p id="weight-summary-kg">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Pounds</h3>
+
+            <p id="weight-summary-lb">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Ounces</h3>
+
+            <p id="weight-summary-oz">—</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Metric and Imperial -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Metric and US Customary Weight Units</h2>
+
+        <p>
+          Weight measurements are commonly expressed using metric units
+          such as grams and kilograms, or US customary units such as pounds
+          and ounces. This converter lets you compare these units easily.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>Unit</th>
+                <th>Symbol</th>
+                <th>Relationship</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Milligram</td>
+                <td>mg</td>
+                <td>1 mg = 0.001 g</td>
+              </tr>
+
+              <tr>
+                <td>Gram</td>
+                <td>g</td>
+                <td>1 g = 0.001 kg</td>
+              </tr>
+
+              <tr>
+                <td>Kilogram</td>
+                <td>kg</td>
+                <td>Base metric unit used for everyday weight</td>
+              </tr>
+
+              <tr>
+                <td>Metric Ton</td>
+                <td>t</td>
+                <td>1 t = 1,000 kg</td>
+              </tr>
+
+              <tr>
+                <td>Ounce</td>
+                <td>oz</td>
+                <td>1 oz ≈ 28.3495 g</td>
+              </tr>
+
+              <tr>
+                <td>Pound</td>
+                <td>lb</td>
+                <td>1 lb = 16 oz</td>
+              </tr>
+
+              <tr>
+                <td>Stone</td>
+                <td>st</td>
+                <td>1 st = 14 lb</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Common conversions -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Common Weight Conversions</h2>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>Conversion</th>
+                <th>Equivalent</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>1 kg</td>
+                <td>1,000 g</td>
+              </tr>
+
+              <tr>
+                <td>1 kg</td>
+                <td>2.20462 lb</td>
+              </tr>
+
+              <tr>
+                <td>1 lb</td>
+                <td>453.59237 g</td>
+              </tr>
+
+              <tr>
+                <td>1 lb</td>
+                <td>16 oz</td>
+              </tr>
+
+              <tr>
+                <td>1 oz</td>
+                <td>28.349523125 g</td>
+              </tr>
+
+              <tr>
+                <td>1 metric ton</td>
+                <td>1,000 kg</td>
+              </tr>
+
+              <tr>
+                <td>1 stone</td>
+                <td>6.35029 kg</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Formula -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Weight Conversion Formula</h2>
+
+        <p>
+          The calculator first converts the entered value into kilograms.
+          It then converts the kilogram value into all supported units.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              1 kg = 1,000 g
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 kg = 1,000,000 mg
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 kg = 2.20462262185 lb
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 kg = 35.27396195 oz
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              1 kg = 0.157473044 st
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Example -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Weight Conversion Example</h2>
+
+        <p>
+          Suppose you want to convert <strong>70 kilograms</strong> into
+          pounds and ounces.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              70 kg ≈ 154.3236 lb
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              70 kg ≈ 2,469.1773 oz
+            </strong>
+          </p>
+
+        </div>
+
+        <p>
+          The same 70 kg is equal to
+          <strong>70,000 grams</strong> and
+          <strong>0.07 metric tons</strong>.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Practical uses -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Where Weight Conversion Is Useful</h2>
+
+        <p>
+          Weight conversion is useful when measurements are given in
+          different units or when comparing metric and US customary
+          measurements.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>Situation</th>
+                <th>Useful Units</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Body weight</td>
+                <td>Kilograms, pounds</td>
+              </tr>
+
+              <tr>
+                <td>Cooking and food</td>
+                <td>Grams, kilograms, ounces, pounds</td>
+              </tr>
+
+              <tr>
+                <td>Shipping</td>
+                <td>Kilograms, pounds</td>
+              </tr>
+
+              <tr>
+                <td>Small quantities</td>
+                <td>Milligrams, grams, ounces</td>
+              </tr>
+
+              <tr>
+                <td>Heavy materials</td>
+                <td>Metric tons, kilograms</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How many pounds are in 1 kilogram?</h3>
+
+        <p>
+          One kilogram equals approximately
+          <strong>2.20462 pounds</strong>.
+        </p>
+
+        <h3>How many kilograms are in 1 pound?</h3>
+
+        <p>
+          One pound equals exactly
+          <strong>0.45359237 kilograms</strong>.
+        </p>
+
+        <h3>How many grams are in 1 kilogram?</h3>
+
+        <p>
+          One kilogram contains exactly
+          <strong>1,000 grams</strong>.
+        </p>
+
+        <h3>How many ounces are in 1 pound?</h3>
+
+        <p>
+          One pound contains exactly
+          <strong>16 ounces</strong>.
+        </p>
+
+        <h3>How many grams are in 1 ounce?</h3>
+
+        <p>
+          One avoirdupois ounce equals approximately
+          <strong>28.3495 grams</strong>.
+        </p>
+
+        <h3>What is the difference between kg and lb?</h3>
+
+        <p>
+          A kilogram is a metric unit, while a pound is a US customary
+          and imperial unit. One kilogram is approximately 2.20462 pounds.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-column">
+
+      <h3>CalclyWorld</h3>
+
+      <p>
+        Free online calculators designed to provide clear,
+        practical and easy-to-understand results for everyday decisions.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Popular Calculators</h3>
+
+      <ul>
+        <li><a href="/age-calculator.html">Age Calculator</a></li>
+        <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+        <li><a href="/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Calculator Categories</h3>
+
+      <ul>
+        <li><a href="/#finance">Finance</a></li>
+        <li><a href="/#everyday">Everyday</a></li>
+        <li><a href="/#math">Math</a></li>
+        <li><a href="/#home-construction">Home &amp; Construction</a></li>
+        <li><a href="/#automotive">Automotive</a></li>
+        <li><a href="/#technology">Technology</a></li>
+        <li><a href="/#conversion">Conversion</a></li>
+        <li><a href="/#travel">Travel</a></li>
+        <li><a href="/#lifestyle">Lifestyle</a></li>
+        <li><a href="/#utility">Utility</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span> CalclyWorld. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="/script-v2.js"></script>
+<script src="/weight-calculator.js"></script>
+
+</body>
+</html>

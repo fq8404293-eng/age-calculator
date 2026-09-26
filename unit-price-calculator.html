@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unit Price Calculator - Compare Cost Per Unit | CalclyWorld</title>
+
+    <meta
+        name="description"
+        content="Use the free Unit Price Calculator to calculate the cost per unit and compare prices for different package sizes, quantities, weights, and volumes."
+    >
+
+    <meta
+        name="keywords"
+        content="unit price calculator, price per unit calculator, unit cost calculator, cost per ounce, cost per pound, price comparison calculator"
+    >
+
+    <link
+        rel="canonical"
+        href="https://calclyworld.com/unit-price-calculator.html"
+    >
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta
+        property="og:title"
+        content="Unit Price Calculator | CalclyWorld"
+    >
+    <meta
+        property="og:description"
+        content="Calculate the cost per unit and compare prices across different package sizes and quantities."
+    >
+    <meta
+        property="og:url"
+        content="https://calclyworld.com/unit-price-calculator.html"
+    >
+    <meta property="og:site_name" content="CalclyWorld">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta
+        name="twitter:title"
+        content="Unit Price Calculator | CalclyWorld"
+    >
+    <meta
+        name="twitter:description"
+        content="Calculate price per unit and compare the cost of different package sizes."
+    >
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Google Analytics -->
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"
+    ></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-BSQETZ21ZZ');
+    </script>
+
+    <!-- Google AdSense -->
+    <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style-v2.css">
+
+    <!-- WebPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Unit Price Calculator",
+        "url": "https://calclyworld.com/unit-price-calculator.html",
+        "description": "Calculate the price per unit for products with different prices and package sizes.",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "CalclyWorld",
+            "url": "https://calclyworld.com/"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://calclyworld.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Unit Price Calculator",
+                "item": "https://calclyworld.com/unit-price-calculator.html"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="container header-container">
+
+            <a href="/" class="logo">
+
+                <img
+                    src="/favicon.png"
+                    alt="CalclyWorld Logo"
+                    width="42"
+                    height="42"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                >
+
+                <span>CalclyWorld</span>
+
+            </a>
+
+            <nav
+                class="main-nav"
+                aria-label="Primary Navigation"
+            >
+
+                <a href="/">Home</a>
+                <a href="/#calculator-directory">Calculators</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+
+            </nav>
+
+            <button
+                id="theme-toggle"
+                class="btn btn-secondary"
+                type="button"
+                aria-label="Toggle dark mode"
+                aria-pressed="false"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+    <main id="main-content">
+
+        <!-- Breadcrumb -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="breadcrumb">
+
+                    <a href="/">Home</a>
+
+                    <span aria-hidden="true">›</span>
+
+                    <span aria-current="page">
+                        Unit Price Calculator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="container">
+
+                <h1>Unit Price Calculator</h1>
+
+                <p>
+                    Calculate the cost per unit to quickly compare the prices
+                    of products with different package sizes and quantities.
+                </p>
+
+                <p>
+                    Useful for comparing groceries, household products,
+                    subscriptions, materials, and other purchases.
+                </p>
+
+                <!-- Calculator Search -->
+                <div class="hero-search">
+
+                    <input
+                        type="search"
+                        id="calculator-search"
+                        class="calculator-search"
+                        placeholder="Search calculators... (Example: BMI, EMI, Age)"
+                        autocomplete="off"
+                        aria-label="Search calculators"
+                    >
+
+                    <div
+                        id="search-results"
+                        class="search-results"
+                        hidden
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Calculator -->
+        <section class="section-small">
+
+            <div class="calculator-container">
+
+                <div class="content-card">
+
+                    <h2 class="text-center">
+                        Calculate Price Per Unit
+                    </h2>
+
+                    <p class="text-center small-text">
+                        Enter the total price and quantity to calculate
+                        the cost for each unit.
+                    </p>
+
+                    <div class="calculator-form">
+
+                        <!-- Product Name -->
+                        <div class="form-group">
+
+                            <label for="unit-price-name">
+                                Product Name
+                                <span class="small-text">(Optional)</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="unit-price-name"
+                                name="unit-price-name"
+                                placeholder="Example: Coffee"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <!-- Total Price -->
+                        <div class="form-group">
+
+                            <label for="unit-price-total">
+                                Total Price
+                            </label>
+
+                            <input
+                                type="number"
+                                id="unit-price-total"
+                                name="unit-price-total"
+                                min="0"
+                                step="any"
+                                placeholder="Example: 6.00"
+                                inputmode="decimal"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- Quantity -->
+                        <div class="form-group">
+
+                            <label for="unit-price-quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                id="unit-price-quantity"
+                                name="unit-price-quantity"
+                                min="0"
+                                step="any"
+                                placeholder="Example: 12"
+                                inputmode="decimal"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- Unit -->
+                        <div class="form-group">
+
+                            <label for="unit-price-unit">
+                                Unit
+                            </label>
+
+                            <select
+                                id="unit-price-unit"
+                                name="unit-price-unit"
+                                required
+                            >
+
+                                <option value="">
+                                    Select unit
+                                </option>
+
+                                <option value="item">
+                                    Item
+                                </option>
+
+                                <option value="ounce">
+                                    Ounce (oz)
+                                </option>
+
+                                <option value="pound">
+                                    Pound (lb)
+                                </option>
+
+                                <option value="gram">
+                                    Gram (g)
+                                </option>
+
+                                <option value="kilogram">
+                                    Kilogram (kg)
+                                </option>
+
+                                <option value="milliliter">
+                                    Milliliter (mL)
+                                </option>
+
+                                <option value="liter">
+                                    Liter (L)
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Error -->
+                        <div
+                            id="unit-price-error"
+                            class="error-message"
+                            role="alert"
+                            aria-live="assertive"
+                            hidden
+                        ></div>
+
+                        <!-- Actions -->
+                        <div class="calculator-actions">
+
+                            <button
+                                id="calculate-unit-price"
+                                class="btn"
+                                type="button"
+                            >
+                                Calculate Unit Price
+                            </button>
+
+                            <button
+                                id="reset-unit-price"
+                                class="btn btn-secondary"
+                                type="button"
+                            >
+                                Reset
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Result -->
+        <section class="section-small">
+
+            <div class="calculator-container">
+
+                <div
+                    id="unit-price-result"
+                    class="content-card"
+                    hidden
+                    aria-live="polite"
+                    aria-atomic="true"
+                >
+
+                    <h2>Unit Price Result</h2>
+
+                    <div id="unit-price-result-content"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- What Is Unit Price -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>What Is Unit Price?</h2>
+
+                    <p>
+                        Unit price is the cost of a product for one standard
+                        unit of quantity. It allows you to compare products
+                        that are sold in different package sizes.
+                    </p>
+
+                    <p>
+                        For example, one package may cost more overall but
+                        contain significantly more product. Looking only at
+                        the package price can make comparisons misleading.
+                        Unit price provides a more useful way to compare the
+                        actual cost.
+                    </p>
+
+                    <p>
+                        The basic calculation is:
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>
+                            Unit Price = Total Price ÷ Total Quantity
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- How to Use -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>How to Use the Unit Price Calculator</h2>
+
+                    <ol>
+
+                        <li>
+                            Enter the product name if you want to identify
+                            the item in the result.
+                        </li>
+
+                        <li>
+                            Enter the total price of the product.
+                        </li>
+
+                        <li>
+                            Enter the total quantity in the package.
+                        </li>
+
+                        <li>
+                            Select the appropriate unit.
+                        </li>
+
+                        <li>
+                            Click <strong>Calculate Unit Price</strong>.
+                        </li>
+
+                    </ol>
+
+                    <p>
+                        The calculator will show the cost per unit and
+                        provide a clear summary of the calculation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Why Unit Price Matters -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Why Compare Unit Prices?</h2>
+
+                    <p>
+                        Unit prices make it easier to compare products when
+                        package sizes are different. A larger package is not
+                        automatically the better value, and a lower shelf
+                        price does not always mean a lower cost per unit.
+                    </p>
+
+                    <p>
+                        Comparing unit prices can help when shopping for
+                        food, cleaning supplies, personal care products,
+                        office supplies, and other regularly purchased
+                        goods.
+                    </p>
+
+                    <p>
+                        The comparison becomes especially useful when two
+                        products have different package weights, volumes,
+                        or quantities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Examples -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Unit Price Examples</h2>
+
+                    <p>
+                        Suppose a package costs $6 and contains 12 ounces.
+                        The unit price is:
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>
+                            $6 ÷ 12 oz = $0.50 per ounce
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        Another package may cost $8 and contain 16 ounces.
+                        Its unit price is:
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>
+                            $8 ÷ 16 oz = $0.50 per ounce
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        Although the second package costs more at checkout,
+                        both products have the same price per ounce in this
+                        example.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Unit Price Formula -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Unit Price Formula</h2>
+
+                    <p>
+                        The unit price formula is straightforward:
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>
+                            Unit Price = Total Price ÷ Quantity
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        For example, if a product costs $10 and contains
+                        20 units:
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>
+                            $10 ÷ 20 = $0.50 per unit
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        The same principle can be used for weight, volume,
+                        or individual items as long as the quantity and
+                        unit are clearly defined.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FAQ -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Frequently Asked Questions</h2>
+
+                    <h3>What is a unit price?</h3>
+
+                    <p>
+                        Unit price is the cost of one unit of a product.
+                        It helps compare products with different package
+                        sizes.
+                    </p>
+
+                    <h3>How do you calculate unit price?</h3>
+
+                    <p>
+                        Divide the total price by the total quantity.
+                        For example, $12 divided by 6 items equals
+                        $2 per item.
+                    </p>
+
+                    <h3>Why is unit price useful?</h3>
+
+                    <p>
+                        Unit price makes it easier to determine which
+                        product offers better value when packages have
+                        different sizes or quantities.
+                    </p>
+
+                    <h3>Can I compare different package sizes?</h3>
+
+                    <p>
+                        Yes. Unit pricing is specifically useful for
+                        comparing products sold in different quantities.
+                    </p>
+
+                    <h3>Does a larger package always have a lower unit price?</h3>
+
+                    <p>
+                        No. A larger package may cost more per unit.
+                        Always compare the calculated unit prices rather
+                        than assuming a larger package is cheaper.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-column">
+
+                <h3>CalclyWorld</h3>
+
+                <p>
+                    Free online calculators designed to provide clear,
+                    practical, and accurate results for everyday calculations.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Popular Calculators</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="/age-calculator.html">
+                            Age Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/emi-calculator.html">
+                            EMI Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/gst-calculator.html">
+                            GST Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/mortgage-calculator.html">
+                            Mortgage Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/compound-interest-calculator.html">
+                            Compound Interest Calculator
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+           <div class="footer-column">
+
+  <h3>Calculator Categories</h3>
+
+  <ul>
+    <li>
+      <a href="/#finance">
+        Finance
+      </a>
+    </li>
+
+    <li>
+      <a href="/#everyday">
+        Everyday
+      </a>
+    </li>
+
+    <li>
+      <a href="/#math">
+        Math
+      </a>
+    </li>
+
+    <li>
+      <a href="/#home-construction">
+        Home &amp; Construction
+      </a>
+    </li>
+
+    <li>
+      <a href="/#automotive">
+        Automotive
+      </a>
+    </li>
+
+    <li>
+      <a href="/#technology">
+        Technology
+      </a>
+    </li>
+
+    <li>
+      <a href="/#conversion">
+        Conversion
+      </a>
+    </li>
+
+    <li>
+      <a href="/#travel">
+        Travel
+      </a>
+    </li>
+
+    <li>
+      <a href="/#lifestyle">
+        Lifestyle
+      </a>
+    </li>
+
+    <li>
+      <a href="/#utility">
+        Utility
+      </a>
+    </li>
+  </ul>
+
+</div>
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span data-current-year></span>
+                CalclyWorld. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/script-v2.js"></script>
+    <script src="/unit-price-calculator.js"></script>
+
+</body>
+</html>

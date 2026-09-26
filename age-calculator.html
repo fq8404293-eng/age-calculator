@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Age Calculator – Calculate Your Exact Age | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Calculate your exact age in years, months and days with CalclyWorld's free Age Calculator. See your next birthday countdown, birth weekday, zodiac sign, birthstone and more."
+  >
+
+  <meta
+    name="keywords"
+    content="age calculator, exact age calculator, birthday calculator, calculate age, age in days, birthday countdown"
+  >
+
+  <link
+    rel="canonical"
+    href="https://calclyworld.com/age-calculator.html"
+  >
+
+  <meta
+    property="og:title"
+    content="Age Calculator – Calculate Your Exact Age"
+  >
+
+  <meta
+    property="og:description"
+    content="Calculate your exact age and discover your next birthday, birth weekday, zodiac sign and more."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://calclyworld.com/age-calculator.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://calclyworld.com/favicon.png"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Age Calculator – CalclyWorld"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Calculate your exact age, total days lived and next birthday countdown."
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="/favicon.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="/apple-touch-icon.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/style-v2.css"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Age Calculator",
+    "url": "https://calclyworld.com/age-calculator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Free online age calculator for calculating exact age, total time lived and next birthday information.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to main content
+  </a>
+
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a
+        href="/"
+        class="logo"
+      >
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+        <span>CalclyWorld</span>
+      </a>
+
+
+      <nav
+        class="main-nav"
+        aria-label="Primary Navigation"
+      >
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- MAIN -->
+  <main id="main-content">
+
+
+    <!-- BREADCRUMB -->
+    <div class="container">
+
+      <nav
+        class="breadcrumb"
+        aria-label="Breadcrumb"
+      >
+
+        <a href="/">Home</a>
+
+        <span aria-hidden="true">›</span>
+
+        <a href="/#everyday">Everyday</a>
+
+        <span aria-hidden="true">›</span>
+
+        <span aria-current="page">
+          Age Calculator
+        </span>
+
+      </nav>
+
+    </div>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>Age Calculator</h1>
+
+        <p>
+          Find your exact age in years, months and days,
+          and discover when your next birthday arrives.
+        </p>
+
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MAIN CALCULATOR -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            When Were You Born?
+          </h2>
+
+          <p class="text-center">
+            Enter your date of birth to calculate your exact age.
+          </p>
+
+
+          <form
+            id="age-calculator-form"
+            class="calculator-form"
+            novalidate
+          >
+
+
+            <!-- BIRTH DATE -->
+            <div class="form-group">
+
+              <label for="birth-date">
+                Date of Birth
+              </label>
+
+              <input
+                type="date"
+                id="birth-date"
+                name="birth-date"
+                required
+                aria-describedby="birth-date-error"
+              >
+
+              <div
+                id="birth-date-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+
+            <!-- QUICK BIRTHDAY INPUT -->
+            <div class="content-card age-quick-input">
+
+              <h3>
+                Or Select Your Birthday
+              </h3>
+
+              <div class="calculator-results-grid">
+
+
+                <div class="result-card">
+
+                  <label for="birth-month">
+                    Month
+                  </label>
+
+                  <select
+                    id="birth-month"
+                    aria-label="Birth month"
+                  >
+
+                    <option value="">
+                      Month
+                    </option>
+
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="result-card">
+
+                  <label for="birth-day">
+                    Day
+                  </label>
+
+                  <select
+                    id="birth-day"
+                    aria-label="Birth day"
+                  >
+
+                    <option value="">
+                      Day
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="result-card">
+
+                  <label for="birth-year">
+                    Year
+                  </label>
+
+                  <select
+                    id="birth-year"
+                    aria-label="Birth year"
+                  >
+
+                    <option value="">
+                      Year
+                    </option>
+
+                  </select>
+
+                </div>
+
+              </div>
+
+
+              <div class="calculator-actions">
+
+                <button
+                  type="button"
+                  id="apply-birthday"
+                  class="btn btn-secondary"
+                >
+                  Use This Birthday
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- CALCULATE -->
+            <div class="calculator-actions">
+
+              <button
+                type="submit"
+                class="btn"
+              >
+                Calculate My Age
+              </button>
+
+              <button
+                type="button"
+                id="clear-age"
+                class="btn btn-secondary"
+              >
+                Clear
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXACT AGE RESULT -->
+    <section
+      class="section-small"
+      id="age-result"
+      hidden
+      aria-live="polite"
+      aria-atomic="true"
+    >
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Your Exact Age
+          </h2>
+
+
+          <div class="result-highlight text-center">
+
+            <h3>
+              You are
+            </h3>
+
+            <p id="exact-age">
+              0 years, 0 months, 0 days
+            </p>
+
+          </div>
+
+
+          <div class="calculator-results-grid">
+
+
+            <div class="result-card">
+
+              <h3>Years</h3>
+
+              <p id="age-years">
+                0
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Months</h3>
+
+              <p id="age-months">
+                0
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Days</h3>
+
+              <p id="age-days">
+                0
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              type="button"
+              id="copy-age-result"
+              class="btn"
+            >
+              Copy Result
+            </button>
+
+            <span
+              id="age-copy-status"
+              aria-live="polite"
+            ></span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BIRTHDAY COUNTDOWN -->
+    <section
+      class="section-small"
+      id="birthday-countdown"
+      hidden
+      aria-live="polite"
+      aria-atomic="true"
+    >
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            🎂 Your Next Birthday
+          </h2>
+
+          <p
+            id="next-birthday-text"
+            class="text-center"
+          >
+            Your next birthday is coming!
+          </p>
+
+
+          <div class="calculator-results-grid">
+
+
+            <div class="result-card">
+
+              <h3>Days</h3>
+
+              <p id="countdown-days">
+                0
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Hours</h3>
+
+              <p id="countdown-hours">
+                00
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Minutes</h3>
+
+              <p id="countdown-minutes">
+                00
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Seconds</h3>
+
+              <p id="countdown-seconds">
+                00
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="result-highlight text-center">
+
+            <p id="birthday-message">
+              Your next birthday is coming!
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BIRTHDAY DETAILS -->
+    <section
+      class="section-small"
+      id="birthday-information"
+      hidden
+    >
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Your Birthday Details
+          </h2>
+
+
+          <div class="calculator-results-grid">
+
+
+            <div class="result-card">
+
+              <h3>Born On</h3>
+
+              <p id="birth-weekday">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Zodiac Sign</h3>
+
+              <p id="zodiac-sign">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Birthstone</h3>
+
+              <p id="birthstone">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Birth Season</h3>
+
+              <p id="birth-season">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Next Birthday</h3>
+
+              <p id="next-birthday-date">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Next Birthday Day</h3>
+
+              <p id="next-birthday-weekday">
+                —
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TIME LIVED -->
+    <section
+      class="section-small"
+      id="time-lived"
+      hidden
+    >
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Your Time Lived
+          </h2>
+
+          <p class="text-center">
+            See your age from different perspectives.
+          </p>
+
+
+          <div class="calculator-results-grid">
+
+
+            <div class="result-card">
+
+              <h3>Total Months</h3>
+
+              <p id="total-months">
+                0
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Total Weeks</h3>
+
+              <p id="total-weeks">
+                0
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Total Days</h3>
+
+              <p id="total-days">
+                0
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Total Hours</h3>
+
+              <p id="total-hours">
+                0
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Total Minutes</h3>
+
+              <p id="total-minutes">
+                0
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LIVE AGE -->
+    <section
+      class="section-small"
+      id="live-age-section"
+      hidden
+    >
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Live Age
+          </h2>
+
+          <p class="text-center">
+            Watch your age update in real time.
+          </p>
+
+
+          <div class="result-highlight text-center">
+
+            <p id="live-age">
+              0 years, 0 months, 0 days
+            </p>
+
+            <p id="live-age-time">
+              0 hours, 0 minutes, 0 seconds
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- OPTIONAL AGE TOOLS -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            More Age Tools
+          </h2>
+
+          <p>
+            Need to compare dates or explore your age in more detail?
+            These additional tools can make the calculator more useful
+            for different situations.
+          </p>
+
+
+          <div class="calculator-results-grid">
+
+
+            <div class="result-card">
+
+              <h3>
+                Age on a Specific Date
+              </h3>
+
+              <p>
+                Calculate how old you were or will be on any date.
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Age Difference
+              </h3>
+
+              <p>
+                Compare the age difference between two people.
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Birthday Countdown
+              </h3>
+
+              <p>
+                See exactly how long remains until your next birthday.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EDUCATIONAL CONTENT -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            How Does an Age Calculator Work?
+          </h2>
+
+          <p>
+            An age calculator finds the amount of time between your
+            date of birth and today's date. Instead of simply subtracting
+            birth years, it considers the month and day as well, giving
+            you a more precise age.
+          </p>
+
+
+          <h3>
+            What Can an Age Calculator Tell You?
+          </h3>
+
+          <ul>
+
+            <li>
+              Your exact age in years, months and days
+            </li>
+
+            <li>
+              Your total number of days lived
+            </li>
+
+            <li>
+              Your total weeks, months and hours
+            </li>
+
+            <li>
+              The weekday on which you were born
+            </li>
+
+            <li>
+              Your next birthday date and countdown
+            </li>
+
+            <li>
+              Your zodiac sign and birthstone
+            </li>
+
+          </ul>
+
+
+          <h3>
+            Why Is Exact Age Different From Simply Subtracting Years?
+          </h3>
+
+          <p>
+            For example, someone born near the end of a year may not
+            have reached their next birthday yet. An exact age calculation
+            checks both the month and day so that the result reflects
+            whether the birthday has already occurred.
+          </p>
+
+
+          <h3>
+            Does the Calculator Handle Leap Years?
+          </h3>
+
+          <p>
+            Yes. The calculation accounts for the different number of
+            days in each month and leap years when determining the elapsed
+            time between dates.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <div class="footer-column">
+
+        <h3>
+          CalclyWorld
+        </h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="/about.html">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact.html">
+              Contact Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="/terms.html">
+              Terms &amp; Conditions
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Popular Calculators
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Calculator Categories
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">
+              Finance
+            </a>
+          </li>
+
+          <li>
+            <a href="/#everyday">
+              Everyday
+            </a>
+          </li>
+
+          <li>
+            <a href="/#math">
+              Math
+            </a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">
+              Automotive
+            </a>
+          </li>
+
+          <li>
+            <a href="/#technology">
+              Technology
+            </a>
+          </li>
+
+          <li>
+            <a href="/#conversion">
+              Conversion
+            </a>
+          </li>
+
+          <li>
+            <a href="/#travel">
+              Travel
+            </a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">
+              Lifestyle
+            </a>
+          </li>
+
+          <li>
+            <a href="/#utility">
+              Utility
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span>
+        CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- SCRIPTS -->
+  <script src="/script-v2.js"></script>
+  <script src="/age-calculator.js"></script>
+
+</body>
+</html>

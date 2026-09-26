@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Water Reminder Calculator | Daily Hydration Schedule</title>
+
+  <meta name="description" content="Use the Water Reminder Calculator to estimate a daily hydration target and create a simple water-drinking schedule based on your waking hours.">
+
+  <meta name="keywords" content="water reminder calculator, hydration calculator, water intake schedule, daily water reminder, hydration schedule">
+
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/water-reminder-calculator.html">
+
+  <meta property="og:title" content="Water Reminder Calculator | CalclyWorld">
+  <meta property="og:description" content="Estimate a daily hydration target and create a simple water-drinking schedule based on your waking hours.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/water-reminder-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Water Reminder Calculator | CalclyWorld">
+  <meta name="twitter:description" content="Estimate a daily hydration target and create a simple water-drinking schedule based on your waking hours.">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Water Reminder Calculator",
+    "url": "https://calclyworld.com/water-reminder-calculator.html",
+    "description": "A calculator for estimating a daily hydration target and creating a simple water reminder schedule.",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+
+        <span>CalclyWorld</span>
+
+      </a>
+
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+
+        <a href="/">Home</a>
+
+        <a href="/#calculator-directory">
+          Calculators
+        </a>
+
+        <a href="/about.html">
+          About
+        </a>
+
+        <a href="/contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+
+        🌙 Dark Mode
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+
+    <!-- Breadcrumb -->
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+
+        <div class="content">
+
+          <a href="/">Home</a>
+
+          <span aria-hidden="true">›</span>
+
+          <span aria-current="page">
+            Water Reminder Calculator
+          </span>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>Water Reminder Calculator</h1>
+
+        <p>
+          Estimate a daily hydration target and create a simple
+          water-drinking schedule based on your waking hours.
+        </p>
+
+        <p>
+          Use the schedule as a practical reminder to spread your
+          water intake throughout the day instead of drinking it all
+          at once.
+        </p>
+
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators">
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Create Your Water Reminder Schedule
+          </h2>
+
+          <p class="text-center small-text">
+            Enter your weight and waking hours to estimate a daily
+            hydration target and divide it into regular reminders.
+          </p>
+
+
+          <div class="calculator-form">
+
+
+            <!-- Weight -->
+            <div class="form-group">
+
+              <label for="water-weight">
+                Body Weight
+              </label>
+
+              <input
+                type="number"
+                id="water-weight"
+                min="1"
+                step="any"
+                value="70"
+                placeholder="Example: 70"
+                inputmode="decimal">
+
+            </div>
+
+
+            <!-- Weight Unit -->
+            <div class="form-group">
+
+              <label for="water-weight-unit">
+                Weight Unit
+              </label>
+
+              <select id="water-weight-unit">
+
+                <option value="kg" selected>
+                  Kilograms (kg)
+                </option>
+
+                <option value="lb">
+                  Pounds (lb)
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Wake Time -->
+            <div class="form-group">
+
+              <label for="wake-time">
+                Wake-Up Time
+              </label>
+
+              <input
+                type="time"
+                id="wake-time"
+                value="07:00">
+
+            </div>
+
+
+            <!-- Bed Time -->
+            <div class="form-group">
+
+              <label for="bed-time">
+                Bedtime
+              </label>
+
+              <input
+                type="time"
+                id="bed-time"
+                value="23:00">
+
+            </div>
+
+
+            <!-- Reminder Interval -->
+            <div class="form-group">
+
+              <label for="reminder-interval">
+                Reminder Interval
+              </label>
+
+              <select id="reminder-interval">
+
+                <option value="60">
+                  Every 1 hour
+                </option>
+
+                <option value="90" selected>
+                  Every 1.5 hours
+                </option>
+
+                <option value="120">
+                  Every 2 hours
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Water Unit -->
+            <div class="form-group">
+
+              <label for="water-unit">
+                Water Measurement Unit
+              </label>
+
+              <select id="water-unit">
+
+                <option value="ml" selected>
+                  Milliliters (mL)
+                </option>
+
+                <option value="oz">
+                  US Fluid Ounces (fl oz)
+                </option>
+
+                <option value="cups">
+                  US Cups
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Error -->
+            <div
+              id="water-reminder-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden>
+            </div>
+
+
+            <!-- Actions -->
+            <div class="calculator-actions">
+
+              <button
+                type="button"
+                id="calculate-water-reminder"
+                class="btn">
+
+                Create Schedule
+
+              </button>
+
+
+              <button
+                type="button"
+                id="clear-water-reminder"
+                class="btn btn-secondary">
+
+                Clear
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="water-reminder-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true">
+
+          <h2>
+            Your Water Reminder Schedule
+          </h2>
+
+          <div id="water-reminder-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Hydration Schedule Summary
+          </h2>
+
+
+          <div class="calculator-results-grid">
+
+
+            <div class="result-card">
+
+              <h3>
+                Daily Water Target
+              </h3>
+
+              <p id="summary-water-target">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Waking Hours
+              </h3>
+
+              <p id="summary-waking-hours">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Reminder Interval
+              </h3>
+
+              <p id="summary-interval">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Reminders
+              </h3>
+
+              <p id="summary-reminders">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>
+                Water Per Reminder
+              </h3>
+
+              <p id="summary-per-reminder">
+                —
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            How the Water Reminder Calculator Works
+          </h2>
+
+          <p>
+            The calculator uses your body weight to create a general
+            daily hydration estimate. It then considers the number of
+            waking hours you enter and divides the estimated daily
+            amount across your selected reminder interval.
+          </p>
+
+          <p>
+            The resulting schedule is intended as a simple planning
+            tool rather than a medical prescription. Individual fluid
+            needs can vary depending on climate, activity, diet,
+            health conditions, medications, and other factors.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Creating a Hydration Routine -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Creating a Consistent Hydration Routine
+          </h2>
+
+          <p>
+            Spreading water intake throughout the day can make it easier
+            to remember to drink regularly. A reminder schedule can be
+            especially useful when you are busy, working at a desk, or
+            traveling.
+          </p>
+
+          <p>
+            You can adjust the reminder interval to match your daily
+            routine. The goal is to create a practical schedule that
+            fits naturally between meals, work, exercise, and sleep.
+          </p>
+
+          <p>
+            Your schedule does not need to be followed exactly every
+            day. Thirst, activity level, weather, and other circumstances
+            can affect how much fluid you need.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Hydration Tips -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Practical Hydration Tips
+          </h2>
+
+          <ul>
+
+            <li>
+              Keep a reusable water bottle nearby so water is easy to access.
+            </li>
+
+            <li>
+              Spread your fluid intake throughout your waking hours.
+            </li>
+
+            <li>
+              Drink more fluids when appropriate for increased activity
+              or hot weather.
+            </li>
+
+            <li>
+              Include water-rich foods such as fruits and vegetables as
+              part of a balanced diet.
+            </li>
+
+            <li>
+              Pay attention to thirst and other signs that you may need
+              more fluids.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Important Information -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Important Information
+          </h2>
+
+          <p>
+            This calculator provides a general estimate for healthy
+            adults and is not a substitute for individualized medical
+            advice.
+          </p>
+
+          <p>
+            People with certain medical conditions or those who have
+            been instructed by a healthcare professional to restrict
+            or manage fluid intake should follow their healthcare
+            professional's guidance instead of relying on a general
+            calculator estimate.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <h3>
+            How much water should I drink each day?
+          </h3>
+
+          <p>
+            Fluid needs vary between individuals. This calculator provides
+            a general weight-based estimate that can be used as a starting
+            point for planning a hydration routine.
+          </p>
+
+
+          <h3>
+            Why does the calculator ask for my waking hours?
+          </h3>
+
+          <p>
+            Waking hours help determine how frequently the estimated daily
+            amount can be distributed throughout the day.
+          </p>
+
+
+          <h3>
+            Can I change the reminder interval?
+          </h3>
+
+          <p>
+            Yes. You can choose a reminder interval of 1 hour, 1.5 hours,
+            or 2 hours.
+          </p>
+
+
+          <h3>
+            Does coffee or tea count toward fluid intake?
+          </h3>
+
+          <p>
+            Beverages can contribute to overall fluid intake, although
+            individual drinks may contain caffeine, sugar, alcohol, or
+            other ingredients that should be considered as part of your
+            overall diet.
+          </p>
+
+
+          <h3>
+            Should everyone follow the same water schedule?
+          </h3>
+
+          <p>
+            No. Hydration needs vary based on factors such as activity,
+            environment, diet, and individual health circumstances.
+            A reminder schedule is simply a planning aid.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <div class="footer-column">
+
+        <h3>
+          CalclyWorld
+        </h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="/about.html">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact.html">
+              Contact Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="/terms.html">
+              Terms &amp; Conditions
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Popular Calculators
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Calculator Categories
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">
+              Finance
+            </a>
+          </li>
+
+          <li>
+            <a href="/#everyday">
+              Everyday
+            </a>
+          </li>
+
+          <li>
+            <a href="/#math">
+              Math
+            </a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">
+              Automotive
+            </a>
+          </li>
+
+          <li>
+            <a href="/#technology">
+              Technology
+            </a>
+          </li>
+
+          <li>
+            <a href="/#conversion">
+              Conversion
+            </a>
+          </li>
+
+          <li>
+            <a href="/#travel">
+              Travel
+            </a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">
+              Lifestyle
+            </a>
+          </li>
+
+          <li>
+            <a href="/#utility">
+              Utility
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld.
+        All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/water-reminder-calculator.js"></script>
+
+</body>
+</html>

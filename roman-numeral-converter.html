@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Roman Numeral Converter | Roman to Number & Number to Roman | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Convert numbers to Roman numerals and Roman numerals to numbers with CalclyWorld's free online Roman Numeral Converter. Supports standard Roman numerals from 1 to 3,999."
+  >
+
+  <meta
+    name="keywords"
+    content="Roman numeral converter, Roman numerals converter, number to Roman numeral, Roman numeral to number, Roman numeral calculator"
+  >
+
+  <meta name="author" content="CalclyWorld">
+
+  <link
+    rel="canonical"
+    href="https://calclyworld.com/roman-numeral-converter.html"
+  >
+
+  <meta property="og:title" content="Roman Numeral Converter | CalclyWorld">
+  <meta
+    property="og:description"
+    content="Convert numbers to Roman numerals and Roman numerals to numbers instantly with CalclyWorld's free online converter."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:url"
+    content="https://calclyworld.com/roman-numeral-converter.html"
+  >
+  <meta
+    property="og:image"
+    content="https://calclyworld.com/favicon.png"
+  >
+
+  <meta name="twitter:card" content="summary">
+  <meta
+    name="twitter:title"
+    content="Roman Numeral Converter | CalclyWorld"
+  >
+  <meta
+    name="twitter:description"
+    content="Convert between Roman numerals and numbers with CalclyWorld."
+  >
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Roman Numeral Converter",
+    "url": "https://calclyworld.com/roman-numeral-converter.html",
+    "description": "A free online calculator for converting numbers to Roman numerals and Roman numerals to numbers.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="/#utility">Utility</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Roman Numeral Converter</span>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Roman Numeral Converter</h1>
+
+        <p>
+          Convert numbers to Roman numerals or Roman numerals to numbers
+          quickly and accurately with our free online Roman Numeral Converter.
+        </p>
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Convert Roman Numerals and Numbers
+          </h2>
+
+          <form
+            id="roman-numeral-converter-form"
+            class="calculator-form"
+            novalidate
+          >
+
+            <div class="form-group">
+
+              <label for="conversion-type">
+                Conversion Type
+              </label>
+
+              <select
+                id="conversion-type"
+                name="conversion-type"
+              >
+                <option value="number-to-roman">
+                  Number to Roman Numeral
+                </option>
+
+                <option value="roman-to-number">
+                  Roman Numeral to Number
+                </option>
+              </select>
+
+            </div>
+
+            <div class="form-group">
+
+              <label
+                for="roman-input"
+                id="roman-input-label"
+              >
+                Number
+              </label>
+
+              <input
+                type="text"
+                id="roman-input"
+                name="roman-input"
+                inputmode="numeric"
+                autocomplete="off"
+                autocapitalize="characters"
+                spellcheck="false"
+                placeholder="Example: 2026"
+                aria-describedby="roman-input-help roman-input-error"
+              >
+
+              <p
+                id="roman-input-help"
+                class="form-help"
+              >
+                Enter a whole number from 1 to 3,999.
+              </p>
+
+              <div
+                id="roman-input-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+            <div class="calculator-actions">
+
+              <button
+                type="submit"
+                id="calculate-roman"
+                class="btn"
+              >
+                Convert
+              </button>
+
+              <button
+                type="button"
+                id="clear-roman"
+                class="btn btn-secondary"
+              >
+                Clear
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="roman-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">
+            Conversion Result
+          </h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Conversion</h3>
+              <p id="summary-roman-conversion">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Input</h3>
+              <p id="summary-roman-input">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Result</h3>
+              <p id="summary-roman-output">—</p>
+            </div>
+
+          </div>
+
+          <div class="result-highlight">
+
+            <h3>Your Converted Value</h3>
+
+            <p
+              id="roman-result-value"
+              class="result-value"
+            >
+              —
+            </p>
+
+            <div class="calculator-actions">
+
+              <button
+                type="button"
+                id="copy-roman-result"
+                class="btn btn-secondary"
+              >
+                Copy Result
+              </button>
+
+            </div>
+
+            <p
+              id="roman-copy-status"
+              class="form-help"
+              aria-live="polite"
+              hidden
+            >
+              Result copied to clipboard.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What Are Roman Numerals? -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Are Roman Numerals?</h2>
+
+          <p>
+            Roman numerals are a number system that originated in ancient
+            Rome. They use combinations of letters from the Latin alphabet
+            to represent numerical values.
+          </p>
+
+          <p>
+            The seven basic Roman numeral symbols are:
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>I</td>
+                  <td>1</td>
+                </tr>
+
+                <tr>
+                  <td>V</td>
+                  <td>5</td>
+                </tr>
+
+                <tr>
+                  <td>X</td>
+                  <td>10</td>
+                </tr>
+
+                <tr>
+                  <td>L</td>
+                  <td>50</td>
+                </tr>
+
+                <tr>
+                  <td>C</td>
+                  <td>100</td>
+                </tr>
+
+                <tr>
+                  <td>D</td>
+                  <td>500</td>
+                </tr>
+
+                <tr>
+                  <td>M</td>
+                  <td>1,000</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Roman Numeral Rules -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Roman Numeral Rules</h2>
+
+          <p>
+            Roman numerals are normally written from larger values to
+            smaller values. However, certain smaller symbols can be placed
+            before larger symbols to indicate subtraction.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Combination</th>
+                  <th>Value</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>IV</td>
+                  <td>4</td>
+                  <td>5 − 1</td>
+                </tr>
+
+                <tr>
+                  <td>IX</td>
+                  <td>9</td>
+                  <td>10 − 1</td>
+                </tr>
+
+                <tr>
+                  <td>XL</td>
+                  <td>40</td>
+                  <td>50 − 10</td>
+                </tr>
+
+                <tr>
+                  <td>XC</td>
+                  <td>90</td>
+                  <td>100 − 10</td>
+                </tr>
+
+                <tr>
+                  <td>CD</td>
+                  <td>400</td>
+                  <td>500 − 100</td>
+                </tr>
+
+                <tr>
+                  <td>CM</td>
+                  <td>900</td>
+                  <td>1,000 − 100</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Number to Roman -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Convert a Number to a Roman Numeral</h2>
+
+          <p>
+            To convert a number to a Roman numeral, the value is broken
+            into Roman numeral units from largest to smallest. The
+            corresponding symbols are then combined.
+          </p>
+
+          <p>
+            For example, <strong>2026</strong> can be represented as:
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Roman Symbol</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>2,000</td>
+                  <td>MM</td>
+                </tr>
+
+                <tr>
+                  <td>20</td>
+                  <td>XX</td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td>VI</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            Therefore, <strong>2026 = MMXXVI</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Roman to Number -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Convert a Roman Numeral to a Number</h2>
+
+          <p>
+            To convert a Roman numeral to a number, the values of its
+            symbols are generally added together. When a smaller symbol
+            appears before a larger symbol in a valid subtractive
+            combination, the smaller value is subtracted.
+          </p>
+
+          <p>
+            For example, <strong>MMXXVI</strong> represents:
+          </p>
+
+          <p>
+            1,000 + 1,000 + 10 + 10 + 5 + 1 = <strong>2,026</strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Common Examples -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Common Roman Numeral Examples</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Number</th>
+                  <th>Roman Numeral</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>I</td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>IV</td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>V</td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+                  <td>IX</td>
+                </tr>
+
+                <tr>
+                  <td>10</td>
+                  <td>X</td>
+                </tr>
+
+                <tr>
+                  <td>40</td>
+                  <td>XL</td>
+                </tr>
+
+                <tr>
+                  <td>50</td>
+                  <td>L</td>
+                </tr>
+
+                <tr>
+                  <td>90</td>
+                  <td>XC</td>
+                </tr>
+
+                <tr>
+                  <td>100</td>
+                  <td>C</td>
+                </tr>
+
+                <tr>
+                  <td>400</td>
+                  <td>CD</td>
+                </tr>
+
+                <tr>
+                  <td>500</td>
+                  <td>D</td>
+                </tr>
+
+                <tr>
+                  <td>900</td>
+                  <td>CM</td>
+                </tr>
+
+                <tr>
+                  <td>1,000</td>
+                  <td>M</td>
+                </tr>
+
+                <tr>
+                  <td>2,026</td>
+                  <td>MMXXVI</td>
+                </tr>
+
+                <tr>
+                  <td>3,999</td>
+                  <td>MMMCMXCIX</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Uses -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Where Roman Numerals Are Used</h2>
+
+          <ul>
+            <li>Clock faces and watches</li>
+            <li>Book chapters and sections</li>
+            <li>Movie sequels and titles</li>
+            <li>Historical dates and monuments</li>
+            <li>Names of monarchs and popes</li>
+            <li>Events such as the Olympic Games and Super Bowls</li>
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What is the largest number supported?</h3>
+
+          <p>
+            This converter uses the standard Roman numeral notation and
+            supports whole numbers from 1 through 3,999.
+          </p>
+
+          <h3>What is 2026 in Roman numerals?</h3>
+
+          <p>
+            2026 is written as <strong>MMXXVI</strong>.
+          </p>
+
+          <h3>What is 3999 in Roman numerals?</h3>
+
+          <p>
+            3,999 is written as <strong>MMMCMXCIX</strong>.
+          </p>
+
+          <h3>Can I enter lowercase Roman numerals?</h3>
+
+          <p>
+            Yes. The converter accepts lowercase Roman numeral letters
+            and treats them as their standard uppercase equivalents.
+          </p>
+
+          <h3>Is zero represented by a Roman numeral?</h3>
+
+          <p>
+            Standard Roman numeral notation does not use a conventional
+            symbol for zero. This converter therefore accepts values
+            starting from 1.
+          </p>
+
+          <h3>Is this Roman Numeral Converter free?</h3>
+
+          <p>
+            Yes. CalclyWorld's Roman Numeral Converter is free to use
+            directly in your browser without requiring an account.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/roman-numeral-converter.js"></script>
+
+</body>
+</html>

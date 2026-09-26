@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Recipe Converter Calculator | Scale Recipe Ingredients</title>
+
+  <meta name="description" content="Use the Recipe Converter Calculator to scale recipe ingredient quantities for more or fewer servings. Convert ingredient amounts quickly when adjusting recipes.">
+
+  <meta name="keywords" content="recipe converter calculator, recipe scaler, recipe serving calculator, ingredient converter, scale recipe">
+
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/recipe-converter-calculator.html">
+
+  <meta property="og:title" content="Recipe Converter Calculator | CalclyWorld">
+  <meta property="og:description" content="Scale recipe ingredient quantities for different serving sizes with the CalclyWorld Recipe Converter Calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/recipe-converter-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Recipe Converter Calculator | CalclyWorld">
+  <meta name="twitter:description" content="Scale recipe ingredient quantities for different serving sizes with CalclyWorld.">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Recipe Converter Calculator",
+    "url": "https://calclyworld.com/recipe-converter-calculator.html",
+    "description": "A recipe converter calculator that scales ingredient quantities for different serving sizes.",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+
+        <div class="content">
+
+          <a href="/">Home</a>
+
+          <span aria-hidden="true">›</span>
+
+          <span aria-current="page">
+            Recipe Converter Calculator
+          </span>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>Recipe Converter Calculator</h1>
+
+        <p>
+          Scale recipe ingredient quantities when you need to cook for
+          more or fewer people.
+        </p>
+
+        <p>
+          Enter your original serving size, desired serving size, and
+          ingredient quantities to quickly calculate the adjusted amounts.
+        </p>
+
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators">
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Scale Your Recipe
+          </h2>
+
+          <p class="text-center small-text">
+            Enter the original and desired number of servings, then add
+            your ingredients and quantities.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <!-- Original Servings -->
+            <div class="form-group">
+
+              <label for="original-servings">
+                Original Servings
+              </label>
+
+              <input
+                type="number"
+                id="original-servings"
+                min="1"
+                step="1"
+                value="4"
+                placeholder="Example: 4"
+                inputmode="numeric">
+
+            </div>
+
+
+            <!-- Desired Servings -->
+            <div class="form-group">
+
+              <label for="desired-servings">
+                Desired Servings
+              </label>
+
+              <input
+                type="number"
+                id="desired-servings"
+                min="1"
+                step="1"
+                value="8"
+                placeholder="Example: 8"
+                inputmode="numeric">
+
+            </div>
+
+
+            <!-- Ingredient 1 -->
+            <div class="form-group">
+
+              <label for="ingredient-1">
+                Ingredient 1
+              </label>
+
+              <input
+                type="text"
+                id="ingredient-1"
+                placeholder="Example: Flour"
+                autocomplete="off">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="quantity-1">
+                Quantity 1
+              </label>
+
+              <input
+                type="number"
+                id="quantity-1"
+                min="0"
+                step="any"
+                placeholder="Example: 2"
+                inputmode="decimal">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="unit-1">
+                Unit 1
+              </label>
+
+              <input
+                type="text"
+                id="unit-1"
+                placeholder="Example: cups"
+                autocomplete="off">
+
+            </div>
+
+
+            <!-- Ingredient 2 -->
+            <div class="form-group">
+
+              <label for="ingredient-2">
+                Ingredient 2
+              </label>
+
+              <input
+                type="text"
+                id="ingredient-2"
+                placeholder="Example: Sugar"
+                autocomplete="off">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="quantity-2">
+                Quantity 2
+              </label>
+
+              <input
+                type="number"
+                id="quantity-2"
+                min="0"
+                step="any"
+                placeholder="Example: 1"
+                inputmode="decimal">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="unit-2">
+                Unit 2
+              </label>
+
+              <input
+                type="text"
+                id="unit-2"
+                placeholder="Example: cup"
+                autocomplete="off">
+
+            </div>
+
+
+            <!-- Ingredient 3 -->
+            <div class="form-group">
+
+              <label for="ingredient-3">
+                Ingredient 3
+              </label>
+
+              <input
+                type="text"
+                id="ingredient-3"
+                placeholder="Example: Milk"
+                autocomplete="off">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="quantity-3">
+                Quantity 3
+              </label>
+
+              <input
+                type="number"
+                id="quantity-3"
+                min="0"
+                step="any"
+                placeholder="Example: 2"
+                inputmode="decimal">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="unit-3">
+                Unit 3
+              </label>
+
+              <input
+                type="text"
+                id="unit-3"
+                placeholder="Example: cups"
+                autocomplete="off">
+
+            </div>
+
+
+            <!-- Ingredient 4 -->
+            <div class="form-group">
+
+              <label for="ingredient-4">
+                Ingredient 4
+              </label>
+
+              <input
+                type="text"
+                id="ingredient-4"
+                placeholder="Example: Butter"
+                autocomplete="off">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="quantity-4">
+                Quantity 4
+              </label>
+
+              <input
+                type="number"
+                id="quantity-4"
+                min="0"
+                step="any"
+                placeholder="Example: 4"
+                inputmode="decimal">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="unit-4">
+                Unit 4
+              </label>
+
+              <input
+                type="text"
+                id="unit-4"
+                placeholder="Example: tbsp"
+                autocomplete="off">
+
+            </div>
+
+
+            <!-- Ingredient 5 -->
+            <div class="form-group">
+
+              <label for="ingredient-5">
+                Ingredient 5
+              </label>
+
+              <input
+                type="text"
+                id="ingredient-5"
+                placeholder="Example: Salt"
+                autocomplete="off">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="quantity-5">
+                Quantity 5
+              </label>
+
+              <input
+                type="number"
+                id="quantity-5"
+                min="0"
+                step="any"
+                placeholder="Example: 1"
+                inputmode="decimal">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="unit-5">
+                Unit 5
+              </label>
+
+              <input
+                type="text"
+                id="unit-5"
+                placeholder="Example: tsp"
+                autocomplete="off">
+
+            </div>
+
+
+            <!-- Error -->
+            <div
+              id="recipe-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden>
+            </div>
+
+
+            <!-- Actions -->
+            <div class="calculator-actions">
+
+              <button
+                type="button"
+                id="calculate-recipe"
+                class="btn">
+                Convert Recipe
+              </button>
+
+              <button
+                type="button"
+                id="clear-recipe"
+                class="btn btn-secondary">
+                Clear
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="recipe-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true">
+
+          <h2>Converted Recipe</h2>
+
+          <div id="recipe-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Recipe Conversion Summary
+          </h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+
+              <h3>Original Servings</h3>
+
+              <p id="summary-original-servings">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Desired Servings</h3>
+
+              <p id="summary-desired-servings">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Scaling Factor</h3>
+
+              <p id="summary-scaling-factor">
+                —
+              </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Ingredients Converted</h3>
+
+              <p id="summary-ingredients">
+                —
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- What Is Recipe Scaling -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is Recipe Scaling?</h2>
+
+          <p>
+            Recipe scaling means adjusting ingredient quantities so a recipe
+            produces a different number of servings than the original recipe.
+          </p>
+
+          <p>
+            For example, if a recipe makes 4 servings and you want to make
+            8 servings, the ingredient quantities generally need to be doubled.
+            If you want only 2 servings, the ingredient quantities generally
+            need to be reduced by half.
+          </p>
+
+          <p>
+            The calculator applies the same scaling factor to each ingredient
+            quantity you enter while keeping the original measurement unit.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Recipe Converter</h2>
+
+          <ol>
+
+            <li>
+              Enter the number of servings in the original recipe.
+            </li>
+
+            <li>
+              Enter the number of servings you want to prepare.
+            </li>
+
+            <li>
+              Enter the ingredient name.
+            </li>
+
+            <li>
+              Enter the original quantity and measurement unit.
+            </li>
+
+            <li>
+              Add up to five ingredients.
+            </li>
+
+            <li>
+              Click <strong>Convert Recipe</strong>.
+            </li>
+
+          </ol>
+
+          <p>
+            The calculator will multiply each ingredient quantity by the
+            scaling factor needed to reach your desired serving size.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Scaling Factor -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Understanding the Scaling Factor</h2>
+
+          <p>
+            The scaling factor tells you how much each ingredient quantity
+            needs to change.
+          </p>
+
+          <p>
+            A factor of <strong>2</strong> means the ingredient quantity
+            is doubled. A factor of <strong>0.5</strong> means the quantity
+            is reduced to half of the original amount.
+          </p>
+
+          <p>
+            For best results, check measurements carefully when working with
+            very small quantities such as spices, flavorings, or leavening
+            ingredients.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Practical Tips -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Recipe Scaling Tips</h2>
+
+          <ul>
+
+            <li>
+              Use the same measurement unit you normally use in the recipe.
+            </li>
+
+            <li>
+              Be careful when scaling very small ingredient quantities.
+            </li>
+
+            <li>
+              Cooking time may not increase proportionally when a recipe is
+              scaled up.
+            </li>
+
+            <li>
+              Pan or baking-dish size may need to be changed when preparing
+              a significantly larger batch.
+            </li>
+
+            <li>
+              For baking, large changes in recipe size may require additional
+              adjustments beyond simply multiplying every ingredient.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+
+          <h3>
+            Can I double a recipe?
+          </h3>
+
+          <p>
+            Yes. Enter the original number of servings and double the desired
+            servings. The calculator will multiply the ingredient quantities
+            by the resulting scaling factor.
+          </p>
+
+
+          <h3>
+            Can I reduce a recipe?
+          </h3>
+
+          <p>
+            Yes. Enter a smaller desired serving size than the original
+            recipe. The calculator will reduce each ingredient quantity
+            accordingly.
+          </p>
+
+
+          <h3>
+            Does the calculator convert cups to grams?
+          </h3>
+
+          <p>
+            No. This calculator scales the numerical quantity while keeping
+            the measurement unit you enter. Weight-to-volume conversions
+            depend on the specific ingredient.
+          </p>
+
+
+          <h3>
+            Can I scale baking recipes?
+          </h3>
+
+          <p>
+            You can use the calculator to scale the ingredient quantities,
+            but large changes to baking recipes may require additional
+            adjustments to pan size, cooking time, temperature, and other
+            baking variables.
+          </p>
+
+
+          <h3>
+            How many ingredients can I enter?
+          </h3>
+
+          <p>
+            This calculator allows you to enter up to five ingredients at
+            one time.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          <li>
+            <a href="/about.html">About Us</a>
+          </li>
+
+          <li>
+            <a href="/contact.html">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="/terms.html">Terms &amp; Conditions</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">
+              Finance
+            </a>
+          </li>
+
+          <li>
+            <a href="/#everyday">
+              Everyday
+            </a>
+          </li>
+
+          <li>
+            <a href="/#math">
+              Math
+            </a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">
+              Automotive
+            </a>
+          </li>
+
+          <li>
+            <a href="/#technology">
+              Technology
+            </a>
+          </li>
+
+          <li>
+            <a href="/#conversion">
+              Conversion
+            </a>
+          </li>
+
+          <li>
+            <a href="/#travel">
+              Travel
+            </a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">
+              Lifestyle
+            </a>
+          </li>
+
+          <li>
+            <a href="/#utility">
+              Utility
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/recipe-converter-calculator.js"></script>
+
+</body>
+</html>

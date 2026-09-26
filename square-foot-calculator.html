@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Square Foot Calculator - Calculate Square Feet & Area | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Use our free Square Foot Calculator to calculate square feet from length and width. Convert area measurements and learn how to calculate square footage for rooms, floors, walls, and other spaces."
+  >
+
+  <meta
+    name="keywords"
+    content="square foot calculator, square feet calculator, calculate square footage, area calculator, sq ft calculator, square feet"
+  >
+
+  <link rel="canonical" href="https://calclyworld.com/square-foot-calculator.html">
+
+  <meta property="og:title" content="Square Foot Calculator | CalclyWorld">
+  <meta
+    property="og:description"
+    content="Calculate square feet and area quickly using length and width measurements."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/square-foot-calculator.html">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Square Foot Calculator",
+    "url": "https://calclyworld.com/square-foot-calculator.html",
+    "description": "A free calculator for calculating square feet from length and width measurements.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Square Foot Calculator</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Square Foot Calculator</h1>
+
+        <p>
+          Calculate the area of a room, floor, wall, or other rectangular
+          space in square feet using its length and width.
+        </p>
+
+        <p>
+          Enter your measurements below to quickly calculate square footage,
+          square meters, and other useful area measurements.
+        </p>
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate Square Feet</h2>
+
+          <p class="text-center small-text">
+            Enter the length and width of the area you want to measure.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+              <label for="square-length">
+                Length
+              </label>
+
+              <input
+                type="number"
+                id="square-length"
+                min="0"
+                step="any"
+                placeholder="Example: 20"
+                inputmode="decimal"
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="square-width">
+                Width
+              </label>
+
+              <input
+                type="number"
+                id="square-width"
+                min="0"
+                step="any"
+                placeholder="Example: 15"
+                inputmode="decimal"
+              >
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="square-unit">
+                Measurement Unit
+              </label>
+
+              <select id="square-unit">
+
+                <option value="ft">
+                  Feet (ft)
+                </option>
+
+                <option value="in">
+                  Inches (in)
+                </option>
+
+                <option value="yd">
+                  Yards (yd)
+                </option>
+
+                <option value="m">
+                  Meters (m)
+                </option>
+
+                <option value="cm">
+                  Centimeters (cm)
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div
+              id="square-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-square"
+                class="btn"
+                type="button"
+              >
+                Calculate Square Feet
+              </button>
+
+              <button
+                id="reset-square"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="square-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>Square Footage Result</h2>
+
+          <div id="square-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Square Foot Calculation Summary
+          </h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Length</h3>
+              <p
+                id="summary-square-length"
+                class="result-value"
+              >
+                —
+              </p>
+            </div>
+
+
+            <div class="result-card">
+              <h3>Width</h3>
+              <p
+                id="summary-square-width"
+                class="result-value"
+              >
+                —
+              </p>
+            </div>
+
+
+            <div class="result-card">
+              <h3>Area</h3>
+              <p
+                id="summary-square-area"
+                class="result-value"
+              >
+                —
+              </p>
+            </div>
+
+
+            <div class="result-card">
+              <h3>Square Meters</h3>
+              <p
+                id="summary-square-meters"
+                class="result-value"
+              >
+                —
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- What Is Square Footage -->
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Is Square Footage?</h2>
+
+          <p>
+            Square footage is a measurement of area commonly used in the
+            United States and other countries for rooms, homes, floors,
+            buildings, land, and construction projects.
+          </p>
+
+          <p>
+            One square foot represents an area that is one foot long and
+            one foot wide. For a rectangular space, square footage can be
+            calculated by multiplying the length by the width.
+          </p>
+
+          <p>
+            For example, a room that is 20 feet long and 15 feet wide has
+            an area of 300 square feet.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Formula -->
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Square Footage Formula</h2>
+
+          <p>
+            For a rectangular or square area, use this simple formula:
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Area = Length × Width</strong>
+            </p>
+
+            <p>
+              When both measurements are in feet, the result is expressed
+              in square feet (ft²).
+            </p>
+
+          </div>
+
+          <p>
+            If your measurements are in inches, yards, meters, or
+            centimeters, the calculator converts them before calculating
+            the equivalent square footage.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Examples -->
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Square Footage Examples</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Length</th>
+                  <th>Width</th>
+                  <th>Area</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>10 ft</td>
+                  <td>10 ft</td>
+                  <td>100 ft²</td>
+                </tr>
+
+                <tr>
+                  <td>20 ft</td>
+                  <td>15 ft</td>
+                  <td>300 ft²</td>
+                </tr>
+
+                <tr>
+                  <td>30 ft</td>
+                  <td>20 ft</td>
+                  <td>600 ft²</td>
+                </tr>
+
+                <tr>
+                  <td>40 ft</td>
+                  <td>25 ft</td>
+                  <td>1,000 ft²</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Tips -->
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Tips for Measuring Square Footage</h2>
+
+          <p>
+            Measure the length and width as accurately as possible. For
+            construction, flooring, painting, or material estimates,
+            small measurement errors can affect the amount of material
+            required.
+          </p>
+
+          <p>
+            If a space has an irregular shape, divide it into smaller
+            rectangles or squares. Calculate the area of each section
+            separately and then add the results together.
+          </p>
+
+          <p>
+            For material purchases such as flooring or tile, consider
+            adding an appropriate waste allowance after calculating the
+            total area.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Square Foot Calculator FAQ</h2>
+
+          <h3>How do I calculate square feet?</h3>
+
+          <p>
+            Multiply the length of the area by its width when both
+            measurements are in feet. For example, 20 ft × 15 ft =
+            300 square feet.
+          </p>
+
+
+          <h3>How many square feet are in one square meter?</h3>
+
+          <p>
+            One square meter is approximately 10.7639 square feet.
+          </p>
+
+
+          <h3>Can I calculate square feet using inches?</h3>
+
+          <p>
+            Yes. Enter both dimensions in inches and select Inches as
+            the measurement unit. The calculator converts the result
+            to square feet.
+          </p>
+
+
+          <h3>How do I calculate square footage for an irregular room?</h3>
+
+          <p>
+            Divide the room into smaller rectangular sections. Calculate
+            the square footage of each section and add those areas
+            together.
+          </p>
+
+
+          <h3>Is square footage the same as square feet?</h3>
+
+          <p>
+            Yes. Square footage describes an area's measurement in
+            square feet, usually written as ft² or sq ft.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          Free online calculators designed to make everyday calculations
+          simple, clear, and useful.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span>
+        CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/square-foot-calculator.js"></script>
+
+</body>
+</html>

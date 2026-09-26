@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Scientific Calculator - Advanced Math Calculator | CalclyWorld</title>
+
+  <meta name="description" content="Use CalclyWorld's free scientific calculator for arithmetic, trigonometry, logarithms, powers, square roots, percentages, and other advanced mathematical calculations.">
+  <meta name="keywords" content="scientific calculator, advanced calculator, online scientific calculator, math calculator, trigonometry calculator, logarithm calculator, power calculator">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/scientific-calculator.html">
+
+  <meta property="og:title" content="Scientific Calculator - Advanced Math Calculator | CalclyWorld">
+  <meta property="og:description" content="Perform advanced mathematical calculations with CalclyWorld's free scientific calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/scientific-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <style>
+    /* Scientific Calculator Layout */
+
+    .scientific-calculator {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .scientific-display {
+      background: var(--card-bg, #ffffff);
+      border: 1px solid var(--border-color, #ddd);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .scientific-expression {
+      width: 100%;
+      min-height: 34px;
+      text-align: right;
+      font-size: 1rem;
+      color: var(--text-secondary, #666);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .scientific-result {
+      width: 100%;
+      min-height: 48px;
+      text-align: right;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-color, #222);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .scientific-mode-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .scientific-mode-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .scientific-mode-btn {
+      border: 1px solid var(--border-color, #ddd);
+      background: var(--card-bg, #fff);
+      color: var(--text-color, #222);
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .scientific-mode-btn.active {
+      background: var(--primary-color, #2563eb);
+      color: #fff;
+      border-color: var(--primary-color, #2563eb);
+    }
+
+    .memory-indicator {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary, #666);
+    }
+
+    .scientific-keypad {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+    }
+
+    .scientific-key {
+      min-height: 52px;
+      border: 1px solid var(--border-color, #ddd);
+      border-radius: 9px;
+      background: var(--card-bg, #fff);
+      color: var(--text-color, #222);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.1s ease, opacity 0.1s ease;
+    }
+
+    .scientific-key:hover {
+      opacity: 0.85;
+    }
+
+    .scientific-key:active {
+      transform: scale(0.97);
+    }
+
+    .scientific-key.function-key {
+      background: var(--secondary-bg, #f3f4f6);
+    }
+
+    .scientific-key.operator-key {
+      background: var(--primary-color, #2563eb);
+      color: #fff;
+      border-color: var(--primary-color, #2563eb);
+    }
+
+    .scientific-key.equals-key {
+      background: var(--success-color, #16a34a);
+      color: #fff;
+      border-color: var(--success-color, #16a34a);
+    }
+
+    .scientific-key.danger-key {
+      background: var(--danger-color, #dc2626);
+      color: #fff;
+      border-color: var(--danger-color, #dc2626);
+    }
+
+    .scientific-key.wide-key {
+      grid-column: span 2;
+    }
+
+    .scientific-help {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: var(--text-secondary, #666);
+      text-align: center;
+    }
+
+    @media (max-width: 650px) {
+      .scientific-keypad {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .scientific-key.wide-key {
+        grid-column: span 2;
+      }
+
+      .scientific-result {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .scientific-keypad {
+        gap: 6px;
+      }
+
+      .scientific-key {
+        min-height: 46px;
+        font-size: 0.9rem;
+      }
+
+      .scientific-display {
+        padding: 14px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Scientific Calculator",
+    "url": "https://calclyworld.com/scientific-calculator.html",
+    "applicationCategory": "CalculatorApplication",
+    "operatingSystem": "Web",
+    "description": "Free online scientific calculator for arithmetic, trigonometry, logarithms, powers, square roots, percentages, and advanced mathematical calculations.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >🌙 Dark Mode</button>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#math">Math</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Scientific Calculator</span>
+      </div>
+    </div>
+
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Scientific Calculator</h1>
+
+        <p>
+          Perform advanced mathematical calculations online with a free
+          scientific calculator for arithmetic, powers, roots, logarithms,
+          trigonometry, percentages, and more.
+        </p>
+
+        <p>
+          Choose your angle mode, enter an expression, and calculate results
+          instantly without installing any software.
+        </p>
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card scientific-calculator">
+
+          <h2 class="text-center">Advanced Scientific Calculator</h2>
+
+          <p class="text-center small-text">
+            Enter an expression using the buttons below or your keyboard.
+          </p>
+
+
+          <div class="scientific-mode-row">
+
+            <div class="scientific-mode-buttons">
+
+              <button
+                type="button"
+                class="scientific-mode-btn active"
+                id="degree-mode"
+                aria-pressed="true"
+              >DEG</button>
+
+              <button
+                type="button"
+                class="scientific-mode-btn"
+                id="radian-mode"
+                aria-pressed="false"
+              >RAD</button>
+
+            </div>
+
+            <div
+              id="memory-indicator"
+              class="memory-indicator"
+              aria-live="polite"
+            >
+              Memory: 0
+            </div>
+
+          </div>
+
+
+          <!-- Display -->
+          <div
+            class="scientific-display"
+            aria-label="Scientific calculator display"
+          >
+
+            <div
+              id="scientific-expression"
+              class="scientific-expression"
+              aria-label="Current expression"
+            ></div>
+
+            <div
+              id="scientific-result"
+              class="scientific-result"
+              aria-live="polite"
+              aria-atomic="true"
+            >0</div>
+
+          </div>
+
+
+          <!-- Keypad -->
+          <div
+            class="scientific-keypad"
+            role="group"
+            aria-label="Scientific calculator keypad"
+          >
+
+            <!-- Row 1 -->
+            <button type="button" class="scientific-key function-key" data-action="memory-clear">MC</button>
+            <button type="button" class="scientific-key function-key" data-action="memory-recall">MR</button>
+            <button type="button" class="scientific-key function-key" data-action="memory-add">M+</button>
+            <button type="button" class="scientific-key function-key" data-action="memory-subtract">M−</button>
+            <button type="button" class="scientific-key function-key" data-action="clear-entry">CE</button>
+            <button type="button" class="scientific-key danger-key" data-action="clear">AC</button>
+
+
+            <!-- Row 2 -->
+            <button type="button" class="scientific-key function-key" data-value="(">(</button>
+            <button type="button" class="scientific-key function-key" data-value=")">)</button>
+            <button type="button" class="scientific-key function-key" data-value="π">π</button>
+            <button type="button" class="scientific-key function-key" data-value="e">e</button>
+            <button type="button" class="scientific-key function-key" data-action="backspace">⌫</button>
+            <button type="button" class="scientific-key operator-key" data-value="/">÷</button>
+
+
+            <!-- Row 3 -->
+            <button type="button" class="scientific-key function-key" data-action="sin">sin</button>
+            <button type="button" class="scientific-key function-key" data-action="cos">cos</button>
+            <button type="button" class="scientific-key function-key" data-action="tan">tan</button>
+            <button type="button" class="scientific-key function-key" data-action="log">log</button>
+            <button type="button" class="scientific-key function-key" data-action="ln">ln</button>
+            <button type="button" class="scientific-key operator-key" data-value="*">×</button>
+
+
+            <!-- Row 4 -->
+            <button type="button" class="scientific-key function-key" data-action="asin">sin⁻¹</button>
+            <button type="button" class="scientific-key function-key" data-action="acos">cos⁻¹</button>
+            <button type="button" class="scientific-key function-key" data-action="atan">tan⁻¹</button>
+            <button type="button" class="scientific-key function-key" data-action="sqrt">√</button>
+            <button type="button" class="scientific-key function-key" data-action="square">x²</button>
+            <button type="button" class="scientific-key operator-key" data-value="-">−</button>
+
+
+            <!-- Row 5 -->
+            <button type="button" class="scientific-key function-key" data-action="factorial">x!</button>
+            <button type="button" class="scientific-key function-key" data-action="reciprocal">1/x</button>
+            <button type="button" class="scientific-key function-key" data-action="percent">%</button>
+            <button type="button" class="scientific-key function-key" data-action="abs">|x|</button>
+            <button type="button" class="scientific-key function-key" data-value="^">xʸ</button>
+            <button type="button" class="scientific-key operator-key" data-value="+">+</button>
+
+
+            <!-- Row 6 -->
+            <button type="button" class="scientific-key" data-value="7">7</button>
+            <button type="button" class="scientific-key" data-value="8">8</button>
+            <button type="button" class="scientific-key" data-value="9">9</button>
+            <button type="button" class="scientific-key function-key" data-action="exp">EXP</button>
+            <button type="button" class="scientific-key function-key" data-action="sign">±</button>
+            <button type="button" class="scientific-key operator-key" data-value="=">=</button>
+
+
+            <!-- Row 7 -->
+            <button type="button" class="scientific-key" data-value="4">4</button>
+            <button type="button" class="scientific-key" data-value="5">5</button>
+            <button type="button" class="scientific-key" data-value="6">6</button>
+            <button type="button" class="scientific-key function-key" data-action="floor">⌊x⌋</button>
+            <button type="button" class="scientific-key function-key" data-action="ceil">⌈x⌉</button>
+            <button type="button" class="scientific-key operator-key" data-value=".">.</button>
+
+
+            <!-- Row 8 -->
+            <button type="button" class="scientific-key" data-value="1">1</button>
+            <button type="button" class="scientific-key" data-value="2">2</button>
+            <button type="button" class="scientific-key" data-value="3">3</button>
+            <button type="button" class="scientific-key function-key" data-action="ans">ANS</button>
+            <button type="button" class="scientific-key function-key" data-action="random">RAND</button>
+            <button type="button" class="scientific-key operator-key" data-value=",">,</button>
+
+
+            <!-- Row 9 -->
+            <button type="button" class="scientific-key wide-key" data-value="0">0</button>
+            <button type="button" class="scientific-key" data-action="decimal">.</button>
+            <button type="button" class="scientific-key function-key" data-action="open-parenthesis">(</button>
+            <button type="button" class="scientific-key function-key" data-action="close-parenthesis">)</button>
+            <button type="button" class="scientific-key equals-key" data-action="equals">Calculate</button>
+
+          </div>
+
+
+          <p class="scientific-help">
+            Keyboard support: numbers, +, −, ×, ÷, parentheses, decimal point,
+            Enter, Backspace, and Escape.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Scientific Calculator</h2>
+
+          <p>
+            Enter numbers and mathematical operators using the calculator
+            keypad or your computer keyboard. You can combine arithmetic
+            operations with parentheses, powers, roots, logarithms,
+            trigonometric functions, and constants.
+          </p>
+
+          <ol>
+            <li>Choose <strong>DEG</strong> for degrees or <strong>RAD</strong> for radians.</li>
+            <li>Enter your mathematical expression.</li>
+            <li>Use scientific functions such as sin, cos, tan, log, ln, √, and x² when needed.</li>
+            <li>Press <strong>Calculate</strong> or the Enter key to calculate the result.</li>
+            <li>Use the memory buttons when you need to temporarily store a number.</li>
+          </ol>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Scientific Calculator Functions</h2>
+
+          <p>
+            This calculator is designed for both everyday arithmetic and
+            more advanced mathematical work. It includes common scientific
+            functions without requiring a separate desktop application.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Function</th>
+                  <th>Purpose</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Basic arithmetic</td>
+                  <td>Add, subtract, multiply, and divide numbers.</td>
+                  <td>25 + 15</td>
+                </tr>
+
+                <tr>
+                  <td>Power</td>
+                  <td>Raise one number to another power.</td>
+                  <td>2^8</td>
+                </tr>
+
+                <tr>
+                  <td>Square root</td>
+                  <td>Calculate the square root of a number.</td>
+                  <td>√144</td>
+                </tr>
+
+                <tr>
+                  <td>Trigonometry</td>
+                  <td>Calculate sine, cosine, and tangent.</td>
+                  <td>sin(30)</td>
+                </tr>
+
+                <tr>
+                  <td>Inverse trigonometry</td>
+                  <td>Calculate inverse sine, cosine, and tangent.</td>
+                  <td>sin⁻¹(0.5)</td>
+                </tr>
+
+                <tr>
+                  <td>Logarithms</td>
+                  <td>Calculate common and natural logarithms.</td>
+                  <td>log(100)</td>
+                </tr>
+
+                <tr>
+                  <td>Factorial</td>
+                  <td>Calculate the factorial of a non-negative integer.</td>
+                  <td>5!</td>
+                </tr>
+
+                <tr>
+                  <td>Percentage</td>
+                  <td>Convert a number to a percentage value.</td>
+                  <td>25%</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Examples -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Scientific Calculator Examples</h2>
+
+          <p>
+            Here are some examples of calculations you can perform with the
+            calculator.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Calculation</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>2 + 8 × 5</td>
+                  <td>42</td>
+                </tr>
+
+                <tr>
+                  <td>√144</td>
+                  <td>12</td>
+                </tr>
+
+                <tr>
+                  <td>2^10</td>
+                  <td>1,024</td>
+                </tr>
+
+                <tr>
+                  <td>5!</td>
+                  <td>120</td>
+                </tr>
+
+                <tr>
+                  <td>log(100)</td>
+                  <td>2</td>
+                </tr>
+
+                <tr>
+                  <td>sin(30°)</td>
+                  <td>0.5</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What is a scientific calculator?</h3>
+
+          <p>
+            A scientific calculator is designed to perform both basic
+            arithmetic and advanced mathematical operations such as
+            trigonometry, logarithms, powers, roots, and factorials.
+          </p>
+
+
+          <h3>What is the difference between DEG and RAD?</h3>
+
+          <p>
+            DEG means degrees and RAD means radians. These modes determine
+            how trigonometric functions such as sine, cosine, and tangent
+            interpret angles.
+          </p>
+
+
+          <h3>Can I use the calculator with my keyboard?</h3>
+
+          <p>
+            Yes. You can enter numbers and common arithmetic operators using
+            your keyboard. Enter calculates the expression, Backspace removes
+            the last character, and Escape clears the calculator.
+          </p>
+
+
+          <h3>Is this scientific calculator free?</h3>
+
+          <p>
+            Yes. CalclyWorld's scientific calculator is free to use online
+            without installing a separate application.
+          </p>
+
+
+          <h3>Can I calculate trigonometric functions?</h3>
+
+          <p>
+            Yes. The calculator includes sine, cosine, tangent, and their
+            inverse functions. You can switch between degree and radian modes.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          Free online calculators designed to make everyday calculations,
+          financial planning, mathematics, conversions, and practical
+          decision-making easier.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/scientific-calculator.js"></script>
+
+</body>
+</html>

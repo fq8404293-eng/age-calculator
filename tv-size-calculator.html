@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TV Size Calculator - Calculate TV Dimensions & Viewing Distance | CalclyWorld</title>
+
+  <meta name="description" content="Use this free TV Size Calculator to calculate TV width, height, screen area, dimensions in inches and centimeters, viewing distance and pixel density.">
+
+  <meta name="keywords" content="tv size calculator, tv dimensions calculator, tv width calculator, tv viewing distance calculator, television size calculator, screen size calculator">
+
+  <link rel="canonical" href="https://calclyworld.com/tv-size-calculator.html">
+
+  <meta property="og:title" content="TV Size Calculator - Calculate TV Dimensions | CalclyWorld">
+  <meta property="og:description" content="Calculate TV width, height, area, viewing distance and physical screen dimensions for any television size.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/tv-size-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"TV Size Calculator",
+    "url":"https://calclyworld.com/tv-size-calculator.html",
+    "applicationCategory":"UtilityApplication",
+    "operatingSystem":"All",
+    "description":"Free online TV size calculator for calculating television dimensions, width, height, viewing distance and screen area.",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+
+  <div class="container header-container">
+
+    <a href="/" class="logo">
+
+      <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+
+      <span>CalclyWorld</span>
+
+    </a>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+
+      <a href="/">Home</a>
+      <a href="/#calculator-directory">Calculators</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+
+    </nav>
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      🌙 Dark Mode
+    </button>
+
+  </div>
+
+</header>
+
+
+<main id="main-content">
+
+  <!-- Breadcrumb -->
+
+  <div class="breadcrumb">
+
+    <div class="container">
+
+      <a href="/">Home</a>
+
+      <span aria-hidden="true">›</span>
+
+      <span aria-current="page">
+        TV Size Calculator
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- Hero -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <h1>TV Size Calculator</h1>
+
+      <p>
+        Calculate the physical width, height, screen area and recommended
+        viewing distance for any television size.
+      </p>
+
+      <p>
+        Enter your TV diagonal and optionally its resolution to estimate
+        pixel density and complete screen dimensions.
+      </p>
+
+      <div class="hero-search">
+
+        <input
+          type="search"
+          id="calculator-search"
+          class="calculator-search"
+          placeholder="Search calculators... (Example: BMI, EMI, Age)"
+          autocomplete="off"
+          aria-label="Search calculators"
+        >
+
+        <div
+          id="search-results"
+          class="search-results"
+          hidden
+        ></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Calculator -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">
+          Calculate TV Dimensions
+        </h2>
+
+        <p class="text-center small-text">
+          Most modern televisions use a 16:9 aspect ratio.
+        </p>
+
+
+        <div class="calculator-form">
+
+
+          <div class="form-group">
+
+            <label for="tv-diagonal">
+              TV Size (Diagonal)
+            </label>
+
+            <input
+              type="number"
+              id="tv-diagonal"
+              min="1"
+              step="any"
+              placeholder="55"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="tv-unit">
+              Measurement Unit
+            </label>
+
+            <select id="tv-unit">
+
+              <option value="in" selected>
+                Inches
+              </option>
+
+              <option value="cm">
+                Centimeters
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="tv-resolution">
+              TV Resolution
+            </label>
+
+            <select id="tv-resolution">
+
+              <option value="">
+                Not Selected
+              </option>
+
+              <option value="1280x720">
+                HD (1280 × 720)
+              </option>
+
+              <option value="1920x1080">
+                Full HD (1920 × 1080)
+              </option>
+
+              <option value="2560x1440">
+                1440p / QHD (2560 × 1440)
+              </option>
+
+              <option value="3840x2160" selected>
+                4K UHD (3840 × 2160)
+              </option>
+
+              <option value="7680x4320">
+                8K UHD (7680 × 4320)
+              </option>
+
+            </select>
+
+            <small class="small-text">
+              Optional. Used for calculating pixel density.
+            </small>
+
+          </div>
+
+
+          <div
+            id="tv-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              id="tv-calculate"
+              class="btn"
+              type="button"
+            >
+              Calculate TV Size
+            </button>
+
+            <button
+              id="tv-reset"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Results -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div
+        id="tv-result"
+        class="content-card"
+        hidden
+        aria-live="polite"
+        aria-atomic="true"
+      >
+
+        <h2>TV Size Results</h2>
+
+        <div id="tv-result-content"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Summary -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">
+          TV Size Summary
+        </h2>
+
+        <div class="calculator-results-grid">
+
+          <div class="result-card">
+
+            <h3>TV Size</h3>
+
+            <p id="tv-summary-size">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Screen Width</h3>
+
+            <p id="tv-summary-width">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Screen Height</h3>
+
+            <p id="tv-summary-height">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Viewing Distance</h3>
+
+            <p id="tv-summary-distance">—</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- How it works -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>How TV Size Is Calculated</h2>
+
+        <p>
+          Television sizes are measured diagonally from one corner of the
+          visible screen to the opposite corner.
+        </p>
+
+        <p>
+          Because most televisions use a 16:9 aspect ratio, the width and
+          height can be calculated from the diagonal measurement.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              Width = Diagonal × 16 ÷ √(16² + 9²)
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              Height = Diagonal × 9 ÷ √(16² + 9²)
+            </strong>
+          </p>
+
+        </div>
+
+        <p>
+          The calculator also estimates viewing distance using common
+          recommended ranges for comfortable television viewing.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Popular TV Sizes -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Popular TV Sizes</h2>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>TV Size</th>
+                <th>Width</th>
+                <th>Height</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>32 inch</td>
+                <td>27.9 in</td>
+                <td>15.7 in</td>
+              </tr>
+
+              <tr>
+                <td>40 inch</td>
+                <td>34.9 in</td>
+                <td>19.6 in</td>
+              </tr>
+
+              <tr>
+                <td>43 inch</td>
+                <td>37.5 in</td>
+                <td>21.1 in</td>
+              </tr>
+
+              <tr>
+                <td>50 inch</td>
+                <td>43.6 in</td>
+                <td>24.5 in</td>
+              </tr>
+
+              <tr>
+                <td>55 inch</td>
+                <td>47.9 in</td>
+                <td>27.0 in</td>
+              </tr>
+
+              <tr>
+                <td>65 inch</td>
+                <td>56.7 in</td>
+                <td>31.9 in</td>
+              </tr>
+
+              <tr>
+                <td>75 inch</td>
+                <td>65.4 in</td>
+                <td>36.8 in</td>
+              </tr>
+
+              <tr>
+                <td>85 inch</td>
+                <td>74.1 in</td>
+                <td>41.7 in</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Viewing Distance -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Recommended TV Viewing Distance</h2>
+
+        <p>
+          Viewing distance depends on screen size and personal preference.
+          A larger television generally allows a greater seating distance.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>TV Size</th>
+                <th>Recommended Distance</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>32 inch</td>
+                <td>4.0 – 6.7 ft</td>
+              </tr>
+
+              <tr>
+                <td>43 inch</td>
+                <td>5.4 – 9.0 ft</td>
+              </tr>
+
+              <tr>
+                <td>50 inch</td>
+                <td>6.3 – 10.4 ft</td>
+              </tr>
+
+              <tr>
+                <td>55 inch</td>
+                <td>6.9 – 11.5 ft</td>
+              </tr>
+
+              <tr>
+                <td>65 inch</td>
+                <td>8.1 – 13.5 ft</td>
+              </tr>
+
+              <tr>
+                <td>75 inch</td>
+                <td>9.4 – 15.6 ft</td>
+              </tr>
+
+              <tr>
+                <td>85 inch</td>
+                <td>10.6 – 17.7 ft</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Example -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>TV Size Example</h2>
+
+        <p>
+          Suppose you have a <strong>55-inch</strong> television with a
+          standard <strong>16:9</strong> aspect ratio.
+        </p>
+
+        <p>
+          The screen width is approximately
+          <strong>47.9 inches</strong>, while the height is approximately
+          <strong>27.0 inches</strong>.
+        </p>
+
+        <p>
+          The visible screen area is approximately
+          <strong>1,293 square inches</strong>.
+        </p>
+
+        <p>
+          A comfortable viewing distance is roughly
+          <strong>6.9 to 11.5 feet</strong>, depending on viewing preference
+          and content.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How is TV size measured?</h3>
+
+        <p>
+          TV size refers to the diagonal distance across the visible display,
+          not the width of the television.
+        </p>
+
+        <h3>How wide is a 55-inch TV?</h3>
+
+        <p>
+          A standard 16:9 55-inch television has a screen width of about
+          47.9 inches.
+        </p>
+
+        <h3>Does the bezel count in TV size?</h3>
+
+        <p>
+          No. Television size usually refers only to the visible display,
+          excluding the bezel and outer frame.
+        </p>
+
+        <h3>What is the best viewing distance for a TV?</h3>
+
+        <p>
+          The ideal distance depends on TV size, resolution and personal
+          preference. Larger 4K televisions can often be viewed comfortably
+          from closer distances than lower-resolution TVs.
+        </p>
+
+        <h3>Does resolution change the physical TV size?</h3>
+
+        <p>
+          No. Resolution changes the number of pixels on the screen but does
+          not change the physical width or height of a television with the
+          same diagonal size.
+        </p>
+
+        <h3>Can I calculate centimeters instead of inches?</h3>
+
+        <p>
+          Yes. Enter the TV diagonal in centimeters and the calculator will
+          automatically provide both centimeter and inch measurements.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-column">
+
+      <h3>CalclyWorld</h3>
+
+      <p>
+        Free online calculators designed to provide clear,
+        practical and easy-to-understand results for everyday decisions.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Popular Calculators</h3>
+
+      <ul>
+        <li><a href="/age-calculator.html">Age Calculator</a></li>
+        <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+        <li><a href="/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Calculator Categories</h3>
+
+      <ul>
+        <li><a href="/#finance">Finance</a></li>
+        <li><a href="/#everyday">Everyday</a></li>
+        <li><a href="/#math">Math</a></li>
+        <li><a href="/#home-construction">Home &amp; Construction</a></li>
+        <li><a href="/#automotive">Automotive</a></li>
+        <li><a href="/#technology">Technology</a></li>
+        <li><a href="/#conversion">Conversion</a></li>
+        <li><a href="/#travel">Travel</a></li>
+        <li><a href="/#lifestyle">Lifestyle</a></li>
+        <li><a href="/#utility">Utility</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span> CalclyWorld. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="/script-v2.js"></script>
+<script src="/tv-size-calculator.js"></script>
+
+</body>
+</html>

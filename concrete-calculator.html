@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Concrete Calculator - Calculate Concrete Volume &amp; Yards | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Concrete Calculator to estimate the concrete needed for slabs, foundations, footings, and other rectangular projects. Calculate volume in cubic feet, cubic yards, and with waste allowance.">
+  <meta name="keywords" content="concrete calculator, concrete volume calculator, concrete yard calculator, cubic yard calculator, slab concrete calculator, concrete estimate calculator">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/concrete-calculator.html">
+
+  <meta property="og:title" content="Concrete Calculator - Calculate Concrete Needed | CalclyWorld">
+  <meta property="og:description" content="Estimate concrete volume for slabs, foundations, footings, and rectangular projects in cubic feet and cubic yards.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/concrete-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Concrete Calculator",
+    "url": "https://calclyworld.com/concrete-calculator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "A free online concrete calculator for estimating concrete volume in cubic feet and cubic yards, including a waste allowance.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container content">
+
+        <a href="/">Home</a>
+
+        <span aria-hidden="true">›</span>
+
+        <a href="/#home-construction">Home &amp; Construction</a>
+
+        <span aria-hidden="true">›</span>
+
+        <span aria-current="page">
+          Concrete Calculator
+        </span>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Concrete Calculator</h1>
+
+        <p>
+          Estimate how much concrete you need for a rectangular slab,
+          foundation, footing, pad, or other project.
+        </p>
+
+        <p>
+          Enter the length, width, thickness, and waste allowance to
+          calculate concrete volume in cubic feet and cubic yards.
+        </p>
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Concrete Needed
+          </h2>
+
+          <p class="text-center small-text">
+            Enter the project dimensions in feet and inches.
+          </p>
+
+          <div class="calculator-form">
+
+            <!-- Project Dimensions -->
+            <h3>Project Dimensions</h3>
+
+            <div class="form-group">
+
+              <label for="concrete-length">
+                Length (ft)
+              </label>
+
+              <input
+                type="number"
+                id="concrete-length"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 20"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="concrete-width">
+                Width (ft)
+              </label>
+
+              <input
+                type="number"
+                id="concrete-width"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 15"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="concrete-thickness">
+                Thickness (inches)
+              </label>
+
+              <input
+                type="number"
+                id="concrete-thickness"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 4"
+              >
+
+              <small class="small-text">
+                Enter the average concrete thickness in inches.
+              </small>
+
+            </div>
+
+            <!-- Waste -->
+            <h3>Waste Allowance</h3>
+
+            <div class="form-group">
+
+              <label for="concrete-waste">
+                Waste Allowance (%)
+              </label>
+
+              <input
+                type="number"
+                id="concrete-waste"
+                min="0"
+                max="50"
+                step="0.5"
+                inputmode="decimal"
+                value="10"
+                placeholder="Example: 10"
+              >
+
+              <small class="small-text">
+                A waste allowance can help account for uneven surfaces,
+                spillage, measurement differences, and delivery losses.
+              </small>
+
+            </div>
+
+            <!-- Error -->
+            <div
+              id="concrete-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <!-- Actions -->
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-concrete"
+                class="btn"
+                type="button"
+              >
+                Calculate Concrete
+              </button>
+
+              <button
+                id="reset-concrete"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="concrete-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">
+            Concrete Estimate
+          </h2>
+
+          <div id="concrete-result-content"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How Calculation Works -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How Does the Concrete Calculator Work?</h2>
+
+          <p>
+            The calculator determines the volume of a rectangular
+            project by multiplying its length, width, and thickness.
+            Because thickness is entered in inches, it is converted
+            to feet before the volume is calculated.
+          </p>
+
+          <p>
+            The resulting volume is shown in cubic feet and converted
+            to cubic yards. A waste allowance can then be added to
+            provide a practical ordering estimate.
+          </p>
+
+          <div class="info-box">
+
+            <p class="text-center">
+              <strong>
+                Volume = Length × Width × Thickness
+              </strong>
+            </p>
+
+            <p class="text-center">
+              <strong>
+                Cubic Yards = Cubic Feet ÷ 27
+              </strong>
+            </p>
+
+            <p class="text-center">
+              <strong>
+                Required Concrete =
+                Volume × (1 + Waste %)
+              </strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Thickness Conversion -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Converting Concrete Thickness to Feet</h2>
+
+          <p>
+            Concrete slabs and similar projects are often measured
+            using thickness in inches, while volume calculations use
+            feet.
+          </p>
+
+          <p>
+            To convert inches to feet, divide the thickness by 12.
+          </p>
+
+          <div class="info-box">
+
+            <p class="text-center">
+              <strong>
+                Thickness in Feet = Thickness in Inches ÷ 12
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            For example, a 4-inch slab has a thickness of:
+          </p>
+
+          <p>
+            <strong>
+              4 ÷ 12 = 0.3333 feet
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Cubic Yard Conversion -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is a Cubic Yard of Concrete?</h2>
+
+          <p>
+            Ready-mix concrete is commonly ordered in cubic yards in
+            the United States. One cubic yard contains 27 cubic feet.
+          </p>
+
+          <div class="info-box">
+
+            <p class="text-center">
+              <strong>
+                1 Cubic Yard = 27 Cubic Feet
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            To convert a volume measured in cubic feet to cubic yards,
+            divide the cubic-foot value by 27.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Concrete Calculator Example</h2>
+
+          <p>
+            Suppose you are pouring a rectangular slab that is
+            20 feet long, 15 feet wide, and 4 inches thick.
+          </p>
+
+          <p>
+            First convert the thickness to feet:
+          </p>
+
+          <p>
+            <strong>
+              4 ÷ 12 = 0.3333 ft
+            </strong>
+          </p>
+
+          <p>
+            The concrete volume is approximately:
+          </p>
+
+          <p>
+            <strong>
+              20 × 15 × 0.3333 ≈ 100 cubic feet
+            </strong>
+          </p>
+
+          <p>
+            Convert cubic feet to cubic yards:
+          </p>
+
+          <p>
+            <strong>
+              100 ÷ 27 ≈ 3.70 cubic yards
+            </strong>
+          </p>
+
+          <p>
+            With a 10% waste allowance:
+          </p>
+
+          <p>
+            <strong>
+              3.70 × 1.10 ≈ 4.07 cubic yards
+            </strong>
+          </p>
+
+          <p>
+            This gives an estimated ordering quantity of approximately
+            <strong>4.07 cubic yards</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Waste Allowance -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Why Add a Concrete Waste Allowance?</h2>
+
+          <p>
+            Theoretical volume does not always equal the amount of
+            concrete that must be ordered. Real projects can have
+            uneven excavation, variations in thickness, spillage,
+            equipment losses, or small measurement differences.
+          </p>
+
+          <p>
+            A waste allowance provides additional material beyond the
+            calculated geometric volume.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Waste Allowance</th>
+                  <th>General Planning Situation</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>5%</td>
+                  <td>Well-measured, straightforward project</td>
+                </tr>
+
+                <tr>
+                  <td>10%</td>
+                  <td>Common starting estimate for many projects</td>
+                </tr>
+
+                <tr>
+                  <td>15%</td>
+                  <td>More variable dimensions or site conditions</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p class="small-text">
+            These are general planning values rather than a universal
+            ordering rule. Actual requirements depend on the project
+            and site conditions.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Different Projects -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Projects You Can Estimate</h2>
+
+          <p>
+            The rectangular volume calculation can be useful for
+            estimating concrete for many simple projects, including:
+          </p>
+
+          <ul>
+
+            <li>
+              Concrete slabs
+            </li>
+
+            <li>
+              Garage and driveway sections
+            </li>
+
+            <li>
+              Patios
+            </li>
+
+            <li>
+              Walkways
+            </li>
+
+            <li>
+              Concrete pads
+            </li>
+
+            <li>
+              Rectangular footings
+            </li>
+
+            <li>
+              Foundation sections
+            </li>
+
+          </ul>
+
+          <p>
+            Irregular or multi-section projects should be divided into
+            simpler measurable shapes and calculated separately.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Irregular Projects -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Calculate Concrete for an Irregular Project</h2>
+
+          <p>
+            If the project does not form one simple rectangle, divide
+            it into smaller rectangular sections whenever practical.
+          </p>
+
+          <p>
+            Calculate the volume of each section and add the volumes
+            together before applying the waste allowance.
+          </p>
+
+          <div class="info-box">
+
+            <p class="text-center">
+              <strong>
+                Total Volume =
+                Volume 1 + Volume 2 + Volume 3 + ...
+              </strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Concrete Calculator</h2>
+
+          <ol>
+
+            <li>
+              Measure the project length in feet.
+            </li>
+
+            <li>
+              Measure the project width in feet.
+            </li>
+
+            <li>
+              Measure the average concrete thickness in inches.
+            </li>
+
+            <li>
+              Enter a suitable waste allowance.
+            </li>
+
+            <li>
+              Click <strong>Calculate Concrete</strong>.
+            </li>
+
+            <li>
+              Review the calculated volume in cubic feet and cubic
+              yards.
+            </li>
+
+            <li>
+              Use the waste-adjusted estimate when planning the amount
+              of concrete required.
+            </li>
+
+          </ol>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Measuring Tips -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Concrete Measurement Tips</h2>
+
+          <ul>
+
+            <li>
+              Measure the project dimensions as accurately as possible.
+            </li>
+
+            <li>
+              If thickness varies, use a realistic average thickness
+              for an initial estimate.
+            </li>
+
+            <li>
+              Divide irregular shapes into simpler sections.
+            </li>
+
+            <li>
+              Check whether the supplier sells concrete by cubic yard,
+              cubic meter, or another unit.
+            </li>
+
+            <li>
+              Confirm the final quantity with your concrete supplier or
+              construction professional before ordering.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Important Note -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Important Note About Concrete Estimates</h2>
+
+          <p>
+            This calculator provides a geometric volume estimate for
+            planning purposes. Actual concrete requirements can vary
+            because of excavation conditions, uneven surfaces, changes
+            in thickness, formwork, spillage, and other site factors.
+          </p>
+
+          <p>
+            Structural concrete work should be designed and reviewed
+            according to applicable building requirements and by an
+            appropriately qualified professional when necessary.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How do I calculate how much concrete I need?</h3>
+
+          <p>
+            Multiply the length by the width and thickness to find the
+            volume. Convert the result to the unit used by your
+            supplier and consider an appropriate waste allowance.
+          </p>
+
+          <h3>How many cubic feet are in a cubic yard?</h3>
+
+          <p>
+            One cubic yard contains 27 cubic feet.
+          </p>
+
+          <h3>Why is concrete thickness entered in inches?</h3>
+
+          <p>
+            Concrete slab thickness is commonly specified in inches.
+            The calculator converts the thickness to feet so it can be
+            used with dimensions measured in feet.
+          </p>
+
+          <h3>Should I add extra concrete?</h3>
+
+          <p>
+            A waste allowance can help account for real-world
+            variations such as uneven surfaces, thickness differences,
+            and spillage. The appropriate allowance depends on the
+            project.
+          </p>
+
+          <h3>Can this calculator estimate a driveway or patio?</h3>
+
+          <p>
+            Yes. It can estimate simple rectangular sections of
+            driveways, patios, slabs, pads, and similar projects.
+          </p>
+
+          <h3>Is the concrete estimate exact?</h3>
+
+          <p>
+            No. It is a planning estimate based on the dimensions you
+            provide. Actual quantities can vary at the job site.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators
+          designed to make everyday calculations simple, fast,
+          and easy to understand.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/concrete-calculator.js"></script>
+
+</body>
+</html>

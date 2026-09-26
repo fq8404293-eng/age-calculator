@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gravel Calculator - Calculate Gravel Needed for a Project | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Gravel Calculator to estimate how much gravel you need for driveways, paths, landscaping, and other projects. Calculate gravel volume from area, depth, and waste allowance.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://calclyworld.com/gravel-calculator.html">
+
+  <meta property="og:title" content="Gravel Calculator - Calculate Gravel Needed for a Project">
+  <meta property="og:description" content="Estimate gravel quantity for driveways, paths, landscaping, and construction projects using area, depth, and waste allowance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/gravel-calculator.html">
+  <meta property="og:site_name" content="CalclyWorld">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Gravel Calculator",
+    "url": "https://calclyworld.com/gravel-calculator.html",
+    "description": "A free online gravel calculator for estimating gravel requirements from area, depth, and waste allowance.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a gravel calculator calculate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A gravel calculator estimates the volume of gravel required based on the project area, gravel depth, and waste allowance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is gravel quantity calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gravel volume is calculated by multiplying the project area by the required gravel depth. A waste allowance can then be added to account for practical material losses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate gravel in cubic yards?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The calculator provides gravel volume in cubic feet, cubic yards, and cubic meters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much waste allowance should I use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The appropriate allowance depends on the project and installation conditions. A small percentage can be used to account for handling, spreading, settling, and measurement differences."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Search -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="container">
+
+        <a href="/">Home</a>
+
+        <span aria-hidden="true">›</span>
+
+        <span aria-current="page">Gravel Calculator</span>
+
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Gravel Calculator</h1>
+
+        <p>
+          Estimate how much gravel you need for driveways, walkways,
+          landscaping, drainage areas, and other projects.
+        </p>
+
+        <p>
+          Enter the project dimensions and desired gravel depth to calculate
+          the estimated volume of gravel required.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate Gravel Quantity</h2>
+
+          <p class="text-center small-text">
+            Enter the area, gravel depth, and waste allowance to estimate the
+            required gravel volume.
+          </p>
+
+          <div class="calculator-form">
+
+            <!-- Length -->
+            <div class="form-group">
+
+              <label for="gravel-length">
+                Area Length (ft)
+              </label>
+
+              <input
+                type="number"
+                id="gravel-length"
+                min="0"
+                step="any"
+                placeholder="Example: 20"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <!-- Width -->
+            <div class="form-group">
+
+              <label for="gravel-width">
+                Area Width (ft)
+              </label>
+
+              <input
+                type="number"
+                id="gravel-width"
+                min="0"
+                step="any"
+                placeholder="Example: 10"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <!-- Depth -->
+            <div class="form-group">
+
+              <label for="gravel-depth">
+                Gravel Depth
+              </label>
+
+              <input
+                type="number"
+                id="gravel-depth"
+                min="0"
+                step="any"
+                placeholder="Example: 4"
+                inputmode="decimal"
+              >
+
+              <small class="small-text">
+                Enter the desired gravel depth.
+              </small>
+
+            </div>
+
+            <!-- Depth Unit -->
+            <div class="form-group">
+
+              <label for="depth-unit">
+                Depth Unit
+              </label>
+
+              <select id="depth-unit">
+
+                <option value="inches">
+                  Inches
+                </option>
+
+                <option value="feet">
+                  Feet
+                </option>
+
+                <option value="centimeters">
+                  Centimeters
+                </option>
+
+                <option value="meters">
+                  Meters
+                </option>
+
+              </select>
+
+            </div>
+
+            <!-- Waste -->
+            <div class="form-group">
+
+              <label for="gravel-waste">
+                Waste / Settling Allowance (%)
+              </label>
+
+              <input
+                type="number"
+                id="gravel-waste"
+                min="0"
+                max="100"
+                step="any"
+                value="10"
+                placeholder="Example: 10"
+                inputmode="decimal"
+              >
+
+              <small class="small-text">
+                Optional allowance for settling, spreading, and material
+                losses.
+              </small>
+
+            </div>
+
+            <!-- Error -->
+            <div
+              id="gravel-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <!-- Actions -->
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-gravel"
+                class="btn"
+                type="button"
+              >
+                Calculate Gravel
+              </button>
+
+              <button
+                id="reset-gravel"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="gravel-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>Gravel Requirement</h2>
+
+          <div id="gravel-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Summary -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Gravel Calculation Summary</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Project Area</h3>
+              <p id="summary-project-area">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Gravel Depth</h3>
+              <p id="summary-gravel-depth">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Gravel Required</h3>
+              <p id="summary-gravel-required">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>With Allowance</h3>
+              <p id="summary-gravel-waste">—</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- How It Works -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Gravel Calculator</h2>
+
+          <p>
+            Enter the length and width of the area you want to cover. Then
+            enter the desired depth of gravel and select the appropriate depth
+            unit.
+          </p>
+
+          <p>
+            The calculator determines the required gravel volume and can add a
+            waste or settling allowance to provide a more practical purchasing
+            estimate.
+          </p>
+
+          <ol>
+            <li>Enter the project length.</li>
+            <li>Enter the project width.</li>
+            <li>Enter the desired gravel depth.</li>
+            <li>Select the depth unit.</li>
+            <li>Enter a waste or settling allowance.</li>
+            <li>Click <strong>Calculate Gravel</strong>.</li>
+          </ol>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Formula -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Gravel Calculator Formula</h2>
+
+          <p>
+            Gravel volume is based on the area being covered and the desired
+            material depth.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Project Area</strong> =
+              Length × Width
+            </p>
+
+            <p>
+              <strong>Gravel Volume</strong> =
+              Project Area × Gravel Depth
+            </p>
+
+            <p>
+              <strong>Volume With Allowance</strong> =
+              Gravel Volume × (1 + Allowance % ÷ 100)
+            </p>
+
+          </div>
+
+          <p>
+            The calculator converts the result between cubic feet, cubic yards,
+            and cubic meters so you can compare the estimate with different
+            supplier measurement systems.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Gravel Calculation Example</h2>
+
+          <p>
+            Suppose you want to cover an area that is 20 feet long and 10 feet
+            wide with a gravel layer 4 inches deep.
+          </p>
+
+          <p>
+            The calculator converts the depth into feet, calculates the total
+            project volume, and then applies the selected waste or settling
+            allowance.
+          </p>
+
+          <p>
+            The final result is provided in cubic feet, cubic yards, and cubic
+            meters to make material ordering easier.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Important Information -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Important Information About Gravel Estimates</h2>
+
+          <p>
+            Gravel depth should be selected according to the purpose of the
+            project, the type of gravel being used, the underlying surface,
+            drainage requirements, and local construction practices.
+          </p>
+
+          <p>
+            Gravel can settle after installation, especially when the base is
+            not fully compacted. An allowance can help provide additional
+            material for settling and practical losses.
+          </p>
+
+          <p>
+            Actual quantities may vary because of grading, moisture, compaction,
+            delivery conditions, and the shape of the project area.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What does a gravel calculator calculate?</h3>
+
+          <p>
+            It estimates the volume of gravel required based on the project
+            area, gravel depth, and optional waste or settling allowance.
+          </p>
+
+          <h3>How is gravel quantity calculated?</h3>
+
+          <p>
+            The project area is multiplied by the required gravel depth to
+            determine the basic volume. An allowance can then be added.
+          </p>
+
+          <h3>Can I calculate gravel in cubic yards?</h3>
+
+          <p>
+            Yes. The calculator provides the result in cubic feet, cubic yards,
+            and cubic meters.
+          </p>
+
+          <h3>How much waste allowance should I use?</h3>
+
+          <p>
+            The appropriate allowance depends on the project. A small
+            percentage can account for settling, spreading, handling losses,
+            and measurement differences.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, easy-to-use online calculators for
+          everyday decisions, financial planning, construction projects,
+          conversions, travel, technology, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/gravel-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Battery Runtime Calculator - Calculate Battery Life | CalclyWorld</title>
+
+  <meta name="description" content="Use the free Battery Runtime Calculator to estimate how long a battery can power a device based on battery capacity, voltage, power consumption and efficiency.">
+
+  <meta name="keywords" content="battery runtime calculator, battery life calculator, battery backup calculator, battery capacity calculator, battery runtime, battery backup time">
+
+  <link rel="canonical" href="https://calclyworld.com/battery-runtime-calculator.html">
+
+  <meta property="og:title" content="Battery Runtime Calculator - Calculate Battery Life | CalclyWorld">
+  <meta property="og:description" content="Calculate estimated battery runtime from battery capacity, voltage, device power consumption and efficiency.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/battery-runtime-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Battery Runtime Calculator",
+    "url": "https://calclyworld.com/battery-runtime-calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "description": "Free online calculator for estimating battery runtime from battery capacity, voltage, device power consumption and efficiency.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-container">
+
+    <a href="/" class="logo">
+      <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+      <span>CalclyWorld</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <a href="/">Home</a>
+      <a href="/#calculator-directory">Calculators</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      🌙 Dark Mode
+    </button>
+
+  </div>
+</header>
+
+
+<main id="main-content">
+
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Battery Runtime Calculator</span>
+    </div>
+  </div>
+
+
+  <section class="hero">
+    <div class="container">
+
+      <h1>Battery Runtime Calculator</h1>
+
+      <p>
+        Estimate how long a battery can power a device based on battery
+        capacity, voltage, power consumption and system efficiency.
+      </p>
+
+      <p>
+        Calculate battery energy, usable energy and estimated runtime in
+        hours and minutes.
+      </p>
+
+      <div class="hero-search">
+        <input
+          type="search"
+          id="calculator-search"
+          class="calculator-search"
+          placeholder="Search calculators... (Example: BMI, EMI, Age)"
+          autocomplete="off"
+          aria-label="Search calculators"
+        >
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Calculator -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">Calculate Battery Runtime</h2>
+
+        <p class="text-center small-text">
+          Enter the battery specifications and device power consumption.
+        </p>
+
+
+        <div class="calculator-form">
+
+          <div class="form-group">
+
+            <label for="battery-capacity">
+              Battery Capacity
+            </label>
+
+            <input
+              type="number"
+              id="battery-capacity"
+              min="0.000001"
+              step="any"
+              placeholder="100"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="battery-capacity-unit">
+              Capacity Unit
+            </label>
+
+            <select id="battery-capacity-unit">
+
+              <option value="Ah" selected>
+                Amp-hours (Ah)
+              </option>
+
+              <option value="mAh">
+                Milliamp-hours (mAh)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="battery-voltage">
+              Battery Voltage
+            </label>
+
+            <div class="input-with-unit">
+
+              <input
+                type="number"
+                id="battery-voltage"
+                min="0.000001"
+                step="any"
+                placeholder="12"
+                inputmode="decimal"
+              >
+
+              <span>V</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="battery-power">
+              Device Power Consumption
+            </label>
+
+            <input
+              type="number"
+              id="battery-power"
+              min="0.000001"
+              step="any"
+              placeholder="60"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="battery-power-unit">
+              Power Unit
+            </label>
+
+            <select id="battery-power-unit">
+
+              <option value="W" selected>
+                Watts (W)
+              </option>
+
+              <option value="mW">
+                Milliwatts (mW)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="battery-efficiency">
+              System Efficiency
+            </label>
+
+            <div class="input-with-unit">
+
+              <input
+                type="number"
+                id="battery-efficiency"
+                min="1"
+                max="100"
+                step="0.1"
+                value="100"
+                inputmode="decimal"
+              >
+
+              <span>%</span>
+
+            </div>
+
+            <small class="small-text">
+              Use 100% for a theoretical estimate. A lower value can account
+              for conversion losses and other real-world inefficiencies.
+            </small>
+
+          </div>
+
+
+          <div
+            id="battery-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              id="battery-calculate"
+              class="btn"
+              type="button"
+            >
+              Calculate Battery Runtime
+            </button>
+
+            <button
+              id="battery-reset"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Results -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div
+        id="battery-result"
+        class="content-card"
+        hidden
+        aria-live="polite"
+        aria-atomic="true"
+      >
+
+        <h2>Battery Runtime Results</h2>
+
+        <div id="battery-result-content"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Summary -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">Battery Runtime Summary</h2>
+
+        <div class="calculator-results-grid">
+
+          <div class="result-card">
+            <h3>Battery Capacity</h3>
+            <p id="battery-summary-capacity">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Battery Voltage</h3>
+            <p id="battery-summary-voltage">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Power Consumption</h3>
+            <p id="battery-summary-power">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Estimated Runtime</h3>
+            <p id="battery-summary-runtime">—</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- How battery runtime works -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>How Battery Runtime Is Calculated</h2>
+
+        <p>
+          Battery runtime depends on the amount of energy stored in the
+          battery and the amount of power consumed by the connected device.
+        </p>
+
+        <p>
+          When battery capacity is provided in amp-hours, the battery's
+          approximate energy is calculated by multiplying amp-hours by
+          voltage.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              Battery Energy (Wh) = Battery Capacity (Ah) × Voltage (V)
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              Runtime (hours) =
+              Usable Battery Energy (Wh) ÷ Device Power (W)
+            </strong>
+          </p>
+
+        </div>
+
+        <p>
+          The calculator applies the selected system efficiency to estimate
+          the usable energy available to the device.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Amp hours and watt hours -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Amp-Hours vs. Watt-Hours</h2>
+
+        <p>
+          Amp-hours (Ah) measure electrical charge capacity, while watt-hours
+          (Wh) represent energy capacity. Voltage is needed to convert
+          amp-hours into watt-hours.
+        </p>
+
+        <p>
+          For example, a 12 V battery rated at 100 Ah has an approximate
+          nominal energy capacity of 1,200 Wh.
+        </p>
+
+        <p>
+          The actual usable energy can be lower depending on battery
+          chemistry, discharge limits, temperature, age, load and other
+          operating conditions.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Example -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Battery Runtime Example</h2>
+
+        <p>
+          Suppose a battery has a capacity of <strong>100 Ah</strong> at
+          <strong>12 V</strong> and powers a device consuming
+          <strong>60 W</strong>.
+        </p>
+
+        <p>
+          Battery energy = 100 Ah × 12 V =
+          <strong>1,200 Wh</strong>.
+        </p>
+
+        <p>
+          At 100% efficiency, the theoretical runtime is:
+          1,200 Wh ÷ 60 W = <strong>20 hours</strong>.
+        </p>
+
+        <p>
+          Real-world runtime may be lower because batteries and power
+          systems are not perfectly efficient.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Factors -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Factors That Affect Battery Runtime</h2>
+
+        <p>
+          The calculated runtime is an estimate. Actual battery performance
+          can vary because of several factors.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Effect on Runtime</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Device Power</td>
+                <td>
+                  Higher power consumption generally reduces runtime.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Battery Age</td>
+                <td>
+                  Older batteries may have reduced effective capacity.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Temperature</td>
+                <td>
+                  Extreme temperatures can affect battery performance.
+                </td>
+              </tr>
+
+              <tr>
+                <td>System Efficiency</td>
+                <td>
+                  Conversion losses reduce the energy delivered to the device.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Discharge Limits</td>
+                <td>
+                  Some batteries should not be fully discharged.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Load Variation</td>
+                <td>
+                  Devices with changing power demands may have different
+                  runtime than a constant-load calculation.
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How do I calculate battery runtime?</h3>
+
+        <p>
+          Convert the battery capacity into watt-hours by multiplying
+          amp-hours by voltage, then divide the usable energy by the
+          device's power consumption in watts.
+        </p>
+
+        <h3>How long will a 100 Ah battery last?</h3>
+
+        <p>
+          It depends on the battery voltage and the power consumed by the
+          connected device. A 100 Ah battery at 12 V contains approximately
+          1,200 Wh of nominal energy before efficiency and discharge limits.
+        </p>
+
+        <h3>What is the difference between Ah and Wh?</h3>
+
+        <p>
+          Ah measures electrical charge capacity, while Wh measures energy.
+          Voltage connects the two measurements:
+          Wh = Ah × V.
+        </p>
+
+        <h3>Why is my actual battery runtime lower?</h3>
+
+        <p>
+          Real-world runtime can be affected by efficiency losses, battery
+          age, temperature, discharge limits, changing loads and the
+          battery's actual available capacity.
+        </p>
+
+        <h3>Can I use mAh instead of Ah?</h3>
+
+        <p>
+          Yes. The calculator supports both Ah and mAh. A capacity given in
+          mAh is converted to Ah before calculating battery energy.
+        </p>
+
+        <h3>Does higher battery voltage increase runtime?</h3>
+
+        <p>
+          Voltage affects the amount of energy represented by a given
+          amp-hour rating. Runtime ultimately depends on total usable
+          watt-hours and device power consumption.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-column">
+
+      <h3>CalclyWorld</h3>
+
+      <p>
+        Free online calculators designed to provide clear,
+        practical and easy-to-understand results for everyday decisions.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Popular Calculators</h3>
+
+      <ul>
+        <li><a href="/age-calculator.html">Age Calculator</a></li>
+        <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+        <li><a href="/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Calculator Categories</h3>
+
+      <ul>
+        <li><a href="/#finance">Finance</a></li>
+        <li><a href="/#everyday">Everyday</a></li>
+        <li><a href="/#math">Math</a></li>
+        <li><a href="/#home-construction">Home &amp; Construction</a></li>
+        <li><a href="/#automotive">Automotive</a></li>
+        <li><a href="/#technology">Technology</a></li>
+        <li><a href="/#conversion">Conversion</a></li>
+        <li><a href="/#travel">Travel</a></li>
+        <li><a href="/#lifestyle">Lifestyle</a></li>
+        <li><a href="/#utility">Utility</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span> CalclyWorld. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="/script-v2.js"></script>
+<script src="/battery-runtime-calculator.js"></script>
+
+</body>
+</html>

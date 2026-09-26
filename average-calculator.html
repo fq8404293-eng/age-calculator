@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Average Calculator - Calculate Mean, Sum & Average | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Average Calculator to calculate the average (mean) of a set of numbers. Enter multiple values to instantly find the sum, count, and arithmetic mean.">
+  <meta name="keywords" content="average calculator, mean calculator, arithmetic mean calculator, calculate average, average of numbers, mean of numbers">
+
+  <link rel="canonical" href="https://calclyworld.com/average-calculator.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Average Calculator - Calculate Mean, Sum & Average">
+  <meta property="og:description" content="Calculate the average, sum, and number of values instantly with CalclyWorld's free Average Calculator.">
+  <meta property="og:url" content="https://calclyworld.com/average-calculator.html">
+  <meta property="og:site_name" content="CalclyWorld">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Average Calculator - Calculate Mean, Sum & Average">
+  <meta name="twitter:description" content="Free Average Calculator for finding the arithmetic mean, sum, and count of numbers.">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BSQETZ21ZZ');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
+    crossorigin="anonymous"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Average Calculator",
+    "url": "https://calclyworld.com/average-calculator.html",
+    "description": "Free Average Calculator for calculating the arithmetic mean, sum, and number of values.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Average Calculator",
+        "item": "https://calclyworld.com/average-calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Average Calculator</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Average Calculator</h1>
+
+        <p>
+          Calculate the average (mean) of a set of numbers quickly and accurately.
+        </p>
+
+        <p>
+          Enter your numbers below to find the total sum, number of values,
+          and arithmetic average.
+        </p>
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate the Average</h2>
+
+          <p class="text-center small-text">
+            Enter numbers separated by commas, spaces, or new lines.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+              <label for="average-numbers">
+                Enter Your Numbers
+              </label>
+
+              <textarea
+                id="average-numbers"
+                rows="6"
+                placeholder="Example: 10, 20, 30, 40, 50"
+                aria-describedby="average-help"
+              ></textarea>
+
+              <p id="average-help" class="small-text">
+                You can enter whole numbers or decimal values.
+                Separate each number with a comma, space, or new line.
+              </p>
+            </div>
+
+            <!-- Error -->
+            <div
+              id="average-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <!-- Actions -->
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-average"
+                class="btn"
+                type="button"
+              >
+                Calculate Average
+              </button>
+
+              <button
+                id="reset-average"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="average-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>Average Calculation Result</h2>
+
+          <div id="average-result-content"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Average Calculator Summary</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Average</h3>
+              <p id="average-summary-value">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Sum</h3>
+              <p id="average-summary-sum">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Number of Values</h3>
+              <p id="average-summary-count">—</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What Is an Average -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>What Is an Average?</h2>
+
+          <p>
+            An average, also called the arithmetic mean, is a way of finding
+            a single representative value from a group of numbers.
+            It is commonly used to summarize data and compare values.
+          </p>
+
+          <p>
+            To calculate an average, add all the numbers together and then
+            divide the total by the number of values in the group.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Formula -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Average Formula</h2>
+
+          <p>
+            The arithmetic mean is calculated using the following formula:
+          </p>
+
+          <div class="info-box">
+            <p>
+              <strong>Average = Sum of all values ÷ Number of values</strong>
+            </p>
+          </div>
+
+          <p>
+            For example, if your numbers are 10, 20, and 30, their sum is 60.
+            There are 3 values, so the average is 60 ÷ 3 = 20.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>How to Use the Average Calculator</h2>
+
+          <ol>
+            <li>Enter your numbers in the input box.</li>
+            <li>Separate numbers using commas, spaces, or new lines.</li>
+            <li>Click <strong>Calculate Average</strong>.</li>
+            <li>Review the average, sum, and number of values.</li>
+          </ol>
+
+          <p>
+            The calculator automatically processes the numbers and displays
+            the result without requiring any manual calculation.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Average Calculation Example</h2>
+
+          <p>
+            Suppose you have the following five numbers:
+          </p>
+
+          <div class="info-box">
+            <p>
+              10, 20, 30, 40, 50
+            </p>
+          </div>
+
+          <p>
+            First, add the numbers together:
+          </p>
+
+          <p>
+            <strong>10 + 20 + 30 + 40 + 50 = 150</strong>
+          </p>
+
+          <p>
+            There are 5 numbers, so:
+          </p>
+
+          <p>
+            <strong>150 ÷ 5 = 30</strong>
+          </p>
+
+          <p>
+            Therefore, the average is <strong>30</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Where Average Is Used -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Where Is an Average Used?</h2>
+
+          <p>
+            Averages are useful in many everyday and professional situations.
+            They can help summarize a collection of numbers into one easy-to-
+            understand value.
+          </p>
+
+          <ul>
+            <li>Calculating average test scores</li>
+            <li>Analyzing monthly expenses</li>
+            <li>Comparing average sales</li>
+            <li>Reviewing average temperatures</li>
+            <li>Analyzing business performance</li>
+            <li>Summarizing numerical data</li>
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Important Note -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Important Note About Averages</h2>
+
+          <p>
+            The arithmetic mean works best when you want every value in a
+            dataset to contribute equally to the result.
+          </p>
+
+          <p>
+            An average can sometimes be affected significantly by very large
+            or very small values. For datasets with extreme values, other
+            measures such as the median may provide additional useful context.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What is the average of a set of numbers?</h3>
+
+          <p>
+            The average is the sum of all values divided by the number of
+            values in the dataset.
+          </p>
+
+          <h3>Can I enter decimal numbers?</h3>
+
+          <p>
+            Yes. The calculator accepts both whole numbers and decimal values.
+          </p>
+
+          <h3>Can I enter negative numbers?</h3>
+
+          <p>
+            Yes. Negative numbers can be included in the calculation.
+          </p>
+
+          <h3>How many numbers can I calculate?</h3>
+
+          <p>
+            You can enter multiple values in the calculator. Separate each
+            value with a comma, space, or new line.
+          </p>
+
+          <h3>Is average the same as mean?</h3>
+
+          <p>
+            In everyday mathematical usage, average commonly refers to the
+            arithmetic mean. The arithmetic mean is calculated by dividing
+            the sum of the values by their count.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides simple, accurate, and easy-to-use online
+          calculators for everyday calculations, finance, technology,
+          home improvement, education, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+    <div class="footer-column">
+
+  <h3>Calculator Categories</h3>
+
+  <ul>
+    <li>
+      <a href="/#finance">
+        Finance
+      </a>
+    </li>
+
+    <li>
+      <a href="/#everyday">
+        Everyday
+      </a>
+    </li>
+
+    <li>
+      <a href="/#math">
+        Math
+      </a>
+    </li>
+
+    <li>
+      <a href="/#home-construction">
+        Home &amp; Construction
+      </a>
+    </li>
+
+    <li>
+      <a href="/#automotive">
+        Automotive
+      </a>
+    </li>
+
+    <li>
+      <a href="/#technology">
+        Technology
+      </a>
+    </li>
+
+    <li>
+      <a href="/#conversion">
+        Conversion
+      </a>
+    </li>
+
+    <li>
+      <a href="/#travel">
+        Travel
+      </a>
+    </li>
+
+    <li>
+      <a href="/#lifestyle">
+        Lifestyle
+      </a>
+    </li>
+
+    <li>
+      <a href="/#utility">
+        Utility
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/average-calculator.js"></script>
+
+</body>
+</html>

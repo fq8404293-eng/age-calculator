@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Prime Number Calculator - Check if a Number Is Prime | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Prime Number Calculator to check whether a number is prime or composite. Get factors, divisibility details, and a clear explanation instantly.">
+  <meta name="keywords" content="prime number calculator, prime checker, check prime number, prime number test, composite number calculator">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/prime-number-calculator.html">
+
+  <meta property="og:title" content="Prime Number Calculator - CalclyWorld">
+  <meta property="og:description" content="Check whether a number is prime or composite and view its factors with our free online calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/prime-number-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Prime Number Calculator",
+    "url": "https://calclyworld.com/prime-number-calculator.html",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "description": "A free online calculator for checking whether a whole number is prime or composite.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container content">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#math">Math</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Prime Number Calculator</span>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Prime Number Calculator</h1>
+
+        <p>
+          Check whether a whole number is prime or composite with our
+          free Prime Number Calculator.
+        </p>
+
+        <p>
+          Enter a number to see whether it is prime, along with its
+          factors and a simple explanation of the result.
+        </p>
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Check a Number</h2>
+
+          <p class="text-center small-text">
+            Enter a whole number to determine whether it is prime or composite.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+              <label for="prime-number">Number</label>
+
+              <input
+                type="number"
+                id="prime-number"
+                step="1"
+                inputmode="numeric"
+                placeholder="Example: 97"
+                aria-describedby="prime-number-help"
+              >
+
+              <small id="prime-number-help" class="small-text">
+                Enter a whole number greater than 1.
+              </small>
+            </div>
+
+            <div
+              id="prime-number-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-prime-number"
+                class="btn"
+                type="button"
+              >
+                Check Number
+              </button>
+
+              <button
+                id="reset-prime-number"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="prime-number-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">Prime Number Result</h2>
+
+          <div id="prime-number-result-content"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What Is a Prime Number -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is a Prime Number?</h2>
+
+          <p>
+            A prime number is a whole number greater than 1 that has
+            exactly two positive factors: <strong>1</strong> and the
+            number itself.
+          </p>
+
+          <p>
+            For example, 7 is prime because its only positive factors
+            are 1 and 7.
+          </p>
+
+          <p>
+            In contrast, 12 is not prime because it can be divided
+            evenly by 1, 2, 3, 4, 6, and 12.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Prime vs Composite -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Prime vs. Composite Numbers</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Number</th>
+                  <th>Type</th>
+                  <th>Factors</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>2</td>
+                  <td>Prime</td>
+                  <td>1, 2</td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>Prime</td>
+                  <td>1, 3</td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>Prime</td>
+                  <td>1, 5</td>
+                </tr>
+
+                <tr>
+                  <td>7</td>
+                  <td>Prime</td>
+                  <td>1, 7</td>
+                </tr>
+
+                <tr>
+                  <td>11</td>
+                  <td>Prime</td>
+                  <td>1, 11</td>
+                </tr>
+
+                <tr>
+                  <td>12</td>
+                  <td>Composite</td>
+                  <td>1, 2, 3, 4, 6, 12</td>
+                </tr>
+
+                <tr>
+                  <td>15</td>
+                  <td>Composite</td>
+                  <td>1, 3, 5, 15</td>
+                </tr>
+
+                <tr>
+                  <td>20</td>
+                  <td>Composite</td>
+                  <td>1, 2, 4, 5, 10, 20</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Prime Number Calculator</h2>
+
+          <ol>
+            <li>Enter a whole number greater than 1.</li>
+            <li>Click <strong>Check Number</strong>.</li>
+            <li>View whether the number is prime or composite.</li>
+            <li>Review the factors and calculation explanation.</li>
+            <li>Click <strong>Reset</strong> to check another number.</li>
+          </ol>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Examples -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Prime Number Examples</h2>
+
+          <p>
+            <strong>Example 1:</strong> 13 is prime because its only
+            positive factors are 1 and 13.
+          </p>
+
+          <p>
+            <strong>Example 2:</strong> 29 is prime because it cannot
+            be evenly divided by any whole number other than 1 and 29.
+          </p>
+
+          <p>
+            <strong>Example 3:</strong> 36 is composite because it has
+            several factors, including 2, 3, 4, 6, 9, and 12.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Special Cases -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Special Cases</h2>
+
+          <p>
+            <strong>1 is not a prime number.</strong> It has only one
+            positive factor, while a prime number must have exactly two.
+          </p>
+
+          <p>
+            <strong>2 is the only even prime number.</strong> Every other
+            even number greater than 2 is divisible by 2 and therefore
+            is composite.
+          </p>
+
+          <p>
+            Negative numbers and non-whole numbers are outside the scope
+            of this prime-number calculator.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What is the smallest prime number?</h3>
+          <p>
+            The smallest prime number is 2.
+          </p>
+
+          <h3>Is 1 a prime number?</h3>
+          <p>
+            No. The number 1 has only one positive factor, so it is not
+            considered prime.
+          </p>
+
+          <h3>Is 2 a prime number?</h3>
+          <p>
+            Yes. 2 has exactly two positive factors: 1 and 2.
+          </p>
+
+          <h3>Is every odd number prime?</h3>
+          <p>
+            No. Some odd numbers are composite. For example, 9, 15,
+            and 21 are odd but are not prime.
+          </p>
+
+          <h3>What is a composite number?</h3>
+          <p>
+            A composite number is a whole number greater than 1 that has
+            more than two positive factors.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators
+          designed to make everyday calculations simple, fast,
+          and easy to understand.
+        </p>
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/prime-number-calculator.js"></script>
+
+</body>
+</html>

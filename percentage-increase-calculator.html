@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Percentage Increase Calculator - Calculate Percent Increase | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Percentage Increase Calculator to calculate the percentage increase between an original value and a new value. Get the increase amount and percentage change instantly.">
+
+  <link rel="canonical" href="https://calclyworld.com/percentage-increase-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:title" content="Percentage Increase Calculator | CalclyWorld">
+  <meta property="og:description" content="Calculate percentage increase, increase amount, and percentage change between two values.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/percentage-increase-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BSQETZ21ZZ');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Percentage Increase Calculator",
+    "url": "https://calclyworld.com/percentage-increase-calculator.html",
+    "description": "Calculate the percentage increase between an original value and a new value.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Percentage Increase Calculator",
+        "item": "https://calclyworld.com/percentage-increase-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate percentage increase?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Subtract the original value from the new value, divide the difference by the original value, and multiply by 100. Percentage increase = ((New Value - Original Value) / Original Value) × 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the percentage increase from 100 to 120?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The percentage increase from 100 to 120 is 20%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can percentage increase be negative?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If the new value is lower than the original value, the result is negative. This represents a percentage decrease rather than an increase."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between percentage increase and percentage points?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Percentage increase measures the relative change between two values. Percentage points describe the direct difference between percentages. For example, an increase from 40% to 50% is a 10 percentage-point increase but a 25% relative increase."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Percentage Increase Calculator</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Percentage Increase Calculator</h1>
+
+        <p>
+          Calculate the percentage increase between an original value and a new value quickly and accurately.
+        </p>
+
+        <p>
+          Enter the starting value and ending value to find the increase amount and percentage increase.
+        </p>
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: GPA, Grade, Age)"
+            autocomplete="off"
+            aria-label="Search calculators">
+
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate Percentage Increase</h2>
+
+          <p class="text-center small-text">
+            Enter the original value and the new value to calculate the percentage increase.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+              <label for="original-value">Original Value</label>
+              <input
+                type="number"
+                id="original-value"
+                min="0"
+                step="any"
+                placeholder="Example: 100"
+                inputmode="decimal">
+            </div>
+
+            <div class="form-group">
+              <label for="new-value">New Value</label>
+              <input
+                type="number"
+                id="new-value"
+                min="0"
+                step="any"
+                placeholder="Example: 125"
+                inputmode="decimal">
+            </div>
+
+            <div
+              id="percentage-increase-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden>
+            </div>
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-percentage-increase"
+                class="btn"
+                type="button">
+                Calculate Increase
+              </button>
+
+              <button
+                id="reset-percentage-increase"
+                class="btn btn-secondary"
+                type="button">
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="percentage-increase-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true">
+
+          <h2>Percentage Increase Result</h2>
+
+          <div id="percentage-increase-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Formula -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>How Percentage Increase Is Calculated</h2>
+
+          <p>
+            Percentage increase shows how much a value has grown compared with its original value.
+            It is commonly used for prices, salaries, sales, population, measurements, and other numerical comparisons.
+          </p>
+
+          <p>
+            The percentage increase formula is:
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Percentage Increase = ((New Value − Original Value) ÷ Original Value) × 100</strong>
+            </p>
+
+          </div>
+
+          <p>
+            First, subtract the original value from the new value to find the amount of increase.
+            Then divide that increase by the original value and multiply by 100.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Percentage Increase Example</h2>
+
+          <p>
+            Suppose a product originally costs $100 and its new price is $125.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Calculation</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Original Value</td>
+                  <td>100</td>
+                </tr>
+
+                <tr>
+                  <td>New Value</td>
+                  <td>125</td>
+                </tr>
+
+                <tr>
+                  <td>Increase Amount</td>
+                  <td>25</td>
+                </tr>
+
+                <tr>
+                  <td>Percentage Increase</td>
+                  <td>25%</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            The value increased by 25, which represents a 25% increase from the original value of 100.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Percentage Increase vs Decrease -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Percentage Increase vs. Percentage Decrease</h2>
+
+          <p>
+            Percentage increase is used when comparing a larger new value with an original value.
+            If the new value is smaller than the original value, the same calculation produces a negative percentage,
+            indicating a decrease.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Original</th>
+                  <th>New</th>
+                  <th>Percentage Change</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>100</td>
+                  <td>125</td>
+                  <td>25% increase</td>
+                </tr>
+
+                <tr>
+                  <td>100</td>
+                  <td>150</td>
+                  <td>50% increase</td>
+                </tr>
+
+                <tr>
+                  <td>100</td>
+                  <td>80</td>
+                  <td>20% decrease</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How do you calculate percentage increase?</h3>
+
+          <p>
+            Subtract the original value from the new value, divide the difference by the original value,
+            and multiply by 100.
+          </p>
+
+          <h3>What is the percentage increase from 100 to 120?</h3>
+
+          <p>
+            The increase is 20. Since 20 is 20% of the original value of 100,
+            the percentage increase is 20%.
+          </p>
+
+          <h3>Can percentage increase be negative?</h3>
+
+          <p>
+            Yes. When the new value is lower than the original value, the calculated percentage change is negative.
+            This represents a percentage decrease.
+          </p>
+
+          <h3>What is the difference between percentage increase and percentage points?</h3>
+
+          <p>
+            Percentage increase measures relative change, while percentage points measure the direct difference
+            between two percentages. For example, moving from 40% to 50% is a 10 percentage-point increase,
+            but it is a 25% relative increase.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          Free online calculators designed to make everyday calculations simple,
+          fast, and easy to understand.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/percentage-increase-calculator.js"></script>
+
+</body>
+</html>

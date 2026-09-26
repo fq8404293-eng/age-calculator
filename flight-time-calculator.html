@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Flight Time Calculator - Calculate Flight Duration | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Calculate estimated flight time from distance and average flight speed. Convert flight duration between hours, minutes, and seconds with CalclyWorld."
+  >
+
+  <meta
+    name="keywords"
+    content="flight time calculator, flight duration calculator, flying time calculator, air travel time calculator, flight duration"
+  >
+
+  <link rel="canonical" href="https://calclyworld.com/flight-time-calculator.html">
+
+  <meta property="og:title" content="Flight Time Calculator - Calculate Flight Duration | CalclyWorld">
+  <meta
+    property="og:description"
+    content="Estimate flight duration from flight distance and average aircraft speed."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/flight-time-calculator.html">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Flight Time Calculator",
+    "url": "https://calclyworld.com/flight-time-calculator.html",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "Any",
+    "description": "A free online flight time calculator for estimating flight duration from distance and average flight speed.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Flight Time Calculator",
+        "item": "https://calclyworld.com/flight-time-calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- Search -->
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+        </div>
+
+        <h1>Flight Time Calculator</h1>
+
+        <p>
+          Estimate flight duration using the travel distance and average
+          aircraft speed.
+        </p>
+
+        <p>
+          Convert the estimated flight time into hours, minutes, and seconds
+          for an easy-to-understand travel duration.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Breadcrumb -->
+
+    <section class="section-small">
+      <div class="container">
+
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Flight Time Calculator</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Flight Time
+          </h2>
+
+          <p class="text-center small-text">
+            Enter the flight distance and average aircraft speed.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+
+              <label for="flight-distance">
+                Flight Distance
+              </label>
+
+              <input
+                type="number"
+                id="flight-distance"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 1500"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="flight-distance-unit">
+                Distance Unit
+              </label>
+
+              <select id="flight-distance-unit">
+
+                <option value="km">
+                  Kilometers (km)
+                </option>
+
+                <option value="miles">
+                  Miles (mi)
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="flight-speed">
+                Average Flight Speed
+              </label>
+
+              <input
+                type="number"
+                id="flight-speed"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 800"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="flight-speed-unit">
+                Speed Unit
+              </label>
+
+              <select id="flight-speed-unit">
+
+                <option value="kmh">
+                  Kilometers per Hour (km/h)
+                </option>
+
+                <option value="mph">
+                  Miles per Hour (mph)
+                </option>
+
+                <option value="knots">
+                  Knots (kn)
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div
+              id="flight-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+
+            <div class="calculator-actions">
+
+              <button
+                id="flight-calculate"
+                class="btn"
+                type="button"
+              >
+                Calculate Flight Time
+              </button>
+
+              <button
+                id="flight-reset"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="flight-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>
+            Flight Time Results
+          </h2>
+
+          <div id="flight-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Flight Time Summary
+          </h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+
+              <h3>Flight Distance</h3>
+
+              <p id="flight-summary-distance">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Estimated Time</h3>
+
+              <p id="flight-summary-time">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Hours</h3>
+
+              <p id="flight-summary-hours">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Minutes</h3>
+
+              <p id="flight-summary-minutes">—</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Is a Flight Time Calculator?</h2>
+
+          <p>
+            A flight time calculator estimates how long an aircraft would
+            take to travel a given distance at a specified average speed.
+            It provides a simple mathematical estimate of airborne travel
+            duration.
+          </p>
+
+          <p>
+            Actual airline journey times can be different because aircraft
+            do not always travel at a constant speed. Flight paths, wind,
+            routing, air traffic, takeoff, landing, taxiing, and airport
+            procedures can all affect the total journey time.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>How Flight Time Is Calculated</h2>
+
+          <p>
+            The basic calculation divides the travel distance by the average
+            travel speed.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Flight time = Distance ÷ Average speed</strong>
+            </p>
+
+            <p>
+              For example, a 1,600 km distance traveled at an average speed
+              of 800 km/h gives an estimated airborne travel time of
+              approximately 2 hours.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Speed Units -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Common Aircraft Speed Units</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Unit</th>
+                  <th>Symbol</th>
+                  <th>Common Use</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Kilometers per Hour</td>
+                  <td>km/h</td>
+                  <td>Metric speed measurement.</td>
+                </tr>
+
+                <tr>
+                  <td>Miles per Hour</td>
+                  <td>mph</td>
+                  <td>Speed measurement using miles.</td>
+                </tr>
+
+                <tr>
+                  <td>Knots</td>
+                  <td>kn</td>
+                  <td>Commonly used in aviation and marine navigation.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Example -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Flight Time Example</h2>
+
+          <p>
+            If the distance between two locations is 1,600 km and the
+            aircraft's average speed is 800 km/h, the estimated flight time
+            is 2 hours.
+          </p>
+
+          <p>
+            This is a mathematical estimate only. A scheduled flight may
+            take longer because of the actual route, weather, air traffic,
+            airport operations, and other factors.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Important Factors -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Factors That Can Affect Actual Flight Time</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Factor</th>
+                  <th>Effect on Journey Time</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Wind</td>
+                  <td>Headwinds and tailwinds can change ground speed.</td>
+                </tr>
+
+                <tr>
+                  <td>Flight Route</td>
+                  <td>The actual route may differ from the straight-line distance.</td>
+                </tr>
+
+                <tr>
+                  <td>Air Traffic</td>
+                  <td>Holding patterns and routing restrictions can add time.</td>
+                </tr>
+
+                <tr>
+                  <td>Takeoff and Landing</td>
+                  <td>Aircraft speed changes significantly during these phases.</td>
+                </tr>
+
+                <tr>
+                  <td>Taxiing</td>
+                  <td>Time spent moving between the runway and terminal affects total journey time.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Does this calculate the exact airline flight duration?</h3>
+
+          <p>
+            No. It provides a mathematical estimate based on distance and
+            average speed. Actual flight duration can differ because of route,
+            wind, air traffic, taxiing, and airport operations.
+          </p>
+
+
+          <h3>Can I enter miles instead of kilometers?</h3>
+
+          <p>
+            Yes. You can select miles for the flight distance and miles per
+            hour for the aircraft speed.
+          </p>
+
+
+          <h3>Can I use knots?</h3>
+
+          <p>
+            Yes. Knots are included because they are commonly used for
+            aircraft speed and navigation.
+          </p>
+
+
+          <h3>Does the result include airport layovers?</h3>
+
+          <p>
+            No. The calculator estimates the travel time for the entered
+            distance and speed. Layovers and scheduled airport waiting time
+            are not included.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          Free online calculators and conversion tools designed to provide
+          useful, accurate, and easy-to-understand results.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/flight-time-calculator.js"></script>
+
+</body>
+</html>

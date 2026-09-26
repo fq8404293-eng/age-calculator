@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hexadecimal Converter | Hex to Decimal & Decimal to Hex | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Convert hexadecimal numbers to decimal and decimal numbers to hexadecimal instantly with CalclyWorld's free online Hexadecimal Converter. Simple, accurate, and easy to use."
+  >
+
+  <meta
+    name="keywords"
+    content="hexadecimal converter, hex to decimal, decimal to hex, hex converter, hexadecimal calculator"
+  >
+
+  <meta name="author" content="CalclyWorld">
+
+  <link
+    rel="canonical"
+    href="https://calclyworld.com/hexadecimal-converter.html"
+  >
+
+  <meta property="og:title" content="Hexadecimal Converter | CalclyWorld">
+  <meta
+    property="og:description"
+    content="Convert hexadecimal to decimal and decimal to hexadecimal instantly with CalclyWorld's free Hexadecimal Converter."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:url"
+    content="https://calclyworld.com/hexadecimal-converter.html"
+  >
+  <meta
+    property="og:image"
+    content="https://calclyworld.com/favicon.png"
+  >
+
+  <meta name="twitter:card" content="summary">
+  <meta
+    name="twitter:title"
+    content="Hexadecimal Converter | CalclyWorld"
+  >
+  <meta
+    name="twitter:description"
+    content="Convert hexadecimal numbers to decimal and decimal numbers to hexadecimal with CalclyWorld."
+  >
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hexadecimal Converter",
+    "url": "https://calclyworld.com/hexadecimal-converter.html",
+    "description": "A free online calculator for converting hexadecimal numbers to decimal and decimal numbers to hexadecimal.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="/#utility">Utility</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Hexadecimal Converter</span>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Hexadecimal Converter</h1>
+
+        <p>
+          Convert hexadecimal numbers to decimal or decimal numbers to
+          hexadecimal quickly and accurately with our free online
+          Hexadecimal Converter.
+        </p>
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Convert Hexadecimal and Decimal Numbers
+          </h2>
+
+          <form
+            id="hexadecimal-converter-form"
+            class="calculator-form"
+            novalidate
+          >
+
+            <div class="form-group">
+
+              <label for="conversion-type">
+                Conversion Type
+              </label>
+
+              <select
+                id="conversion-type"
+                name="conversion-type"
+              >
+                <option value="hex-to-decimal">
+                  Hexadecimal to Decimal
+                </option>
+
+                <option value="decimal-to-hex">
+                  Decimal to Hexadecimal
+                </option>
+              </select>
+
+            </div>
+
+            <div class="form-group">
+
+              <label
+                for="hexadecimal-input"
+                id="hexadecimal-input-label"
+              >
+                Hexadecimal Number
+              </label>
+
+              <input
+                type="text"
+                id="hexadecimal-input"
+                name="hexadecimal-input"
+                inputmode="text"
+                autocomplete="off"
+                autocapitalize="characters"
+                spellcheck="false"
+                placeholder="Example: 2F"
+                aria-describedby="hexadecimal-input-help hexadecimal-input-error"
+              >
+
+              <p
+                id="hexadecimal-input-help"
+                class="form-help"
+              >
+                Enter a hexadecimal number using 0–9 and A–F.
+              </p>
+
+              <div
+                id="hexadecimal-input-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+            <div class="calculator-actions">
+
+              <button
+                type="submit"
+                id="calculate-hexadecimal"
+                class="btn"
+              >
+                Convert
+              </button>
+
+              <button
+                type="button"
+                id="clear-hexadecimal"
+                class="btn btn-secondary"
+              >
+                Clear
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="hexadecimal-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">
+            Conversion Result
+          </h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Conversion</h3>
+              <p id="summary-hexadecimal-conversion">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Input</h3>
+              <p id="summary-hexadecimal-input">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Result</h3>
+              <p id="summary-hexadecimal-output">—</p>
+            </div>
+
+          </div>
+
+          <div class="result-highlight">
+
+            <h3>Your Converted Number</h3>
+
+            <p
+              id="hexadecimal-result-value"
+              class="result-value"
+            >
+              —
+            </p>
+
+            <div class="calculator-actions">
+
+              <button
+                type="button"
+                id="copy-hexadecimal-result"
+                class="btn btn-secondary"
+              >
+                Copy Result
+              </button>
+
+            </div>
+
+            <p
+              id="hexadecimal-copy-status"
+              class="form-help"
+              aria-live="polite"
+              hidden
+            >
+              Result copied to clipboard.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What Is Hexadecimal? -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is a Hexadecimal Number?</h2>
+
+          <p>
+            Hexadecimal is a base-16 number system that uses sixteen
+            symbols to represent values. It uses the digits
+            <strong>0 through 9</strong> and the letters
+            <strong>A through F</strong>.
+          </p>
+
+          <p>
+            The letters represent values from 10 to 15:
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Hexadecimal</th>
+                  <th>Decimal Value</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>A</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>11</td>
+                </tr>
+                <tr>
+                  <td>C</td>
+                  <td>12</td>
+                </tr>
+                <tr>
+                  <td>D</td>
+                  <td>13</td>
+                </tr>
+                <tr>
+                  <td>E</td>
+                  <td>14</td>
+                </tr>
+                <tr>
+                  <td>F</td>
+                  <td>15</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Hex to Decimal -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How Hexadecimal to Decimal Conversion Works</h2>
+
+          <p>
+            Each position in a hexadecimal number represents a power
+            of 16. Starting from the right, the positions represent
+            16<sup>0</sup>, 16<sup>1</sup>, 16<sup>2</sup>,
+            16<sup>3</sup>, and so on.
+          </p>
+
+          <p>
+            For example, hexadecimal <strong>2F</strong> can be
+            converted to decimal as follows:
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Hex Digit</th>
+                  <th>Power of 16</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>2</td>
+                  <td>16<sup>1</sup></td>
+                  <td>32</td>
+                </tr>
+
+                <tr>
+                  <td>F</td>
+                  <td>16<sup>0</sup></td>
+                  <td>15</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            Therefore:
+            <strong>32 + 15 = 47</strong>.
+            So hexadecimal <strong>2F</strong> equals decimal
+            <strong>47</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Decimal to Hex -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How Decimal to Hexadecimal Conversion Works</h2>
+
+          <p>
+            To convert a positive decimal whole number to hexadecimal,
+            repeatedly divide the number by 16 and record the
+            remainders. Remainders from 10 through 15 are represented
+            by A through F.
+          </p>
+
+          <p>
+            For example, decimal <strong>47</strong> converts to
+            hexadecimal <strong>2F</strong>.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Calculation</th>
+                  <th>Quotient</th>
+                  <th>Remainder</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>47 ÷ 16</td>
+                  <td>2</td>
+                  <td>15 (F)</td>
+                </tr>
+
+                <tr>
+                  <td>2 ÷ 16</td>
+                  <td>0</td>
+                  <td>2</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            Reading the remainders from bottom to top gives
+            <strong>2F</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Common Examples -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Common Hexadecimal and Decimal Examples</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Hexadecimal</th>
+                  <th>Decimal</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+
+                <tr>
+                  <td>1</td>
+                  <td>1</td>
+                </tr>
+
+                <tr>
+                  <td>A</td>
+                  <td>10</td>
+                </tr>
+
+                <tr>
+                  <td>F</td>
+                  <td>15</td>
+                </tr>
+
+                <tr>
+                  <td>10</td>
+                  <td>16</td>
+                </tr>
+
+                <tr>
+                  <td>1A</td>
+                  <td>26</td>
+                </tr>
+
+                <tr>
+                  <td>2F</td>
+                  <td>47</td>
+                </tr>
+
+                <tr>
+                  <td>64</td>
+                  <td>100</td>
+                </tr>
+
+                <tr>
+                  <td>FF</td>
+                  <td>255</td>
+                </tr>
+
+                <tr>
+                  <td>3E8</td>
+                  <td>1000</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Uses -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Where Hexadecimal Numbers Are Used</h2>
+
+          <ul>
+            <li>Programming and software development</li>
+            <li>Computer memory addresses</li>
+            <li>Digital electronics</li>
+            <li>Color codes such as HTML and CSS colors</li>
+            <li>Machine-level data representation</li>
+            <li>Debugging and computer science</li>
+            <li>Network and hardware identification</li>
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What is hexadecimal?</h3>
+
+          <p>
+            Hexadecimal is a base-16 number system that uses the digits
+            0–9 and the letters A–F.
+          </p>
+
+          <h3>What is 2F in decimal?</h3>
+
+          <p>
+            Hexadecimal 2F is equal to decimal 47.
+          </p>
+
+          <h3>What is 255 in hexadecimal?</h3>
+
+          <p>
+            Decimal 255 is equal to hexadecimal FF.
+          </p>
+
+          <h3>Are lowercase hexadecimal letters accepted?</h3>
+
+          <p>
+            Yes. Hexadecimal values can be written using either
+            uppercase or lowercase letters from A through F.
+          </p>
+
+          <h3>Can this converter handle large numbers?</h3>
+
+          <p>
+            The calculator uses JavaScript's BigInt capability for
+            whole-number conversion and validates values before
+            displaying the result.
+          </p>
+
+          <h3>Is this Hexadecimal Converter free?</h3>
+
+          <p>
+            Yes. CalclyWorld's Hexadecimal Converter is free to use
+            directly in your browser without requiring an account.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/hexadecimal-converter.js"></script>
+
+</body>
+</html>

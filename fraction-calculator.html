@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fraction Calculator - Add, Subtract, Multiply & Divide Fractions | CalclyWorld</title>
+
+  <meta name="description" content="Use CalclyWorld's free fraction calculator to add, subtract, multiply, and divide fractions. Simplify fractions, convert improper fractions to mixed numbers, and calculate fraction results instantly.">
+  <meta name="keywords" content="fraction calculator, fractions calculator, add fractions, subtract fractions, multiply fractions, divide fractions, simplify fractions, mixed number calculator">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/fraction-calculator.html">
+
+  <meta property="og:title" content="Fraction Calculator - Add, Subtract, Multiply & Divide Fractions | CalclyWorld">
+  <meta property="og:description" content="Calculate and simplify fractions with CalclyWorld's free online fraction calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/fraction-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <style>
+    .fraction-calculator {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .fraction-input-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .fraction-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .fraction-input-group label {
+      font-weight: 600;
+    }
+
+    .fraction-input-group input {
+      width: 100%;
+    }
+
+    .fraction-slash {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      padding-top: 28px;
+    }
+
+    .fraction-operator {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+
+    .fraction-operator select {
+      min-width: 180px;
+    }
+
+    .fraction-result-display {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+   .fraction-result-box {
+  min-width: 180px;
+  padding: 20px;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+    .fraction-result-label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--text-secondary, #666);
+    }
+
+    .fraction-result-value {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+  .fraction-equation {
+  margin-top: 22px;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: var(--secondary-bg);
+  color: var(--text-color);
+}
+
+    .fraction-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+  .fraction-info-card {
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  text-align: center;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+    .fraction-info-card strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    @media (max-width: 600px) {
+      .fraction-input-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .fraction-slash {
+        padding-top: 0;
+        line-height: 1;
+      }
+
+      .fraction-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fraction-result-display {
+        gap: 14px;
+      }
+
+      .fraction-result-box {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Fraction Calculator",
+    "url": "https://calclyworld.com/fraction-calculator.html",
+    "applicationCategory": "CalculatorApplication",
+    "operatingSystem": "Web",
+    "description": "Free online fraction calculator for adding, subtracting, multiplying, dividing, and simplifying fractions.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >🌙 Dark Mode</button>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#math">Math</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Fraction Calculator</span>
+      </div>
+    </div>
+
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Fraction Calculator</h1>
+
+        <p>
+          Calculate fractions quickly and accurately by adding, subtracting,
+          multiplying, or dividing two fractions.
+        </p>
+
+        <p>
+          The calculator automatically simplifies the result and shows the
+          decimal value and mixed-number form when applicable.
+        </p>
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card fraction-calculator">
+
+          <h2 class="text-center">Calculate Fractions</h2>
+
+          <p class="text-center small-text">
+            Enter two fractions and choose an operation.
+          </p>
+
+
+          <!-- First Fraction -->
+          <div class="fraction-input-row">
+
+            <div class="fraction-input-group">
+              <label for="fraction1-numerator">
+                First Fraction — Numerator
+              </label>
+
+              <input
+                type="number"
+                id="fraction1-numerator"
+                inputmode="numeric"
+                step="1"
+                placeholder="Example: 3"
+                aria-label="First fraction numerator"
+              >
+            </div>
+
+            <div class="fraction-slash" aria-hidden="true">/</div>
+
+            <div class="fraction-input-group">
+              <label for="fraction1-denominator">
+                Denominator
+              </label>
+
+              <input
+                type="number"
+                id="fraction1-denominator"
+                inputmode="numeric"
+                step="1"
+                placeholder="Example: 4"
+                aria-label="First fraction denominator"
+              >
+            </div>
+
+          </div>
+
+
+          <!-- Operator -->
+          <div class="fraction-operator">
+
+            <label for="fraction-operation" class="sr-only">
+              Fraction operation
+            </label>
+
+            <select id="fraction-operation" aria-label="Fraction operation">
+              <option value="add">Add (+)</option>
+              <option value="subtract">Subtract (−)</option>
+              <option value="multiply">Multiply (×)</option>
+              <option value="divide">Divide (÷)</option>
+            </select>
+
+          </div>
+
+
+          <!-- Second Fraction -->
+          <div class="fraction-input-row">
+
+            <div class="fraction-input-group">
+              <label for="fraction2-numerator">
+                Second Fraction — Numerator
+              </label>
+
+              <input
+                type="number"
+                id="fraction2-numerator"
+                inputmode="numeric"
+                step="1"
+                placeholder="Example: 2"
+                aria-label="Second fraction numerator"
+              >
+            </div>
+
+            <div class="fraction-slash" aria-hidden="true">/</div>
+
+            <div class="fraction-input-group">
+              <label for="fraction2-denominator">
+                Denominator
+              </label>
+
+              <input
+                type="number"
+                id="fraction2-denominator"
+                inputmode="numeric"
+                step="1"
+                placeholder="Example: 3"
+                aria-label="Second fraction denominator"
+              >
+            </div>
+
+          </div>
+
+
+          <!-- Error -->
+          <div
+            id="fraction-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <!-- Actions -->
+          <div class="calculator-actions">
+
+            <button
+              id="calculate-fraction"
+              class="btn"
+              type="button"
+            >
+              Calculate
+            </button>
+
+            <button
+              id="reset-fraction"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="fraction-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">Fraction Calculation Result</h2>
+
+          <div
+            id="fraction-equation"
+            class="fraction-equation"
+          ></div>
+
+          <div class="fraction-result-display">
+
+            <div class="fraction-result-box">
+
+              <span class="fraction-result-label">
+                Simplified Fraction
+              </span>
+
+              <span
+                id="simplified-fraction"
+                class="fraction-result-value"
+              ></span>
+
+            </div>
+
+
+            <div class="fraction-result-box">
+
+              <span class="fraction-result-label">
+                Decimal
+              </span>
+
+              <span
+                id="decimal-result"
+                class="fraction-result-value"
+              ></span>
+
+            </div>
+
+
+            <div class="fraction-result-box">
+
+              <span class="fraction-result-label">
+                Mixed Number
+              </span>
+
+              <span
+                id="mixed-number-result"
+                class="fraction-result-value"
+              ></span>
+
+            </div>
+
+          </div>
+
+
+          <div class="fraction-info-grid">
+
+            <div class="fraction-info-card">
+
+              <strong>Numerator</strong>
+
+              <span id="result-numerator"></span>
+
+            </div>
+
+
+            <div class="fraction-info-card">
+
+              <strong>Denominator</strong>
+
+              <span id="result-denominator"></span>
+
+            </div>
+
+
+            <div class="fraction-info-card">
+
+              <strong>GCD</strong>
+
+              <span id="result-gcd"></span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- What Is a Fraction -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is a Fraction?</h2>
+
+          <p>
+            A fraction represents a part of a whole and is written using a
+            numerator and denominator. The numerator is the number above the
+            fraction line, while the denominator is the number below it.
+          </p>
+
+          <p>
+            For example, in <strong>3/4</strong>, 3 is the numerator and 4 is
+            the denominator. The fraction means three parts out of four equal
+            parts.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How to Calculate Fractions -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Calculate Fractions</h2>
+
+          <h3>Adding Fractions</h3>
+
+          <p>
+            To add fractions with the same denominator, add their numerators
+            and keep the denominator unchanged.
+          </p>
+
+          <p>
+            For fractions with different denominators, first find a common
+            denominator, convert both fractions, and then add the numerators.
+          </p>
+
+
+          <h3>Subtracting Fractions</h3>
+
+          <p>
+            Fraction subtraction works similarly to addition. Fractions with
+            different denominators must first be converted to equivalent
+            fractions with a common denominator.
+          </p>
+
+
+          <h3>Multiplying Fractions</h3>
+
+          <p>
+            To multiply two fractions, multiply the numerators together and
+            multiply the denominators together. The resulting fraction can
+            then be simplified.
+          </p>
+
+
+          <h3>Dividing Fractions</h3>
+
+          <p>
+            To divide one fraction by another, multiply the first fraction by
+            the reciprocal of the second fraction.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Examples -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Fraction Calculator Examples</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Calculation</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>1/2 + 1/4</td>
+                  <td>3/4</td>
+                </tr>
+
+                <tr>
+                  <td>3/4 − 1/4</td>
+                  <td>1/2</td>
+                </tr>
+
+                <tr>
+                  <td>2/3 × 3/4</td>
+                  <td>1/2</td>
+                </tr>
+
+                <tr>
+                  <td>3/4 ÷ 1/2</td>
+                  <td>3/2 = 1 1/2</td>
+                </tr>
+
+                <tr>
+                  <td>5/8</td>
+                  <td>0.625</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What does a fraction represent?</h3>
+
+          <p>
+            A fraction represents a quantity divided into equal parts. The
+            numerator indicates how many parts are being considered, while
+            the denominator indicates the total number of equal parts.
+          </p>
+
+
+          <h3>Can this calculator simplify fractions?</h3>
+
+          <p>
+            Yes. The calculator reduces the result to its simplest form by
+            dividing the numerator and denominator by their greatest common
+            divisor.
+          </p>
+
+
+          <h3>Can I add fractions with different denominators?</h3>
+
+          <p>
+            Yes. The calculator handles fractions with different denominators
+            by finding the appropriate common denominator automatically.
+          </p>
+
+
+          <h3>Can the calculator show mixed numbers?</h3>
+
+          <p>
+            Yes. When the result is an improper fraction, the calculator
+            displays its mixed-number equivalent when applicable.
+          </p>
+
+
+          <h3>Can I divide by a fraction?</h3>
+
+          <p>
+            Yes. Enter the two fractions, select Divide, and the calculator
+            will multiply the first fraction by the reciprocal of the second.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          Free online calculators designed to make everyday calculations,
+          financial planning, mathematics, conversions, and practical
+          decision-making easier.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/fraction-calculator.js"></script>
+
+</body>
+</html>

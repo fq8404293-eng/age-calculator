@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hotel Cost Calculator - Calculate Hotel Stay Cost | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Calculate your total hotel stay cost based on nightly room rate, number of nights, rooms, taxes, and additional hotel fees with CalclyWorld's free Hotel Cost Calculator."
+  >
+
+  <meta
+    name="keywords"
+    content="hotel cost calculator, hotel price calculator, hotel stay cost, hotel room cost calculator, vacation hotel budget calculator"
+  >
+
+  <link rel="canonical" href="https://calclyworld.com/hotel-cost-calculator.html">
+
+  <meta property="og:title" content="Hotel Cost Calculator - Calculate Hotel Stay Cost | CalclyWorld">
+  <meta
+    property="og:description"
+    content="Estimate the total cost of a hotel stay including room rates, taxes, resort fees, and other additional charges."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/hotel-cost-calculator.html">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hotel Cost Calculator",
+    "url": "https://calclyworld.com/hotel-cost-calculator.html",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "Any",
+    "description": "A free online hotel cost calculator for estimating room costs, taxes, fees, and total hotel stay expenses.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Hotel Cost Calculator",
+        "item": "https://calclyworld.com/hotel-cost-calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- Search -->
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+        </div>
+
+        <h1>Hotel Cost Calculator</h1>
+
+        <p>
+          Estimate the total cost of your hotel stay using the nightly room
+          rate, number of nights, rooms, taxes, and additional fees.
+        </p>
+
+        <p>
+          Calculate your estimated room cost, taxes, fees, and total hotel
+          expense before booking your stay.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Breadcrumb -->
+
+    <section class="section-small">
+      <div class="container">
+
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Hotel Cost Calculator</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Hotel Stay Cost
+          </h2>
+
+          <p class="text-center small-text">
+            Enter your room rate, stay length, taxes, and additional fees.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+
+              <label for="hotel-nightly-rate">
+                Nightly Room Rate
+              </label>
+
+              <input
+                type="number"
+                id="hotel-nightly-rate"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 150"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="hotel-nights">
+                Number of Nights
+              </label>
+
+              <input
+                type="number"
+                id="hotel-nights"
+                inputmode="numeric"
+                step="1"
+                min="1"
+                placeholder="Example: 5"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="hotel-rooms">
+                Number of Rooms
+              </label>
+
+              <input
+                type="number"
+                id="hotel-rooms"
+                inputmode="numeric"
+                step="1"
+                min="1"
+                placeholder="Example: 1"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="hotel-tax">
+                Hotel Tax (%)
+              </label>
+
+              <input
+                type="number"
+                id="hotel-tax"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                max="100"
+                placeholder="Example: 10"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="hotel-fees">
+                Additional Fees per Night
+              </label>
+
+              <input
+                type="number"
+                id="hotel-fees"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 20"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="hotel-currency">
+                Currency
+              </label>
+
+              <select id="hotel-currency">
+
+                <option value="$">USD ($)</option>
+                <option value="€">EUR (€)</option>
+                <option value="£">GBP (£)</option>
+                <option value="₹">INR (₹)</option>
+                <option value="C$">CAD (C$)</option>
+                <option value="A$">AUD (A$)</option>
+                <option value="¥">JPY (¥)</option>
+                <option value="¥">CNY (¥)</option>
+                <option value="د.إ">AED (د.إ)</option>
+                <option value="S$">SGD (S$)</option>
+                <option value="CHF">CHF</option>
+                <option value="custom">Other</option>
+
+              </select>
+
+            </div>
+
+
+            <div
+              class="form-group"
+              id="hotel-custom-currency-group"
+              hidden
+            >
+
+              <label for="hotel-custom-currency">
+                Custom Currency Symbol
+              </label>
+
+              <input
+                type="text"
+                id="hotel-custom-currency"
+                maxlength="5"
+                placeholder="Example: kr"
+              >
+
+            </div>
+
+
+            <div
+              id="hotel-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+
+            <div class="calculator-actions">
+
+              <button
+                id="hotel-calculate"
+                class="btn"
+                type="button"
+              >
+                Calculate Hotel Cost
+              </button>
+
+              <button
+                id="hotel-reset"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="hotel-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>
+            Hotel Cost Results
+          </h2>
+
+          <div id="hotel-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Hotel Cost Summary
+          </h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+
+              <h3>Room Cost</h3>
+
+              <p id="hotel-summary-room">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Hotel Tax</h3>
+
+              <p id="hotel-summary-tax">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Additional Fees</h3>
+
+              <p id="hotel-summary-fees">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Total Cost</h3>
+
+              <p id="hotel-summary-total">—</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Is a Hotel Cost Calculator?</h2>
+
+          <p>
+            A hotel cost calculator helps estimate the total amount you may
+            spend on a hotel stay. The advertised nightly room rate is not
+            always the final amount because taxes, resort fees, service
+            charges, and other costs may be added.
+          </p>
+
+          <p>
+            By entering your nightly rate, number of nights, number of rooms,
+            tax rate, and additional nightly fees, you can create a clearer
+            estimate of your accommodation cost.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>How the Hotel Cost Calculator Works</h2>
+
+          <p>
+            The calculator first determines the room cost from the nightly
+            rate, number of nights, and number of rooms. It then calculates
+            the hotel tax and adds any additional nightly fees.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Room cost:</strong>
+              Nightly rate × nights × rooms.
+            </p>
+
+            <p>
+              <strong>Hotel tax:</strong>
+              Room cost × tax rate.
+            </p>
+
+            <p>
+              <strong>Additional fees:</strong>
+              Fee per night × nights × rooms.
+            </p>
+
+            <p>
+              <strong>Total cost:</strong>
+              Room cost + hotel tax + additional fees.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Example -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Hotel Cost Example</h2>
+
+          <p>
+            Suppose a hotel room costs $150 per night and you stay for
+            5 nights in one room. With a 10% hotel tax and $20 in additional
+            fees per night, the calculator can estimate the room cost,
+            taxes, fees, and total amount.
+          </p>
+
+          <p>
+            This makes it easier to compare accommodation options using
+            estimated total costs rather than looking only at the advertised
+            nightly room rate.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Important Considerations -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Hotel Costs to Consider</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Cost</th>
+                  <th>What It May Include</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Room Rate</td>
+                  <td>The advertised price of the room per night.</td>
+                </tr>
+
+                <tr>
+                  <td>Hotel Tax</td>
+                  <td>Applicable hotel, lodging, or local taxes.</td>
+                </tr>
+
+                <tr>
+                  <td>Additional Fees</td>
+                  <td>Resort fees, facility fees, or other nightly charges.</td>
+                </tr>
+
+                <tr>
+                  <td>Other Charges</td>
+                  <td>Optional services or charges not included in the estimate.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Does the calculator include hotel taxes?</h3>
+
+          <p>
+            Yes. You can enter the applicable hotel tax percentage and the
+            calculator will add it to the estimated room cost.
+          </p>
+
+
+          <h3>Can I calculate the cost of multiple rooms?</h3>
+
+          <p>
+            Yes. Enter the number of rooms and the calculator will multiply
+            the room rate, nights, and applicable fees accordingly.
+          </p>
+
+
+          <h3>Are additional fees included?</h3>
+
+          <p>
+            Yes. You can enter additional fees charged per room per night.
+            Examples may include resort or facility fees.
+          </p>
+
+
+          <h3>Does this calculate the exact hotel price?</h3>
+
+          <p>
+            No. It provides an estimate based on the values you enter.
+            Actual hotel charges may differ because of taxes, fees, policies,
+            discounts, and other charges.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          Free online calculators and conversion tools designed to provide
+          useful, accurate, and easy-to-understand results.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/hotel-cost-calculator.js"></script>
+
+</body>
+</html>

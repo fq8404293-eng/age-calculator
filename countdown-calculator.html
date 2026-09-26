@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Countdown Calculator - Count Down to Any Date & Time | CalclyWorld</title>
+
+    <meta name="description" content="Use the free Countdown Calculator to count down the time remaining until a specific date and time. Calculate remaining days, hours, minutes, and seconds easily.">
+
+    <meta name="keywords" content="countdown calculator, countdown timer, date countdown, time countdown, calculate time remaining, days until calculator">
+
+    <link rel="canonical" href="https://calclyworld.com/countdown-calculator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Countdown Calculator | CalclyWorld">
+    <meta property="og:description" content="Calculate the time remaining until any date and time with the free Countdown Calculator.">
+    <meta property="og:url" content="https://calclyworld.com/countdown-calculator.html">
+    <meta property="og:site_name" content="CalclyWorld">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Countdown Calculator | CalclyWorld">
+    <meta name="twitter:description" content="Calculate the time remaining until a specific date and time.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-BSQETZ21ZZ');
+    </script>
+
+    <!-- Google AdSense -->
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
+        crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style-v2.css">
+
+    <!-- WebPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Countdown Calculator",
+        "url": "https://calclyworld.com/countdown-calculator.html",
+        "description": "Calculate the time remaining until a specific date and time.",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "CalclyWorld",
+            "url": "https://calclyworld.com/"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://calclyworld.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Countdown Calculator",
+                "item": "https://calclyworld.com/countdown-calculator.html"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="container header-container">
+
+            <a href="/" class="logo">
+
+                <img
+                    src="/favicon.png"
+                    alt="CalclyWorld Logo"
+                    width="42"
+                    height="42"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async">
+
+                <span>CalclyWorld</span>
+
+            </a>
+
+            <nav class="main-nav" aria-label="Primary Navigation">
+
+                <a href="/">Home</a>
+                <a href="/#calculator-directory">Calculators</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+
+            </nav>
+
+            <button
+                id="theme-toggle"
+                class="btn btn-secondary"
+                type="button"
+                aria-label="Toggle dark mode"
+                aria-pressed="false">
+
+                🌙 Dark Mode
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <main id="main-content">
+
+        <!-- Breadcrumb -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="breadcrumb">
+
+                    <a href="/">Home</a>
+
+                    <span aria-hidden="true">›</span>
+
+                    <span aria-current="page">
+                        Countdown Calculator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="container">
+
+                <h1>Countdown Calculator</h1>
+
+                <p>
+                    Calculate how much time remains until a specific date
+                    and time.
+                </p>
+
+                <p>
+                    Use it for birthdays, holidays, vacations, events,
+                    deadlines, launches, and other important dates.
+                </p>
+
+                <!-- Calculator Search -->
+                <div class="hero-search">
+
+                    <input
+                        type="search"
+                        id="calculator-search"
+                        class="calculator-search"
+                        placeholder="Search calculators... (Example: BMI, EMI, Age)"
+                        autocomplete="off"
+                        aria-label="Search calculators">
+
+                    <div
+                        id="search-results"
+                        class="search-results"
+                        hidden>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Calculator -->
+        <section class="section-small">
+
+            <div class="calculator-container">
+
+                <div class="content-card">
+
+                    <h2 class="text-center">
+                        Countdown to a Date
+                    </h2>
+
+                    <p class="text-center small-text">
+                        Select a future date and time to see the remaining
+                        countdown.
+                    </p>
+
+                    <div class="calculator-form">
+
+                        <!-- Target Date -->
+                        <div class="form-group">
+
+                            <label for="countdown-date">
+                                Target Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="countdown-date"
+                                name="countdown-date"
+                                required>
+
+                        </div>
+
+                        <!-- Target Time -->
+                        <div class="form-group">
+
+                            <label>
+                                Target Time
+                            </label>
+
+                            <div class="time-input-group">
+
+                                <select
+                                    id="countdown-hour"
+                                    name="countdown-hour"
+                                    aria-label="Target hour">
+
+                                    <option value="">Hour</option>
+
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+
+                                </select>
+
+                                <select
+                                    id="countdown-minute"
+                                    name="countdown-minute"
+                                    aria-label="Target minute">
+
+                                    <option value="">Minute</option>
+
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+
+                                </select>
+
+                                <select
+                                    id="countdown-period"
+                                    name="countdown-period"
+                                    aria-label="Target AM or PM">
+
+                                    <option value="">AM/PM</option>
+                                    <option value="AM">AM</option>
+                                    <option value="PM">PM</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <p class="small-text">
+                            Select the target date and time using the hour,
+                            minute, and AM/PM options.
+                        </p>
+
+                        <!-- Error -->
+                        <div
+                            id="countdown-error"
+                            class="error-message"
+                            role="alert"
+                            aria-live="assertive"
+                            hidden>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="calculator-actions">
+
+                            <button
+                                id="calculate-countdown"
+                                class="btn"
+                                type="button">
+                                Start Countdown
+                            </button>
+
+                            <button
+                                id="reset-countdown"
+                                class="btn btn-secondary"
+                                type="button">
+                                Reset
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Countdown Result -->
+        <section class="section-small">
+
+            <div class="calculator-container">
+
+                <div
+                    id="countdown-result"
+                    class="content-card"
+                    hidden
+                    aria-live="polite"
+                    aria-atomic="true">
+
+                    <h2>Countdown Result</h2>
+
+                    <div id="countdown-result-content"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- What Is a Countdown -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>What Is a Countdown?</h2>
+
+                    <p>
+                        A countdown measures the amount of time remaining
+                        before a specific future date and time. Instead of
+                        manually calculating the difference between the
+                        current moment and an upcoming event, a countdown
+                        calculator performs the calculation automatically.
+                    </p>
+
+                    <p>
+                        Countdown calculations can be useful for birthdays,
+                        holidays, trips, appointments, project deadlines,
+                        exams, product launches, celebrations, and other
+                        events that have a specific date and time.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- How to Use -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>How to Use the Countdown Calculator</h2>
+
+                    <ol>
+
+                        <li>
+                            Select the date of the event or deadline.
+                        </li>
+
+                        <li>
+                            Select the target hour, minute, and AM/PM period.
+                        </li>
+
+                        <li>
+                            Click <strong>Start Countdown</strong>.
+                        </li>
+
+                        <li>
+                            View the remaining days, hours, minutes,
+                            and seconds.
+                        </li>
+
+                    </ol>
+
+                    <p>
+                        The countdown updates automatically while the page
+                        remains open, so you can see the remaining time change
+                        in real time.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Common Uses -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Common Uses for a Countdown</h2>
+
+                    <p>
+                        A countdown can help you keep track of how long remains
+                        before an important event or deadline.
+                    </p>
+
+                    <ul>
+
+                        <li>Birthdays and anniversaries</li>
+                        <li>Holidays and vacations</li>
+                        <li>Exams and assignment deadlines</li>
+                        <li>Meetings and appointments</li>
+                        <li>Travel dates and departures</li>
+                        <li>Events and celebrations</li>
+                        <li>Project and work deadlines</li>
+                        <li>Product launches and releases</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Understanding the Result -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Understanding the Countdown Result</h2>
+
+                    <p>
+                        The calculator breaks the remaining time into four
+                        simple units:
+                    </p>
+
+                    <div class="table-wrapper">
+
+                        <table class="amortization-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Unit</th>
+                                    <th>Meaning</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Days</td>
+                                    <td>
+                                        Complete 24-hour periods remaining.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Hours</td>
+                                    <td>
+                                        Additional hours remaining after
+                                        complete days.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Minutes</td>
+                                    <td>
+                                        Additional minutes remaining after
+                                        complete hours.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Seconds</td>
+                                    <td>
+                                        Additional seconds remaining after
+                                        complete minutes.
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FAQ -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Frequently Asked Questions</h2>
+
+                    <h3>What can I use the Countdown Calculator for?</h3>
+
+                    <p>
+                        You can use it to count down to birthdays, holidays,
+                        vacations, deadlines, appointments, events, launches,
+                        and other future dates.
+                    </p>
+
+                    <h3>Does the countdown update automatically?</h3>
+
+                    <p>
+                        Yes. Once the countdown starts, the remaining time
+                        updates automatically while the page is open.
+                    </p>
+
+                    <h3>Can I choose a specific time?</h3>
+
+                    <p>
+                        Yes. You can select a target date, hour, minute,
+                        and AM/PM period for a precise countdown.
+                    </p>
+
+                    <h3>What happens if the target time has already passed?</h3>
+
+                    <p>
+                        The calculator will tell you that the selected
+                        countdown target is not in the future. You can then
+                        choose another date or time.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-column">
+
+                <h3>CalclyWorld</h3>
+
+                <p>
+                    Free online calculators designed to provide clear,
+                    practical, and accurate results for everyday calculations.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Popular Calculators</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="/age-calculator.html">
+                            Age Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/emi-calculator.html">
+                            EMI Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/gst-calculator.html">
+                            GST Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/mortgage-calculator.html">
+                            Mortgage Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/compound-interest-calculator.html">
+                            Compound Interest Calculator
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+          <div class="footer-column">
+
+  <h3>Calculator Categories</h3>
+
+  <ul>
+    <li>
+      <a href="/#finance">
+        Finance
+      </a>
+    </li>
+
+    <li>
+      <a href="/#everyday">
+        Everyday
+      </a>
+    </li>
+
+    <li>
+      <a href="/#math">
+        Math
+      </a>
+    </li>
+
+    <li>
+      <a href="/#home-construction">
+        Home &amp; Construction
+      </a>
+    </li>
+
+    <li>
+      <a href="/#automotive">
+        Automotive
+      </a>
+    </li>
+
+    <li>
+      <a href="/#technology">
+        Technology
+      </a>
+    </li>
+
+    <li>
+      <a href="/#conversion">
+        Conversion
+      </a>
+    </li>
+
+    <li>
+      <a href="/#travel">
+        Travel
+      </a>
+    </li>
+
+    <li>
+      <a href="/#lifestyle">
+        Lifestyle
+      </a>
+    </li>
+
+    <li>
+      <a href="/#utility">
+        Utility
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span data-current-year></span>
+                CalclyWorld. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/script-v2.js"></script>
+    <script src="/countdown-calculator.js"></script>
+
+</body>
+</html>

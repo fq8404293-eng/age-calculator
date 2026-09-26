@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discount Calculator - Calculate Sale Price & Savings | CalclyWorld</title>
+
+    <meta
+        name="description"
+        content="Use the free Discount Calculator to calculate discount amounts, sale prices, and total savings from percentage discounts."
+    >
+
+    <meta
+        name="keywords"
+        content="discount calculator, sale price calculator, percentage discount calculator, discount percentage calculator, savings calculator"
+    >
+
+    <link
+        rel="canonical"
+        href="https://calclyworld.com/discount-calculator.html"
+    >
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta
+        property="og:title"
+        content="Discount Calculator | CalclyWorld"
+    >
+    <meta
+        property="og:description"
+        content="Calculate discounts, sale prices, and savings quickly with the free Discount Calculator."
+    >
+    <meta
+        property="og:url"
+        content="https://calclyworld.com/discount-calculator.html"
+    >
+    <meta property="og:site_name" content="CalclyWorld">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta
+        name="twitter:title"
+        content="Discount Calculator | CalclyWorld"
+    >
+    <meta
+        name="twitter:description"
+        content="Calculate discount amounts, sale prices, and savings from percentage discounts."
+    >
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Google Analytics -->
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"
+    ></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-BSQETZ21ZZ');
+    </script>
+
+    <!-- Google AdSense -->
+    <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style-v2.css">
+
+    <!-- WebPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Discount Calculator",
+        "url": "https://calclyworld.com/discount-calculator.html",
+        "description": "Calculate discount amounts, sale prices, and savings from percentage discounts.",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "CalclyWorld",
+            "url": "https://calclyworld.com/"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://calclyworld.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Discount Calculator",
+                "item": "https://calclyworld.com/discount-calculator.html"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="container header-container">
+
+            <a href="/" class="logo">
+
+                <img
+                    src="/favicon.png"
+                    alt="CalclyWorld Logo"
+                    width="42"
+                    height="42"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                >
+
+                <span>CalclyWorld</span>
+
+            </a>
+
+            <nav
+                class="main-nav"
+                aria-label="Primary Navigation"
+            >
+
+                <a href="/">Home</a>
+                <a href="/#calculator-directory">Calculators</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+
+            </nav>
+
+            <button
+                id="theme-toggle"
+                class="btn btn-secondary"
+                type="button"
+                aria-label="Toggle dark mode"
+                aria-pressed="false"
+            >
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+    <main id="main-content">
+
+        <!-- Breadcrumb -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="breadcrumb">
+
+                    <a href="/">Home</a>
+
+                    <span aria-hidden="true">›</span>
+
+                    <span aria-current="page">
+                        Discount Calculator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="container">
+
+                <h1>Discount Calculator</h1>
+
+                <p>
+                    Calculate how much you save and the final price after
+                    applying a percentage discount.
+                </p>
+
+                <p>
+                    Useful for shopping, sales, price comparisons, coupons,
+                    promotions, and everyday purchases.
+                </p>
+
+                <!-- Calculator Search -->
+                <div class="hero-search">
+
+                    <input
+                        type="search"
+                        id="calculator-search"
+                        class="calculator-search"
+                        placeholder="Search calculators... (Example: BMI, EMI, Age)"
+                        autocomplete="off"
+                        aria-label="Search calculators"
+                    >
+
+                    <div
+                        id="search-results"
+                        class="search-results"
+                        hidden
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Calculator -->
+        <section class="section-small">
+
+            <div class="calculator-container">
+
+                <div class="content-card">
+
+                    <h2 class="text-center">
+                        Calculate Your Discount
+                    </h2>
+
+                    <p class="text-center small-text">
+                        Enter the original price and discount percentage
+                        to calculate your savings and final price.
+                    </p>
+
+                    <div class="calculator-form">
+
+                        <!-- Original Price -->
+                        <div class="form-group">
+
+                            <label for="discount-original-price">
+                                Original Price
+                            </label>
+
+                            <input
+                                type="number"
+                                id="discount-original-price"
+                                name="discount-original-price"
+                                min="0"
+                                step="any"
+                                placeholder="Example: 100"
+                                inputmode="decimal"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- Discount Percentage -->
+                        <div class="form-group">
+
+                            <label for="discount-percentage">
+                                Discount Percentage
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="discount-percentage"
+                                    name="discount-percentage"
+                                    min="0"
+                                    max="100"
+                                    step="any"
+                                    placeholder="Example: 20"
+                                    inputmode="decimal"
+                                    required
+                                >
+
+                                <span>%</span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Optional Second Discount -->
+                        <div class="form-group">
+
+                            <label for="discount-second">
+                                Additional Discount
+                                <span class="small-text">(Optional)</span>
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="discount-second"
+                                    name="discount-second"
+                                    min="0"
+                                    max="100"
+                                    step="any"
+                                    placeholder="Example: 10"
+                                    inputmode="decimal"
+                                >
+
+                                <span>%</span>
+
+                            </div>
+
+                            <p class="small-text">
+                                If entered, this discount is applied after
+                                the first discount.
+                            </p>
+
+                        </div>
+
+                        <!-- Error -->
+                        <div
+                            id="discount-error"
+                            class="error-message"
+                            role="alert"
+                            aria-live="assertive"
+                            hidden
+                        ></div>
+
+                        <!-- Actions -->
+                        <div class="calculator-actions">
+
+                            <button
+                                id="calculate-discount"
+                                class="btn"
+                                type="button"
+                            >
+                                Calculate Discount
+                            </button>
+
+                            <button
+                                id="reset-discount"
+                                class="btn btn-secondary"
+                                type="button"
+                            >
+                                Reset
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Result -->
+        <section class="section-small">
+
+            <div class="calculator-container">
+
+                <div
+                    id="discount-result"
+                    class="content-card"
+                    hidden
+                    aria-live="polite"
+                    aria-atomic="true"
+                >
+
+                    <h2>Discount Calculation Result</h2>
+
+                    <div id="discount-result-content"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- What Is a Discount -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>What Is a Discount?</h2>
+
+                    <p>
+                        A discount reduces the original price of a product
+                        or service by a specified percentage or fixed amount.
+                        Percentage discounts are commonly used during sales,
+                        promotions, coupons, and special offers.
+                    </p>
+
+                    <p>
+                        For example, if an item costs $100 and has a 20%
+                        discount, the discount amount is $20 and the final
+                        price is $80.
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>
+                            Discount Amount =
+                            Original Price × Discount Percentage ÷ 100
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- How to Use -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>How to Use the Discount Calculator</h2>
+
+                    <ol>
+
+                        <li>
+                            Enter the original price of the item.
+                        </li>
+
+                        <li>
+                            Enter the discount percentage.
+                        </li>
+
+                        <li>
+                            Optionally enter an additional discount if the
+                            purchase has two successive percentage discounts.
+                        </li>
+
+                        <li>
+                            Click <strong>Calculate Discount</strong>.
+                        </li>
+
+                    </ol>
+
+                    <p>
+                        The calculator shows the discount amount, final
+                        price, and total savings. If an additional discount
+                        is entered, it is applied to the price remaining
+                        after the first discount.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Discount Formula -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Discount Formula</h2>
+
+                    <p>
+                        To calculate the amount saved from a percentage
+                        discount, use:
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>
+                            Discount Amount =
+                            Original Price × Discount % ÷ 100
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        To calculate the final price:
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>
+                            Final Price =
+                            Original Price − Discount Amount
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        For example, a $250 item with a 15% discount has
+                        a discount amount of $37.50 and a final price of
+                        $212.50.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Successive Discounts -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>How Successive Discounts Work</h2>
+
+                    <p>
+                        Two percentage discounts applied one after another
+                        are not simply added together.
+                    </p>
+
+                    <p>
+                        For example, suppose a $100 item receives a 20%
+                        discount followed by a 10% discount.
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>
+                            First price: $100
+                            <br>
+                            After 20% discount: $80
+                            <br>
+                            After 10% discount: $72
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        The combined reduction is $28, or 28% of the
+                        original price, not 30%. The second discount is
+                        calculated from the already reduced price.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Examples -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Discount Examples</h2>
+
+                    <p>
+                        If a product costs $80 and is discounted by 25%:
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>
+                            Discount = $80 × 25% = $20
+                            <br>
+                            Final Price = $80 − $20 = $60
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        You save $20 and pay $60 after the discount.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Shopping Tips -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Tips for Comparing Discounts</h2>
+
+                    <p>
+                        A larger percentage discount does not always mean
+                        a better deal. Compare the final price as well as
+                        the amount saved.
+                    </p>
+
+                    <p>
+                        When comparing promotions, check whether a discount
+                        is applied before or after another discount, coupon,
+                        shipping charge, or other fee.
+                    </p>
+
+                    <p>
+                        For percentage-off promotions, calculate the final
+                        price rather than assuming that multiple discounts
+                        can simply be added together.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FAQ -->
+        <section class="section-small">
+
+            <div class="container">
+
+                <div class="content-card">
+
+                    <h2>Frequently Asked Questions</h2>
+
+                    <h3>How do I calculate a discount?</h3>
+
+                    <p>
+                        Multiply the original price by the discount
+                        percentage divided by 100. Subtract the resulting
+                        discount amount from the original price to find
+                        the final price.
+                    </p>
+
+                    <h3>What is the final price after a discount?</h3>
+
+                    <p>
+                        The final price is the original price minus the
+                        discount amount.
+                    </p>
+
+                    <h3>How much is 20% off $100?</h3>
+
+                    <p>
+                        A 20% discount on $100 saves $20, leaving a final
+                        price of $80.
+                    </p>
+
+                    <h3>Are two 10% discounts equal to 20% off?</h3>
+
+                    <p>
+                        No. When two 10% discounts are applied successively,
+                        the second discount is calculated from the reduced
+                        price. The combined reduction is 19%.
+                    </p>
+
+                    <h3>Can I calculate two successive discounts?</h3>
+
+                    <p>
+                        Yes. Enter the second percentage discount in the
+                        optional Additional Discount field. The calculator
+                        applies it after the first discount.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-column">
+
+                <h3>CalclyWorld</h3>
+
+                <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Popular Calculators</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="/age-calculator.html">
+                            Age Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/emi-calculator.html">
+                            EMI Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/gst-calculator.html">
+                            GST Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/mortgage-calculator.html">
+                            Mortgage Calculator
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/compound-interest-calculator.html">
+                            Compound Interest Calculator
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+           <div class="footer-column">
+
+  <h3>Calculator Categories</h3>
+
+  <ul>
+    <li>
+      <a href="/#finance">
+        Finance
+      </a>
+    </li>
+
+    <li>
+      <a href="/#everyday">
+        Everyday
+      </a>
+    </li>
+
+    <li>
+      <a href="/#math">
+        Math
+      </a>
+    </li>
+
+    <li>
+      <a href="/#home-construction">
+        Home &amp; Construction
+      </a>
+    </li>
+
+    <li>
+      <a href="/#automotive">
+        Automotive
+      </a>
+    </li>
+
+    <li>
+      <a href="/#technology">
+        Technology
+      </a>
+    </li>
+
+    <li>
+      <a href="/#conversion">
+        Conversion
+      </a>
+    </li>
+
+    <li>
+      <a href="/#travel">
+        Travel
+      </a>
+    </li>
+
+    <li>
+      <a href="/#lifestyle">
+        Lifestyle
+      </a>
+    </li>
+
+    <li>
+      <a href="/#utility">
+        Utility
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span data-current-year></span>
+                CalclyWorld. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/script-v2.js"></script>
+    <script src="/discount-calculator.js"></script>
+
+</body>
+</html>

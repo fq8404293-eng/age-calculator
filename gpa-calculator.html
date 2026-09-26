@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GPA Calculator - Calculate Your Grade Point Average | CalclyWorld</title>
+
+  <meta name="description" content="Use CalclyWorld's free GPA Calculator to calculate your grade point average from course grades and credit hours. Add multiple courses and instantly calculate your GPA on a 4.0 scale.">
+
+  <meta name="keywords" content="GPA calculator, grade point average calculator, calculate GPA, college GPA calculator, university GPA calculator, 4.0 GPA calculator">
+
+  <link rel="canonical" href="https://calclyworld.com/gpa-calculator.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GPA Calculator - Calculate Your Grade Point Average">
+  <meta property="og:description" content="Calculate your GPA using course grades and credit hours with CalclyWorld's free GPA Calculator.">
+  <meta property="og:url" content="https://calclyworld.com/gpa-calculator.html">
+  <meta property="og:site_name" content="CalclyWorld">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GPA Calculator - Calculate Your Grade Point Average">
+  <meta name="twitter:description" content="Calculate your GPA from course grades and credit hours on a standard 4.0 scale.">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BSQETZ21ZZ');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
+    crossorigin="anonymous"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "GPA Calculator",
+    "url": "https://calclyworld.com/gpa-calculator.html",
+    "description": "Free GPA Calculator for calculating grade point average from course grades and credit hours.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "GPA Calculator",
+        "item": "https://calclyworld.com/gpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">GPA Calculator</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>GPA Calculator</h1>
+
+        <p>
+          Calculate your Grade Point Average (GPA) from your course grades
+          and credit hours.
+        </p>
+
+        <p>
+          Add your courses below to calculate your weighted GPA on a standard
+          4.0 scale.
+        </p>
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate Your GPA</h2>
+
+          <p class="text-center small-text">
+            Enter each course, select its letter grade, and enter the number
+            of credits.
+          </p>
+
+          <div class="calculator-form">
+
+            <!-- Course Table -->
+            <div class="table-wrapper">
+
+              <table class="amortization-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Course</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Credits</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+
+                <tbody id="gpa-courses">
+
+                  <!-- Course 1 -->
+                  <tr class="gpa-course-row">
+
+                    <td>
+                      <input
+                        type="text"
+                        class="gpa-course-name"
+                        placeholder="Course 1"
+                        aria-label="Course 1 name"
+                      >
+                    </td>
+
+                    <td>
+                      <select
+                        class="gpa-grade"
+                        aria-label="Course 1 grade"
+                      >
+                        <option value="">Select Grade</option>
+                        <option value="4.0">A+</option>
+                        <option value="4.0">A</option>
+                        <option value="3.7">A-</option>
+                        <option value="3.3">B+</option>
+                        <option value="3.0">B</option>
+                        <option value="2.7">B-</option>
+                        <option value="2.3">C+</option>
+                        <option value="2.0">C</option>
+                        <option value="1.7">C-</option>
+                        <option value="1.0">D</option>
+                        <option value="0.0">F</option>
+                      </select>
+                    </td>
+
+                    <td>
+                      <input
+                        type="number"
+                        class="gpa-credits"
+                        min="0.1"
+                        step="0.1"
+                        placeholder="3"
+                        aria-label="Course 1 credits"
+                      >
+                    </td>
+
+                    <td>
+                      <button
+                        type="button"
+                        class="btn btn-secondary gpa-remove-course"
+                        aria-label="Remove Course 1"
+                      >
+                        Remove
+                      </button>
+                    </td>
+
+                  </tr>
+
+                  <!-- Course 2 -->
+                  <tr class="gpa-course-row">
+
+                    <td>
+                      <input
+                        type="text"
+                        class="gpa-course-name"
+                        placeholder="Course 2"
+                        aria-label="Course 2 name"
+                      >
+                    </td>
+
+                    <td>
+                      <select
+                        class="gpa-grade"
+                        aria-label="Course 2 grade"
+                      >
+                        <option value="">Select Grade</option>
+                        <option value="4.0">A+</option>
+                        <option value="4.0">A</option>
+                        <option value="3.7">A-</option>
+                        <option value="3.3">B+</option>
+                        <option value="3.0">B</option>
+                        <option value="2.7">B-</option>
+                        <option value="2.3">C+</option>
+                        <option value="2.0">C</option>
+                        <option value="1.7">C-</option>
+                        <option value="1.0">D</option>
+                        <option value="0.0">F</option>
+                      </select>
+                    </td>
+
+                    <td>
+                      <input
+                        type="number"
+                        class="gpa-credits"
+                        min="0.1"
+                        step="0.1"
+                        placeholder="3"
+                        aria-label="Course 2 credits"
+                      >
+                    </td>
+
+                    <td>
+                      <button
+                        type="button"
+                        class="btn btn-secondary gpa-remove-course"
+                        aria-label="Remove Course 2"
+                      >
+                        Remove
+                      </button>
+                    </td>
+
+                  </tr>
+
+                  <!-- Course 3 -->
+                  <tr class="gpa-course-row">
+
+                    <td>
+                      <input
+                        type="text"
+                        class="gpa-course-name"
+                        placeholder="Course 3"
+                        aria-label="Course 3 name"
+                      >
+                    </td>
+
+                    <td>
+                      <select
+                        class="gpa-grade"
+                        aria-label="Course 3 grade"
+                      >
+                        <option value="">Select Grade</option>
+                        <option value="4.0">A+</option>
+                        <option value="4.0">A</option>
+                        <option value="3.7">A-</option>
+                        <option value="3.3">B+</option>
+                        <option value="3.0">B</option>
+                        <option value="2.7">B-</option>
+                        <option value="2.3">C+</option>
+                        <option value="2.0">C</option>
+                        <option value="1.7">C-</option>
+                        <option value="1.0">D</option>
+                        <option value="0.0">F</option>
+                      </select>
+                    </td>
+
+                    <td>
+                      <input
+                        type="number"
+                        class="gpa-credits"
+                        min="0.1"
+                        step="0.1"
+                        placeholder="3"
+                        aria-label="Course 3 credits"
+                      >
+                    </td>
+
+                    <td>
+                      <button
+                        type="button"
+                        class="btn btn-secondary gpa-remove-course"
+                        aria-label="Remove Course 3"
+                      >
+                        Remove
+                      </button>
+                    </td>
+
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+
+            <!-- Add Course -->
+            <div class="calculator-actions">
+
+              <button
+                id="add-gpa-course"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Add Course
+              </button>
+
+            </div>
+
+            <!-- Error -->
+            <div
+              id="gpa-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <!-- Main Actions -->
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-gpa"
+                class="btn"
+                type="button"
+              >
+                Calculate GPA
+              </button>
+
+              <button
+                id="reset-gpa"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="gpa-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>GPA Calculation Result</h2>
+
+          <div id="gpa-result-content"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">GPA Summary</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>GPA</h3>
+              <p id="gpa-summary-value">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Total Credits</h3>
+              <p id="gpa-summary-credits">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Total Grade Points</h3>
+              <p id="gpa-summary-points">—</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What Is GPA -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>What Is GPA?</h2>
+
+          <p>
+            GPA stands for Grade Point Average. It is a numerical measure
+            commonly used by schools, colleges, and universities to summarize
+            a student's academic performance.
+          </p>
+
+          <p>
+            On a 4.0 scale, higher grade points generally represent stronger
+            academic performance. Each course contributes to the GPA according
+            to both its grade and the number of credits assigned to the course.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GPA Formula -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>How Is GPA Calculated?</h2>
+
+          <p>
+            A weighted GPA is calculated by multiplying each course's grade
+            points by its credit hours, adding those results together, and
+            dividing by the total number of credits.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>
+                GPA = Total Grade Points ÷ Total Credits
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            This means a course with more credits has a greater effect on the
+            final GPA than a course with fewer credits.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Grade Scale -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Standard 4.0 GPA Scale</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th scope="col">Letter Grade</th>
+                  <th scope="col">Grade Points</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>A+</td>
+                  <td>4.0</td>
+                </tr>
+                <tr>
+                  <td>A</td>
+                  <td>4.0</td>
+                </tr>
+                <tr>
+                  <td>A-</td>
+                  <td>3.7</td>
+                </tr>
+                <tr>
+                  <td>B+</td>
+                  <td>3.3</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>3.0</td>
+                </tr>
+                <tr>
+                  <td>B-</td>
+                  <td>2.7</td>
+                </tr>
+                <tr>
+                  <td>C+</td>
+                  <td>2.3</td>
+                </tr>
+                <tr>
+                  <td>C</td>
+                  <td>2.0</td>
+                </tr>
+                <tr>
+                  <td>C-</td>
+                  <td>1.7</td>
+                </tr>
+                <tr>
+                  <td>D</td>
+                  <td>1.0</td>
+                </tr>
+                <tr>
+                  <td>F</td>
+                  <td>0.0</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p class="small-text">
+            This calculator uses the grade-point values shown above.
+            Your school or university may use a different grading scale.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>GPA Calculation Example</h2>
+
+          <p>
+            Suppose a student has three courses:
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th scope="col">Course</th>
+                  <th scope="col">Grade</th>
+                  <th scope="col">Grade Points</th>
+                  <th scope="col">Credits</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Mathematics</td>
+                  <td>A</td>
+                  <td>4.0</td>
+                  <td>3</td>
+                </tr>
+
+                <tr>
+                  <td>English</td>
+                  <td>B</td>
+                  <td>3.0</td>
+                  <td>3</td>
+                </tr>
+
+                <tr>
+                  <td>Science</td>
+                  <td>A-</td>
+                  <td>3.7</td>
+                  <td>4</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            Total grade points:
+            <strong>
+              (4.0 × 3) + (3.0 × 3) + (3.7 × 4) = 33.8
+            </strong>
+          </p>
+
+          <p>
+            Total credits:
+            <strong>3 + 3 + 4 = 10</strong>
+          </p>
+
+          <p>
+            GPA:
+            <strong>33.8 ÷ 10 = 3.38</strong>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Weighted GPA -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Why Do Credits Matter?</h2>
+
+          <p>
+            GPA is normally credit-weighted. This means courses with different
+            credit values do not necessarily contribute equally to your final
+            GPA.
+          </p>
+
+          <p>
+            For example, a 4-credit course has a greater effect on your GPA
+            than a 2-credit course with the same grade because the 4-credit
+            course contributes twice as many grade points.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Important Note -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Important Note About GPA Scales</h2>
+
+          <p>
+            GPA systems vary between schools, colleges, and countries.
+            Some institutions use a 4.0 scale, while others may use different
+            scales or grading policies.
+          </p>
+
+          <p>
+            This calculator uses the standard grade-point values displayed
+            above. For official academic records, always use the grading
+            policy provided by your institution.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container content">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What is a 4.0 GPA scale?</h3>
+
+          <p>
+            A 4.0 GPA scale assigns numerical grade points to letter grades,
+            with 4.0 generally representing the highest grade point used in
+            this calculator.
+          </p>
+
+          <h3>Does a higher-credit course affect GPA more?</h3>
+
+          <p>
+            Yes. In a credit-weighted GPA calculation, a course with more
+            credits has a greater effect on the final GPA.
+          </p>
+
+          <h3>Can I add more than three courses?</h3>
+
+          <p>
+            Yes. Use the Add Course button to add additional courses to the
+            calculator.
+          </p>
+
+          <h3>Can I remove a course?</h3>
+
+          <p>
+            Yes. Each course row has a Remove button.
+          </p>
+
+          <h3>Is this GPA calculator official?</h3>
+
+          <p>
+            No. It is an estimation tool. Your institution's official GPA
+            calculation may use different grade values, rounding rules, or
+            policies.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides simple, accurate, and easy-to-use online
+          calculators for everyday calculations, finance, technology,
+          home improvement, education, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+    <div class="footer-column">
+
+  <h3>Calculator Categories</h3>
+
+  <ul>
+    <li>
+      <a href="/#finance">
+        Finance
+      </a>
+    </li>
+
+    <li>
+      <a href="/#everyday">
+        Everyday
+      </a>
+    </li>
+
+    <li>
+      <a href="/#math">
+        Math
+      </a>
+    </li>
+
+    <li>
+      <a href="/#home-construction">
+        Home &amp; Construction
+      </a>
+    </li>
+
+    <li>
+      <a href="/#automotive">
+        Automotive
+      </a>
+    </li>
+
+    <li>
+      <a href="/#technology">
+        Technology
+      </a>
+    </li>
+
+    <li>
+      <a href="/#conversion">
+        Conversion
+      </a>
+    </li>
+
+    <li>
+      <a href="/#travel">
+        Travel
+      </a>
+    </li>
+
+    <li>
+      <a href="/#lifestyle">
+        Lifestyle
+      </a>
+    </li>
+
+    <li>
+      <a href="/#utility">
+        Utility
+      </a>
+    </li>
+  </ul>
+
+</div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/gpa-calculator.js"></script>
+
+</body>
+</html>

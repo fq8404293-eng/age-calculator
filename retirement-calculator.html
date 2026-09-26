@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Retirement Calculator - Estimate Your Retirement Savings | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Use CalclyWorld's Retirement Calculator to estimate your retirement savings, investment growth, contributions, and potential retirement income based on your age, savings, contributions, return, inflation, and retirement goals."
+  >
+
+  <meta
+    name="keywords"
+    content="retirement calculator, retirement savings calculator, retirement planning calculator, retirement income calculator, 401k calculator, retirement investment calculator"
+  >
+
+  <link rel="canonical" href="https://calclyworld.com/retirement-calculator.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Retirement Calculator - Estimate Your Retirement Savings">
+  <meta
+    property="og:description"
+    content="Estimate your retirement savings and potential retirement income using your current age, savings, contributions, investment return, inflation, and retirement goals."
+  >
+  <meta property="og:url" content="https://calclyworld.com/retirement-calculator.html">
+  <meta property="og:site_name" content="CalclyWorld">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Retirement Calculator - CalclyWorld">
+  <meta
+    name="twitter:description"
+    content="Estimate future retirement savings and retirement income with CalclyWorld's free Retirement Calculator."
+  >
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Retirement Calculator",
+    "url": "https://calclyworld.com/retirement-calculator.html",
+    "description": "A free retirement calculator that estimates future retirement savings, investment growth, contributions, and potential retirement income.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a retirement calculator estimate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A retirement calculator estimates how your savings and contributions may grow before retirement and can provide an approximate retirement income based on the assumptions you enter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What return should I use in a retirement calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The appropriate return assumption depends on your investments, asset allocation, fees, time horizon, and market conditions. It is useful to test several reasonable assumptions rather than relying on a single rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does inflation matter for retirement planning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Inflation reduces purchasing power over time. A retirement income that looks sufficient today may buy fewer goods and services many years from now, which is why inflation is an important planning assumption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator include Social Security?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can enter an estimated annual Social Security income, which is shown separately from the investment-based retirement income estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this retirement calculator financial advice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculator provides mathematical estimates based on the assumptions you enter. Actual investment returns, inflation, taxes, fees, income needs, and longevity can differ significantly."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#finance">Finance</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Retirement Calculator</span>
+      </nav>
+    </div>
+
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Retirement Calculator</h1>
+
+        <p>
+          Estimate how your current savings and future contributions could grow
+          by retirement and explore a potential retirement income based on the
+          assumptions you provide.
+        </p>
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Plan Your Retirement</h2>
+
+          <p class="text-center">
+            Enter your current financial situation and retirement goals to
+            estimate your potential retirement savings.
+          </p>
+
+
+          <form id="retirement-form" class="calculator-form" novalidate>
+
+            <!-- Current Age -->
+            <div class="form-group">
+
+              <label for="current-age">
+                Current Age
+              </label>
+
+              <input
+                type="number"
+                id="current-age"
+                name="current-age"
+                min="18"
+                max="100"
+                step="1"
+                value="30"
+                inputmode="numeric"
+                required
+              >
+
+              <small>
+                Your current age in years.
+              </small>
+
+              <div
+                id="current-age-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                        hidden
+              ></div>
+
+            </div>
+
+
+            <!-- Retirement Age -->
+            <div class="form-group">
+
+              <label for="retirement-age">
+                Retirement Age
+              </label>
+
+              <input
+                type="number"
+                id="retirement-age"
+                name="retirement-age"
+                min="19"
+                max="100"
+                step="1"
+                value="65"
+                inputmode="numeric"
+                required
+              >
+
+              <small>
+                The age at which you plan to retire.
+              </small>
+
+              <div
+                id="retirement-age-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+
+            <!-- Current Savings -->
+            <div class="form-group">
+
+              <label for="current-savings">
+                Current Retirement Savings
+              </label>
+
+              <input
+                type="number"
+                id="current-savings"
+                name="current-savings"
+                min="0"
+                step="0.01"
+                value="25000"
+                inputmode="decimal"
+                placeholder="Example: 25000"
+                required
+              >
+
+              <small>
+                The amount you already have saved for retirement.
+              </small>
+
+              <div
+                id="current-savings-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+
+            <!-- Monthly Contribution -->
+            <div class="form-group">
+
+              <label for="monthly-contribution">
+                Monthly Contribution
+              </label>
+
+              <input
+                type="number"
+                id="monthly-contribution"
+                name="monthly-contribution"
+                min="0"
+                step="0.01"
+                value="500"
+                inputmode="decimal"
+                placeholder="Example: 500"
+                required
+              >
+
+              <small>
+                How much you plan to add to your retirement savings each month.
+              </small>
+
+              <div
+                id="monthly-contribution-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+
+            <!-- Annual Return -->
+            <div class="form-group">
+
+              <label for="annual-return">
+                Expected Annual Return (%)
+              </label>
+
+              <input
+                type="number"
+                id="annual-return"
+                name="annual-return"
+                min="0"
+                max="50"
+                step="0.01"
+                value="7"
+                inputmode="decimal"
+                placeholder="Example: 7"
+                required
+              >
+
+              <small>
+                An assumed average annual investment return before retirement.
+              </small>
+
+              <div
+                id="annual-return-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+
+            <!-- Inflation -->
+            <div class="form-group">
+
+              <label for="inflation-rate">
+                Expected Inflation Rate (%)
+              </label>
+
+              <input
+                type="number"
+                id="inflation-rate"
+                name="inflation-rate"
+                min="0"
+                max="30"
+                step="0.01"
+                value="3"
+                inputmode="decimal"
+                placeholder="Example: 3"
+                required
+              >
+
+              <small>
+                An assumed average annual inflation rate used to estimate
+                future purchasing power.
+              </small>
+
+              <div
+                id="inflation-rate-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+
+            <!-- Desired Income -->
+            <div class="form-group">
+
+              <label for="desired-income">
+                Desired Annual Retirement Income
+              </label>
+
+              <input
+                type="number"
+                id="desired-income"
+                name="desired-income"
+                min="0"
+                step="0.01"
+                value="60000"
+                inputmode="decimal"
+                placeholder="Example: 60000"
+                required
+              >
+
+              <small>
+                The annual retirement income you would like to have in today's
+                dollars.
+              </small>
+
+              <div
+                id="desired-income-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+
+            <!-- Social Security -->
+            <div class="form-group">
+
+              <label for="social-security">
+                Estimated Annual Social Security Income
+              </label>
+
+              <input
+                type="number"
+                id="social-security"
+                name="social-security"
+                min="0"
+                step="0.01"
+                value="24000"
+                inputmode="decimal"
+                placeholder="Example: 24000"
+              >
+
+              <small>
+                Optional estimated annual Social Security income during
+                retirement. Enter 0 if you do not want to include it.
+              </small>
+
+              <div
+                id="social-security-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+
+            <!-- Actions -->
+            <div class="calculator-actions">
+
+              <button
+                type="submit"
+                class="btn"
+              >
+                Calculate Retirement
+              </button>
+
+              <button
+                type="reset"
+                id="clear-retirement"
+                class="btn btn-secondary"
+              >
+                Clear
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Results -->
+    <section
+      id="retirement-results"
+      class="section-small"
+      hidden
+      aria-live="polite"
+      aria-atomic="true"
+    >
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Your Retirement Projection</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Projected Savings at Retirement</h3>
+              <p id="future-savings">$0.00</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Total Contributions</h3>
+              <p id="total-contributions">$0.00</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Investment Growth</h3>
+              <p id="investment-growth">$0.00</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Years Until Retirement</h3>
+              <p id="years-until-retirement">0</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Estimated Monthly Retirement Income</h3>
+              <p id="monthly-retirement-income">$0.00</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Estimated Annual Retirement Income</h3>
+              <p id="annual-retirement-income">$0.00</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Inflation-Adjusted Annual Income</h3>
+              <p id="inflation-adjusted-income">$0.00</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Retirement Funding Status</h3>
+              <p id="retirement-status">—</p>
+            </div>
+
+          </div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              type="button"
+              id="copy-retirement-result"
+              class="btn btn-secondary"
+            >
+              Copy Result
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Projection Table -->
+    <section
+      id="projection-section"
+      class="section-small"
+      hidden
+    >
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2>Year-by-Year Retirement Projection</h2>
+
+          <p>
+            This table shows how your estimated retirement savings may grow
+            over time based on the assumptions entered above.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th scope="col">Year</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Starting Balance</th>
+                  <th scope="col">Contributions</th>
+                  <th scope="col">Investment Growth</th>
+                  <th scope="col">Ending Balance</th>
+                </tr>
+              </thead>
+
+              <tbody id="retirement-table-body">
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- What Is Retirement Planning -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is Retirement Planning?</h2>
+
+          <p>
+            Retirement planning is the process of estimating how much money
+            you may need after you stop working and determining how much you
+            may need to save and invest before retirement.
+          </p>
+
+          <p>
+            A retirement plan usually considers your current savings, future
+            contributions, investment returns, inflation, expected retirement
+            age, retirement expenses, and other sources of income.
+          </p>
+
+          <p>
+            The earlier you begin, the more time your savings have to
+            potentially benefit from compound growth. However, the actual
+            outcome depends on investment performance, contributions,
+            inflation, fees, taxes, and changes in your financial situation.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How Calculator Works -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How the Retirement Calculator Works</h2>
+
+          <p>
+            The calculator projects your retirement savings from your current
+            age through your planned retirement age.
+          </p>
+
+          <p>
+            Your current savings are allowed to grow based on the expected
+            annual return. Monthly contributions are added throughout the
+            projection period and also participate in investment growth.
+          </p>
+
+          <p>
+            The calculator then estimates a potential retirement income from
+            the projected savings and adds the Social Security amount you
+            entered.
+          </p>
+
+          <p>
+            Inflation is also considered so that you can see how a future
+            retirement income compares with your desired income in today's
+            purchasing power.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Formula -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Retirement Savings Formula</h2>
+
+          <p>
+            The future value of existing savings can be represented using
+            compound growth:
+          </p>
+
+          <p>
+            <strong>
+              Future Value = Current Savings × (1 + r)<sup>n</sup>
+            </strong>
+          </p>
+
+          <p>
+            Regular contributions are also accumulated over time. The actual
+            calculation in this tool uses monthly periods so that monthly
+            contributions can be included in the projection.
+          </p>
+
+          <p>
+            Here, <strong>r</strong> represents the periodic investment return
+            and <strong>n</strong> represents the number of periods.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Compound Growth -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Why Compound Growth Matters</h2>
+
+          <p>
+            Compound growth means that investment returns can themselves
+            generate additional returns over time.
+          </p>
+
+          <p>
+            For example, if an investment grows from $10,000 to $10,700 during
+            one year at a 7% return, the following year's growth is based on
+            the larger balance if the investment remains invested.
+          </p>
+
+          <p>
+            This is one reason time can be an important part of retirement
+            planning. Starting earlier can give savings more years to
+            potentially grow.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Inflation -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Why Inflation Matters</h2>
+
+          <p>
+            Inflation reduces the purchasing power of money over time.
+          </p>
+
+          <p>
+            If prices rise by 3% per year, the same amount of money generally
+            buys fewer goods and services in the future than it does today.
+          </p>
+
+          <p>
+            This calculator uses your inflation assumption to help illustrate
+            the difference between a future dollar amount and its approximate
+            purchasing power in today's dollars.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Retirement Income -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Estimating Retirement Income</h2>
+
+          <p>
+            Knowing your projected retirement balance is only one part of
+            retirement planning. You also need to consider how that balance
+            could support your spending during retirement.
+          </p>
+
+          <p>
+            A common planning approach is to estimate a sustainable withdrawal
+            amount from retirement savings. This calculator uses a simplified
+            withdrawal assumption to provide an educational estimate rather
+            than a personalized withdrawal strategy.
+          </p>
+
+          <p>
+            Social Security or other retirement income can provide another
+            source of cash flow. Entering an estimated Social Security amount
+            allows the calculator to show it separately from the estimated
+            investment-based retirement income.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Worked Example -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Retirement Calculator Example</h2>
+
+          <p>
+            Suppose someone is 30 years old, has $25,000 already saved for
+            retirement, contributes $500 per month, and plans to retire at
+            age 65.
+          </p>
+
+          <p>
+            If they assume a 7% annual investment return and 3% inflation,
+            the calculator can project how those savings and contributions
+            may grow over the 35-year period.
+          </p>
+
+          <p>
+            The result is an estimate, not a guarantee. Actual returns may be
+            higher or lower, contributions may change, and inflation may not
+            remain constant.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How To Use -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Retirement Calculator</h2>
+
+          <ol>
+
+            <li>
+              Enter your current age.
+            </li>
+
+            <li>
+              Enter the age at which you expect to retire.
+            </li>
+
+            <li>
+              Enter your current retirement savings.
+            </li>
+
+            <li>
+              Enter how much you expect to contribute each month.
+            </li>
+
+            <li>
+              Enter an expected annual investment return.
+            </li>
+
+            <li>
+              Enter an estimated inflation rate.
+            </li>
+
+            <li>
+              Enter your desired annual retirement income in today's dollars.
+            </li>
+
+            <li>
+              Enter estimated annual Social Security income if applicable.
+            </li>
+
+            <li>
+              Select <strong>Calculate Retirement</strong> to view the
+              projection.
+            </li>
+
+          </ol>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Common Mistakes -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Common Retirement Planning Mistakes</h2>
+
+          <ul>
+
+            <li>
+              Waiting too long to begin saving.
+            </li>
+
+            <li>
+              Underestimating the effect of inflation.
+            </li>
+
+            <li>
+              Assuming investment returns will be constant every year.
+            </li>
+
+            <li>
+              Ignoring investment fees and taxes.
+            </li>
+
+            <li>
+              Failing to increase contributions as income grows.
+            </li>
+
+            <li>
+              Forgetting healthcare and other retirement expenses.
+            </li>
+
+            <li>
+              Treating a retirement projection as a guaranteed result.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Important Information -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Important Information</h2>
+
+          <p>
+            Retirement calculations are highly dependent on the assumptions
+            used. Investment returns are not guaranteed, and actual market
+            performance can vary substantially from year to year.
+          </p>
+
+          <p>
+            This calculator does not account for every possible retirement
+            planning factor, including individual tax situations, investment
+            fees, healthcare costs, required minimum distributions, pensions,
+            changing contribution levels, or changes in spending.
+          </p>
+
+          <p>
+            The results are intended for educational and planning purposes
+            only. Consider your personal circumstances and consult a qualified
+            financial professional when making important financial decisions.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-list">
+
+            <h3>What does a retirement calculator estimate?</h3>
+
+            <p>
+              It estimates how your current savings and future contributions
+              may grow before retirement and provides an approximate retirement
+              income based on the assumptions you enter.
+            </p>
+
+
+            <h3>What return should I use?</h3>
+
+            <p>
+              The appropriate return depends on your investments, asset
+              allocation, fees, time horizon, and market conditions. Testing
+              multiple assumptions can provide a broader view of possible
+              outcomes.
+            </p>
+
+
+            <h3>Why is inflation included?</h3>
+
+            <p>
+              Inflation reduces purchasing power. Including an inflation
+              assumption helps illustrate what future money may be worth in
+              today's purchasing power.
+            </p>
+
+
+            <h3>Does the calculator include Social Security?</h3>
+
+            <p>
+              Yes. You can enter an estimated annual Social Security income.
+              It is included separately from the investment-based retirement
+              income estimate.
+            </p>
+
+
+            <h3>Are the results guaranteed?</h3>
+
+            <p>
+              No. The results are estimates based on the assumptions entered.
+              Investment returns, inflation, expenses, taxes, and personal
+              circumstances can all change.
+            </p>
+
+
+            <h3>Is this financial advice?</h3>
+
+            <p>
+              No. This calculator provides mathematical estimates for
+              educational and planning purposes. It does not provide
+              personalized financial advice.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Related Calculators -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Related Calculators</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+
+              <h3>Compound Interest Calculator</h3>
+
+              <p>
+                Explore how an initial investment and regular contributions
+                can grow through compound interest.
+              </p>
+
+              <a
+                href="/compound-interest-calculator.html"
+                class="btn btn-secondary"
+              >
+                Calculate Compound Interest
+              </a>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Investment Return Calculator</h3>
+
+              <p>
+                Estimate the growth and return of an investment over time.
+              </p>
+
+              <a
+                href="/investment-return-calculator.html"
+                class="btn btn-secondary"
+              >
+                Calculate Investment Return
+              </a>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Savings Calculator</h3>
+
+              <p>
+                Estimate how regular savings and interest can build your
+                future balance.
+              </p>
+
+              <a
+                href="/savings-calculator.html"
+                class="btn btn-secondary"
+              >
+                Calculate Savings
+              </a>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Age Calculator</h3>
+
+              <p>
+                Calculate your exact age and explore your next birthday
+                information.
+              </p>
+
+              <a
+                href="/age-calculator.html"
+                class="btn btn-secondary"
+              >
+                Calculate Age
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          <li>
+            <a href="/about.html">About Us</a>
+          </li>
+
+          <li>
+            <a href="/contact.html">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="/terms.html">Terms &amp; Conditions</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">Age Calculator</a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">EMI Calculator</a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">GST Calculator</a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">Mortgage Calculator</a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">Finance</a>
+          </li>
+
+          <li>
+            <a href="/#everyday">Everyday</a>
+          </li>
+
+          <li>
+            <a href="/#math">Math</a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">Automotive</a>
+          </li>
+
+          <li>
+            <a href="/#technology">Technology</a>
+          </li>
+
+          <li>
+            <a href="/#conversion">Conversion</a>
+          </li>
+
+          <li>
+            <a href="/#travel">Travel</a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">Lifestyle</a>
+          </li>
+
+          <li>
+            <a href="/#utility">Utility</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span>
+        CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/retirement-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Car Depreciation Calculator - Calculate Vehicle Value Loss | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Car Depreciation Calculator to estimate vehicle value loss, depreciation percentage, remaining value, and average annual depreciation based on purchase price and current value.">
+
+  <meta name="keywords" content="car depreciation calculator, vehicle depreciation calculator, car value depreciation calculator, auto depreciation calculator, vehicle value calculator, car depreciation percentage">
+
+  <link rel="canonical" href="https://calclyworld.com/car-depreciation-calculator.html">
+
+  <meta property="og:title" content="Car Depreciation Calculator - Calculate Vehicle Value Loss | CalclyWorld">
+  <meta property="og:description" content="Calculate car depreciation, vehicle value loss, remaining value, depreciation percentage, and average annual depreciation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/car-depreciation-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Car Depreciation Calculator",
+    "url": "https://calclyworld.com/car-depreciation-calculator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "A free online calculator for estimating car and vehicle depreciation and remaining value.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="breadcrumb">
+      <div class="content">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Car Depreciation Calculator</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+
+        <h1>Car Depreciation Calculator</h1>
+
+        <p>
+          Estimate how much value a car or vehicle has lost over time
+          based on its purchase price, current value, and ownership period.
+        </p>
+
+        <p>
+          Calculate total depreciation, depreciation percentage, remaining
+          value, and average annual depreciation.
+        </p>
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate Car Depreciation</h2>
+
+          <p class="text-center small-text">
+            Enter the vehicle's original purchase price, current value,
+            and how long you have owned it.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+
+              <label for="depreciation-purchase-price">
+                Original Purchase Price
+              </label>
+
+              <input
+                type="number"
+                id="depreciation-purchase-price"
+                min="0"
+                step="any"
+                placeholder="Example: 30000"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="depreciation-current-value">
+                Current Vehicle Value
+              </label>
+
+              <input
+                type="number"
+                id="depreciation-current-value"
+                min="0"
+                step="any"
+                placeholder="Example: 21000"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="depreciation-years">
+                Ownership Period (Years)
+              </label>
+
+              <input
+                type="number"
+                id="depreciation-years"
+                min="0"
+                step="any"
+                placeholder="Example: 3"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="depreciation-currency">
+                Currency
+              </label>
+
+              <select id="depreciation-currency">
+
+                <option value="$">USD ($)</option>
+                <option value="₹">INR (₹)</option>
+                <option value="£">GBP (£)</option>
+                <option value="€">EUR (€)</option>
+                <option value="C$">CAD (C$)</option>
+                <option value="A$">AUD (A$)</option>
+                <option value="¥">JPY (¥)</option>
+                <option value="¥">CNY (¥)</option>
+                <option value="د.إ">AED (د.إ)</option>
+                <option value="S$">SGD (S$)</option>
+                <option value="CHF">CHF</option>
+                <option value="custom">Other</option>
+
+              </select>
+
+            </div>
+
+            <div
+              class="form-group"
+              id="depreciation-custom-currency-group"
+              hidden
+            >
+
+              <label for="depreciation-custom-currency">
+                Custom Currency Symbol
+              </label>
+
+              <input
+                type="text"
+                id="depreciation-custom-currency"
+                maxlength="10"
+                placeholder="Example: ₱"
+                autocomplete="off"
+              >
+
+            </div>
+
+            <div
+              id="depreciation-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-depreciation"
+                class="btn"
+                type="button"
+              >
+                Calculate Depreciation
+              </button>
+
+              <button
+                id="reset-depreciation"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="depreciation-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>Car Depreciation Result</h2>
+
+          <div id="depreciation-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Depreciation Summary</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Original Price</h3>
+              <p id="depreciation-summary-original">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Current Value</h3>
+              <p id="depreciation-summary-current">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Total Depreciation</h3>
+              <p id="depreciation-summary-loss">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Depreciation Rate</h3>
+              <p id="depreciation-summary-rate">—</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Is Car Depreciation?</h2>
+
+          <p>
+            Car depreciation is the reduction in a vehicle's value over
+            time. Most vehicles lose value as they become older and
+            accumulate mileage, although the amount of depreciation varies
+            between vehicles.
+          </p>
+
+          <p>
+            Depreciation is important when buying, selling, financing, or
+            owning a vehicle because the vehicle's market value can be
+            significantly different from the price originally paid.
+          </p>
+
+          <p>
+            This calculator compares the original purchase price with the
+            current estimated vehicle value to show how much value has
+            been lost.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>How to Calculate Car Depreciation</h2>
+
+          <p>
+            The simplest way to calculate depreciation is to subtract the
+            current vehicle value from the original purchase price.
+          </p>
+
+          <div class="info-box">
+
+            <h3>Total Depreciation Formula</h3>
+
+            <p>
+              <strong>
+                Depreciation = Original Price − Current Value
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            The percentage of value lost can then be calculated by dividing
+            the depreciation amount by the original purchase price.
+          </p>
+
+          <div class="info-box">
+
+            <h3>Depreciation Percentage Formula</h3>
+
+            <p>
+              <strong>
+                Depreciation % =
+                (Depreciation ÷ Original Price) × 100
+              </strong>
+            </p>
+
+          </div>
+
+          <p>
+            If the ownership period is known, the calculator can also
+            estimate the average depreciation per year.
+          </p>
+
+          <div class="info-box">
+
+            <h3>Average Annual Depreciation</h3>
+
+            <p>
+              <strong>
+                Average Annual Depreciation =
+                Total Depreciation ÷ Ownership Years
+              </strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Example Car Depreciation Calculation</h2>
+
+          <p>
+            Suppose a car was purchased for $30,000 and is currently
+            estimated to be worth $21,000 after three years.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Calculation</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Original Purchase Price</td>
+                  <td>$30,000</td>
+                </tr>
+
+                <tr>
+                  <td>Current Vehicle Value</td>
+                  <td>$21,000</td>
+                </tr>
+
+                <tr>
+                  <td>Ownership Period</td>
+                  <td>3 years</td>
+                </tr>
+
+                <tr>
+                  <td>Total Depreciation</td>
+                  <td>$9,000</td>
+                </tr>
+
+                <tr>
+                  <td>Depreciation Percentage</td>
+                  <td>30%</td>
+                </tr>
+
+                <tr>
+                  <td>Average Annual Depreciation</td>
+                  <td>$3,000/year</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p>
+            In this example, the vehicle has lost $9,000 of its original
+            value, representing 30% depreciation over three years.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Factors That Affect Car Depreciation</h2>
+
+          <p>
+            Vehicle depreciation is not determined by age alone. Several
+            factors can influence how much a vehicle is worth in the
+            used-car market.
+          </p>
+
+          <ul>
+            <li>Vehicle age</li>
+            <li>Mileage and usage</li>
+            <li>Make and model</li>
+            <li>Overall mechanical condition</li>
+            <li>Exterior and interior condition</li>
+            <li>Service and maintenance history</li>
+            <li>Accident or damage history</li>
+            <li>Demand for the vehicle</li>
+            <li>Number of previous owners</li>
+            <li>Local used-vehicle market conditions</li>
+          </ul>
+
+          <p>
+            Popular models with strong used-market demand may retain their
+            value better than vehicles with weaker demand. Actual resale
+            value can also vary significantly between regions and markets.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Why Car Depreciation Matters</h2>
+
+          <p>
+            Depreciation is an important part of the true cost of owning
+            a vehicle. Two vehicles can have similar fuel, insurance, and
+            maintenance expenses while experiencing very different losses
+            in market value.
+          </p>
+
+          <p>
+            Understanding depreciation can help when comparing vehicles,
+            deciding whether to buy new or used, estimating resale value,
+            or evaluating the long-term cost of ownership.
+          </p>
+
+          <p>
+            The calculator provides a simple historical depreciation
+            estimate based on the values you enter. It should not be
+            treated as a guaranteed prediction of future resale value.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Car Depreciation FAQ</h2>
+
+          <h3>What is car depreciation?</h3>
+
+          <p>
+            Car depreciation is the decrease in a vehicle's market value
+            over time. It represents the difference between what the
+            vehicle was worth or purchased for and what it is worth later.
+          </p>
+
+          <h3>How is car depreciation calculated?</h3>
+
+          <p>
+            A simple depreciation calculation subtracts the current value
+            from the original purchase price. The resulting loss can then
+            be expressed as a percentage of the original price.
+          </p>
+
+          <h3>Does every car depreciate at the same rate?</h3>
+
+          <p>
+            No. Depreciation varies by vehicle. Age, mileage, condition,
+            demand, reliability, brand reputation, and local market
+            conditions can all influence resale value.
+          </p>
+
+          <h3>Can I use this calculator for a motorcycle?</h3>
+
+          <p>
+            Yes. Although the calculator is designed around vehicle
+            depreciation, the same basic calculation can be used for
+            motorcycles and other vehicles when comparing their original
+            and current values.
+          </p>
+
+          <h3>Does this calculator predict future car value?</h3>
+
+          <p>
+            No. This version calculates depreciation from an original
+            price and a current estimated value. Future resale prices
+            depend on market conditions and cannot be guaranteed from a
+            simple historical calculation.
+          </p>
+
+          <h3>What is average annual depreciation?</h3>
+
+          <p>
+            Average annual depreciation is the total value lost divided
+            by the number of years the vehicle has been owned. It is a
+            simple average and does not mean that a vehicle loses exactly
+            the same amount every year.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators for
+          finance, everyday calculations, mathematics, construction,
+          automotive, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/car-depreciation-calculator.js"></script>
+
+</body>
+</html>

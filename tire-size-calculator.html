@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tire Size Calculator - Compare Tire Sizes & Speedometer Difference | CalclyWorld</title>
+
+  <meta name="description" content="Use the free Tire Size Calculator to compare tire sizes, sidewall height, overall diameter, circumference, ground clearance and speedometer difference.">
+  <meta name="keywords" content="tire size calculator, tyre size calculator, tire comparison calculator, tire diameter calculator, speedometer error calculator">
+
+  <link rel="canonical" href="https://calclyworld.com/tire-size-calculator.html">
+
+  <meta property="og:title" content="Tire Size Calculator - Compare Tire Sizes | CalclyWorld">
+  <meta property="og:description" content="Compare tire sizes and calculate diameter, circumference, sidewall height, ground clearance and speedometer difference.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/tire-size-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tire Size Calculator",
+    "url": "https://calclyworld.com/tire-size-calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "description": "Free tire size calculator for comparing tire dimensions, diameter, circumference, sidewall height, ground clearance and speedometer difference.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-container">
+
+    <a href="/" class="logo">
+      <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+      <span>CalclyWorld</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <a href="/">Home</a>
+      <a href="/#calculator-directory">Calculators</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      🌙 Dark Mode
+    </button>
+
+  </div>
+</header>
+
+
+<main id="main-content">
+
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Tire Size Calculator</span>
+    </div>
+  </div>
+
+
+  <section class="hero">
+    <div class="container">
+
+      <h1>Tire Size Calculator</h1>
+
+      <p>
+        Compare two tire sizes and see how their dimensions differ.
+        Calculate sidewall height, overall diameter, circumference,
+        ground clearance change and speedometer difference.
+      </p>
+
+      <p>
+        Enter tire sizes using the standard format such as
+        <strong>225/45R17</strong>, or enter the dimensions manually.
+      </p>
+
+      <div class="hero-search">
+        <input
+          type="search"
+          id="calculator-search"
+          class="calculator-search"
+          placeholder="Search calculators... (Example: BMI, EMI, Age)"
+          autocomplete="off"
+          aria-label="Search calculators"
+        >
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Calculator -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">Compare Tire Sizes</h2>
+
+        <p class="text-center small-text">
+          Enter the original and new tire dimensions to compare their measurements.
+        </p>
+
+
+        <div class="calculator-form">
+
+          <!-- Original Tire -->
+          <h3>Original Tire</h3>
+
+          <div class="form-group">
+
+            <label for="tire-original-width">
+              Tire Width (mm)
+            </label>
+
+            <input
+              type="number"
+              id="tire-original-width"
+              min="1"
+              step="1"
+              placeholder="225"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="tire-original-aspect">
+              Aspect Ratio (%)
+            </label>
+
+            <input
+              type="number"
+              id="tire-original-aspect"
+              min="1"
+              step="1"
+              placeholder="45"
+              inputmode="decimal"
+            >
+
+            <small class="small-text">
+              Example: 45 for a 225/45R17 tire.
+            </small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="tire-original-rim">
+              Rim Diameter (inches)
+            </label>
+
+            <input
+              type="number"
+              id="tire-original-rim"
+              min="1"
+              step="0.1"
+              placeholder="17"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <!-- New Tire -->
+          <h3>New Tire</h3>
+
+          <div class="form-group">
+
+            <label for="tire-new-width">
+              Tire Width (mm)
+            </label>
+
+            <input
+              type="number"
+              id="tire-new-width"
+              min="1"
+              step="1"
+              placeholder="235"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="tire-new-aspect">
+              Aspect Ratio (%)
+            </label>
+
+            <input
+              type="number"
+              id="tire-new-aspect"
+              min="1"
+              step="1"
+              placeholder="45"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="tire-new-rim">
+              Rim Diameter (inches)
+            </label>
+
+            <input
+              type="number"
+              id="tire-new-rim"
+              min="1"
+              step="0.1"
+              placeholder="17"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <!-- Speedometer -->
+          <h3>Speedometer Comparison</h3>
+
+          <div class="form-group">
+
+            <label for="tire-speed">
+              Current Speedometer Reading
+            </label>
+
+            <div class="input-with-unit">
+
+              <input
+                type="number"
+                id="tire-speed"
+                min="0"
+                step="0.1"
+                placeholder="60"
+                inputmode="decimal"
+              >
+
+              <span>km/h</span>
+
+            </div>
+
+            <small class="small-text">
+              Optional. Used to estimate the speedometer reading after changing tire size.
+            </small>
+
+          </div>
+
+
+          <div
+            id="tire-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              id="tire-calculate"
+              class="btn"
+              type="button"
+            >
+              Calculate Tire Size
+            </button>
+
+            <button
+              id="tire-reset"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Results -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div
+        id="tire-result"
+        class="content-card"
+        hidden
+        aria-live="polite"
+        aria-atomic="true"
+      >
+
+        <h2>Tire Size Comparison Results</h2>
+
+        <div id="tire-result-content"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Summary -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">Tire Size Summary</h2>
+
+        <div class="calculator-results-grid">
+
+          <div class="result-card">
+            <h3>Original Diameter</h3>
+            <p id="tire-summary-original">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>New Diameter</h3>
+            <p id="tire-summary-new">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Diameter Difference</h3>
+            <p id="tire-summary-difference">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Diameter Change</h3>
+            <p id="tire-summary-percent">—</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- What is tire size -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>What Does a Tire Size Mean?</h2>
+
+        <p>
+          A tire size such as <strong>225/45R17</strong> contains several
+          important measurements. The first number, 225, represents the
+          tire width in millimeters. The second number, 45, is the aspect
+          ratio, meaning the sidewall height is 45% of the tire width.
+        </p>
+
+        <p>
+          The letter <strong>R</strong> indicates radial construction,
+          while 17 represents the wheel rim diameter in inches.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+              <tr>
+                <th>Part</th>
+                <th>Example</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Width</td>
+                <td>225</td>
+                <td>225 mm tire width</td>
+              </tr>
+
+              <tr>
+                <td>Aspect Ratio</td>
+                <td>45</td>
+                <td>Sidewall is 45% of width</td>
+              </tr>
+
+              <tr>
+                <td>Construction</td>
+                <td>R</td>
+                <td>Radial construction</td>
+              </tr>
+
+              <tr>
+                <td>Rim Diameter</td>
+                <td>17</td>
+                <td>17-inch wheel</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Formulas -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>How Tire Size Is Calculated</h2>
+
+        <p>
+          The calculator uses the tire width, aspect ratio and rim diameter
+          to estimate the overall tire diameter and circumference.
+        </p>
+
+        <h3>Sidewall Height</h3>
+
+        <p>
+          Sidewall height = Tire width × Aspect ratio ÷ 100
+        </p>
+
+        <h3>Overall Diameter</h3>
+
+        <p>
+          Overall diameter = (2 × Sidewall height) + Rim diameter
+        </p>
+
+        <p>
+          Because tire width is measured in millimeters and rim diameter
+          is measured in inches, the calculator converts the measurements
+          to the same unit before calculating the final diameter.
+        </p>
+
+        <h3>Circumference</h3>
+
+        <p>
+          Circumference = π × Overall diameter
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Example -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Tire Size Comparison Example</h2>
+
+        <p>
+          Suppose a vehicle currently uses <strong>225/45R17</strong>
+          tires and you want to compare them with <strong>235/45R17</strong>.
+        </p>
+
+        <p>
+          The new tire is wider, while the width and rim diameter changes
+          determine whether its overall diameter becomes larger or smaller.
+        </p>
+
+        <p>
+          Comparing the overall diameter is important because a significant
+          change can affect speedometer readings, ground clearance,
+          gearing and available space around the tire.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Why compare -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Why Tire Size Comparison Matters</h2>
+
+        <p>
+          Changing tire size is more than simply choosing a wider or larger
+          tire. The overall diameter can change even when the wheel diameter
+          stays the same.
+        </p>
+
+        <p>
+          A larger overall diameter can increase ground clearance and
+          change the distance traveled per wheel revolution. A smaller
+          diameter can have the opposite effect.
+        </p>
+
+        <p>
+          Tire-size changes can also affect speedometer accuracy, handling,
+          acceleration, braking characteristics and clearance. Always check
+          your vehicle manufacturer's approved tire sizes before purchasing
+          replacement tires.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What is a tire size calculator?</h3>
+
+        <p>
+          A tire size calculator compares tire dimensions and estimates
+          measurements such as sidewall height, overall diameter,
+          circumference and percentage difference.
+        </p>
+
+        <h3>Does changing tire size affect the speedometer?</h3>
+
+        <p>
+          Yes. If the overall tire diameter changes, the distance traveled
+          per wheel revolution also changes. This can cause the actual
+          vehicle speed to differ from the speedometer reading.
+        </p>
+
+        <h3>Does a wider tire always have a larger diameter?</h3>
+
+        <p>
+          No. Tire width and overall diameter are separate measurements.
+          The aspect ratio and rim diameter also determine the final
+          overall diameter.
+        </p>
+
+        <h3>Can I use this calculator for cars and motorcycles?</h3>
+
+        <p>
+          Yes. The mathematical comparison can be used for many vehicles
+          that use conventional tire-size measurements. However, always
+          confirm manufacturer-approved sizes and physical clearance before
+          fitting a different tire.
+        </p>
+
+        <h3>What percentage difference is acceptable?</h3>
+
+        <p>
+          There is no universal percentage that is appropriate for every
+          vehicle. Vehicle manufacturers specify compatible tire sizes,
+          and factors such as clearance, load rating, wheel width and
+          drivetrain requirements also matter.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-column">
+
+      <h3>CalclyWorld</h3>
+
+      <p>
+        Free online calculators designed to provide clear,
+        practical and easy-to-understand results for everyday decisions.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Popular Calculators</h3>
+
+      <ul>
+        <li><a href="/age-calculator.html">Age Calculator</a></li>
+        <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+        <li><a href="/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Calculator Categories</h3>
+
+      <ul>
+        <li><a href="/#finance">Finance</a></li>
+        <li><a href="/#everyday">Everyday</a></li>
+        <li><a href="/#math">Math</a></li>
+        <li><a href="/#home-construction">Home &amp; Construction</a></li>
+        <li><a href="/#automotive">Automotive</a></li>
+        <li><a href="/#technology">Technology</a></li>
+        <li><a href="/#conversion">Conversion</a></li>
+        <li><a href="/#travel">Travel</a></li>
+        <li><a href="/#lifestyle">Lifestyle</a></li>
+        <li><a href="/#utility">Utility</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span> CalclyWorld. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="/script-v2.js"></script>
+<script src="/tire-size-calculator.js"></script>
+
+</body>
+</html>

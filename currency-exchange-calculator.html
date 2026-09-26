@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Currency Exchange Calculator | CalclyWorld</title>
+
+  <meta name="description" content="Convert currencies quickly with the CalclyWorld Currency Exchange Calculator. Calculate exchange values between major currencies for travel, shopping, budgeting, and everyday use.">
+
+  <meta name="keywords" content="currency exchange calculator, currency converter, exchange rate calculator, convert currency, USD EUR GBP INR converter">
+
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/currency-exchange-calculator.html">
+
+  <meta property="og:title" content="Currency Exchange Calculator | CalclyWorld">
+  <meta property="og:description" content="Convert currencies quickly with the CalclyWorld Currency Exchange Calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/currency-exchange-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Currency Exchange Calculator | CalclyWorld">
+  <meta name="twitter:description" content="Convert currencies quickly with the CalclyWorld Currency Exchange Calculator.">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Currency Exchange Calculator",
+    "url": "https://calclyworld.com/currency-exchange-calculator.html",
+    "description": "A currency exchange calculator for converting amounts between major currencies.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- Main -->
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="content">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Currency Exchange Calculator</span>
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Currency Exchange Calculator</h1>
+
+        <p>
+          Convert money between major world currencies quickly and easily.
+          Enter an amount, choose the currencies, and calculate the converted value.
+        </p>
+
+        <p>
+          This calculator is useful for travel planning, international shopping,
+          budgeting, and comparing currency values.
+        </p>
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators">
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Currency Exchange Calculator</h2>
+
+          <p class="text-center small-text">
+            Enter an amount and select the currencies you want to convert.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <!-- Amount -->
+            <div class="form-group">
+
+              <label for="exchange-amount">
+                Amount
+              </label>
+
+              <input
+                type="number"
+                id="exchange-amount"
+                min="0"
+                step="any"
+                value="100"
+                placeholder="Enter amount"
+                inputmode="decimal">
+
+            </div>
+
+
+            <!-- From -->
+            <div class="form-group">
+
+              <label for="from-currency">
+                From Currency
+              </label>
+
+              <select id="from-currency">
+
+                <option value="USD" selected>USD — US Dollar</option>
+                <option value="EUR">EUR — Euro</option>
+                <option value="GBP">GBP — British Pound</option>
+                <option value="INR">INR — Indian Rupee</option>
+                <option value="CAD">CAD — Canadian Dollar</option>
+                <option value="AUD">AUD — Australian Dollar</option>
+                <option value="JPY">JPY — Japanese Yen</option>
+                <option value="CNY">CNY — Chinese Yuan</option>
+                <option value="AED">AED — UAE Dirham</option>
+                <option value="SGD">SGD — Singapore Dollar</option>
+                <option value="CHF">CHF — Swiss Franc</option>
+
+              </select>
+
+            </div>
+
+
+            <!-- To -->
+            <div class="form-group">
+
+              <label for="to-currency">
+                To Currency
+              </label>
+
+              <select id="to-currency">
+
+                <option value="USD">USD — US Dollar</option>
+                <option value="EUR" selected>EUR — Euro</option>
+                <option value="GBP">GBP — British Pound</option>
+                <option value="INR">INR — Indian Rupee</option>
+                <option value="CAD">CAD — Canadian Dollar</option>
+                <option value="AUD">AUD — Australian Dollar</option>
+                <option value="JPY">JPY — Japanese Yen</option>
+                <option value="CNY">CNY — Chinese Yuan</option>
+                <option value="AED">AED — UAE Dirham</option>
+                <option value="SGD">SGD — Singapore Dollar</option>
+                <option value="CHF">CHF — Swiss Franc</option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Error -->
+            <div
+              id="exchange-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden>
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="calculator-actions">
+
+              <button
+                type="button"
+                id="calculate-exchange"
+                class="btn">
+                Convert Currency
+              </button>
+
+              <button
+                type="button"
+                id="swap-currencies"
+                class="btn btn-secondary">
+                Swap Currencies
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Result -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="exchange-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true">
+
+          <h2>Currency Conversion Result</h2>
+
+          <div id="exchange-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Currency Exchange Summary</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Amount</h3>
+              <p id="summary-amount">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>From Currency</h3>
+              <p id="summary-from">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>To Currency</h3>
+              <p id="summary-to">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Exchange Rate</h3>
+              <p id="summary-rate">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Converted Amount</h3>
+              <p id="summary-converted">—</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- What Is Currency Exchange -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is Currency Exchange?</h2>
+
+          <p>
+            Currency exchange is the process of converting one country's
+            currency into another currency. The exchange rate determines
+            how much of the second currency is received for a given amount
+            of the first currency.
+          </p>
+
+          <p>
+            Exchange rates can change over time because currency markets
+            respond to economic conditions, interest rates, inflation,
+            international trade, and changes in market demand.
+          </p>
+
+          <p>
+            A currency converter can help you estimate the value of money
+            when planning a trip, comparing international prices, or
+            preparing a personal budget.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How To Use -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Currency Exchange Calculator</h2>
+
+          <ol>
+
+            <li>
+              Enter the amount you want to convert.
+            </li>
+
+            <li>
+              Select the currency you are converting from.
+            </li>
+
+            <li>
+              Select the currency you want to convert to.
+            </li>
+
+            <li>
+              Click <strong>Convert Currency</strong>.
+            </li>
+
+            <li>
+              Review the converted amount and exchange rate.
+            </li>
+
+          </ol>
+
+          <p>
+            Use <strong>Swap Currencies</strong> to quickly reverse the
+            selected currencies.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Exchange Rate Information -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Understanding Currency Exchange Rates</h2>
+
+          <p>
+            An exchange rate shows the value of one currency relative to
+            another. For example, a rate of 1.10 EUR per USD means that
+            one US dollar is equivalent to approximately 1.10 euros at
+            that quoted rate.
+          </p>
+
+          <p>
+            The rate displayed by a currency calculator may differ from
+            the rate offered by a bank, credit card company, airport
+            exchange counter, or money-transfer service.
+          </p>
+
+          <p>
+            Financial institutions may add transaction fees, foreign
+            exchange fees, or a conversion markup. These charges can
+            change the final amount received or paid.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What is an exchange rate?</h3>
+
+          <p>
+            An exchange rate is the value of one currency expressed
+            in another currency.
+          </p>
+
+
+          <h3>Why do exchange rates change?</h3>
+
+          <p>
+            Exchange rates can change because of supply and demand,
+            economic conditions, interest rates, inflation, trade,
+            and market expectations.
+          </p>
+
+
+          <h3>Will my bank use the same exchange rate?</h3>
+
+          <p>
+            Not necessarily. Banks and payment providers can use their
+            own exchange rates and may add fees or conversion markups.
+          </p>
+
+
+          <h3>Can I use this calculator for travel?</h3>
+
+          <p>
+            Yes. It can help you estimate the value of your money in
+            another currency while planning travel expenses.
+          </p>
+
+
+          <h3>Is the calculated amount guaranteed?</h3>
+
+          <p>
+            No. Currency rates can change, and the final amount may
+            differ because of provider rates and additional fees.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/currency-exchange-calculator.js"></script>
+
+</body>
+</html>

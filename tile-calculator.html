@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tile Calculator - Calculate Tiles Needed for a Floor or Wall | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Tile Calculator to estimate how many tiles you need for a floor or wall. Calculate tile area, total tiles, coverage, waste allowance, and estimated boxes required.">
+  <meta name="keywords" content="tile calculator, tile quantity calculator, floor tile calculator, wall tile calculator, how many tiles do I need, tile coverage calculator">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/tile-calculator.html">
+
+  <meta property="og:title" content="Tile Calculator - Calculate How Many Tiles You Need | CalclyWorld">
+  <meta property="og:description" content="Estimate the number of tiles needed for a floor or wall based on surface dimensions, tile size, and waste allowance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/tile-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tile Calculator",
+    "url": "https://calclyworld.com/tile-calculator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "A free online tile calculator for estimating the number of tiles required for floors and walls.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container content">
+
+        <a href="/">Home</a>
+
+        <span aria-hidden="true">›</span>
+
+        <a href="/#home-construction">Home &amp; Construction</a>
+
+        <span aria-hidden="true">›</span>
+
+        <span aria-current="page">
+          Tile Calculator
+        </span>
+
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Tile Calculator</h1>
+
+        <p>
+          Estimate how many tiles you need for a floor or wall based on
+          the surface dimensions and tile size.
+        </p>
+
+        <p>
+          Enter your surface measurements, tile dimensions, and waste
+          allowance to calculate the required tile quantity and total
+          coverage.
+        </p>
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Tiles Needed
+          </h2>
+
+          <p class="text-center small-text">
+            Enter all dimensions in feet and inches.
+          </p>
+
+          <div class="calculator-form">
+
+            <!-- Surface Dimensions -->
+            <h3>Surface Dimensions</h3>
+
+            <div class="form-group">
+
+              <label for="tile-room-length">
+                Surface Length (ft)
+              </label>
+
+              <input
+                type="number"
+                id="tile-room-length"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 20"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="tile-room-width">
+                Surface Width (ft)
+              </label>
+
+              <input
+                type="number"
+                id="tile-room-width"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 15"
+              >
+
+            </div>
+
+            <!-- Tile Dimensions -->
+            <h3>Tile Dimensions</h3>
+
+            <div class="form-group">
+
+              <label for="tile-length">
+                Tile Length (inches)
+              </label>
+
+              <input
+                type="number"
+                id="tile-length"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 24"
+              >
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="tile-width">
+                Tile Width (inches)
+              </label>
+
+              <input
+                type="number"
+                id="tile-width"
+                min="0"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 24"
+              >
+
+            </div>
+
+            <!-- Waste -->
+            <h3>Waste Allowance</h3>
+
+            <div class="form-group">
+
+              <label for="tile-waste">
+                Waste Allowance (%)
+              </label>
+
+              <input
+                type="number"
+                id="tile-waste"
+                min="0"
+                max="50"
+                step="0.5"
+                inputmode="decimal"
+                value="10"
+                placeholder="Example: 10"
+              >
+
+              <small class="small-text">
+                A waste allowance helps account for cuts, breakage,
+                damaged tiles, and installation patterns.
+              </small>
+
+            </div>
+
+            <!-- Box Information -->
+            <h3>Box Information</h3>
+
+            <div class="form-group">
+
+              <label for="tile-box-quantity">
+                Tiles per Box (optional)
+              </label>
+
+              <input
+                type="number"
+                id="tile-box-quantity"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                placeholder="Example: 4"
+              >
+
+              <small class="small-text">
+                Leave blank if you only want the number of individual
+                tiles.
+              </small>
+
+            </div>
+
+            <!-- Error -->
+            <div
+              id="tile-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <!-- Actions -->
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-tile"
+                class="btn"
+                type="button"
+              >
+                Calculate Tiles
+              </button>
+
+              <button
+                id="reset-tile"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="tile-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">
+            Tile Estimate
+          </h2>
+
+          <div id="tile-result-content"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How Calculation Works -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How Does the Tile Calculator Work?</h2>
+
+          <p>
+            The calculator first determines the total area of the
+            surface you want to cover. It then calculates the area of
+            one tile using its length and width.
+          </p>
+
+          <p>
+            The surface area is divided by the area of one tile to
+            determine the theoretical number of tiles. A waste
+            allowance is then added to account for cutting, breakage,
+            damaged tiles, and installation requirements.
+          </p>
+
+          <div class="info-box">
+
+            <p class="text-center">
+              <strong>
+                Tiles Needed =
+                Surface Area ÷ Tile Area × (1 + Waste %)
+              </strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tile Area -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Calculate Tile Area</h2>
+
+          <p>
+            Tile area is calculated by multiplying the tile's length by
+            its width. Because tile dimensions are commonly listed in
+            inches while room dimensions may be measured in feet, the
+            tile dimensions must first be converted to feet.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>
+                Tile Length in Feet = Tile Length in Inches ÷ 12
+              </strong>
+            </p>
+
+            <p>
+              <strong>
+                Tile Width in Feet = Tile Width in Inches ÷ 12
+              </strong>
+            </p>
+
+            <p>
+              <strong>
+                Tile Area = Tile Length × Tile Width
+              </strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Waste Allowance -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Why Add a Tile Waste Allowance?</h2>
+
+          <p>
+            Tile installations rarely use exactly the theoretical
+            number of tiles. Some tiles may need to be cut around
+            walls, corners, doors, fixtures, or other obstacles.
+          </p>
+
+          <p>
+            Tiles can also be damaged during transportation or
+            installation. Keeping additional tiles can make repairs
+            easier later, especially if the tile design is discontinued.
+          </p>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Waste Allowance</th>
+                  <th>Typical Situation</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>5%</td>
+                  <td>Simple layout with minimal cutting</td>
+                </tr>
+
+                <tr>
+                  <td>10%</td>
+                  <td>Common starting estimate for many projects</td>
+                </tr>
+
+                <tr>
+                  <td>15%</td>
+                  <td>More cutting or a more complex layout</td>
+                </tr>
+
+                <tr>
+                  <td>20%+</td>
+                  <td>Complex patterns, diagonal layouts, or significant cutting</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <p class="small-text">
+            These are general planning ranges rather than manufacturer
+            requirements. Your actual waste can vary by project.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Tile Calculator Example</h2>
+
+          <p>
+            Suppose a floor is 20 feet long and 15 feet wide.
+            Its surface area is:
+          </p>
+
+          <p>
+            <strong>
+              20 × 15 = 300 sq ft
+            </strong>
+          </p>
+
+          <p>
+            Suppose the tiles are 24 × 24 inches. Each tile is
+            2 × 2 feet, giving an area of:
+          </p>
+
+          <p>
+            <strong>
+              2 × 2 = 4 sq ft per tile
+            </strong>
+          </p>
+
+          <p>
+            Without waste, the theoretical requirement is:
+          </p>
+
+          <p>
+            <strong>
+              300 ÷ 4 = 75 tiles
+            </strong>
+          </p>
+
+          <p>
+            With a 10% waste allowance:
+          </p>
+
+          <p>
+            <strong>
+              75 × 1.10 = 82.5 tiles
+            </strong>
+          </p>
+
+          <p>
+            Since tiles are purchased as whole units, the practical
+            quantity is rounded up to <strong>83 tiles</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Boxes -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Buying Tiles by the Box</h2>
+
+          <p>
+            Tiles are often sold in boxes containing a fixed number of
+            tiles or a specified amount of square footage.
+          </p>
+
+          <p>
+            If you know how many tiles are included in each box, the
+            calculator can also estimate the number of boxes required.
+            The result is rounded up because partial boxes may not be
+            available for purchase.
+          </p>
+
+          <div class="info-box">
+
+            <p class="text-center">
+              <strong>
+                Boxes Needed = Tiles Required ÷ Tiles per Box
+              </strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Floor vs Wall -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Floor Tile vs. Wall Tile Calculations</h2>
+
+          <p>
+            The basic area calculation works for both floors and
+            rectangular walls. The main difference is the shape and
+            layout of the surface being covered.
+          </p>
+
+          <p>
+            For a simple rectangular floor, multiply length by width.
+            For a rectangular wall, multiply wall width by wall height.
+            If multiple surfaces are being tiled, calculate each area
+            separately and add them together.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Tile Calculator</h2>
+
+          <ol>
+
+            <li>
+              Measure the length of the surface in feet.
+            </li>
+
+            <li>
+              Measure the width of the surface in feet.
+            </li>
+
+            <li>
+              Enter the tile length and width in inches.
+            </li>
+
+            <li>
+              Enter a waste allowance based on the complexity of the
+              installation.
+            </li>
+
+            <li>
+              Optionally enter the number of tiles contained in each
+              box.
+            </li>
+
+            <li>
+              Click <strong>Calculate Tiles</strong>.
+            </li>
+
+            <li>
+              Review the surface area, tile area, estimated quantity,
+              waste allowance, and boxes required.
+            </li>
+
+          </ol>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Measuring Tips -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Tips for Measuring a Tiling Project</h2>
+
+          <ul>
+
+            <li>
+              Measure the length and width at more than one point if
+              the surface may not be perfectly square.
+            </li>
+
+            <li>
+              Divide irregular rooms into simple rectangular sections
+              and calculate each section separately.
+            </li>
+
+            <li>
+              Account for areas that will not receive tile, such as
+              permanent fixtures or openings.
+            </li>
+
+            <li>
+              Check the actual dimensions printed on the tile packaging
+              because nominal tile sizes can differ from exact
+              measurements.
+            </li>
+
+            <li>
+              Keep some spare tiles for future repairs whenever
+              practical.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Important Note -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Important Note About Tile Estimates</h2>
+
+          <p>
+            This calculator provides a planning estimate based on the
+            dimensions and waste allowance you enter. Actual tile
+            requirements can vary because of room shape, grout joints,
+            tile layout, cuts, damaged tiles, and installation patterns.
+          </p>
+
+          <p>
+            For a final purchase quantity, compare the calculated result
+            with the manufacturer's packaging information and your
+            installer's recommendations.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How many tiles do I need?</h3>
+
+          <p>
+            The number depends on the surface area, tile size, and
+            waste allowance. Enter those measurements into the
+            calculator to estimate the required quantity.
+          </p>
+
+          <h3>Why are tile dimensions entered in inches?</h3>
+
+          <p>
+            Tile manufacturers commonly list tile sizes in inches.
+            The calculator converts those measurements to feet so they
+            can be compared with the surface area.
+          </p>
+
+          <h3>How much tile waste should I allow?</h3>
+
+          <p>
+            A 10% allowance is a useful starting point for many simple
+            projects, but projects with complex patterns or extensive
+            cutting may require a higher allowance.
+          </p>
+
+          <h3>Does the calculator account for grout?</h3>
+
+          <p>
+            The calculator estimates tile quantity based on tile
+            dimensions and surface area. It does not separately model
+            grout joint width.
+          </p>
+
+          <h3>Can I calculate wall tiles with this calculator?</h3>
+
+          <p>
+            Yes. For a rectangular wall, use the wall width as the
+            surface length and the wall height as the surface width.
+          </p>
+
+          <h3>Should I buy extra tiles?</h3>
+
+          <p>
+            Keeping some spare tiles can be useful for future repairs.
+            The appropriate amount depends on the project, tile type,
+            installation pattern, and availability.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators
+          designed to make everyday calculations simple, fast,
+          and easy to understand.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/tile-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Decimal Calculator - Decimal to Fraction, Percentage & More | CalclyWorld</title>
+
+  <meta name="description" content="Use CalclyWorld's free decimal calculator to convert decimals to fractions and percentages, perform decimal arithmetic, and calculate decimal values quickly and accurately.">
+
+  <meta name="keywords" content="decimal calculator, decimal to fraction calculator, decimal to percentage calculator, decimal arithmetic calculator, convert decimal, decimal conversion">
+
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/decimal-calculator.html">
+
+  <meta property="og:title" content="Decimal Calculator - Decimal to Fraction, Percentage & More | CalclyWorld">
+  <meta property="og:description" content="Convert decimals to fractions and percentages and perform decimal calculations with CalclyWorld's free online decimal calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/decimal-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+
+  <style>
+    .decimal-calculator {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .decimal-input-group {
+      max-width: 520px;
+      margin: 0 auto 22px;
+    }
+
+    .decimal-input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .decimal-input-group input {
+      width: 100%;
+    }
+
+    .decimal-operation-group {
+      max-width: 300px;
+      margin: 0 auto 22px;
+    }
+
+    .decimal-operation-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .decimal-operation-group select {
+      width: 100%;
+    }
+
+    .decimal-result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .decimal-result-card {
+      padding: 18px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      background: var(--card-bg);
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    .decimal-result-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .decimal-result-value {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .decimal-equation {
+      margin-top: 22px;
+      padding: 16px;
+      border-radius: 10px;
+      background: var(--secondary-bg);
+      color: var(--text-color);
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .decimal-place-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .decimal-place-card {
+      padding: 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background: var(--card-bg);
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    .decimal-place-card strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .decimal-place-card span {
+      font-weight: 600;
+    }
+
+    @media (max-width: 650px) {
+      .decimal-result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .decimal-place-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .decimal-place-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Decimal Calculator",
+    "url": "https://calclyworld.com/decimal-calculator.html",
+    "applicationCategory": "CalculatorApplication",
+    "operatingSystem": "Web",
+    "description": "Free online decimal calculator for decimal arithmetic and converting decimals to fractions and percentages.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+</head>
+
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+        <span>CalclyWorld</span>
+
+      </a>
+
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+
+        <a href="/">Home</a>
+
+        <a href="/#calculator-directory">
+          Calculators
+        </a>
+
+        <a href="/about.html">
+          About
+        </a>
+
+        <a href="/contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >🌙 Dark Mode</button>
+
+    </div>
+
+  </header>
+
+
+  <main id="main-content">
+
+
+    <!-- Breadcrumb -->
+
+    <div class="container">
+
+      <div class="breadcrumb">
+
+        <a href="/">Home</a>
+
+        <span aria-hidden="true">›</span>
+
+        <a href="/#math">Math</a>
+
+        <span aria-hidden="true">›</span>
+
+        <span aria-current="page">
+          Decimal Calculator
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>Decimal Calculator</h1>
+
+        <p>
+          Perform decimal calculations and quickly convert decimal numbers
+          into fractions and percentages.
+        </p>
+
+        <p>
+          Use this calculator for addition, subtraction, multiplication,
+          division, decimal-to-fraction conversion, and decimal-to-percentage
+          conversion.
+        </p>
+
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Calculator -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card decimal-calculator">
+
+          <h2 class="text-center">
+            Decimal Calculator
+          </h2>
+
+          <p class="text-center small-text">
+            Enter two decimal numbers and select an operation.
+          </p>
+
+
+          <!-- First Number -->
+
+          <div class="decimal-input-group">
+
+            <label for="decimal-number-1">
+              First Number
+            </label>
+
+            <input
+              type="number"
+              id="decimal-number-1"
+              inputmode="decimal"
+              step="any"
+              placeholder="Example: 12.5"
+              autocomplete="off"
+            >
+
+          </div>
+
+
+          <!-- Operation -->
+
+          <div class="decimal-operation-group">
+
+            <label for="decimal-operation">
+              Operation
+            </label>
+
+            <select id="decimal-operation">
+
+              <option value="add">
+                Add (+)
+              </option>
+
+              <option value="subtract">
+                Subtract (−)
+              </option>
+
+              <option value="multiply">
+                Multiply (×)
+              </option>
+
+              <option value="divide">
+                Divide (÷)
+              </option>
+
+              <option value="convert">
+                Convert Decimal
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- Second Number -->
+
+          <div
+            id="second-decimal-group"
+            class="decimal-input-group"
+          >
+
+            <label for="decimal-number-2">
+              Second Number
+            </label>
+
+            <input
+              type="number"
+              id="decimal-number-2"
+              inputmode="decimal"
+              step="any"
+              placeholder="Example: 4.5"
+              autocomplete="off"
+            >
+
+          </div>
+
+
+          <!-- Error -->
+
+          <div
+            id="decimal-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <!-- Actions -->
+
+          <div class="calculator-actions">
+
+            <button
+              id="calculate-decimal"
+              class="btn"
+              type="button"
+            >
+              Calculate
+            </button>
+
+            <button
+              id="reset-decimal"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="decimal-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">
+            Decimal Calculation Result
+          </h2>
+
+
+          <div
+            id="decimal-equation"
+            class="decimal-equation"
+          ></div>
+
+
+          <div class="decimal-result-grid">
+
+
+            <div class="decimal-result-card">
+
+              <strong>
+                Result
+              </strong>
+
+              <span
+                id="decimal-result-value"
+                class="decimal-result-value"
+              ></span>
+
+            </div>
+
+
+            <div class="decimal-result-card">
+
+              <strong>
+                Fraction
+              </strong>
+
+              <span
+                id="decimal-fraction"
+                class="decimal-result-value"
+              ></span>
+
+            </div>
+
+
+            <div class="decimal-result-card">
+
+              <strong>
+                Percentage
+              </strong>
+
+              <span
+                id="decimal-percentage"
+                class="decimal-result-value"
+              ></span>
+
+            </div>
+
+          </div>
+
+
+          <!-- Decimal Place Information -->
+
+          <h3 class="text-center" style="margin-top: 28px;">
+            Decimal Place Values
+          </h3>
+
+
+          <div class="decimal-place-grid">
+
+
+            <div class="decimal-place-card">
+
+              <strong>
+                Ones
+              </strong>
+
+              <span id="decimal-ones">
+                —
+              </span>
+
+            </div>
+
+
+            <div class="decimal-place-card">
+
+              <strong>
+                Tenths
+              </strong>
+
+              <span id="decimal-tenths">
+                —
+              </span>
+
+            </div>
+
+
+            <div class="decimal-place-card">
+
+              <strong>
+                Hundredths
+              </strong>
+
+              <span id="decimal-hundredths">
+                —
+              </span>
+
+            </div>
+
+
+            <div class="decimal-place-card">
+
+              <strong>
+                Thousandths
+              </strong>
+
+              <span id="decimal-thousandths">
+                —
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- What Is a Decimal -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            What Is a Decimal?
+          </h2>
+
+          <p>
+            A decimal is a way of representing numbers using a decimal point
+            to separate whole-number values from fractional values. For
+            example, 12.75 represents twelve whole units and seventy-five
+            hundredths.
+          </p>
+
+          <p>
+            Digits to the right of the decimal point represent tenths,
+            hundredths, thousandths, and smaller place values.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Decimal Operations -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            How to Calculate Decimals
+          </h2>
+
+
+          <h3>
+            Adding Decimals
+          </h3>
+
+          <p>
+            When adding decimal numbers, align their decimal points and add
+            the corresponding place values. For example, 2.5 + 1.25 equals
+            3.75.
+          </p>
+
+
+          <h3>
+            Subtracting Decimals
+          </h3>
+
+          <p>
+            Decimal subtraction also requires the decimal points to be
+            aligned. Zeros can be added to the right of a decimal when
+            necessary to make the place values easier to compare.
+          </p>
+
+
+          <h3>
+            Multiplying Decimals
+          </h3>
+
+          <p>
+            Multiply decimal numbers as whole numbers first, then place the
+            decimal point according to the total number of decimal places in
+            the original numbers.
+          </p>
+
+
+          <h3>
+            Dividing Decimals
+          </h3>
+
+          <p>
+            Decimal division can be performed by moving the decimal point in
+            the divisor and dividend by the same number of places when
+            necessary.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Decimal Conversion -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Decimal to Fraction and Percentage
+          </h2>
+
+          <p>
+            A terminating decimal can be converted to a fraction by writing
+            it over a power of ten and then simplifying the fraction.
+          </p>
+
+          <p>
+            For example, 0.75 can be written as 75/100 and simplified to 3/4.
+          </p>
+
+          <p>
+            To convert a decimal to a percentage, multiply the decimal by
+            100 and add the percent sign. For example, 0.75 is equal to 75%.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Examples -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Decimal Calculator Examples
+          </h2>
+
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Calculation</th>
+                  <th>Result</th>
+                </tr>
+
+              </thead>
+
+
+              <tbody>
+
+                <tr>
+                  <td>2.5 + 1.25</td>
+                  <td>3.75</td>
+                </tr>
+
+                <tr>
+                  <td>10.5 − 2.25</td>
+                  <td>8.25</td>
+                </tr>
+
+                <tr>
+                  <td>2.5 × 4</td>
+                  <td>10</td>
+                </tr>
+
+                <tr>
+                  <td>10 ÷ 4</td>
+                  <td>2.5</td>
+                </tr>
+
+                <tr>
+                  <td>0.75 as a fraction</td>
+                  <td>3/4</td>
+                </tr>
+
+                <tr>
+                  <td>0.75 as a percentage</td>
+                  <td>75%</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <h3>
+            What can this decimal calculator do?
+          </h3>
+
+          <p>
+            It can perform decimal addition, subtraction, multiplication,
+            and division. It can also convert a decimal value into a fraction
+            and percentage.
+          </p>
+
+
+          <h3>
+            How do I convert a decimal to a fraction?
+          </h3>
+
+          <p>
+            Enter the decimal number and choose the Convert Decimal option.
+            The calculator converts terminating decimal values into an
+            equivalent simplified fraction.
+          </p>
+
+
+          <h3>
+            How do I convert a decimal to a percentage?
+          </h3>
+
+          <p>
+            Multiply the decimal by 100. For example, 0.25 becomes 25%.
+            The calculator performs this conversion automatically.
+          </p>
+
+
+          <h3>
+            What are decimal place values?
+          </h3>
+
+          <p>
+            The first digit after the decimal point is the tenths place, the
+            second is the hundredths place, and the third is the thousandths
+            place.
+          </p>
+
+
+          <h3>
+            Is this decimal calculator free?
+          </h3>
+
+          <p>
+            Yes. CalclyWorld's decimal calculator is free to use online.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <div class="footer-column">
+
+        <h3>
+          CalclyWorld
+        </h3>
+
+          <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          <li>
+            <a href="/about.html">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact.html">
+              Contact Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="/terms.html">
+              Terms &amp; Conditions
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Popular Calculators
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Calculator Categories
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/#finance">
+              Finance
+            </a>
+          </li>
+
+          <li>
+            <a href="/#everyday">
+              Everyday
+            </a>
+          </li>
+
+          <li>
+            <a href="/#math">
+              Math
+            </a>
+          </li>
+
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+
+          <li>
+            <a href="/#automotive">
+              Automotive
+            </a>
+          </li>
+
+          <li>
+            <a href="/#technology">
+              Technology
+            </a>
+          </li>
+
+          <li>
+            <a href="/#conversion">
+              Conversion
+            </a>
+          </li>
+
+          <li>
+            <a href="/#travel">
+              Travel
+            </a>
+          </li>
+
+          <li>
+            <a href="/#lifestyle">
+              Lifestyle
+            </a>
+          </li>
+
+          <li>
+            <a href="/#utility">
+              Utility
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span>
+        CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/decimal-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Square Root Calculator - Calculate Square Roots Online | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Square Root Calculator to calculate the square root of any non-negative number. Get accurate results, explanations, formulas, and examples instantly.">
+  <meta name="keywords" content="square root calculator, square root, calculate square root, sqrt calculator, square root online">
+  <meta name="author" content="CalclyWorld">
+
+  <link rel="canonical" href="https://calclyworld.com/square-root-calculator.html">
+
+  <meta property="og:title" content="Square Root Calculator - CalclyWorld">
+  <meta property="og:description" content="Calculate square roots quickly and accurately with our free online Square Root Calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/square-root-calculator.html">
+  <meta property="og:image" content="https://calclyworld.com/favicon.png">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Square Root Calculator",
+    "url": "https://calclyworld.com/square-root-calculator.html",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "description": "A free online calculator for finding the square root of a non-negative number.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container content">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#math">Math</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Square Root Calculator</span>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Square Root Calculator</h1>
+
+        <p>
+          Calculate the square root of any non-negative number instantly
+          with our free and easy-to-use Square Root Calculator.
+        </p>
+
+        <p>
+          Enter a number to get its square root, squared result,
+          calculation formula, and a simple explanation.
+        </p>
+
+        <!-- Calculator Search -->
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate a Square Root</h2>
+
+          <p class="text-center small-text">
+            Enter a non-negative number below to calculate its square root.
+          </p>
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+              <label for="square-root-number">Number</label>
+
+              <input
+                type="number"
+                id="square-root-number"
+                step="any"
+                inputmode="decimal"
+                placeholder="Example: 144"
+                aria-describedby="square-root-help"
+              >
+
+              <small id="square-root-help" class="small-text">
+                Enter any number greater than or equal to 0.
+              </small>
+            </div>
+
+            <div
+              id="square-root-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-square-root"
+                class="btn"
+                type="button"
+              >
+                Calculate Square Root
+              </button>
+
+              <button
+                id="reset-square-root"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div
+          id="square-root-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">Square Root Result</h2>
+
+          <div id="square-root-result-content"></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Explanation -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is a Square Root?</h2>
+
+          <p>
+            The square root of a number is a value that, when multiplied
+            by itself, produces the original number.
+          </p>
+
+          <p>
+            For example, the square root of 25 is 5 because
+            <strong>5 × 5 = 25</strong>.
+          </p>
+
+          <p>
+            The square root symbol is called the radical sign and is
+            written as <strong>√</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Formula -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Square Root Formula</h2>
+
+          <p>
+            If a number is represented by <strong>x</strong>, its square
+            root can be written as:
+          </p>
+
+          <div class="info-box">
+            <p class="text-center">
+              <strong>√x = y</strong>
+            </p>
+
+            <p>
+              This means that:
+            </p>
+
+            <p class="text-center">
+              <strong>y × y = x</strong>
+            </p>
+          </div>
+
+          <p>
+            For example:
+          </p>
+
+          <p>
+            <strong>√144 = 12</strong>
+          </p>
+
+          <p>
+            because <strong>12 × 12 = 144</strong>.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Perfect Squares -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Common Square Roots</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+                <tr>
+                  <th>Number</th>
+                  <th>Square Root</th>
+                  <th>Verification</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0 × 0 = 0</td>
+                </tr>
+
+                <tr>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1 × 1 = 1</td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>2</td>
+                  <td>2 × 2 = 4</td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+                  <td>3</td>
+                  <td>3 × 3 = 9</td>
+                </tr>
+
+                <tr>
+                  <td>16</td>
+                  <td>4</td>
+                  <td>4 × 4 = 16</td>
+                </tr>
+
+                <tr>
+                  <td>25</td>
+                  <td>5</td>
+                  <td>5 × 5 = 25</td>
+                </tr>
+
+                <tr>
+                  <td>36</td>
+                  <td>6</td>
+                  <td>6 × 6 = 36</td>
+                </tr>
+
+                <tr>
+                  <td>49</td>
+                  <td>7</td>
+                  <td>7 × 7 = 49</td>
+                </tr>
+
+                <tr>
+                  <td>64</td>
+                  <td>8</td>
+                  <td>8 × 8 = 64</td>
+                </tr>
+
+                <tr>
+                  <td>81</td>
+                  <td>9</td>
+                  <td>9 × 9 = 81</td>
+                </tr>
+
+                <tr>
+                  <td>100</td>
+                  <td>10</td>
+                  <td>10 × 10 = 100</td>
+                </tr>
+
+                <tr>
+                  <td>144</td>
+                  <td>12</td>
+                  <td>12 × 12 = 144</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Square Root Calculator</h2>
+
+          <ol>
+            <li>Enter a non-negative number.</li>
+            <li>Click <strong>Calculate Square Root</strong>.</li>
+            <li>View the square root and calculation details.</li>
+            <li>Use <strong>Reset</strong> to perform another calculation.</li>
+          </ol>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Examples -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Square Root Examples</h2>
+
+          <p>
+            <strong>Example 1:</strong> √100 = 10 because
+            10 × 10 = 100.
+          </p>
+
+          <p>
+            <strong>Example 2:</strong> √64 = 8 because
+            8 × 8 = 64.
+          </p>
+
+          <p>
+            <strong>Example 3:</strong> √2 ≈ 1.414213562 because
+            1.414213562 × 1.414213562 is approximately 2.
+          </p>
+
+          <p>
+            Not every positive number has a whole-number square root.
+            The calculator displays an accurate decimal approximation
+            for such numbers.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Important Note -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Important Note About Negative Numbers</h2>
+
+          <p>
+            This calculator is designed to calculate real-number square
+            roots. A negative number does not have a real-number square
+            root.
+          </p>
+
+          <p>
+            For example, √−9 is not a real number. It can be represented
+            using imaginary numbers, but that is outside the scope of
+            this calculator.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What is the square root of 25?</h3>
+          <p>
+            The square root of 25 is 5 because 5 × 5 = 25.
+          </p>
+
+          <h3>What is the square root of 144?</h3>
+          <p>
+            The square root of 144 is 12 because 12 × 12 = 144.
+          </p>
+
+          <h3>Can I calculate the square root of a decimal?</h3>
+          <p>
+            Yes. You can enter decimal values such as 2.25, 10.5,
+            or 0.25.
+          </p>
+
+          <h3>Can I calculate the square root of a negative number?</h3>
+          <p>
+            This calculator only provides real-number results, so
+            negative inputs are not accepted.
+          </p>
+
+          <h3>What is a perfect square?</h3>
+          <p>
+            A perfect square is a number whose square root is a whole
+            number. Examples include 4, 9, 16, 25, and 100.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, practical online calculators
+          designed to make everyday calculations simple, fast,
+          and easy to understand.
+        </p>
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/square-root-calculator.js"></script>
+
+</body>
+</html>

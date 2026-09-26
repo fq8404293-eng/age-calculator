@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>File Size Calculator - Convert KB, MB, GB &amp; TB | CalclyWorld</title>
+
+  <meta name="description" content="Use the free File Size Calculator to convert file sizes between bytes, KB, MB, GB and TB. Compare decimal and binary storage units and calculate equivalent file sizes.">
+
+  <meta name="keywords" content="file size calculator, file size converter, KB MB GB converter, MB to GB calculator, GB to MB calculator, bytes converter">
+
+  <link rel="canonical" href="https://calclyworld.com/file-size-calculator.html">
+
+  <meta property="og:title" content="File Size Calculator - Convert KB, MB, GB &amp; TB | CalclyWorld">
+  <meta property="og:description" content="Convert file sizes between bytes, KB, MB, GB and TB with this free online File Size Calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/file-size-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "File Size Calculator",
+    "url": "https://calclyworld.com/file-size-calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "description": "Free online calculator for converting file sizes between bytes, kilobytes, megabytes, gigabytes and terabytes using decimal and binary units.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-container">
+
+    <a href="/" class="logo">
+      <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+      <span>CalclyWorld</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <a href="/">Home</a>
+      <a href="/#calculator-directory">Calculators</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      🌙 Dark Mode
+    </button>
+
+  </div>
+</header>
+
+
+<main id="main-content">
+
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">File Size Calculator</span>
+    </div>
+  </div>
+
+
+  <section class="hero">
+    <div class="container">
+
+      <h1>File Size Calculator</h1>
+
+      <p>
+        Convert file sizes between bytes, kilobytes, megabytes, gigabytes
+        and terabytes quickly and accurately.
+      </p>
+
+      <p>
+        Choose decimal or binary units depending on whether you are working
+        with storage specifications, file sizes, memory or computing data.
+      </p>
+
+      <div class="hero-search">
+        <input
+          type="search"
+          id="calculator-search"
+          class="calculator-search"
+          placeholder="Search calculators... (Example: BMI, EMI, Age)"
+          autocomplete="off"
+          aria-label="Search calculators"
+        >
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Calculator -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">Convert File Size</h2>
+
+        <p class="text-center small-text">
+          Enter a value, choose the unit system and calculate equivalent sizes.
+        </p>
+
+
+        <div class="calculator-form">
+
+          <div class="form-group">
+
+            <label for="file-size-value">
+              File Size
+            </label>
+
+            <input
+              type="number"
+              id="file-size-value"
+              min="0"
+              step="any"
+              placeholder="1"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="file-size-unit">
+              Input Unit
+            </label>
+
+            <select id="file-size-unit">
+
+              <option value="B">Bytes (B)</option>
+
+              <option value="KB" selected>
+                Kilobytes (KB)
+              </option>
+
+              <option value="MB">
+                Megabytes (MB)
+              </option>
+
+              <option value="GB">
+                Gigabytes (GB)
+              </option>
+
+              <option value="TB">
+                Terabytes (TB)
+              </option>
+
+              <option value="KiB">
+                Kibibytes (KiB)
+              </option>
+
+              <option value="MiB">
+                Mebibytes (MiB)
+              </option>
+
+              <option value="GiB">
+                Gibibytes (GiB)
+              </option>
+
+              <option value="TiB">
+                Tebibytes (TiB)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="file-size-system">
+              Unit System
+            </label>
+
+            <select id="file-size-system">
+
+              <option value="decimal" selected>
+                Decimal (1 KB = 1,000 bytes)
+              </option>
+
+              <option value="binary">
+                Binary (1 KiB = 1,024 bytes)
+              </option>
+
+            </select>
+
+            <small class="small-text">
+              Decimal units are commonly used for storage and network
+              measurements. Binary units are commonly used in computing.
+            </small>
+
+          </div>
+
+
+          <div
+            id="file-size-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              id="file-size-calculate"
+              class="btn"
+              type="button"
+            >
+              Calculate File Size
+            </button>
+
+            <button
+              id="file-size-reset"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Results -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div
+        id="file-size-result"
+        class="content-card"
+        hidden
+        aria-live="polite"
+        aria-atomic="true"
+      >
+
+        <h2>File Size Conversion Results</h2>
+
+        <div id="file-size-result-content"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Summary -->
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">File Size Summary</h2>
+
+        <div class="calculator-results-grid">
+
+          <div class="result-card">
+            <h3>Input Size</h3>
+            <p id="file-size-summary-input">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Bytes</h3>
+            <p id="file-size-summary-bytes">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Megabytes</h3>
+            <p id="file-size-summary-mb">—</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Gigabytes</h3>
+            <p id="file-size-summary-gb">—</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Decimal and binary -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Decimal vs. Binary File Size Units</h2>
+
+        <p>
+          File sizes can be represented using either decimal or binary units.
+          The two systems use different numbers of bytes for each unit.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+              <tr>
+                <th>Unit</th>
+                <th>Decimal Value</th>
+                <th>Binary Equivalent</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>KB / KiB</td>
+                <td>1,000 bytes</td>
+                <td>1,024 bytes</td>
+              </tr>
+
+              <tr>
+                <td>MB / MiB</td>
+                <td>1,000,000 bytes</td>
+                <td>1,048,576 bytes</td>
+              </tr>
+
+              <tr>
+                <td>GB / GiB</td>
+                <td>1,000,000,000 bytes</td>
+                <td>1,073,741,824 bytes</td>
+              </tr>
+
+              <tr>
+                <td>TB / TiB</td>
+                <td>1,000,000,000,000 bytes</td>
+                <td>1,099,511,627,776 bytes</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- How conversion works -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>How File Size Conversion Works</h2>
+
+        <p>
+          The calculator first converts the entered value into bytes.
+          It then divides the byte value by the appropriate unit size to
+          calculate the equivalent measurements.
+        </p>
+
+        <h3>Decimal Units</h3>
+
+        <p>
+          Decimal units use powers of 1,000. For example,
+          1 GB equals 1,000 MB and 1,000,000,000 bytes.
+        </p>
+
+        <h3>Binary Units</h3>
+
+        <p>
+          Binary units use powers of 1,024. For example,
+          1 GiB equals 1,024 MiB and 1,073,741,824 bytes.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              1 byte = 8 bits
+            </strong>
+          </p>
+
+          <p>
+            Decimal:
+            <strong>1 GB = 1,000,000,000 bytes</strong>
+          </p>
+
+          <p>
+            Binary:
+            <strong>1 GiB = 1,073,741,824 bytes</strong>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Example -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>File Size Conversion Example</h2>
+
+        <p>
+          Suppose you have a file that is <strong>5 GB</strong> using
+          decimal units.
+        </p>
+
+        <p>
+          Because 1 GB equals 1,000 MB, the file is
+          <strong>5,000 MB</strong>.
+        </p>
+
+        <p>
+          In bytes, the same file contains
+          <strong>5,000,000,000 bytes</strong>.
+        </p>
+
+        <p>
+          If the same number of bytes is expressed as binary gibibytes,
+          the value is approximately <strong>4.66 GiB</strong>.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Common uses -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Common Uses for a File Size Calculator</h2>
+
+        <p>
+          File size conversions are useful when comparing storage capacity,
+          checking download requirements, estimating backup sizes or
+          understanding the size of digital files.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+              <tr>
+                <th>Use Case</th>
+                <th>Useful Conversion</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Hard Drive or SSD Storage</td>
+                <td>GB to TB</td>
+              </tr>
+
+              <tr>
+                <td>Large Video Files</td>
+                <td>GB to MB</td>
+              </tr>
+
+              <tr>
+                <td>Documents and Images</td>
+                <td>KB to MB</td>
+              </tr>
+
+              <tr>
+                <td>Computer Memory</td>
+                <td>MiB to GiB</td>
+              </tr>
+
+              <tr>
+                <td>Backup Planning</td>
+                <td>GB or TB conversions</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How many MB are in 1 GB?</h3>
+
+        <p>
+          Using decimal units, 1 GB equals 1,000 MB.
+          Using binary units, 1 GiB equals 1,024 MiB.
+        </p>
+
+        <h3>Is 1 GB the same as 1 GiB?</h3>
+
+        <p>
+          No. A decimal GB contains 1,000,000,000 bytes, while a binary
+          GiB contains 1,073,741,824 bytes.
+        </p>
+
+        <h3>Why does my storage drive show less space than advertised?</h3>
+
+        <p>
+          Storage manufacturers generally use decimal units, while some
+          operating systems may display storage using binary-based values
+          or different unit labels. Formatting and system overhead can also
+          affect the available capacity.
+        </p>
+
+        <h3>How many bytes are in 1 MB?</h3>
+
+        <p>
+          In decimal units, 1 MB equals 1,000,000 bytes.
+          In binary units, 1 MiB equals 1,048,576 bytes.
+        </p>
+
+        <h3>How many bytes are in 1 GB?</h3>
+
+        <p>
+          A decimal GB contains 1,000,000,000 bytes.
+          A binary GiB contains 1,073,741,824 bytes.
+        </p>
+
+        <h3>What is the difference between MB and Mb?</h3>
+
+        <p>
+          MB means megabytes, while Mb means megabits. One byte contains
+          eight bits, so these units should not be treated as interchangeable.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-column">
+
+      <h3>CalclyWorld</h3>
+
+      <p>
+        Free online calculators designed to provide clear,
+        practical and easy-to-understand results for everyday decisions.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Popular Calculators</h3>
+
+      <ul>
+        <li><a href="/age-calculator.html">Age Calculator</a></li>
+        <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+        <li><a href="/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Calculator Categories</h3>
+
+      <ul>
+        <li><a href="/#finance">Finance</a></li>
+        <li><a href="/#everyday">Everyday</a></li>
+        <li><a href="/#math">Math</a></li>
+        <li><a href="/#home-construction">Home &amp; Construction</a></li>
+        <li><a href="/#automotive">Automotive</a></li>
+        <li><a href="/#technology">Technology</a></li>
+        <li><a href="/#conversion">Conversion</a></li>
+        <li><a href="/#travel">Travel</a></li>
+        <li><a href="/#lifestyle">Lifestyle</a></li>
+        <li><a href="/#utility">Utility</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span> CalclyWorld. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="/script-v2.js"></script>
+<script src="/file-size-calculator.js"></script>
+
+</body>
+</html>

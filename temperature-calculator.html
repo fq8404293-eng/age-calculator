@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Temperature Converter - Convert Celsius, Fahrenheit &amp; Kelvin | CalclyWorld</title>
+
+  <meta name="description" content="Use the free Temperature Converter to convert Celsius, Fahrenheit and Kelvin. Quickly convert °C to °F, °F to °C, Celsius to Kelvin and more.">
+
+  <meta name="keywords" content="temperature converter, temperature calculator, Celsius to Fahrenheit, Fahrenheit to Celsius, Celsius to Kelvin, Kelvin to Celsius, C to F, F to C, temperature conversion">
+
+  <link rel="canonical" href="https://calclyworld.com/temperature-calculator.html">
+
+  <meta property="og:title" content="Temperature Converter - Convert Celsius, Fahrenheit &amp; Kelvin | CalclyWorld">
+  <meta property="og:description" content="Convert temperatures between Celsius, Fahrenheit and Kelvin with this free online temperature converter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/temperature-calculator.html">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Temperature Converter",
+    "url": "https://calclyworld.com/temperature-calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "description": "Free online temperature converter for converting Celsius, Fahrenheit and Kelvin.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+
+  <div class="container header-container">
+
+    <a href="/" class="logo">
+
+      <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+
+      <span>CalclyWorld</span>
+
+    </a>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+
+      <a href="/">Home</a>
+      <a href="/#calculator-directory">Calculators</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+
+    </nav>
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      🌙 Dark Mode
+    </button>
+
+  </div>
+
+</header>
+
+
+<main id="main-content">
+
+  <!-- Breadcrumb -->
+
+  <div class="breadcrumb">
+
+    <div class="container">
+
+      <a href="/">Home</a>
+
+      <span aria-hidden="true">›</span>
+
+      <span aria-current="page">
+        Temperature Converter
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- Hero -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <h1>Temperature Converter</h1>
+
+      <p>
+        Convert temperatures between Celsius, Fahrenheit and Kelvin
+        quickly and accurately.
+      </p>
+
+      <p>
+        Enter a temperature and instantly see the equivalent value in
+        all three temperature scales.
+      </p>
+
+
+      <div class="hero-search">
+
+        <input
+          type="search"
+          id="calculator-search"
+          class="calculator-search"
+          placeholder="Search calculators... (Example: BMI, EMI, Age)"
+          autocomplete="off"
+          aria-label="Search calculators"
+        >
+
+        <div
+          id="search-results"
+          class="search-results"
+          hidden
+        ></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Calculator -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">
+          Convert Temperature
+        </h2>
+
+        <p class="text-center small-text">
+          Enter a temperature and select the unit you want to convert.
+        </p>
+
+
+        <div class="calculator-form">
+
+          <div class="form-group">
+
+            <label for="temperature-value">
+              Temperature Value
+            </label>
+
+            <input
+              type="number"
+              id="temperature-value"
+              step="any"
+              placeholder="25"
+              inputmode="decimal"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="temperature-unit">
+              Temperature Unit
+            </label>
+
+            <select id="temperature-unit">
+
+              <option value="C" selected>
+                Celsius (°C)
+              </option>
+
+              <option value="F">
+                Fahrenheit (°F)
+              </option>
+
+              <option value="K">
+                Kelvin (K)
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div
+            id="temperature-error"
+            class="error-message"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          ></div>
+
+
+          <div class="calculator-actions">
+
+            <button
+              id="temperature-calculate"
+              class="btn"
+              type="button"
+            >
+              Convert Temperature
+            </button>
+
+            <button
+              id="temperature-reset"
+              class="btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Results -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div
+        id="temperature-result"
+        class="content-card"
+        hidden
+        aria-live="polite"
+        aria-atomic="true"
+      >
+
+        <h2>Temperature Conversion Results</h2>
+
+        <div id="temperature-result-content"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Summary -->
+
+  <section class="section-small">
+
+    <div class="calculator-container">
+
+      <div class="content-card">
+
+        <h2 class="text-center">
+          Temperature Conversion Summary
+        </h2>
+
+        <div class="calculator-results-grid">
+
+          <div class="result-card">
+
+            <h3>Input Temperature</h3>
+
+            <p id="temperature-summary-input">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Celsius</h3>
+
+            <p id="temperature-summary-celsius">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Fahrenheit</h3>
+
+            <p id="temperature-summary-fahrenheit">—</p>
+
+          </div>
+
+
+          <div class="result-card">
+
+            <h3>Kelvin</h3>
+
+            <p id="temperature-summary-kelvin">—</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Temperature Scales -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Temperature Scales</h2>
+
+        <p>
+          Celsius, Fahrenheit and Kelvin are three commonly encountered
+          temperature scales. Celsius is widely used for everyday
+          temperature measurements, Fahrenheit is commonly used in the
+          United States, and Kelvin is widely used in scientific work.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>Scale</th>
+                <th>Symbol</th>
+                <th>Common Reference</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Celsius</td>
+                <td>°C</td>
+                <td>Water freezes at 0°C</td>
+              </tr>
+
+              <tr>
+                <td>Fahrenheit</td>
+                <td>°F</td>
+                <td>Water freezes at 32°F</td>
+              </tr>
+
+              <tr>
+                <td>Kelvin</td>
+                <td>K</td>
+                <td>Absolute temperature scale</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Conversion Formulas -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Temperature Conversion Formulas</h2>
+
+        <p>
+          Temperature scales use different zero points and intervals, so
+          converting temperatures requires formulas rather than simply
+          multiplying by a constant.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              Fahrenheit = (Celsius × 9/5) + 32
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              Celsius = (Fahrenheit − 32) × 5/9
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              Kelvin = Celsius + 273.15
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              Celsius = Kelvin − 273.15
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Example -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Temperature Conversion Example</h2>
+
+        <p>
+          Suppose the temperature is <strong>25°C</strong>.
+        </p>
+
+        <div class="info-box">
+
+          <p>
+            <strong>
+              25°C = 77°F
+            </strong>
+          </p>
+
+          <p>
+            <strong>
+              25°C = 298.15 K
+            </strong>
+          </p>
+
+        </div>
+
+        <p>
+          The Fahrenheit value is calculated as
+          (25 × 9/5) + 32 = 77°F.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Important temperatures -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Common Temperature References</h2>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>Description</th>
+                <th>Celsius</th>
+                <th>Fahrenheit</th>
+                <th>Kelvin</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Absolute zero</td>
+                <td>−273.15°C</td>
+                <td>−459.67°F</td>
+                <td>0 K</td>
+              </tr>
+
+              <tr>
+                <td>Water freezing point</td>
+                <td>0°C</td>
+                <td>32°F</td>
+                <td>273.15 K</td>
+              </tr>
+
+              <tr>
+                <td>Room temperature example</td>
+                <td>20°C</td>
+                <td>68°F</td>
+                <td>293.15 K</td>
+              </tr>
+
+              <tr>
+                <td>Water boiling point</td>
+                <td>100°C</td>
+                <td>212°F</td>
+                <td>373.15 K</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <p class="small-text">
+          Water freezing and boiling points shown here assume standard
+          atmospheric pressure.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Practical Uses -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Where Temperature Conversion Is Useful</h2>
+
+        <p>
+          Temperature conversion is useful when reading weather reports,
+          cooking instructions, scientific measurements, equipment
+          specifications and information from countries that use different
+          temperature scales.
+        </p>
+
+        <div class="table-wrapper">
+
+          <table class="amortization-table">
+
+            <thead>
+
+              <tr>
+                <th>Situation</th>
+                <th>Common Temperature Scale</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Weather reports</td>
+                <td>Celsius or Fahrenheit</td>
+              </tr>
+
+              <tr>
+                <td>Cooking</td>
+                <td>Celsius or Fahrenheit</td>
+              </tr>
+
+              <tr>
+                <td>Scientific calculations</td>
+                <td>Kelvin</td>
+              </tr>
+
+              <tr>
+                <td>Laboratory measurements</td>
+                <td>Kelvin or Celsius</td>
+              </tr>
+
+              <tr>
+                <td>International specifications</td>
+                <td>Celsius, Kelvin or Fahrenheit</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section class="section-small">
+
+    <div class="content">
+
+      <div class="content-card">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How do you convert Celsius to Fahrenheit?</h3>
+
+        <p>
+          Multiply the Celsius temperature by 9/5 and then add 32.
+          For example, 25°C equals 77°F.
+        </p>
+
+        <h3>How do you convert Fahrenheit to Celsius?</h3>
+
+        <p>
+          Subtract 32 from the Fahrenheit temperature and multiply the
+          result by 5/9.
+        </p>
+
+        <h3>How do you convert Celsius to Kelvin?</h3>
+
+        <p>
+          Add 273.15 to the Celsius temperature. For example,
+          25°C equals 298.15 K.
+        </p>
+
+        <h3>Is Kelvin the same as Celsius?</h3>
+
+        <p>
+          No. The Celsius and Kelvin scales have the same size temperature
+          interval, but their zero points are different. A temperature of
+          0°C equals 273.15 K.
+        </p>
+
+        <h3>What is absolute zero?</h3>
+
+        <p>
+          Absolute zero is 0 K, which corresponds to −273.15°C or
+          −459.67°F.
+        </p>
+
+        <h3>What temperature is 100°C in Fahrenheit?</h3>
+
+        <p>
+          100°C equals <strong>212°F</strong>.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-column">
+
+      <h3>CalclyWorld</h3>
+
+      <p>
+        Free online calculators designed to provide clear,
+        practical and easy-to-understand results for everyday decisions.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Popular Calculators</h3>
+
+      <ul>
+        <li><a href="/age-calculator.html">Age Calculator</a></li>
+        <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+        <li><a href="/gst-calculator.html">GST Calculator</a></li>
+        <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Calculator Categories</h3>
+
+      <ul>
+        <li><a href="/#finance">Finance</a></li>
+        <li><a href="/#everyday">Everyday</a></li>
+        <li><a href="/#math">Math</a></li>
+        <li><a href="/#home-construction">Home &amp; Construction</a></li>
+        <li><a href="/#automotive">Automotive</a></li>
+        <li><a href="/#technology">Technology</a></li>
+        <li><a href="/#conversion">Conversion</a></li>
+        <li><a href="/#travel">Travel</a></li>
+        <li><a href="/#lifestyle">Lifestyle</a></li>
+        <li><a href="/#utility">Utility</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span> CalclyWorld. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="/script-v2.js"></script>
+<script src="/temperature-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Brick Calculator - Calculate Bricks Needed for a Wall | CalclyWorld</title>
+
+  <meta name="description" content="Use our free Brick Calculator to estimate how many bricks you need for a wall. Enter wall dimensions, brick size, mortar joint, and waste allowance to calculate the required number of bricks.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://calclyworld.com/brick-calculator.html">
+
+  <meta property="og:title" content="Brick Calculator - Calculate Bricks Needed for a Wall">
+  <meta property="og:description" content="Estimate the number of bricks required for a wall using wall dimensions, brick size, mortar joint, and waste allowance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/brick-calculator.html">
+  <meta property="og:site_name" content="CalclyWorld">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Brick Calculator",
+    "url": "https://calclyworld.com/brick-calculator.html",
+    "description": "A free online brick calculator for estimating the number of bricks required for a wall.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CalclyWorld",
+      "url": "https://calclyworld.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does a brick calculator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A brick calculator estimates the number of bricks required by comparing the wall area with the face area of one brick while accounting for the mortar joint and waste allowance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the calculator include mortar joints?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The calculator allows you to enter the mortar joint thickness so the estimated brick coverage includes the space occupied by mortar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why should I add a waste allowance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A waste allowance helps account for broken bricks, cutting, transportation damage, and other material losses during construction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use different brick sizes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Enter the actual length, height, and thickness of the bricks you plan to use."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Search -->
+    <section class="section-small">
+      <div class="container">
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="container">
+
+        <a href="/">Home</a>
+
+        <span aria-hidden="true">›</span>
+
+        <span aria-current="page">Brick Calculator</span>
+
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Brick Calculator</h1>
+
+        <p>
+          Estimate how many bricks you need to build a wall based on the wall
+          dimensions, brick size, mortar joint, and waste allowance.
+        </p>
+
+        <p>
+          Enter your measurements below to calculate the estimated brick
+          quantity and the approximate number of bricks to purchase.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Calculate Bricks Needed</h2>
+
+          <p class="text-center small-text">
+            Enter the wall and brick dimensions to estimate the required
+            number of bricks.
+          </p>
+
+          <div class="calculator-form">
+
+            <!-- Wall Length -->
+            <div class="form-group">
+
+              <label for="wall-length">
+                Wall Length (ft)
+              </label>
+
+              <input
+                type="number"
+                id="wall-length"
+                min="0"
+                step="any"
+                placeholder="Example: 20"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <!-- Wall Height -->
+            <div class="form-group">
+
+              <label for="wall-height">
+                Wall Height (ft)
+              </label>
+
+              <input
+                type="number"
+                id="wall-height"
+                min="0"
+                step="any"
+                placeholder="Example: 10"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <!-- Openings -->
+            <div class="form-group">
+
+              <label for="wall-openings">
+                Doors &amp; Windows Area (sq ft)
+              </label>
+
+              <input
+                type="number"
+                id="wall-openings"
+                min="0"
+                step="any"
+                value="0"
+                placeholder="Example: 30"
+                inputmode="decimal"
+                aria-describedby="openings-help"
+              >
+
+              <small id="openings-help" class="small-text">
+                Enter the combined area of doors and windows.
+              </small>
+
+            </div>
+
+            <!-- Brick Length -->
+            <div class="form-group">
+
+              <label for="brick-length">
+                Brick Length (in)
+              </label>
+
+              <input
+                type="number"
+                id="brick-length"
+                min="0"
+                step="any"
+                placeholder="Example: 8"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <!-- Brick Height -->
+            <div class="form-group">
+
+              <label for="brick-height">
+                Brick Height (in)
+              </label>
+
+              <input
+                type="number"
+                id="brick-height"
+                min="0"
+                step="any"
+                placeholder="Example: 4"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <!-- Brick Thickness -->
+            <div class="form-group">
+
+              <label for="brick-thickness">
+                Brick Thickness (in)
+              </label>
+
+              <input
+                type="number"
+                id="brick-thickness"
+                min="0"
+                step="any"
+                placeholder="Example: 4"
+                inputmode="decimal"
+              >
+
+            </div>
+
+            <!-- Mortar Joint -->
+            <div class="form-group">
+
+              <label for="mortar-joint">
+                Mortar Joint Thickness (in)
+              </label>
+
+              <input
+                type="number"
+                id="mortar-joint"
+                min="0"
+                step="any"
+                value="0.375"
+                placeholder="Example: 0.375"
+                inputmode="decimal"
+                aria-describedby="mortar-help"
+              >
+
+              <small id="mortar-help" class="small-text">
+                Enter the approximate thickness of the mortar joint.
+              </small>
+
+            </div>
+
+            <!-- Waste -->
+            <div class="form-group">
+
+              <label for="brick-waste">
+                Waste Allowance (%)
+              </label>
+
+              <input
+                type="number"
+                id="brick-waste"
+                min="0"
+                max="100"
+                step="any"
+                value="5"
+                placeholder="Example: 5"
+                inputmode="decimal"
+                aria-describedby="waste-help"
+              >
+
+              <small id="waste-help" class="small-text">
+                Allowance for broken, cut, or damaged bricks.
+              </small>
+
+            </div>
+
+            <!-- Error -->
+            <div
+              id="brick-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <!-- Actions -->
+            <div class="calculator-actions">
+
+              <button
+                id="calculate-bricks"
+                class="btn"
+                type="button"
+              >
+                Calculate Bricks
+              </button>
+
+              <button
+                id="reset-bricks"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="brick-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>Brick Requirement</h2>
+
+          <div id="brick-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Summary -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">Brick Calculation Summary</h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+              <h3>Wall Area</h3>
+              <p id="summary-wall-area">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Brick Size</h3>
+              <p id="summary-brick-size">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Bricks Required</h3>
+              <p id="summary-bricks-required">—</p>
+            </div>
+
+            <div class="result-card">
+              <h3>Bricks to Purchase</h3>
+              <p id="summary-bricks-purchase">—</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- How It Works -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>How to Use the Brick Calculator</h2>
+
+          <p>
+            Start by entering the length and height of the wall. If the wall
+            contains doors or windows, enter their combined area so that this
+            space can be removed from the total wall area.
+          </p>
+
+          <p>
+            Next, enter the dimensions of one brick and the approximate mortar
+            joint thickness. Finally, enter a waste allowance to account for
+            damaged or cut bricks.
+          </p>
+
+          <ol>
+            <li>Enter the wall length.</li>
+            <li>Enter the wall height.</li>
+            <li>Enter the total door and window area.</li>
+            <li>Enter the brick length, height, and thickness.</li>
+            <li>Enter the mortar joint thickness.</li>
+            <li>Enter a waste allowance.</li>
+            <li>Click <strong>Calculate Bricks</strong>.</li>
+          </ol>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Formula -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Brick Calculator Formula</h2>
+
+          <p>
+            The calculator first determines the usable wall area by subtracting
+            doors and windows from the total wall area.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Wall Area</strong> =
+              Wall Length × Wall Height
+            </p>
+
+            <p>
+              <strong>Usable Wall Area</strong> =
+              Wall Area − Door &amp; Window Area
+            </p>
+
+            <p>
+              <strong>Effective Brick Length</strong> =
+              Brick Length + Mortar Joint
+            </p>
+
+            <p>
+              <strong>Effective Brick Height</strong> =
+              Brick Height + Mortar Joint
+            </p>
+
+            <p>
+              <strong>Brick Coverage Area</strong> =
+              Effective Brick Length × Effective Brick Height
+            </p>
+
+            <p>
+              <strong>Bricks Required</strong> =
+              Usable Wall Area ÷ Brick Coverage Area
+            </p>
+
+          </div>
+
+          <p>
+            A waste allowance is then applied to the estimated brick quantity
+            to provide a practical purchasing estimate.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Example -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Brick Calculation Example</h2>
+
+          <p>
+            Suppose a wall is 20 feet long and 10 feet high, with no openings.
+            If the bricks measure 8 × 4 inches and the mortar joint is
+            0.375 inches, the calculator determines the effective coverage of
+            each brick including the mortar space.
+          </p>
+
+          <p>
+            A waste allowance can then be added to the calculated requirement
+            so you have additional bricks available for breakage, cutting, or
+            other construction losses.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Important Information -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Important Information About Brick Estimates</h2>
+
+          <p>
+            Brick dimensions and mortar joint thickness can vary significantly
+            between products and construction methods. Always use the actual
+            dimensions of the bricks being purchased.
+          </p>
+
+          <p>
+            The calculated quantity is an estimate. Actual requirements can
+            change because of wall layout, corners, openings, cuts, brick
+            breakage, joint thickness, and installation practices.
+          </p>
+
+          <p>
+            For major construction projects, compare the estimate with the
+            project's plans, material specifications, and recommendations from
+            a qualified construction professional.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How does a brick calculator work?</h3>
+
+          <p>
+            It estimates the number of bricks by comparing the usable wall area
+            with the effective face area covered by one brick and its mortar
+            joint.
+          </p>
+
+          <h3>Does the calculator include mortar joints?</h3>
+
+          <p>
+            Yes. You can enter the mortar joint thickness so the effective
+            coverage of each brick accounts for the space between bricks.
+          </p>
+
+          <h3>Why should I add a waste allowance?</h3>
+
+          <p>
+            Extra bricks can be useful because some bricks may break, require
+            cutting, or become damaged during transportation and construction.
+          </p>
+
+          <h3>Can I use different brick sizes?</h3>
+
+          <p>
+            Yes. Enter the actual length, height, and thickness of the bricks
+            you intend to use.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides free, easy-to-use online calculators for
+          everyday decisions, financial planning, construction projects,
+          conversions, travel, technology, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script src="/script-v2.js"></script>
+  <script src="/brick-calculator.js"></script>
+
+</body>
+</html>

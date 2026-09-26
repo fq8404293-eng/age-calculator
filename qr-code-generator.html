@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QR Code Generator | Create QR Codes Online - CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Create a QR code online with CalclyWorld's free QR Code Generator. Enter text, a website URL, contact information, or other content and generate a QR code instantly."
+  >
+
+  <meta
+    name="keywords"
+    content="QR code generator, QR generator, create QR code, free QR code generator, online QR code generator"
+  >
+
+  <meta name="author" content="CalclyWorld">
+
+  <link
+    rel="canonical"
+    href="https://calclyworld.com/qr-code-generator.html"
+  >
+
+  <meta
+    property="og:title"
+    content="QR Code Generator | CalclyWorld"
+  >
+
+  <meta
+    property="og:description"
+    content="Create QR codes instantly from text, URLs, contact information, and other content with CalclyWorld's free QR Code Generator."
+  >
+
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:url"
+    content="https://calclyworld.com/qr-code-generator.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://calclyworld.com/favicon.png"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="/favicon.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="/apple-touch-icon.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/style-v2.css"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "QR Code Generator",
+    "url": "https://calclyworld.com/qr-code-generator.html",
+    "description": "A free online QR Code Generator for creating QR codes from text, URLs, contact information, and other content.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to main content
+  </a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a
+        href="/"
+        class="logo"
+      >
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav
+        class="main-nav"
+        aria-label="Primary Navigation"
+      >
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div class="container">
+
+      <nav
+        class="breadcrumb"
+        aria-label="Breadcrumb"
+      >
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#utility">Utility</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">
+          QR Code Generator
+        </span>
+      </nav>
+
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="container">
+
+        <h1>QR Code Generator</h1>
+
+        <p>
+          Create a QR code from text, a website URL, contact information,
+          or other content. Generate and download your QR code instantly.
+        </p>
+
+        <div class="hero-search">
+
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Calculator -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Create a QR Code
+          </h2>
+
+          <form
+            id="qr-code-form"
+            class="calculator-form"
+          >
+
+            <div class="form-group">
+
+              <label for="qr-content">
+                Text or URL
+              </label>
+
+              <textarea
+                id="qr-content"
+                rows="5"
+                maxlength="2000"
+                placeholder="Enter a website URL, text, contact information, or other content..."
+                aria-describedby="qr-content-help qr-content-error"
+              ></textarea>
+
+              <small id="qr-content-help">
+                Enter the content you want to store in the QR code.
+              </small>
+
+              <div
+                id="qr-content-error"
+                class="error-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+            </div>
+
+            <div class="calculator-actions">
+
+              <button
+                type="submit"
+                id="generate-qr"
+                class="btn"
+              >
+                Generate QR Code
+              </button>
+
+              <button
+                type="button"
+                id="clear-qr"
+                class="btn btn-secondary"
+              >
+                Clear
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Result -->
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="qr-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2 class="text-center">
+            Generated QR Code
+          </h2>
+
+          <div id="qr-result-content">
+
+            <div
+              id="qr-code"
+              class="qr-code-display"
+              aria-label="Generated QR code"
+            ></div>
+
+            <div class="calculator-actions">
+
+              <button
+                type="button"
+                id="download-qr"
+                class="btn"
+              >
+                Download QR Code
+              </button>
+
+            </div>
+
+            <div class="calculator-results-grid">
+
+              <div class="result-card">
+
+                <h3>Content Type</h3>
+
+                <p id="summary-qr-type">
+                  —
+                </p>
+
+              </div>
+
+              <div class="result-card">
+
+                <h3>Content Length</h3>
+
+                <p id="summary-qr-length">
+                  —
+                </p>
+
+              </div>
+
+            </div>
+
+            <p id="qr-result-text"></p>
+
+            <p>
+              <strong>Privacy note:</strong>
+              Your QR code content is processed in your browser.
+              The content you enter is not sent to CalclyWorld's server.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Educational Content -->
+    <section class="section-small">
+
+      <div class="container">
+
+        <div class="content-card">
+
+          <h2>What Is a QR Code?</h2>
+
+          <p>
+            A QR code is a two-dimensional barcode that can store information
+            such as website addresses, text, contact details, and other
+            digital content. A smartphone camera or QR scanning application
+            can read the code and provide access to the stored information.
+          </p>
+
+          <h2>How to Use This QR Code Generator</h2>
+
+          <ol>
+            <li>
+              Enter the text, URL, or other information you want to encode.
+            </li>
+            <li>
+              Click <strong>Generate QR Code</strong>.
+            </li>
+            <li>
+              Review the generated QR code.
+            </li>
+            <li>
+              Click <strong>Download QR Code</strong> to save it as an image.
+            </li>
+          </ol>
+
+          <h2>What Can You Put in a QR Code?</h2>
+
+          <ul>
+            <li>Website URLs</li>
+            <li>Plain text</li>
+            <li>Contact information</li>
+            <li>Business information</li>
+            <li>Event or location details</li>
+            <li>Other text-based information</li>
+          </ul>
+
+          <h2>Tips for Using QR Codes</h2>
+
+          <p>
+            Keep important QR codes easy to scan by using sufficient size,
+            good contrast, and a clear surrounding area. Before printing or
+            sharing a QR code, scan it with a phone to confirm that it opens
+            or displays the intended information.
+          </p>
+
+          <p>
+            If a QR code contains a website address, make sure the destination
+            page is correct and accessible before distributing the code.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          CalclyWorld provides practical online calculators for finance,
+          everyday calculations, mathematics, home projects, automotive
+          needs, technology, travel, lifestyle, and more.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li>
+            <a href="/terms.html">
+              Terms &amp; Conditions
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+          <li>
+            <a href="/age-calculator.html">
+              Age Calculator
+            </a>
+          </li>
+          <li>
+            <a href="/emi-calculator.html">
+              EMI Calculator
+            </a>
+          </li>
+          <li>
+            <a href="/gst-calculator.html">
+              GST Calculator
+            </a>
+          </li>
+          <li>
+            <a href="/mortgage-calculator.html">
+              Mortgage Calculator
+            </a>
+          </li>
+          <li>
+            <a href="/compound-interest-calculator.html">
+              Compound Interest Calculator
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li>
+            <a href="/#home-construction">
+              Home &amp; Construction
+            </a>
+          </li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span>
+        CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <!-- Shared JavaScript -->
+  <script src="/script-v2.js"></script>
+
+  <!-- QR Code Library -->
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+
+  <!-- Calculator JavaScript -->
+  <script src="/qr-code-generator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Travel Budget Calculator - Estimate Trip Costs | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Estimate your total travel budget for accommodation, food, transportation, activities, and other trip expenses with CalclyWorld's free Travel Budget Calculator."
+  >
+
+  <meta
+    name="keywords"
+    content="travel budget calculator, trip budget calculator, vacation budget calculator, travel cost calculator, trip cost estimator"
+  >
+
+  <link rel="canonical" href="https://calclyworld.com/travel-budget-calculator.html">
+
+  <meta property="og:title" content="Travel Budget Calculator - Estimate Trip Costs | CalclyWorld">
+  <meta
+    property="og:description"
+    content="Estimate accommodation, food, transportation, activities, and other travel expenses to build a complete trip budget."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/travel-budget-calculator.html">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Travel Budget Calculator",
+    "url": "https://calclyworld.com/travel-budget-calculator.html",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "Any",
+    "description": "A free online travel budget calculator for estimating accommodation, food, transportation, activities, and other trip expenses.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Travel Budget Calculator",
+        "item": "https://calclyworld.com/travel-budget-calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- Search -->
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+        </div>
+
+        <h1>Travel Budget Calculator</h1>
+
+        <p>
+          Estimate how much your trip may cost based on accommodation,
+          food, transportation, activities, and other daily expenses.
+        </p>
+
+        <p>
+          Build a simple travel budget before your trip and see your
+          estimated daily and total costs.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Breadcrumb -->
+
+    <section class="section-small">
+      <div class="container">
+
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Travel Budget Calculator</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Calculate Your Travel Budget
+          </h2>
+
+          <p class="text-center small-text">
+            Enter your trip details and estimated daily expenses.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+
+              <label for="travel-days">
+                Trip Length (Days)
+              </label>
+
+              <input
+                type="number"
+                id="travel-days"
+                inputmode="decimal"
+                step="1"
+                min="1"
+                placeholder="Example: 7"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="travel-travelers">
+                Number of Travelers
+              </label>
+
+              <input
+                type="number"
+                id="travel-travelers"
+                inputmode="numeric"
+                step="1"
+                min="1"
+                placeholder="Example: 2"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="travel-currency">
+                Currency
+              </label>
+
+              <select id="travel-currency">
+
+                <option value="$">USD ($)</option>
+                <option value="€">EUR (€)</option>
+                <option value="£">GBP (£)</option>
+                <option value="₹">INR (₹)</option>
+                <option value="C$">CAD (C$)</option>
+                <option value="A$">AUD (A$)</option>
+                <option value="¥">JPY (¥)</option>
+                <option value="¥">CNY (¥)</option>
+                <option value="د.إ">AED (د.إ)</option>
+                <option value="S$">SGD (S$)</option>
+                <option value="CHF">CHF</option>
+                <option value="custom">Other</option>
+
+              </select>
+
+            </div>
+
+
+            <div
+              class="form-group"
+              id="travel-custom-currency-group"
+              hidden
+            >
+
+              <label for="travel-custom-currency">
+                Custom Currency Symbol
+              </label>
+
+              <input
+                type="text"
+                id="travel-custom-currency"
+                maxlength="5"
+                placeholder="Example: kr"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="travel-accommodation">
+                Accommodation per Day
+              </label>
+
+              <input
+                type="number"
+                id="travel-accommodation"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 120"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="travel-food">
+                Food per Person per Day
+              </label>
+
+              <input
+                type="number"
+                id="travel-food"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 40"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="travel-transportation">
+                Transportation per Person per Day
+              </label>
+
+              <input
+                type="number"
+                id="travel-transportation"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 20"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="travel-activities">
+                Activities per Person per Day
+              </label>
+
+              <input
+                type="number"
+                id="travel-activities"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 30"
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="travel-other">
+                Other Expenses per Person per Day
+              </label>
+
+              <input
+                type="number"
+                id="travel-other"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 10"
+              >
+
+            </div>
+
+
+            <div
+              id="travel-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+
+            <div class="calculator-actions">
+
+              <button
+                id="travel-calculate"
+                class="btn"
+                type="button"
+              >
+                Calculate Travel Budget
+              </button>
+
+              <button
+                id="travel-reset"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="travel-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>
+            Travel Budget Results
+          </h2>
+
+          <div id="travel-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Travel Budget Summary
+          </h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+
+              <h3>Total Trip Cost</h3>
+
+              <p id="travel-summary-total">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Cost Per Day</h3>
+
+              <p id="travel-summary-daily">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Cost Per Traveler</h3>
+
+              <p id="travel-summary-person">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>Travelers</h3>
+
+              <p id="travel-summary-travelers">—</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Is a Travel Budget Calculator?</h2>
+
+          <p>
+            A travel budget calculator helps estimate the cost of a trip
+            before you travel. Instead of looking at one expense at a time,
+            you can combine accommodation, food, transportation, activities,
+            and other daily expenses into one estimated budget.
+          </p>
+
+          <p>
+            The calculator can be useful for vacations, business trips,
+            weekend getaways, road trips, and longer international travel.
+            Your actual expenses may differ depending on prices, travel
+            dates, location, and personal spending habits.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>How the Travel Budget Calculator Works</h2>
+
+          <p>
+            The calculator adds your estimated daily expenses and then
+            multiplies the applicable per-person expenses by the number of
+            travelers and trip length.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Daily budget:</strong>
+              Accommodation + food + transportation + activities + other expenses.
+            </p>
+
+            <p>
+              <strong>Total trip budget:</strong>
+              Daily trip cost × number of trip days.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Budget Categories -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Travel Expenses to Consider</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Expense</th>
+                  <th>What to Include</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Accommodation</td>
+                  <td>Hotels, hostels, vacation rentals, and other lodging.</td>
+                </tr>
+
+                <tr>
+                  <td>Food</td>
+                  <td>Meals, snacks, drinks, and dining out.</td>
+                </tr>
+
+                <tr>
+                  <td>Transportation</td>
+                  <td>Local transit, taxis, rideshares, rental vehicles, and fuel.</td>
+                </tr>
+
+                <tr>
+                  <td>Activities</td>
+                  <td>Museums, attractions, tours, entertainment, and experiences.</td>
+                </tr>
+
+                <tr>
+                  <td>Other Expenses</td>
+                  <td>Shopping, tips, travel supplies, and miscellaneous spending.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Example -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Travel Budget Example</h2>
+
+          <p>
+            Suppose two people travel for 7 days. If accommodation costs
+            $120 per day, food costs $40 per person per day, transportation
+            costs $20 per person per day, activities cost $30 per person per
+            day, and other expenses cost $10 per person per day, the
+            calculator can combine these amounts into an estimated trip
+            budget.
+          </p>
+
+          <p>
+            Accommodation is treated as a trip-level daily expense, while
+            the other listed categories are calculated per traveler.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Does the calculator include flights?</h3>
+
+          <p>
+            This calculator focuses on daily and trip expenses entered into
+            the form. Flight costs are not included automatically, so you
+            can account for them separately when planning your complete
+            travel budget.
+          </p>
+
+
+          <h3>Can I use this calculator for international travel?</h3>
+
+          <p>
+            Yes. You can select several common currencies or enter a custom
+            currency symbol. The calculator does not perform currency
+            exchange automatically.
+          </p>
+
+
+          <h3>Does accommodation apply per person?</h3>
+
+          <p>
+            No. Accommodation is treated as a daily trip expense in this
+            calculator. Food, transportation, activities, and other expenses
+            are entered per person per day.
+          </p>
+
+
+          <h3>Is the result an exact travel cost?</h3>
+
+          <p>
+            No. The result is an estimate based on the amounts you enter.
+            Actual costs can change because of prices, taxes, exchange rates,
+            travel dates, location, and unexpected expenses.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          Free online calculators and conversion tools designed to provide
+          useful, accurate, and easy-to-understand results.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/travel-budget-calculator.js"></script>
+
+</body>
+</html>

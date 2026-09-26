@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Speed Converter - Convert km/h, mph, m/s & Knots | CalclyWorld</title>
+
+  <meta
+    name="description"
+    content="Convert speed measurements between km/h, mph, m/s, ft/s, knots, and other common speed units with CalclyWorld's free Speed Converter."
+  >
+
+  <meta
+    name="keywords"
+    content="speed converter, speed conversion, km/h to mph, mph to km/h, m/s to km/h, knots to mph, mph to m/s, speed calculator"
+  >
+
+  <link rel="canonical" href="https://calclyworld.com/speed-calculator.html">
+
+  <meta property="og:title" content="Speed Converter - Convert Speed Units Online | CalclyWorld">
+  <meta
+    property="og:description"
+    content="Convert speed measurements between kilometers per hour, miles per hour, meters per second, knots, feet per second, and more."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calclyworld.com/speed-calculator.html">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="/style-v2.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Speed Converter",
+    "url": "https://calclyworld.com/speed-calculator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "A free online speed converter for converting between common metric and imperial speed units.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://calclyworld.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Speed Converter",
+        "item": "https://calclyworld.com/speed-calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a href="/" class="logo">
+        <img
+          src="/favicon.png"
+          alt="CalclyWorld Logo"
+          width="42"
+          height="42"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <span>CalclyWorld</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/#calculator-directory">Calculators</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        class="btn btn-secondary"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        🌙 Dark Mode
+      </button>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- Search -->
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-search">
+          <input
+            type="search"
+            id="calculator-search"
+            class="calculator-search"
+            placeholder="Search calculators... (Example: BMI, EMI, Age)"
+            autocomplete="off"
+            aria-label="Search calculators"
+          >
+
+          <div
+            id="search-results"
+            class="search-results"
+            hidden
+          ></div>
+        </div>
+
+        <h1>Speed Converter</h1>
+
+        <p>
+          Convert speed measurements quickly and accurately between common
+          metric, imperial, and nautical units.
+        </p>
+
+        <p>
+          Convert km/h, mph, m/s, knots, ft/s, and other speed units in seconds.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Breadcrumb -->
+
+    <section class="section-small">
+      <div class="container">
+
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Speed Converter</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Convert Speed
+          </h2>
+
+          <p class="text-center small-text">
+            Enter a speed and select the unit you want to convert from.
+          </p>
+
+
+          <div class="calculator-form">
+
+            <div class="form-group">
+
+              <label for="speed-value">
+                Speed
+              </label>
+
+              <input
+                type="number"
+                id="speed-value"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="Example: 100"
+                aria-describedby="speed-value-help"
+              >
+
+              <small id="speed-value-help">
+                Enter a positive speed value.
+              </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="speed-unit">
+                Convert From
+              </label>
+
+              <select id="speed-unit">
+
+                <option value="ms">
+                  Meters per Second (m/s)
+                </option>
+
+                <option value="kmh">
+                  Kilometers per Hour (km/h)
+                </option>
+
+                <option value="mph">
+                  Miles per Hour (mph)
+                </option>
+
+                <option value="fts">
+                  Feet per Second (ft/s)
+                </option>
+
+                <option value="knots">
+                  Knots (kn)
+                </option>
+
+                <option value="mmin">
+                  Meters per Minute (m/min)
+                </option>
+
+                <option value="kmmin">
+                  Kilometers per Minute (km/min)
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div
+              id="speed-error"
+              class="error-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+
+            <div class="calculator-actions">
+
+              <button
+                id="speed-calculate"
+                class="btn"
+                type="button"
+              >
+                Convert Speed
+              </button>
+
+              <button
+                id="speed-reset"
+                class="btn btn-secondary"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Results -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div
+          id="speed-result"
+          class="content-card"
+          hidden
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <h2>
+            Speed Conversion Results
+          </h2>
+
+          <div id="speed-result-content"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Summary -->
+
+    <section class="section-small">
+
+      <div class="calculator-container">
+
+        <div class="content-card">
+
+          <h2 class="text-center">
+            Speed Conversion Summary
+          </h2>
+
+          <div class="calculator-results-grid">
+
+            <div class="result-card">
+
+              <h3>Input Speed</h3>
+
+              <p id="speed-summary-input">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>km/h</h3>
+
+              <p id="speed-summary-kmh">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>mph</h3>
+
+              <p id="speed-summary-mph">—</p>
+
+            </div>
+
+
+            <div class="result-card">
+
+              <h3>m/s</h3>
+
+              <p id="speed-summary-ms">—</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>What Is a Speed Converter?</h2>
+
+          <p>
+            A speed converter changes a measurement from one speed unit into
+            another equivalent unit. Speed is commonly expressed in
+            kilometers per hour, miles per hour, meters per second, feet per
+            second, or knots depending on the country and application.
+          </p>
+
+          <p>
+            This converter provides a quick way to compare speed measurements
+            without manually calculating the conversion between different
+            units.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Supported Units -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Speed Units Supported</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Unit</th>
+                  <th>Symbol</th>
+                  <th>Common Use</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Meters per Second</td>
+                  <td>m/s</td>
+                  <td>Scientific and engineering measurements.</td>
+                </tr>
+
+                <tr>
+                  <td>Kilometers per Hour</td>
+                  <td>km/h</td>
+                  <td>Road speeds and everyday measurements in many countries.</td>
+                </tr>
+
+                <tr>
+                  <td>Miles per Hour</td>
+                  <td>mph</td>
+                  <td>Road speeds in countries using miles.</td>
+                </tr>
+
+                <tr>
+                  <td>Feet per Second</td>
+                  <td>ft/s</td>
+                  <td>Engineering, physics, and technical measurements.</td>
+                </tr>
+
+                <tr>
+                  <td>Knots</td>
+                  <td>kn</td>
+                  <td>Aviation and marine navigation.</td>
+                </tr>
+
+                <tr>
+                  <td>Meters per Minute</td>
+                  <td>m/min</td>
+                  <td>Industrial and technical applications.</td>
+                </tr>
+
+                <tr>
+                  <td>Kilometers per Minute</td>
+                  <td>km/min</td>
+                  <td>Higher-speed mathematical and technical calculations.</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Formula -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>How Speed Conversion Works</h2>
+
+          <p>
+            The calculator first converts the entered speed into meters per
+            second. It then uses that common base unit to calculate the
+            equivalent value in every supported speed unit.
+          </p>
+
+          <div class="info-box">
+
+            <p>
+              <strong>Example:</strong>
+              100 km/h is approximately 62.137 mph and 27.778 m/s.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Common Conversions -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Common Speed Conversions</h2>
+
+          <div class="table-wrapper">
+
+            <table class="amortization-table">
+
+              <thead>
+
+                <tr>
+                  <th>Conversion</th>
+                  <th>Equivalent</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>1 km/h</td>
+                  <td>0.621371 mph</td>
+                </tr>
+
+                <tr>
+                  <td>1 mph</td>
+                  <td>1.609344 km/h</td>
+                </tr>
+
+                <tr>
+                  <td>1 m/s</td>
+                  <td>3.6 km/h</td>
+                </tr>
+
+                <tr>
+                  <td>1 knot</td>
+                  <td>1.852 km/h</td>
+                </tr>
+
+                <tr>
+                  <td>1 ft/s</td>
+                  <td>0.3048 m/s</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section-small">
+
+      <div class="content">
+
+        <div class="content-card">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How do I convert km/h to mph?</h3>
+
+          <p>
+            Multiply the speed in kilometers per hour by approximately
+            0.621371 to convert it to miles per hour.
+          </p>
+
+
+          <h3>How do I convert mph to km/h?</h3>
+
+          <p>
+            Multiply the speed in miles per hour by 1.609344 to convert it
+            to kilometers per hour.
+          </p>
+
+
+          <h3>How fast is 100 km/h in mph?</h3>
+
+          <p>
+            100 km/h is approximately 62.137 mph.
+          </p>
+
+
+          <h3>What is a knot?</h3>
+
+          <p>
+            A knot is a unit of speed commonly used in aviation and marine
+            navigation. One knot equals exactly 1.852 kilometers per hour.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-column">
+
+        <h3>CalclyWorld</h3>
+
+        <p>
+          Free online calculators and conversion tools designed to provide
+          useful, accurate, and easy-to-understand results.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Popular Calculators</h3>
+
+        <ul>
+
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Calculator Categories</h3>
+
+        <ul>
+
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#everyday">Everyday</a></li>
+          <li><a href="/#math">Math</a></li>
+          <li><a href="/#home-construction">Home &amp; Construction</a></li>
+          <li><a href="/#automotive">Automotive</a></li>
+          <li><a href="/#technology">Technology</a></li>
+          <li><a href="/#conversion">Conversion</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#lifestyle">Lifestyle</a></li>
+          <li><a href="/#utility">Utility</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © <span data-current-year></span> CalclyWorld. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="/script-v2.js"></script>
+  <script src="/speed-calculator.js"></script>
+
+</body>
+</html>

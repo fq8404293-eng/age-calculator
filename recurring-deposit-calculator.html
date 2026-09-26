@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<title>
+    Recurring Deposit Calculator | Estimate Maturity Value & Interest | CalclyWorld
+</title>
+
+<meta
+name="description"
+content="Use the free CalclyWorld Recurring Deposit Calculator to estimate the potential maturity value, total deposits, estimated interest earned, and growth of regular deposits over time."
+
+>
+
+<meta
+name="robots"
+content="index, follow"
+
+>
+
+<link
+    rel="canonical"
+    href="https://calclyworld.com/recurring-deposit-calculator.html"
+>
+
+<meta
+name="theme-color"
+content="#2563eb"
+
+>
+
+<meta
+name="author"
+content="CalclyWorld"
+
+>
+
+<meta
+name="format-detection"
+content="telephone=no"
+
+>
+
+<meta
+name="referrer"
+content="strict-origin-when-cross-origin"
+
+>
+
+<meta
+name="application-name"
+content="CalclyWorld"
+
+>
+
+<meta
+name="color-scheme"
+content="light dark"
+
+>
+
+<!-- ==========================================================
+     OPEN GRAPH
+========================================================== -->
+
+<meta
+property="og:type"
+content="website"
+
+>
+
+<meta
+property="og:title"
+content="Recurring Deposit Calculator | CalclyWorld"
+
+>
+
+<meta
+property="og:description"
+content="Estimate potential maturity value, total deposits, estimated interest, and recurring deposit growth based on your deposit amount, interest rate, compounding frequency, and investment period."
+
+>
+
+<meta
+property="og:url"
+content="https://calclyworld.com/recurring-deposit-calculator.html"
+
+>
+
+<meta
+property="og:image"
+content="https://calclyworld.com/favicon.png"
+
+>
+
+<meta
+property="og:site_name"
+content="CalclyWorld"
+
+>
+
+<meta
+property="og:locale"
+content="en_US"
+
+>
+
+<!-- ==========================================================
+     TWITTER
+========================================================== -->
+
+<meta
+name="twitter:card"
+content="summary_large_image"
+
+>
+
+<meta
+name="twitter:title"
+content="Recurring Deposit Calculator | CalclyWorld"
+
+>
+
+<meta
+name="twitter:description"
+content="Estimate the potential maturity value and interest earned from regular recurring deposits over a selected investment period."
+
+>
+
+<meta
+name="twitter:image"
+content="https://calclyworld.com/favicon.png"
+
+>
+
+<!-- ==========================================================
+     FAVICON
+========================================================== -->
+
+<link
+    rel="icon"
+    href="/favicon.png"
+    sizes="32x32"
+    type="image/png"
+>
+
+<link
+    rel="icon"
+    href="/favicon.png"
+    sizes="192x192"
+    type="image/png"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="/apple-touch-icon.png"
+>
+
+<!-- ==========================================================
+     SHARED CSS
+========================================================== -->
+
+<link
+    rel="stylesheet"
+    href="style-v2.css"
+>
+
+<!-- ==========================================================
+     WEBPAGE SCHEMA
+========================================================== -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Recurring Deposit Calculator",
+    "url": "https://calclyworld.com/recurring-deposit-calculator.html",
+    "description": "A free online Recurring Deposit Calculator that estimates potential maturity value, total deposits, estimated interest earned, and recurring deposit growth.",
+    "isPartOf": {
+        "@type": "WebSite",
+        "name": "CalclyWorld",
+        "url": "https://calclyworld.com/"
+    },
+    "inLanguage": "en"
+}
+</script>
+
+<!-- ==========================================================
+     BREADCRUMB SCHEMA
+========================================================== -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://calclyworld.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Recurring Deposit Calculator",
+            "item": "https://calclyworld.com/recurring-deposit-calculator.html"
+        }
+    ]
+}
+</script>
+
+<!-- ==========================================================
+     FAQ SCHEMA
+========================================================== -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+
+        {
+            "@type": "Question",
+            "name": "What is a recurring deposit calculator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A recurring deposit calculator estimates the potential future or maturity value of regular deposits based on the deposit amount, assumed annual interest rate, compounding frequency, and investment period."
+            }
+        },
+
+        {
+            "@type": "Question",
+            "name": "How does a recurring deposit work?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A recurring deposit generally involves depositing a fixed amount at regular intervals for a selected period. The deposited money may earn interest according to the terms offered by the financial institution."
+            }
+        },
+
+        {
+            "@type": "Question",
+            "name": "Can I make monthly recurring deposits?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. This calculator uses regular monthly deposits as the default contribution schedule and estimates how those deposits may grow over time."
+            }
+        },
+
+        {
+            "@type": "Question",
+            "name": "What does the recurring deposit calculator show?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The calculator shows the regular deposit amount, investment period, total amount deposited, estimated interest earned, estimated maturity value, and a year-by-year growth breakdown."
+            }
+        },
+
+        {
+            "@type": "Question",
+            "name": "Are recurring deposit returns guaranteed?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. This calculator provides a mathematical estimate based on the interest rate and assumptions entered. Actual bank or financial product returns depend on the terms, rates, fees, taxes, and conditions of the specific product."
+            }
+        },
+
+        {
+            "@type": "Question",
+            "name": "Does this calculator include taxes and fees?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Taxes, account fees, penalties, and other charges are not included unless specifically stated."
+            }
+        },
+
+        {
+            "@type": "Question",
+            "name": "Is this calculator financial advice?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The calculator is intended for educational and general planning purposes only and does not provide personalized financial, investment, tax, or legal advice."
+            }
+        }
+
+    ]
+}
+</script>
+
+<!-- ==========================================================
+     GOOGLE ANALYTICS
+========================================================== -->
+
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"
+></script>
+
+<script>
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+    dataLayer.push(arguments);
+}
+
+gtag(
+    "js",
+    new Date()
+);
+
+gtag(
+    "config",
+    "G-BSQETZ21ZZ"
+);
+
+</script>
+
+<!-- ==========================================================
+     GOOGLE ADSENSE
+========================================================== -->
+
+<script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
+    crossorigin="anonymous"
+></script>
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+     SKIP LINK
+========================================================== -->
+
+<a
+class="skip-link"
+href="#main-content"
+
+>
+
+
+Skip to main content
+
+
+</a>
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header class="site-header">
+
+<div class="container header-container">
+
+
+<a
+    href="/"
+    class="logo"
+>
+
+    <img
+        src="/favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+    >
+
+    <span>
+        CalclyWorld
+    </span>
+
+</a>
+
+
+<nav
+    class="main-nav"
+    aria-label="Primary Navigation"
+>
+
+    <a href="/">
+        Home
+    </a>
+
+    <a href="/#calculator-directory">
+        Calculators
+    </a>
+
+    <a href="/about.html">
+        About
+    </a>
+
+    <a href="/contact.html">
+        Contact
+    </a>
+
+</nav>
+
+
+<button
+    id="theme-toggle"
+    class="btn btn-secondary"
+    type="button"
+    aria-label="Toggle dark mode"
+    aria-pressed="false"
+>
+    🌙 Dark Mode
+</button>
+
+
+</div>
+
+</header>
+
+<!-- ==========================================================
+     MAIN
+========================================================== -->
+
+<main id="main-content">
+
+<!-- ==========================================================
+     BREADCRUMB
+========================================================== -->
+
+<nav
+    class="breadcrumb"
+    aria-label="Breadcrumb"
+>
+
+<div class="content">
+
+
+<a href="/">
+    Home
+</a>
+
+<span aria-hidden="true">
+    ›
+</span>
+
+<span aria-current="page">
+    Recurring Deposit Calculator
+</span>
+
+
+</div>
+
+</nav>
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section class="hero">
+
+<div class="container">
+
+
+<h1>
+    Recurring Deposit Calculator
+</h1>
+
+<p>
+
+    Estimate how regular deposits could potentially grow over time
+    using your deposit amount, assumed annual interest rate,
+    compounding frequency, and investment period.
+
+</p>
+
+<p>
+
+    The calculator estimates your total deposits, potential interest
+    earned, and estimated maturity value so you can explore different
+    recurring deposit scenarios.
+
+    Results are mathematical estimates based on the assumptions you
+    enter and should not be treated as guaranteed returns.
+
+</p>
+
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     CALCULATOR
+========================================================== -->
+
+<section class="section-small">
+
+<div class="calculator-container">
+
+<div class="content-card">
+
+
+<h2 class="text-center">
+    Calculate Your Recurring Deposit
+</h2>
+
+
+<p class="text-center small-text">
+
+    Enter your recurring deposit details below to estimate the
+    potential maturity value, total deposits, and estimated
+    interest earned.
+
+</p>
+
+
+<!-- ======================================================
+     HOMEPAGE-STYLE SEARCH BOX
+======================================================= -->
+
+<div class="hero-search">
+
+    <input
+        type="search"
+        id="calculator-search"
+        class="calculator-search"
+        placeholder="Search calculators... (Example: BMI, EMI, Age)"
+        autocomplete="off"
+        aria-label="Search calculators"
+    >
+
+    <div
+        id="search-results"
+        class="search-results"
+        hidden
+    >
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     CALCULATOR FORM
+======================================================= -->
+
+<div class="calculator-form">
+
+
+    <!-- Currency -->
+
+    <label for="rd-currency">
+        Currency
+    </label>
+
+    <select
+        id="rd-currency"
+        name="rd-currency"
+    >
+
+        <option
+            value="USD"
+            selected
+        >
+            USD — US Dollar ($)
+        </option>
+
+        <option value="EUR">
+            EUR — Euro (€)
+        </option>
+
+        <option value="GBP">
+            GBP — British Pound (£)
+        </option>
+
+        <option value="CAD">
+            CAD — Canadian Dollar (C$)
+        </option>
+
+        <option value="AUD">
+            AUD — Australian Dollar (A$)
+        </option>
+
+        <option value="INR">
+            INR — Indian Rupee (₹)
+        </option>
+
+    </select>
+
+
+    <!-- Regular Deposit -->
+
+    <label for="rd-monthly-deposit">
+        Regular Deposit Amount
+    </label>
+
+    <input
+        type="number"
+        id="rd-monthly-deposit"
+        name="rd-monthly-deposit"
+        placeholder="e.g. 500"
+        min="0.01"
+        step="0.01"
+        required
+        inputmode="decimal"
+        autocomplete="off"
+    >
+
+
+    <!-- Deposit Frequency -->
+
+    <label for="rd-deposit-frequency">
+        Deposit Frequency
+    </label>
+
+    <select
+        id="rd-deposit-frequency"
+        name="rd-deposit-frequency"
+    >
+
+        <option
+            value="monthly"
+            selected
+        >
+            Monthly
+        </option>
+
+        <option value="yearly">
+            Yearly
+        </option>
+
+    </select>
+
+
+    <!-- Annual Interest Rate -->
+
+    <label for="rd-interest-rate">
+        Annual Interest Rate (%)
+    </label>
+
+    <input
+        type="number"
+        id="rd-interest-rate"
+        name="rd-interest-rate"
+        placeholder="e.g. 5"
+        min="0"
+        max="100"
+        step="0.01"
+        required
+        inputmode="decimal"
+        autocomplete="off"
+    >
+
+
+    <!-- Investment Period -->
+
+    <label for="rd-investment-period">
+        Investment Period (Years)
+    </label>
+
+    <input
+        type="number"
+        id="rd-investment-period"
+        name="rd-investment-period"
+        placeholder="e.g. 5"
+        min="1"
+        max="100"
+        step="1"
+        required
+        inputmode="numeric"
+        autocomplete="off"
+    >
+
+
+    <!-- Compounding Frequency -->
+
+    <label for="rd-compounding-frequency">
+        Compounding Frequency
+    </label>
+
+    <select
+        id="rd-compounding-frequency"
+        name="rd-compounding-frequency"
+    >
+
+        <option
+            value="monthly"
+            selected
+        >
+            Monthly
+        </option>
+
+        <option value="quarterly">
+            Quarterly
+        </option>
+
+        <option value="yearly">
+            Yearly
+        </option>
+
+    </select>
+
+
+    <!-- Error Message -->
+
+    <div
+        id="rd-error"
+        class="error-message"
+        role="alert"
+        aria-live="assertive"
+        hidden
+    >
+    </div>
+
+
+    <!-- Actions -->
+
+    <div class="calculator-actions">
+
+
+        <button
+            type="button"
+            id="calculate-rd"
+            class="btn"
+        >
+            Calculate Recurring Deposit
+        </button>
+
+
+        <button
+            type="button"
+            id="reset-rd"
+            class="btn btn-secondary"
+        >
+            Reset
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     RESULTS
+========================================================== -->
+
+<section class="section-small">
+
+<div class="calculator-container">
+
+<div
+    id="rd-result"
+    class="content-card"
+    hidden
+    aria-live="polite"
+    aria-atomic="true"
+>
+
+
+<h2>
+    Your Recurring Deposit Results
+</h2>
+
+<div id="rd-result-content">
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     RECURRING DEPOSIT SUMMARY
+========================================================== -->
+
+<section class="section-small">
+
+<div class="calculator-container">
+
+<div class="content-card">
+
+
+<h2 class="text-center">
+    Recurring Deposit Summary
+</h2>
+
+
+<div class="info-box">
+
+
+    <p>
+
+        <strong>
+            Regular Deposit
+        </strong>
+
+        <br>
+
+        <span id="summary-rd-deposit">
+            $0.00
+        </span>
+
+    </p>
+
+
+    <hr>
+
+
+    <p>
+
+        <strong>
+            Total Deposits
+        </strong>
+
+        <br>
+
+        <span id="summary-rd-total-deposits">
+            $0.00
+        </span>
+
+    </p>
+
+
+    <hr>
+
+
+    <p>
+
+        <strong>
+            Estimated Interest
+        </strong>
+
+        <br>
+
+        <span id="summary-rd-interest">
+            $0.00
+        </span>
+
+    </p>
+
+
+    <hr>
+
+
+    <p>
+
+        <strong>
+            Estimated Maturity Value
+        </strong>
+
+        <br>
+
+        <span id="summary-rd-maturity">
+            $0.00
+        </span>
+
+    </p>
+
+
+</div>
+
+
+<p class="small-text">
+
+    These figures are mathematical estimates based on the
+    information and assumptions entered.
+
+    Actual financial products may use different interest
+    calculations, deposit schedules, fees, taxes, penalties,
+    and terms.
+
+</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     HOW IT IS CALCULATED
+========================================================== -->
+
+<section class="section-small">
+
+<div class="content">
+
+<div class="content-card">
+
+
+<h2>
+    How Does a Recurring Deposit Calculator Work?
+</h2>
+
+
+<p>
+
+    A recurring deposit allows you to add a fixed amount of money
+    at regular intervals instead of depositing one large amount
+    at the beginning.
+
+    The calculator estimates how these deposits could potentially
+    grow when an assumed interest rate is applied over time.
+
+</p>
+
+
+<p>
+
+    Because deposits are added at different points during the
+    investment period, each deposit may have a different amount
+    of time to earn interest.
+
+    Money deposited earlier has more time to participate in the
+    calculation than money deposited later.
+
+</p>
+
+
+<h3>
+    Regular Deposit Amount
+</h3>
+
+
+<p>
+
+    The regular deposit is the amount you plan to add at each
+    selected deposit interval.
+
+    For example, if you choose a monthly deposit of $500,
+    the calculator assumes that $500 is added each month
+    throughout the selected period.
+
+</p>
+
+
+<h3>
+    Deposit Frequency
+</h3>
+
+
+<p>
+
+    Deposit frequency determines how often new money is added.
+
+    You can choose monthly or yearly deposits.
+
+    The calculator uses your selected frequency when estimating
+    the total amount deposited and potential maturity value.
+
+</p>
+
+
+<h3>
+    Annual Interest Rate
+</h3>
+
+
+<p>
+
+    The annual interest rate is the assumed rate used to estimate
+    potential growth.
+
+    For example, entering 5% means the calculation uses an
+    assumed annual interest rate of 5%.
+
+    This is a mathematical assumption and does not guarantee
+    that an actual financial institution will pay this rate.
+
+</p>
+
+
+<h3>
+    Compounding Frequency
+</h3>
+
+
+<p>
+
+    Compounding frequency describes how often interest is applied
+    to the balance used in the calculation.
+
+    This calculator allows monthly, quarterly, or yearly
+    compounding assumptions.
+
+</p>
+
+
+<p>
+
+    Actual recurring deposit products may use specific formulas
+    and crediting schedules defined by the financial institution.
+
+    Therefore, the calculator should be used as a general estimate
+    rather than an exact quote from a bank or financial provider.
+
+</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     HOW TO USE
+========================================================== -->
+
+<section class="section-small">
+
+<div class="content">
+
+<div class="content-card">
+
+
+<h2>
+    How to Use This Recurring Deposit Calculator
+</h2>
+
+
+<ol>
+
+    <li>
+        Select the currency you want to use for the calculation.
+    </li>
+
+    <li>
+        Enter the amount you plan to deposit regularly.
+    </li>
+
+    <li>
+        Select whether your deposits are monthly or yearly.
+    </li>
+
+    <li>
+        Enter the assumed annual interest rate.
+    </li>
+
+    <li>
+        Enter the number of years you plan to make deposits.
+    </li>
+
+    <li>
+        Select the assumed compounding frequency.
+    </li>
+
+    <li>
+        Click
+        <strong>
+            Calculate Recurring Deposit
+        </strong>.
+    </li>
+
+    <li>
+        Review your estimated total deposits,
+        estimated interest, maturity value,
+        and year-by-year growth breakdown.
+    </li>
+
+</ol>
+
+
+<p>
+
+    You can change your assumptions and calculate again to compare
+    different hypothetical scenarios.
+
+    For example, you can compare a shorter deposit period with a
+    longer period or see how different assumed interest rates affect
+    the mathematical estimate.
+
+</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     UNDERSTANDING RECURRING DEPOSITS
+========================================================== -->
+
+<section class="section-small">
+
+<div class="content">
+
+<div class="content-card">
+
+
+<h2>
+    Understanding Recurring Deposits
+</h2>
+
+
+<p>
+
+    A recurring deposit is generally designed for people who want
+    to save a fixed amount regularly over a defined period.
+
+    Instead of investing one large amount at the start, the saver
+    makes repeated deposits according to a chosen schedule.
+
+</p>
+
+
+<p>
+
+    The total amount available at maturity may consist of the
+    money deposited over time plus interest or other earnings,
+    depending on the specific financial product.
+
+</p>
+
+
+<h3>
+    Why Regular Saving Can Be Useful
+</h3>
+
+
+<p>
+
+    Regular deposits can make saving easier to manage because
+    contributions are spread across multiple payment periods.
+
+    This approach may be useful for people who receive income
+    regularly and prefer to set aside a fixed amount from each
+    paycheck or income cycle.
+
+</p>
+
+
+<h3>
+    Why Starting Earlier Can Matter
+</h3>
+
+
+<p>
+
+    When money is deposited earlier, it generally has more time
+    to earn interest under the assumptions used by a calculation.
+
+    Over longer periods, the effect of compounding can become more
+    noticeable because previously accumulated interest may also
+    contribute to future growth.
+
+</p>
+
+
+<h3>
+    Recurring Deposits vs. One-Time Deposits
+</h3>
+
+
+<p>
+
+    A recurring deposit involves adding money at regular intervals,
+    while a one-time deposit places a larger amount into an account
+    at the beginning.
+
+    Because the timing of deposits is different, the potential
+    interest calculation can also be different even when the total
+    amount of money deposited is similar.
+
+</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     IMPORTANT THINGS TO REMEMBER
+========================================================== -->
+
+<section class="section-small">
+
+<div class="content">
+
+<div class="content-card">
+
+
+<h2>
+    Important Things to Remember
+</h2>
+
+
+<ul>
+
+    <li>
+        The calculator provides estimates based on the assumptions
+        you enter.
+    </li>
+
+    <li>
+        Actual financial products may use different interest
+        calculation methods.
+    </li>
+
+    <li>
+        Interest rates offered by banks and financial institutions
+        can change over time.
+    </li>
+
+    <li>
+        Taxes may reduce the amount of interest you ultimately keep.
+    </li>
+
+    <li>
+        Account fees, penalties, or early withdrawal charges may
+        affect actual returns.
+    </li>
+
+    <li>
+        Inflation can reduce the purchasing power of money received
+        in the future.
+    </li>
+
+    <li>
+        The calculator does not account for every condition of a
+        specific bank or financial product.
+    </li>
+
+    <li>
+        The results should not be considered personalized financial
+        or investment advice.
+    </li>
+
+</ul>
+
+
+<p>
+
+    Always review the official terms and conditions of a financial
+    product before opening an account or making a financial decision.
+
+</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     RELATED CALCULATORS
+========================================================== -->
+
+<section class="section-small">
+
+<div class="content">
+
+
+<h2 class="section-title">
+    Related Calculators
+</h2>
+
+
+<p class="section-description">
+
+    Explore other CalclyWorld financial calculators to compare
+    savings, deposits, loans, and investment scenarios.
+
+</p>
+
+
+<div class="calculator-grid">
+
+
+    <article class="calculator-card">
+
+        <h3>
+            Savings Calculator
+        </h3>
+
+        <p>
+
+            Estimate how regular savings contributions and assumed
+            interest may grow over time.
+
+        </p>
+
+        <a href="/savings-calculator.html">
+            Open Calculator →
+        </a>
+
+    </article>
+
+
+    <article class="calculator-card">
+
+        <h3>
+            Fixed Deposit Calculator
+        </h3>
+
+        <p>
+
+            Estimate the potential maturity value and interest
+            earned from a one-time fixed deposit.
+
+        </p>
+
+        <a href="/fixed-deposit-calculator.html">
+            Open Calculator →
+        </a>
+
+    </article>
+
+
+    <article class="calculator-card">
+
+        <h3>
+            SIP Calculator
+        </h3>
+
+        <p>
+
+            Estimate the potential future value of regular
+            investments using an assumed rate of return.
+
+        </p>
+
+        <a href="/sip-calculator.html">
+            Open Calculator →
+        </a>
+
+    </article>
+
+
+    <article class="calculator-card">
+
+        <h3>
+            Investment Return Calculator
+        </h3>
+
+        <p>
+
+            Explore how an initial investment and regular
+            contributions may grow over time.
+
+        </p>
+
+        <a href="/investment-return-calculator.html">
+            Open Calculator →
+        </a>
+
+    </article>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     FAQ
+========================================================== -->
+
+<section class="section-small">
+
+<div class="content">
+
+<div class="content-card">
+
+
+<h2>
+    Frequently Asked Questions
+</h2>
+
+
+<div class="faq">
+
+
+    <div class="faq-item">
+
+        <div class="faq-question">
+            What is a recurring deposit calculator?
+        </div>
+
+        <div class="faq-answer">
+
+            <p>
+
+                A recurring deposit calculator estimates the
+                potential maturity value of regular deposits based
+                on the deposit amount, assumed annual interest rate,
+                compounding frequency, and investment period.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div class="faq-question">
+            How does a recurring deposit work?
+        </div>
+
+        <div class="faq-answer">
+
+            <p>
+
+                A recurring deposit generally involves adding a
+                fixed amount at regular intervals for a selected
+                period.
+
+                The money may earn interest according to the terms
+                offered by the financial institution.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div class="faq-question">
+            Can I make monthly recurring deposits?
+        </div>
+
+        <div class="faq-answer">
+
+            <p>
+
+                Yes.
+
+                This calculator supports monthly deposits as well
+                as yearly deposits.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div class="faq-question">
+            What does the calculator show?
+        </div>
+
+        <div class="faq-answer">
+
+            <p>
+
+                The calculator can show your regular deposit,
+                total deposits, estimated interest earned,
+                estimated maturity value, and year-by-year
+                growth breakdown.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div class="faq-question">
+            Are recurring deposit returns guaranteed?
+        </div>
+
+        <div class="faq-answer">
+
+            <p>
+
+                No.
+
+                The results are mathematical estimates based on
+                the assumptions entered.
+
+                Actual financial products may have different rates,
+                terms, fees, taxes, and calculation methods.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div class="faq-question">
+            Does the calculator include taxes and fees?
+        </div>
+
+        <div class="faq-answer">
+
+            <p>
+
+                No.
+
+                Taxes, account fees, penalties, and other charges
+                are not included unless specifically stated.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <div class="faq-question">
+            Is this calculator financial advice?
+        </div>
+
+        <div class="faq-answer">
+
+            <p>
+
+                No.
+
+                This calculator is intended for educational and
+                general planning purposes only.
+
+                It does not provide personalized financial,
+                investment, tax, or legal advice.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ==========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="site-footer">
+
+<div class="container footer-grid">
+
+
+<div class="footer-column">
+
+    <h3>
+        CalclyWorld
+    </h3>
+
+    <p>
+
+        CalclyWorld provides free online calculators for finance,
+        health, home improvement, technology, education, and
+        everyday life.
+
+        Every calculator is designed to be simple, accurate,
+        and easy to use.
+
+    </p>
+
+</div>
+
+
+<div class="footer-column">
+
+    <h3>
+        Quick Links
+    </h3>
+
+    <ul>
+
+        <li>
+            <a href="/">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="/about.html">
+                About Us
+            </a>
+        </li>
+
+        <li>
+            <a href="/contact.html">
+                Contact Us
+            </a>
+        </li>
+
+        <li>
+            <a href="/privacy.html">
+                Privacy Policy
+            </a>
+        </li>
+
+        <li>
+            <a href="/terms.html">
+                Terms &amp; Conditions
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div class="footer-column">
+
+    <h3>
+        Popular Calculators
+    </h3>
+
+    <ul>
+
+        <li>
+            <a href="/age-calculator.html">
+                Age Calculator
+            </a>
+        </li>
+
+        <li>
+            <a href="/emi-calculator.html">
+                EMI Calculator
+            </a>
+        </li>
+
+        <li>
+            <a href="/bmi-calculator.html">
+                BMI Calculator
+            </a>
+        </li>
+
+        <li>
+            <a href="/gst-calculator.html">
+                GST Calculator
+            </a>
+        </li>
+
+        <li>
+            <a href="/mortgage-calculator.html">
+                Mortgage Calculator
+            </a>
+        </li>
+
+        <li>
+            <a href="/compound-interest-calculator.html">
+                Compound Interest Calculator
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div class="footer-column">
+
+  <h3>Calculator Categories</h3>
+
+  <ul>
+    <li>
+      <a href="/#finance">
+        Finance
+      </a>
+    </li>
+
+    <li>
+      <a href="/#everyday">
+        Everyday
+      </a>
+    </li>
+
+    <li>
+      <a href="/#math">
+        Math
+      </a>
+    </li>
+
+    <li>
+      <a href="/#home-construction">
+        Home &amp; Construction
+      </a>
+    </li>
+
+    <li>
+      <a href="/#automotive">
+        Automotive
+      </a>
+    </li>
+
+    <li>
+      <a href="/#technology">
+        Technology
+      </a>
+    </li>
+
+    <li>
+      <a href="/#conversion">
+        Conversion
+      </a>
+    </li>
+
+    <li>
+      <a href="/#travel">
+        Travel
+      </a>
+    </li>
+
+    <li>
+      <a href="/#lifestyle">
+        Lifestyle
+      </a>
+    </li>
+
+    <li>
+      <a href="/#utility">
+        Utility
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+
+<p>
+
+    ©
+    <span data-current-year></span>
+    CalclyWorld. All rights reserved.
+
+</p>
+
+
+</div>
+
+</footer>
+
+<!-- ==========================================================
+     SHARED WEBSITE JAVASCRIPT
+========================================================== -->
+
+<script src="script-v2.js"></script>
+
+<!-- ==========================================================
+     RECURRING DEPOSIT CALCULATOR JAVASCRIPT
+========================================================== -->
+
+<script src="recurring-deposit-calculator.js"></script>
+
+</body>
+
+</html>
