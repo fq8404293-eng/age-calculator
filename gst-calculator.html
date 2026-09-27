@@ -1,153 +1,2210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
 
-  <title>GST Calculator India | Calculate GST Online (5%, 12%, 18%, 28%)</title>
+<meta charset="UTF-8">
 
-  <meta name="description" content="Free GST Calculator India. Add or remove GST instantly for 5%, 12%, 18%, 28% slabs. Calculate GST amount, base price, and total easily online.">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-  <meta name="robots" content="index, follow">
+<title>
+GST Calculator - Calculate GST Online, Add or Remove GST | CalclyWorld
+</title>
 
-  <link rel="canonical" href="https://calclyworld.com/gst-calculator.html">
+<meta
+name="description"
+content="Use the free CalclyWorld GST Calculator to calculate GST, add or remove GST, find GST-inclusive and exclusive prices, and calculate CGST, SGST, and IGST amounts."
+>
 
-  <link rel="icon" type="image/png" href="/favicon.png">
+<meta
+name="robots"
+content="index, follow"
+>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+name="author"
+content="CalclyWorld"
+>
 
- <link rel="stylesheet" href="gst-style.css">
+<link
+rel="canonical"
+href="https://calclyworld.com/gst-calculator.html"
+>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSQETZ21ZZ"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-BSQETZ21ZZ');
+<meta
+property="og:type"
+content="website"
+>
+
+<meta
+property="og:url"
+content="https://calclyworld.com/gst-calculator.html"
+>
+
+<meta
+property="og:title"
+content="GST Calculator - Calculate GST Online | CalclyWorld"
+>
+
+<meta
+property="og:description"
+content="Calculate GST, add or remove GST, find GST-inclusive and exclusive prices, and see CGST, SGST, and IGST breakdowns."
+>
+
+<meta
+property="og:image"
+content="https://calclyworld.com/favicon.png"
+>
+
+<meta
+name="twitter:card"
+content="summary"
+>
+
+<meta
+name="twitter:title"
+content="GST Calculator - Calculate GST Online | CalclyWorld"
+>
+
+<meta
+name="twitter:description"
+content="Free online GST calculator for adding GST, removing GST, and calculating GST components."
+>
+
+<meta
+name="twitter:image"
+content="https://calclyworld.com/favicon.png"
+>
+
+<link
+rel="icon"
+type="image/png"
+href="/favicon.png"
+>
+
+<link
+rel="apple-touch-icon"
+href="/apple-touch-icon.png"
+>
+
+<link
+rel="stylesheet"
+href="/style-v2.css"
+>
+
+
+<!-- WebApplication Structured Data -->
+
+<script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GST Calculator",
+  "url": "https://calclyworld.com/gst-calculator.html",
+  "description": "Free online GST calculator for calculating GST amounts, GST-inclusive prices, GST-exclusive prices, CGST, SGST, and IGST.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "publisher": {
+    "@type": "Organization",
+    "name": "CalclyWorld",
+    "url": "https://calclyworld.com/"
+  }
+}
+
 </script>
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9996577216569842"
-     crossorigin="anonymous"></script>
+
+<!-- Breadcrumb Structured Data -->
+
+<script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calclyworld.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Finance",
+      "item": "https://calclyworld.com/#finance"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GST Calculator",
+      "item": "https://calclyworld.com/gst-calculator.html"
+    }
+  ]
+}
+
+</script>
+
 
 </head>
 
+
 <body>
 
-<div class="container">
 
-  <a href="/" style="text-decoration:none; font-weight:bold;">← Back to Home</a>
+<a
+href="#main-content"
+class="skip-link"
+>
+Skip to main content
+</a>
 
-  <h1>GST Calculator India</h1>
 
-  <p class="subtext">
-    Calculate GST instantly - Add or Remove GST from any amount in India
-  </p>
+<!-- HEADER -->
 
-  <input type="number" id="amount" placeholder="Enter Amount (₹)">
+<header class="site-header">
 
-  <select id="gstRate">
-    <option value="5">5% GST</option>
-    <option value="12">12% GST</option>
-    <option value="18" selected>18% GST</option>
-    <option value="28">28% GST</option>
-  </select>
+  <div class="container header-container">
 
-  <div class="btn-group">
-    <button onclick="addGST()">Add GST</button>
-    <button onclick="removeGST()">Remove GST</button>
+    <a
+    href="/"
+    class="logo"
+    >
+
+      <img
+      src="/favicon.png"
+      alt="CalclyWorld Logo"
+      width="42"
+      height="42"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      >
+
+      <span>
+        CalclyWorld
+      </span>
+
+    </a>
+
+
+    <nav
+    class="main-nav"
+    aria-label="Primary Navigation"
+    >
+
+      <a href="/">
+        Home
+      </a>
+
+      <a href="/#calculator-directory">
+        Calculators
+      </a>
+
+      <a href="/about.html">
+        About
+      </a>
+
+      <a href="/contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+
+    <button
+    id="theme-toggle"
+    class="btn btn-secondary"
+    type="button"
+    aria-label="Toggle dark mode"
+    aria-pressed="false"
+    >
+      🌙 Dark Mode
+    </button>
+
   </div>
 
-  <div class="result">
-    <p>Base Price: ₹<span id="base">0</span></p>
-    <p>GST Amount: ₹<span id="gst">0</span></p>
-    <p class="total">Total Price: ₹<span id="total">0</span></p>
+</header>
+
+
+<!-- BREADCRUMB -->
+
+<section class="section-small">
+
+  <div class="container">
+
+    <nav
+    aria-label="Breadcrumb"
+    class="breadcrumb"
+    >
+
+      <a href="/">
+        Home
+      </a>
+
+      <span aria-hidden="true">
+        /
+      </span>
+
+      <a href="/#finance">
+        Finance
+      </a>
+
+      <span aria-hidden="true">
+        /
+      </span>
+
+      <span aria-current="page">
+        GST Calculator
+      </span>
+
+    </nav>
+
   </div>
-</div>
 
-<div class="content">
-  <!-- WHAT IS GST -->
-  <h2>What is GST in India?</h2>
-  <p>
-    GST (Goods and Services Tax) is a unified tax system used in India on the sale of goods and services. It replaced multiple indirect taxes like VAT, service tax, and excise duty.
-  </p>
+</section>
 
-  <!-- WHO USES -->
-  <h2>Who Uses This GST Calculator?</h2>
-  <p>
-    This GST calculator is widely used in India by shop owners, freelancers, small businesses, accountants, and customers to quickly calculate tax on products and services.
-  </p>
 
-  <!-- HOW IT WORKS -->
-  <h2>How GST Calculator Works</h2>
-  <p>
-    Enter the amount, select GST rate, and click Add GST or Remove GST. The calculator instantly shows base price, GST amount, and final price.
-  </p>
+<main id="main-content">
 
-  <!-- GST RATES -->
-  <h2>GST Rates in India</h2>
-  <ul>
-    <li>5% – Essential goods and services</li>
-    <li>12% – Packaged food and telecom services</li>
-    <li>18% – Most goods and services (standard rate)</li>
-    <li>28% – Luxury items and premium goods</li>
-  </ul>
-<h2>Benefits of Using a GST Calculator</h2>
 
-<ul>
-  <li>Calculate GST instantly</li>
-  <li>Avoid manual calculation errors</li>
-  <li>Useful for businesses and freelancers</li>
-  <li>Supports common GST slabs in India</li>
-  <li>Free and easy to use</li>
-</ul>
-  <!-- FAQ -->
-  <h2>GST Calculator FAQs</h2>
+<!-- HERO -->
 
-  <h3>What is GST in simple words?</h3>
-  <p>GST is a tax applied on goods and services in India at different percentage rates.</p>
+<section class="hero">
 
-  <h3>Is GST same for all products?</h3>
-  <p>No, GST rates vary from 5% to 28% depending on the product or service category.</p>
+  <div class="container">
 
-  <h3>Can I calculate GST both ways?</h3>
-  <p>Yes, you can add GST or remove GST using this calculator.</p>
+    <h1>
+      GST Calculator
+    </h1>
 
-  <h3>Who should use this GST calculator?</h3>
-  <p>Businesses, shop owners, accountants, freelancers, and customers in India use it daily.</p>
+    <p>
+      Calculate GST instantly, add GST to a price, remove GST from a
+      GST-inclusive amount, and see the tax breakdown clearly.
+    </p>
 
-  <h3>Is this GST calculator free?</h3>
-  <p>Yes, it is completely free and works instantly online.</p>
+    <p>
+      Use this calculator to find the taxable amount, GST amount,
+      final price, and applicable tax components for common GST
+      calculations.
+    </p>
 
-  <!-- INTERNAL LINKS -->
- <h2>More Free Calculators</h2>
-<ul>
-  <li><a href="/age-calculator.html">Age Calculator</a></li>
-  <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
-  <li><a href="/emi-calculator.html">EMI Calculator</a></li>
-  <li><a href="/mortgage-calculator.html">Mortgage Calculator</a></li>
-  <li><a href="/compound-interest-calculator.html">Compound Interest Calculator</a></li>
-  <li><a href="/retirement-calculator.html">Retirement Calculator</a></li>
-  <li><a href="/percentage-calculator.html">Percentage Calculator</a></li>
-  <li><a href="/tip-calculator.html">Tip Calculator</a></li>
-</ul>
+  </div>
 
-</div>
+</section>
 
-<footer style="margin-top:40px; padding:20px; text-align:center; background:#f5f5f5;">
-  <p><strong>CalclyWorld</strong> – Free Online Calculators</p>
 
-  <p>
-    <a href="/about.html">About Us</a> |
-    <a href="/privacy.html">Privacy Policy</a> |
-    <a href="/terms.html">Terms & Conditions</a> |
-    <a href="/contact.html">Contact Us</a>
-  </p>
+<!-- CALCULATOR -->
 
-  <p>© 2026 CalclyWorld. All rights reserved.</p>
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        Calculate GST
+      </h2>
+
+      <p>
+        Enter an amount, choose the GST rate, and select whether you
+        want to add GST or remove GST from an amount that already
+        includes tax.
+      </p>
+
+
+      <form
+      id="gst-form"
+      class="calculator-form"
+      novalidate
+      >
+
+
+        <!-- AMOUNT -->
+
+        <div class="form-group">
+
+          <label for="gst-amount">
+            Amount
+          </label>
+
+          <input
+          type="number"
+          id="gst-amount"
+          name="gst-amount"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+          placeholder="Enter amount"
+          autocomplete="off"
+          required
+          >
+
+          <small class="form-help">
+            Enter the price before GST when adding GST, or the
+            GST-inclusive price when removing GST.
+          </small>
+
+        </div>
+
+
+        <!-- GST RATE -->
+
+        <div class="form-group">
+
+          <label for="gst-rate">
+            GST Rate
+          </label>
+
+          <select
+          id="gst-rate"
+          name="gst-rate"
+          >
+
+            <option value="0">
+              0%
+            </option>
+
+            <option value="5">
+              5%
+            </option>
+
+            <option value="12" selected>
+              12%
+            </option>
+
+            <option value="18">
+              18%
+            </option>
+
+            <option value="28">
+              28%
+            </option>
+
+            <option value="custom">
+              Custom Rate
+            </option>
+
+          </select>
+
+          <small class="form-help">
+            Select the GST rate applicable to your transaction.
+          </small>
+
+        </div>
+
+
+        <!-- CUSTOM GST RATE -->
+
+        <div
+        id="custom-rate-group"
+        class="form-group"
+        hidden
+        >
+
+          <label for="custom-gst-rate">
+            Custom GST Rate (%)
+          </label>
+
+          <input
+          type="number"
+          id="custom-gst-rate"
+          name="custom-gst-rate"
+          min="0"
+          max="100"
+          step="0.01"
+          inputmode="decimal"
+          placeholder="Example: 15"
+          autocomplete="off"
+          >
+
+          <small class="form-help">
+            Enter a GST rate from 0% to 100%.
+          </small>
+
+        </div>
+
+
+        <!-- OPERATION -->
+
+        <div class="form-group">
+
+          <label for="gst-operation">
+            Calculation
+          </label>
+
+          <select
+          id="gst-operation"
+          name="gst-operation"
+          >
+
+            <option value="add">
+              Add GST to amount
+            </option>
+
+            <option value="remove">
+              Remove GST from amount
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- TRANSACTION TYPE -->
+
+        <div class="form-group">
+
+          <label for="gst-transaction">
+
+            Transaction Type
+
+          </label>
+
+          <select
+          id="gst-transaction"
+          name="gst-transaction"
+          >
+
+            <option value="intra">
+              Within the same state / territory
+            </option>
+
+            <option value="inter">
+              Between different states / territories
+            </option>
+
+          </select>
+
+          <small class="form-help">
+            This option is used to display a CGST + SGST/UTGST
+            breakdown or an IGST breakdown where applicable.
+          </small>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="form-actions">
+
+          <button
+          type="submit"
+          class="btn btn-primary"
+          >
+            Calculate GST
+          </button>
+
+          <button
+          type="reset"
+          id="gst-reset"
+          class="btn btn-secondary"
+          >
+            Reset
+          </button>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <p
+        id="gst-error"
+        class="error-message"
+        role="alert"
+        hidden
+        >
+        </p>
+
+
+      </form>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div
+    id="gst-result"
+    class="content-card"
+    hidden
+    >
+
+      <h2>
+        GST Calculation Result
+      </h2>
+
+
+      <div class="result-grid">
+
+
+        <div class="result-item">
+
+          <span class="result-label">
+            Base / Taxable Amount
+          </span>
+
+          <strong id="gst-original">
+            0.00
+          </strong>
+
+        </div>
+
+
+        <div class="result-item">
+
+          <span class="result-label">
+            GST Rate
+          </span>
+
+          <strong id="gst-percentage">
+            0%
+          </strong>
+
+        </div>
+
+
+        <div class="result-item">
+
+          <span class="result-label">
+            Total GST
+          </span>
+
+          <strong id="gst-tax">
+            0.00
+          </strong>
+
+        </div>
+
+
+        <div class="result-item">
+
+          <span class="result-label">
+            Final Amount
+          </span>
+
+          <strong id="gst-total">
+            0.00
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- TAX BREAKDOWN -->
+
+      <div
+      id="gst-breakdown"
+      class="content-card"
+      >
+
+        <h3>
+          GST Breakdown
+        </h3>
+
+
+        <div class="result-grid">
+
+
+          <div class="result-item">
+
+            <span class="result-label">
+              CGST
+            </span>
+
+            <strong id="gst-cgst">
+              0.00
+            </strong>
+
+          </div>
+
+
+          <div class="result-item">
+
+            <span class="result-label">
+              SGST / UTGST
+            </span>
+
+            <strong id="gst-sgst">
+              0.00
+            </strong>
+
+          </div>
+
+
+          <div class="result-item">
+
+            <span class="result-label">
+              IGST
+            </span>
+
+            <strong id="gst-igst">
+              0.00
+            </strong>
+
+          </div>
+
+
+          <div class="result-item">
+
+            <span class="result-label">
+              Taxable Value
+            </span>
+
+            <strong id="gst-taxable">
+              0.00
+            </strong>
+
+          </div>
+
+
+        </div>
+
+
+        <p
+        id="gst-breakdown-note"
+        class="small-text"
+        >
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- INTRODUCTION -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        What Is a GST Calculator?
+      </h2>
+
+      <p>
+        A GST calculator is an online tool that helps you calculate
+        Goods and Services Tax on a product, service, invoice, or
+        transaction. Instead of calculating the tax manually, you can
+        enter the amount and GST rate to instantly determine the tax
+        amount and final price.
+      </p>
+
+      <p>
+        A GST calculation can work in two directions. When you have a
+        price before tax, you can add GST to find the final amount.
+        When you already have a GST-inclusive price, you can reverse
+        the calculation to determine the original taxable amount and
+        GST component.
+      </p>
+
+      <p>
+        This calculator is designed to show both the main calculation
+        and a tax-component breakdown so that the result is easier to
+        understand.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- HOW TO USE -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        How to Use the GST Calculator
+      </h2>
+
+      <ol>
+
+        <li>
+          Enter the amount you want to calculate.
+        </li>
+
+        <li>
+          Select the applicable GST rate.
+        </li>
+
+        <li>
+          Choose whether you want to add GST or remove GST.
+        </li>
+
+        <li>
+          Select the transaction type if you want to see a CGST,
+          SGST/UTGST, or IGST breakdown.
+        </li>
+
+        <li>
+          Click <strong>Calculate GST</strong>.
+        </li>
+
+        <li>
+          Review the taxable amount, GST amount, tax components,
+          and final amount.
+        </li>
+
+      </ol>
+
+      <p>
+        If the amount already includes GST, use the
+        <strong>Remove GST from amount</strong> option. This performs
+        a reverse GST calculation rather than simply subtracting the
+        GST percentage from the total.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- GST FORMULAS -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        GST Calculation Formulas
+      </h2>
+
+      <p>
+        GST calculations depend on whether the amount you enter is
+        before GST or already includes GST. The two situations use
+        different formulas.
+      </p>
+
+
+      <h3>
+        Adding GST to an Amount
+      </h3>
+
+      <p>
+        When you have a price before GST, calculate the GST amount
+        using:
+      </p>
+
+      <p>
+        <strong>
+          GST Amount = Base Amount × GST Rate ÷ 100
+        </strong>
+      </p>
+
+      <p>
+        The final price including GST is:
+      </p>
+
+      <p>
+        <strong>
+          Final Amount = Base Amount + GST Amount
+        </strong>
+      </p>
+
+
+      <h3>
+        Removing GST From an Inclusive Amount
+      </h3>
+
+      <p>
+        If the amount you enter already includes GST, you cannot
+        simply subtract the GST percentage from the total. Instead,
+        the original taxable amount is calculated using:
+      </p>
+
+      <p>
+        <strong>
+          Base Amount = GST-Inclusive Amount × 100 ÷ (100 + GST Rate)
+        </strong>
+      </p>
+
+      <p>
+        The GST component is then:
+      </p>
+
+      <p>
+        <strong>
+          GST Amount = GST-Inclusive Amount − Base Amount
+        </strong>
+      </p>
+
+
+      <h3>
+        CGST and SGST Calculation
+      </h3>
+
+      <p>
+        For a qualifying intra-state transaction where the applicable
+        GST is divided equally between the two components:
+      </p>
+
+      <p>
+        <strong>
+          CGST = Total GST ÷ 2
+        </strong>
+      </p>
+
+      <p>
+        <strong>
+          SGST / UTGST = Total GST ÷ 2
+        </strong>
+      </p>
+
+      <p>
+        For example, if the total applicable GST rate is 18%, the
+        component rate is commonly represented as 9% CGST and 9%
+        SGST/UTGST for an eligible intra-state transaction.
+      </p>
+
+
+      <h3>
+        IGST Calculation
+      </h3>
+
+      <p>
+        For a qualifying inter-state transaction, the applicable GST
+        can be represented as IGST rather than being divided into
+        CGST and SGST.
+      </p>
+
+      <p>
+        <strong>
+          IGST = Taxable Amount × IGST Rate ÷ 100
+        </strong>
+      </p>
+
+      <p>
+        The actual tax treatment of a transaction depends on the
+        applicable tax rules, place of supply, nature of the supply,
+        and other circumstances.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GST EXAMPLE -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        GST Calculation Example
+      </h2>
+
+      <p>
+        Suppose a product has a taxable price of
+        <strong>₹10,000</strong> and the applicable GST rate is
+        <strong>18%</strong>.
+      </p>
+
+
+      <h3>
+        Step 1: Calculate GST
+      </h3>
+
+      <p>
+        GST = ₹10,000 × 18 ÷ 100
+      </p>
+
+      <p>
+        <strong>
+          GST = ₹1,800
+        </strong>
+      </p>
+
+
+      <h3>
+        Step 2: Calculate the Final Price
+      </h3>
+
+      <p>
+        Final Amount = ₹10,000 + ₹1,800
+      </p>
+
+      <p>
+        <strong>
+          Final Amount = ₹11,800
+        </strong>
+      </p>
+
+
+      <h3>
+        Step 3: Calculate the GST Components
+      </h3>
+
+      <p>
+        If the transaction is an eligible intra-state transaction
+        with an equal CGST and SGST split:
+      </p>
+
+      <p>
+        CGST = ₹1,800 ÷ 2 =
+        <strong>₹900</strong>
+      </p>
+
+      <p>
+        SGST = ₹1,800 ÷ 2 =
+        <strong>₹900</strong>
+      </p>
+
+      <p>
+        Therefore:
+      </p>
+
+      <ul>
+
+        <li>
+          Taxable amount: <strong>₹10,000</strong>
+        </li>
+
+        <li>
+          CGST: <strong>₹900</strong>
+        </li>
+
+        <li>
+          SGST: <strong>₹900</strong>
+        </li>
+
+        <li>
+          Total GST: <strong>₹1,800</strong>
+        </li>
+
+        <li>
+          Final amount: <strong>₹11,800</strong>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- REVERSE GST EXAMPLE -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        Reverse GST Calculation Example
+      </h2>
+
+      <p>
+        Now suppose the final invoice amount is
+        <strong>₹11,800</strong> and this amount already includes
+        GST at 18%.
+      </p>
+
+      <p>
+        To find the original taxable value:
+      </p>
+
+      <p>
+        Base Amount =
+        ₹11,800 × 100 ÷ 118
+      </p>
+
+      <p>
+        <strong>
+          Base Amount = ₹10,000
+        </strong>
+      </p>
+
+      <p>
+        The GST component is:
+      </p>
+
+      <p>
+        ₹11,800 − ₹10,000 =
+        <strong>₹1,800 GST</strong>
+      </p>
+
+      <p>
+        This is why removing GST from an inclusive amount requires
+        the reverse-GST formula rather than simply subtracting 18%.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GST INCLUSIVE VS EXCLUSIVE -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        GST Inclusive vs GST Exclusive
+      </h2>
+
+      <p>
+        Understanding whether a displayed price includes GST is
+        important when calculating the final cost or preparing an
+        invoice.
+      </p>
+
+
+      <h3>
+        GST Exclusive Price
+      </h3>
+
+      <p>
+        A GST-exclusive price is the amount before GST has been
+        added.
+      </p>
+
+      <p>
+        For example, if the taxable price is ₹10,000 and GST is
+        18%, the GST is ₹1,800 and the customer pays ₹11,800.
+      </p>
+
+
+      <h3>
+        GST Inclusive Price
+      </h3>
+
+      <p>
+        A GST-inclusive price already contains the applicable GST.
+      </p>
+
+      <p>
+        If the invoice total is ₹11,800 including 18% GST, the
+        taxable value is ₹10,000 and the GST component is ₹1,800.
+      </p>
+
+
+      <div class="table-responsive">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>
+                Price Type
+              </th>
+
+              <th>
+                Meaning
+              </th>
+
+              <th>
+                Calculation
+              </th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>
+                GST Exclusive
+              </td>
+
+              <td>
+                Price before GST
+              </td>
+
+              <td>
+                Base + GST
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                GST Inclusive
+              </td>
+
+              <td>
+                Price already containing GST
+              </td>
+
+              <td>
+                Total includes base + GST
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GST RATE TABLE -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        Common GST Rate Options
+      </h2>
+
+      <p>
+        The calculator includes several commonly used GST rate
+        options for convenience. The applicable rate depends on the
+        jurisdiction, product or service, classification, and
+        transaction circumstances.
+      </p>
+
+      <div class="table-responsive">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>
+                GST Rate
+              </th>
+
+              <th>
+                Example Calculation on ₹10,000
+              </th>
+
+              <th>
+                GST Amount
+              </th>
+
+              <th>
+                Total Including GST
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>
+                0%
+              </td>
+
+              <td>
+                ₹10,000 × 0%
+              </td>
+
+              <td>
+                ₹0
+              </td>
+
+              <td>
+                ₹10,000
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                5%
+              </td>
+
+              <td>
+                ₹10,000 × 5%
+              </td>
+
+              <td>
+                ₹500
+              </td>
+
+              <td>
+                ₹10,500
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                12%
+              </td>
+
+              <td>
+                ₹10,000 × 12%
+              </td>
+
+              <td>
+                ₹1,200
+              </td>
+
+              <td>
+                ₹11,200
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                18%
+              </td>
+
+              <td>
+                ₹10,000 × 18%
+              </td>
+
+              <td>
+                ₹1,800
+              </td>
+
+              <td>
+                ₹11,800
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                28%
+              </td>
+
+              <td>
+                ₹10,000 × 28%
+              </td>
+
+              <td>
+                ₹2,800
+              </td>
+
+              <td>
+                ₹12,800
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <p class="small-text">
+
+        <strong>
+          Important:
+        </strong>
+
+        GST rates are not universal. Always verify the rate that
+        applies to the specific product, service, transaction, and
+        jurisdiction before using a calculated amount for an actual
+        invoice, tax filing, or payment.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CGST SGST IGST -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        CGST, SGST, and IGST Explained
+      </h2>
+
+      <p>
+        GST can be represented through different tax components
+        depending on the nature of the transaction.
+      </p>
+
+
+      <h3>
+        CGST
+      </h3>
+
+      <p>
+        CGST stands for Central Goods and Services Tax. In an
+        applicable intra-state transaction, it can form one part of
+        the total GST charged.
+      </p>
+
+
+      <h3>
+        SGST
+      </h3>
+
+      <p>
+        SGST stands for State Goods and Services Tax. In an applicable
+        intra-state transaction, it can form the other part of the
+        GST charged.
+      </p>
+
+
+      <h3>
+        UTGST
+      </h3>
+
+      <p>
+        UTGST refers to Union Territory Goods and Services Tax and
+        can apply in relevant transactions involving Union
+        Territories under the applicable rules.
+      </p>
+
+
+      <h3>
+        IGST
+      </h3>
+
+      <p>
+        IGST stands for Integrated Goods and Services Tax. It is used
+        for applicable inter-state supplies and certain other
+        transactions covered by GST rules.
+      </p>
+
+
+      <div class="table-responsive">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>
+                Component
+              </th>
+
+              <th>
+                General Purpose
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>
+                CGST
+              </td>
+
+              <td>
+                Central component of applicable intra-state GST
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                SGST
+              </td>
+
+              <td>
+                State component of applicable intra-state GST
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                UTGST
+              </td>
+
+              <td>
+                Union Territory component in applicable cases
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                IGST
+              </td>
+
+              <td>
+                Integrated tax for applicable inter-state supplies
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHEN TO USE -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        When Can You Use a GST Calculator?
+      </h2>
+
+      <p>
+        A GST calculator can be useful whenever you need to determine
+        a tax amount or understand how GST affects the final price.
+      </p>
+
+      <ul>
+
+        <li>
+          Checking the GST component of an invoice
+        </li>
+
+        <li>
+          Calculating the selling price after adding GST
+        </li>
+
+        <li>
+          Finding the taxable value from a GST-inclusive price
+        </li>
+
+        <li>
+          Estimating tax on goods or services
+        </li>
+
+        <li>
+          Comparing prices before and after GST
+        </li>
+
+        <li>
+          Preparing preliminary price estimates
+        </li>
+
+        <li>
+          Checking CGST and SGST components
+        </li>
+
+        <li>
+          Estimating IGST for an applicable inter-state transaction
+        </li>
+
+        <li>
+          Checking calculations before preparing an invoice
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- COMMON MISTAKES -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        Common GST Calculation Mistakes
+      </h2>
+
+
+      <h3>
+        1. Subtracting the GST Percentage Directly
+      </h3>
+
+      <p>
+        If a price already includes GST, subtracting the GST
+        percentage directly from the total does not correctly recover
+        the taxable value. Use the reverse GST formula instead.
+      </p>
+
+
+      <h3>
+        2. Using the Wrong GST Rate
+      </h3>
+
+      <p>
+        The correct rate depends on the applicable tax rules and the
+        classification of the goods or services. Do not assume that
+        the same rate applies to every transaction.
+      </p>
+
+
+      <h3>
+        3. Confusing Taxable Value With Final Price
+      </h3>
+
+      <p>
+        The taxable value is the amount on which GST is calculated.
+        The final price can include both the taxable value and the
+        GST amount.
+      </p>
+
+
+      <h3>
+        4. Confusing CGST + SGST With IGST
+      </h3>
+
+      <p>
+        The tax components depend on the nature of the transaction.
+        An applicable intra-state transaction may involve CGST and
+        SGST/UTGST, while an applicable inter-state transaction may
+        involve IGST.
+      </p>
+
+
+      <h3>
+        5. Treating the Calculator as a Tax Filing Tool
+      </h3>
+
+      <p>
+        A calculator provides mathematical results based on the
+        information entered. It does not determine the legal tax
+        classification or replace professional tax advice.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BUSINESS USE -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        GST Calculator for Businesses and Sellers
+      </h2>
+
+      <p>
+        Businesses and sellers can use a GST calculator as a quick
+        way to estimate tax-inclusive prices and understand the GST
+        component of a transaction.
+      </p>
+
+      <p>
+        For example, a seller who has a pre-tax product price can add
+        the applicable GST rate to estimate the customer's total
+        amount. Conversely, if a displayed selling price already
+        includes GST, the reverse calculation can help estimate the
+        taxable value and tax component.
+      </p>
+
+      <p>
+        For actual invoices, accounting records, GST returns, and
+        compliance decisions, the applicable tax rules and official
+        documentation should always be checked separately.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section
+id="faq"
+class="section-small"
+>
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        Frequently Asked Questions About GST
+      </h2>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What is GST?
+        </h3>
+
+        <p>
+          GST stands for Goods and Services Tax. It is a consumption
+          tax system used in multiple jurisdictions, with specific
+          rules and rates determined by the relevant jurisdiction.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          How do I calculate GST on a price?
+        </h3>
+
+        <p>
+          Multiply the taxable amount by the GST rate and divide by
+          100. Add the resulting GST amount to the taxable amount to
+          obtain the GST-inclusive price.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          How do I remove GST from an inclusive price?
+        </h3>
+
+        <p>
+          Divide the GST-inclusive amount by 100 plus the GST rate,
+          then multiply by 100 to find the taxable amount. The GST
+          component is the difference between the inclusive amount and
+          taxable amount.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          How is 18% GST calculated?
+        </h3>
+
+        <p>
+          For a taxable amount of ₹10,000, 18% GST is ₹1,800, making
+          the total ₹11,800 when GST is added to the price.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What is the difference between CGST and SGST?
+        </h3>
+
+        <p>
+          CGST and SGST can represent the two components of applicable
+          intra-state GST. When the applicable GST is split equally,
+          each component represents half of the total GST rate.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          What is IGST?
+        </h3>
+
+        <p>
+          IGST stands for Integrated Goods and Services Tax. It is
+          applicable to qualifying inter-state supplies and certain
+          other transactions under the relevant GST rules.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Can I use this calculator for GST-inclusive prices?
+        </h3>
+
+        <p>
+          Yes. Select the option to remove GST from the amount and
+          enter the GST-inclusive price. The calculator will estimate
+          the taxable value and GST component.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Can I enter my own GST rate?
+        </h3>
+
+        <p>
+          Yes. Select Custom Rate and enter the GST percentage you
+          want to use.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Are GST rates the same for every product?
+        </h3>
+
+        <p>
+          No. Applicable GST rates can depend on the jurisdiction,
+          product or service classification, transaction type, and
+          other tax rules. Always verify the applicable rate before
+          using a result for an actual transaction.
+        </p>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <h3>
+          Is this calculator suitable for tax filing?
+        </h3>
+
+        <p>
+          The calculator is designed for mathematical estimates and
+          general calculations. It should not be treated as a
+          substitute for official tax guidance, accounting software,
+          or professional tax advice.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RELATED CALCULATORS -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        Related Calculators
+      </h2>
+
+      <p>
+        Explore other CalclyWorld calculators that can help with
+        prices, percentages, taxes, and financial calculations.
+      </p>
+
+
+      <div class="calculator-grid">
+
+
+        <a
+        href="/percentage-calculator.html"
+        class="calculator-card"
+        >
+
+          <h3>
+            Percentage Calculator
+          </h3>
+
+          <p>
+            Calculate percentages, percentage changes, and related
+            percentage values.
+          </p>
+
+        </a>
+
+
+        <a
+        href="/discount-calculator.html"
+        class="calculator-card"
+        >
+
+          <h3>
+            Discount Calculator
+          </h3>
+
+          <p>
+            Calculate discounts, savings, and final prices after a
+            percentage discount.
+          </p>
+
+        </a>
+
+
+        <a
+        href="/tax-calculator.html"
+        class="calculator-card"
+        >
+
+          <h3>
+            Tax Calculator
+          </h3>
+
+          <p>
+            Estimate tax amounts using the inputs and assumptions
+            provided by the calculator.
+          </p>
+
+        </a>
+
+
+        <a
+        href="/salary-calculator.html"
+        class="calculator-card"
+        >
+
+          <h3>
+            Salary Calculator
+          </h3>
+
+          <p>
+            Calculate salary-related amounts and understand different
+            components of compensation.
+          </p>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DISCLAIMER -->
+
+<section class="section-small">
+
+  <div class="content">
+
+    <div class="content-card">
+
+      <h2>
+        GST Calculator Disclaimer
+      </h2>
+
+      <p>
+        This GST calculator is provided for general informational
+        and mathematical purposes. The result depends entirely on
+        the amount, GST rate, and transaction details entered by the
+        user.
+      </p>
+
+      <p>
+        Tax rates, classifications, exemptions, place-of-supply
+        rules, invoicing requirements, and other GST rules can change
+        and can vary according to jurisdiction and transaction
+        circumstances.
+      </p>
+
+      <p>
+        Before relying on a calculation for an actual invoice,
+        accounting record, tax return, payment, or compliance
+        decision, verify the applicable rules using the relevant
+        official tax authority or consult a qualified tax
+        professional.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+
+    <div class="footer-column">
+
+      <h3>
+        CalclyWorld
+      </h3>
+
+      <p>
+        CalclyWorld provides free online calculators for finance,
+        everyday life, math, home construction, automotive,
+        technology, conversion, travel, lifestyle, and utility needs.
+        Every calculator is designed to be simple, useful, and easy to use.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Quick Links
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="/about.html">
+            About Us
+          </a>
+        </li>
+
+        <li>
+          <a href="/contact.html">
+            Contact Us
+          </a>
+        </li>
+
+        <li>
+          <a href="/privacy.html">
+            Privacy Policy
+          </a>
+        </li>
+
+        <li>
+          <a href="/terms.html">
+            Terms &amp; Conditions
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Popular Calculators
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="/age-calculator.html">
+            Age Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="/emi-calculator.html">
+            EMI Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="/gst-calculator.html">
+            GST Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="/mortgage-calculator.html">
+            Mortgage Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="/compound-interest-calculator.html">
+            Compound Interest Calculator
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Calculator Categories
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="/#finance">
+            Finance
+          </a>
+        </li>
+
+        <li>
+          <a href="/#everyday">
+            Everyday
+          </a>
+        </li>
+
+        <li>
+          <a href="/#math">
+            Math
+          </a>
+        </li>
+
+        <li>
+          <a href="/#home-construction">
+            Home &amp; Construction
+          </a>
+        </li>
+
+        <li>
+          <a href="/#automotive">
+            Automotive
+          </a>
+        </li>
+
+        <li>
+          <a href="/#technology">
+            Technology
+          </a>
+        </li>
+
+        <li>
+          <a href="/#conversion">
+            Conversion
+          </a>
+        </li>
+
+        <li>
+          <a href="/#travel">
+            Travel
+          </a>
+        </li>
+
+        <li>
+          <a href="/#lifestyle">
+            Lifestyle
+          </a>
+        </li>
+
+        <li>
+          <a href="/#utility">
+            Utility
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      ©
+      <span data-current-year></span>
+      CalclyWorld.
+      All rights reserved.
+    </p>
+
+  </div>
+
 </footer>
 
-<script src="gst-script.js"></script>
+
+<!-- SHARED WEBSITE JAVASCRIPT -->
+
+<script src="/script-v2.js"></script>
+
+
+<!-- GST CALCULATOR JAVASCRIPT -->
+
+<script src="/gst-calculator.js"></script>
+
 
 </body>
+
 </html>
