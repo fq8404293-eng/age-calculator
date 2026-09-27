@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Homepage -->
@@ -9,6 +8,7 @@
   </url>
 
   <!-- Finance Calculators -->
+  <url><loc>https://calclyworld.com/loan-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://calclyworld.com/sip-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://calclyworld.com/savings-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://calclyworld.com/fixed-deposit-calculator.html</loc><priority>0.8</priority></url>
@@ -124,24 +124,9 @@
   <url><loc>https://calclyworld.com/retirement-calculator.html</loc><priority>0.8</priority></url>
 
   <!-- Important Site Pages -->
-  <url>
-    <loc>https://calclyworld.com/about.html</loc>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://calclyworld.com/contact.html</loc>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://calclyworld.com/privacy.html</loc>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://calclyworld.com/terms.html</loc>
-    <priority>0.5</priority>
-  </url>
+  <url><loc>https://calclyworld.com/about.html</loc><priority>0.5</priority></url>
+  <url><loc>https://calclyworld.com/contact.html</loc><priority>0.5</priority></url>
+  <url><loc>https://calclyworld.com/privacy.html</loc><priority>0.5</priority></url>
+  <url><loc>https://calclyworld.com/terms.html</loc><priority>0.5</priority></url>
 
 </urlset>
