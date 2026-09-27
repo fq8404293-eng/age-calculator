@@ -116,6 +116,13 @@ const CALCULATORS = [
         url: "/personal-loan-calculator.html"
     },
 
+        {
+        name: "Loan Calculator",
+        category: "Finance",
+        url: "/loan-calculator.html"
+    },
+
+
     {
         name: "Car Loan Calculator",
         category: "Finance",
