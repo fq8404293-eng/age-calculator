@@ -123,12 +123,6 @@
   <url><loc>https://calclyworld.com/percentage-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://calclyworld.com/retirement-calculator.html</loc><priority>0.8</priority></url>
 
-  <!-- Existing BMI page -->
-  <url>
-    <loc>https://calclyworld.com/bmi-calculator.html</loc>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Important Site Pages -->
   <url>
     <loc>https://calclyworld.com/about.html</loc>
