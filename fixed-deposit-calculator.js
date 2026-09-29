@@ -18,7 +18,6 @@ const fixedDepositCalculatorSearchData = [
 { name: "GST Calculator", url: "gst-calculator.html" },
 { name: "Percentage Calculator", url: "percentage-calculator.html" },
 { name: "Tip Calculator", url: "tip-calculator.html" },
-{ name: "BMI Calculator", url: "bmi-calculator.html" },
 { name: "Age Calculator", url: "age-calculator.html" }
 ];
 
