@@ -1,3 +1,4 @@
+
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -211,14 +212,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const day =
       Number(parts[2]);
 
-
     const date =
       new Date(
         year,
         month - 1,
         day
       );
-
 
     if (
       date.getFullYear() !== year ||
@@ -274,27 +273,58 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-
-  /* =========================================================
-     INITIALIZE DATE
-  ========================================================= */
-
-  birthDateInput.max =
-    dateToInput(today());
-
-
   /* =========================================================
      BIRTHDAY DROPDOWNS
   ========================================================= */
 
-  function populateYears() {
+  function populateBirthdayDropdowns() {
 
-    const currentYear =
-      today().getFullYear();
+    if (!birthMonth || !birthDay || !birthYear) {
+      return;
+    }
+
+    birthMonth.innerHTML =
+      '<option value="">Month</option>';
+
+    const months = [
+      "January", "February", "March",
+      "April", "May", "June",
+      "July", "August", "September",
+      "October", "November", "December"
+    ];
+
+    months.forEach((month, index) => {
+
+      const option =
+        document.createElement("option");
+
+      option.value = String(index + 1);
+      option.textContent = month;
+
+      birthMonth.appendChild(option);
+    });
+
+
+    birthDay.innerHTML =
+      '<option value="">Day</option>';
+
+    for (let day = 1; day <= 31; day++) {
+
+      const option =
+        document.createElement("option");
+
+      option.value = String(day);
+      option.textContent = String(day);
+
+      birthDay.appendChild(option);
+    }
+
 
     birthYear.innerHTML =
       '<option value="">Year</option>';
 
+    const currentYear =
+      today().getFullYear();
 
     for (
       let year = currentYear;
@@ -305,243 +335,108 @@ document.addEventListener("DOMContentLoaded", () => {
       const option =
         document.createElement("option");
 
-      option.value =
-        String(year);
-
-      option.textContent =
-        String(year);
+      option.value = String(year);
+      option.textContent = String(year);
 
       birthYear.appendChild(option);
     }
   }
 
 
-  function populateDays() {
+  function updateBirthdayDays() {
+
+    if (!birthMonth || !birthDay) {
+      return;
+    }
 
     const month =
       Number(birthMonth.value);
 
     const year =
-      Number(birthYear.value) ||
-      today().getFullYear();
-
-    const previousDay =
-      Number(birthDay.value);
-
-
-    birthDay.innerHTML =
-      '<option value="">Day</option>';
-
+      birthYear && birthYear.value
+        ? Number(birthYear.value)
+        : today().getFullYear();
 
     if (!month) {
       return;
     }
 
+    const maximumDay =
+      daysInMonth(year, month);
 
-    const totalDays =
-      daysInMonth(
-        year,
-        month
-      );
+    const previousDay =
+      Number(birthDay.value);
 
+    birthDay.innerHTML =
+      '<option value="">Day</option>';
 
     for (
       let day = 1;
-      day <= totalDays;
+      day <= maximumDay;
       day++
     ) {
 
       const option =
         document.createElement("option");
 
-      option.value =
-        String(day);
-
-      option.textContent =
-        String(day);
+      option.value = String(day);
+      option.textContent = String(day);
 
       birthDay.appendChild(option);
     }
 
-
     if (
       previousDay >= 1 &&
-      previousDay <= totalDays
+      previousDay <= maximumDay
     ) {
-
       birthDay.value =
         String(previousDay);
     }
   }
 
 
-  populateYears();
+  populateBirthdayDropdowns();
 
 
-  birthMonth.addEventListener(
-    "change",
-    populateDays
-  );
+  if (birthMonth) {
+    birthMonth.addEventListener(
+      "change",
+      updateBirthdayDays
+    );
+  }
 
-
-  birthYear.addEventListener(
-    "change",
-    populateDays
-  );
-
-
-  /* =========================================================
-     USE DROPDOWN BIRTHDAY
-  ========================================================= */
-
-  applyBirthdayButton.addEventListener(
-    "click",
-    () => {
-
-      clearError();
-
-
-      const month =
-        Number(birthMonth.value);
-
-      const day =
-        Number(birthDay.value);
-
-      const year =
-        Number(birthYear.value);
-
-
-      if (!month || !day || !year) {
-
-        showError(
-          "Please select your month, day and year."
-        );
-
-        return;
-      }
-
-
-      const date =
-        new Date(
-          year,
-          month - 1,
-          day
-        );
-
-
-      if (
-        date.getFullYear() !== year ||
-        date.getMonth() !== month - 1 ||
-        date.getDate() !== day
-      ) {
-
-        showError(
-          "Please select a valid birthday."
-        );
-
-        return;
-      }
-
-
-      if (date > today()) {
-
-        showError(
-          "Your birthday cannot be in the future."
-        );
-
-        return;
-      }
-
-
-      birthDateInput.value =
-        dateToInput(date);
-
-
-      clearError();
-    }
-  );
-
-
-  /* =========================================================
-     VALIDATION
-  ========================================================= */
-
-  function showError(message) {
-
-    birthDateError.textContent =
-      message;
-
-    birthDateError.hidden =
-      false;
+  if (birthYear) {
+    birthYear.addEventListener(
+      "change",
+      updateBirthdayDays
+    );
   }
 
 
-  function clearError() {
+  /* =========================================================
+     AGE CALCULATION
+  ========================================================= */
 
-    birthDateError.textContent =
-      "";
+  function calculateAge(birthDate, referenceDate = today()) {
 
-    birthDateError.hidden =
-      true;
-  }
-
-
-  function validateBirthDate() {
-
-    clearError();
-
-
-    const date =
-      inputToDate(
-        birthDateInput.value
-      );
-
-
-    if (!date) {
-
-      showError(
-        "Please enter your date of birth."
-      );
-
+    if (
+      !(birthDate instanceof Date) ||
+      Number.isNaN(birthDate.getTime()) ||
+      birthDate > referenceDate
+    ) {
       return null;
     }
-
-
-    if (date > today()) {
-
-      showError(
-        "Date of birth cannot be in the future."
-      );
-
-      return null;
-    }
-
-
-    return date;
-  }
-
-
-  /* =========================================================
-     EXACT AGE
-  ========================================================= */
-
-  function calculateExactAge(
-    birthDate,
-    currentDate
-  ) {
 
     let years =
-      currentDate.getFullYear() -
+      referenceDate.getFullYear() -
       birthDate.getFullYear();
 
-
     let months =
-      currentDate.getMonth() -
+      referenceDate.getMonth() -
       birthDate.getMonth();
 
-
     let days =
-      currentDate.getDate() -
+      referenceDate.getDate() -
       birthDate.getDate();
 
 
@@ -549,140 +444,339 @@ document.addEventListener("DOMContentLoaded", () => {
 
       months--;
 
-      const previousMonthDays =
-        new Date(
-          currentDate.getFullYear(),
-          currentDate.getMonth(),
-          0
-        ).getDate();
+      const previousMonth =
+        referenceDate.getMonth() === 0
+          ? 12
+          : referenceDate.getMonth();
 
-      days += previousMonthDays;
+      const previousMonthYear =
+        referenceDate.getMonth() === 0
+          ? referenceDate.getFullYear() - 1
+          : referenceDate.getFullYear();
+
+      days += daysInMonth(
+        previousMonthYear,
+        previousMonth
+      );
     }
 
 
     if (months < 0) {
-
       years--;
-
       months += 12;
+    }
+
+
+    /*
+      Handle February 29 birthdays in non-leap years.
+      This uses the common February 28 convention.
+    */
+
+    const birthdayThisYear =
+      new Date(
+        referenceDate.getFullYear(),
+        birthDate.getMonth(),
+        birthDate.getDate()
+      );
+
+    if (
+      birthDate.getMonth() === 1 &&
+      birthDate.getDate() === 29 &&
+      !isLeapYear(referenceDate.getFullYear())
+    ) {
+      birthdayThisYear.setDate(28);
     }
 
 
     return {
       years,
       months,
-      days
+      days,
+      totalDays: Math.floor(
+        (
+          referenceDate.getTime() -
+          new Date(
+            birthDate.getFullYear(),
+            birthDate.getMonth(),
+            birthDate.getDate()
+          ).getTime()
+        ) / 86400000
+      )
     };
   }
 
 
   /* =========================================================
-     TOTAL DAYS
+     INPUT VALIDATION
   ========================================================= */
 
-  function getTotalDays(
-    birthDate,
-    currentDate
-  ) {
+  function showBirthDateError(message) {
 
-    const milliseconds =
-      currentDate.getTime() -
-      birthDate.getTime();
+    if (birthDateError) {
+      birthDateError.textContent = message;
+      birthDateError.hidden = false;
+    }
+
+    if (birthDateInput) {
+      birthDateInput.setAttribute(
+        "aria-invalid",
+        "true"
+      );
+    }
+  }
 
 
-    return Math.floor(
-      milliseconds / 86400000
+  function clearBirthDateError() {
+
+    if (birthDateError) {
+      birthDateError.textContent = "";
+      birthDateError.hidden = true;
+    }
+
+    if (birthDateInput) {
+      birthDateInput.removeAttribute(
+        "aria-invalid"
+      );
+    }
+  }
+
+
+  function getValidBirthDate() {
+
+    clearBirthDateError();
+
+    const birthDate =
+      inputToDate(
+        birthDateInput
+          ? birthDateInput.value
+          : ""
+      );
+
+    if (!birthDateInput || !birthDateInput.value) {
+
+      showBirthDateError(
+        "Please enter your date of birth."
+      );
+
+      return null;
+    }
+
+    if (!birthDate) {
+
+      showBirthDateError(
+        "Please enter a valid date."
+      );
+
+      return null;
+    }
+
+    if (birthDate > today()) {
+
+      showBirthDateError(
+        "Your date of birth cannot be in the future."
+      );
+
+      return null;
+    }
+
+    if (
+      birthDate.getFullYear() < 1900
+    ) {
+
+      showBirthDateError(
+        "Please enter a year from 1900 onward."
+      );
+
+      return null;
+    }
+
+    return birthDate;
+  }
+
+  /* =========================================================
+     DISPLAY AGE RESULTS
+  ========================================================= */
+
+  function setText(element, value) {
+
+    if (element) {
+      element.textContent = String(value);
+    }
+  }
+
+
+  function showSection(element) {
+
+    if (element) {
+      element.hidden = false;
+    }
+  }
+
+
+  function displayAgeResults(birthDate) {
+
+    const age =
+      calculateAge(birthDate);
+
+    if (!age) {
+      return;
+    }
+
+    selectedBirthDate = birthDate;
+
+    setText(
+      exactAge,
+      `${age.years} years, ${age.months} months, ${age.days} days`
     );
+
+    setText(ageYears, age.years);
+    setText(ageMonths, age.months);
+    setText(ageDays, age.days);
+
+
+    /* Birthday information */
+
+    setText(
+      birthWeekday,
+      WEEKDAYS[birthDate.getDay()]
+    );
+
+    setText(
+      zodiacSign,
+      getZodiacSign(
+        birthDate.getMonth() + 1,
+        birthDate.getDate()
+      )
+    );
+
+    setText(
+      birthstone,
+      getBirthstone(birthDate.getMonth())
+    );
+
+    setText(
+      birthSeason,
+      getBirthSeason(birthDate.getMonth())
+    );
+
+
+    /* Total time lived */
+
+    const totalDaysLived =
+      age.totalDays;
+
+    setText(
+      totalMonths,
+      age.years * 12 + age.months
+    );
+
+    setText(
+      totalWeeks,
+      Math.floor(totalDaysLived / 7)
+    );
+
+    setText(
+      totalDays,
+      formatNumber(totalDaysLived)
+    );
+
+    setText(
+      totalHours,
+      formatNumber(totalDaysLived * 24)
+    );
+
+    setText(
+      totalMinutes,
+      formatNumber(totalDaysLived * 1440)
+    );
+
+
+    /* Show result sections */
+
+    showSection(resultSection);
+    showSection(birthdayCountdown);
+    showSection(birthdayInformation);
+    showSection(timeLived);
+    showSection(liveAgeSection);
+
+
+    updateBirthdayCountdown();
+    updateLiveAge();
+
+    startCountdownTimer();
+    startLiveAgeTimer();
+
+    if (resultSection) {
+      resultSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
   }
 
 
   /* =========================================================
-     ZODIAC
+     ZODIAC SIGN
   ========================================================= */
 
-  function getZodiac(
-    month,
-    day
-  ) {
-
-    if (
-      (month === 1 && day >= 20) ||
-      (month === 2 && day <= 18)
-    ) {
-      return "Aquarius";
-    }
-
-    if (
-      (month === 2 && day >= 19) ||
-      (month === 3 && day <= 20)
-    ) {
-      return "Pisces";
-    }
+  function getZodiacSign(month, day) {
 
     if (
       (month === 3 && day >= 21) ||
       (month === 4 && day <= 19)
-    ) {
-      return "Aries";
-    }
+    ) return "Aries";
 
     if (
       (month === 4 && day >= 20) ||
       (month === 5 && day <= 20)
-    ) {
-      return "Taurus";
-    }
+    ) return "Taurus";
 
     if (
       (month === 5 && day >= 21) ||
       (month === 6 && day <= 20)
-    ) {
-      return "Gemini";
-    }
+    ) return "Gemini";
 
     if (
       (month === 6 && day >= 21) ||
       (month === 7 && day <= 22)
-    ) {
-      return "Cancer";
-    }
+    ) return "Cancer";
 
     if (
       (month === 7 && day >= 23) ||
       (month === 8 && day <= 22)
-    ) {
-      return "Leo";
-    }
+    ) return "Leo";
 
     if (
       (month === 8 && day >= 23) ||
       (month === 9 && day <= 22)
-    ) {
-      return "Virgo";
-    }
+    ) return "Virgo";
 
     if (
       (month === 9 && day >= 23) ||
       (month === 10 && day <= 22)
-    ) {
-      return "Libra";
-    }
+    ) return "Libra";
 
     if (
       (month === 10 && day >= 23) ||
       (month === 11 && day <= 21)
-    ) {
-      return "Scorpio";
-    }
+    ) return "Scorpio";
 
     if (
       (month === 11 && day >= 22) ||
       (month === 12 && day <= 21)
-    ) {
-      return "Sagittarius";
-    }
+    ) return "Sagittarius";
 
-    return "Capricorn";
+    if (
+      (month === 12 && day >= 22) ||
+      (month === 1 && day <= 19)
+    ) return "Capricorn";
+
+    if (
+      (month === 1 && day >= 20) ||
+      (month === 2 && day <= 18)
+    ) return "Aquarius";
+
+    return "Pisces";
   }
 
 
@@ -690,24 +784,24 @@ document.addEventListener("DOMContentLoaded", () => {
      BIRTHSTONE
   ========================================================= */
 
-  function getBirthstone(month) {
+  function getBirthstone(monthIndex) {
 
-    const stones = {
-      1: "Garnet",
-      2: "Amethyst",
-      3: "Aquamarine",
-      4: "Diamond",
-      5: "Emerald",
-      6: "Pearl",
-      7: "Ruby",
-      8: "Peridot",
-      9: "Sapphire",
-      10: "Opal",
-      11: "Topaz",
-      12: "Turquoise"
-    };
+    const stones = [
+      "Garnet",
+      "Amethyst",
+      "Aquamarine",
+      "Diamond",
+      "Emerald",
+      "Pearl",
+      "Ruby",
+      "Peridot",
+      "Sapphire",
+      "Opal",
+      "Topaz",
+      "Turquoise"
+    ];
 
-    return stones[month];
+    return stones[monthIndex] || "Unknown";
   }
 
 
@@ -715,467 +809,160 @@ document.addEventListener("DOMContentLoaded", () => {
      BIRTH SEASON
   ========================================================= */
 
-  function getBirthSeason(month) {
+  function getBirthSeason(monthIndex) {
 
-    if (
-      month === 12 ||
-      month === 1 ||
-      month === 2
-    ) {
-      return "Winter";
-    }
+    const month = monthIndex + 1;
 
-    if (
-      month >= 3 &&
-      month <= 5
-    ) {
+    /*
+      Meteorological seasons for the Northern Hemisphere.
+    */
+
+    if ([3, 4, 5].includes(month)) {
       return "Spring";
     }
 
-    if (
-      month >= 6 &&
-      month <= 8
-    ) {
+    if ([6, 7, 8].includes(month)) {
       return "Summer";
     }
 
-    return "Autumn";
-  }
+    if ([9, 10, 11].includes(month)) {
+      return "Autumn";
+    }
 
+    return "Winter";
+  }
 
   /* =========================================================
      NEXT BIRTHDAY
   ========================================================= */
 
-  function getNextBirthday(
-    birthDate,
-    referenceDate
-  ) {
+  function getNextBirthday(birthDate) {
 
-    let year =
-      referenceDate.getFullYear();
+    const currentDate = new Date();
 
-    const month =
-      birthDate.getMonth();
+    const currentYear = currentDate.getFullYear();
 
-    const day =
-      birthDate.getDate();
+    const month = birthDate.getMonth();
+    const day = birthDate.getDate();
 
+    let nextBirthday = new Date(
+      currentYear,
+      month,
+      day
+    );
 
-    let birthday;
-
+    /*
+      Use February 28 for a February 29 birthday
+      in a non-leap year.
+    */
 
     if (
       month === 1 &&
       day === 29 &&
-      !isLeapYear(year)
+      !isLeapYear(currentYear)
     ) {
-
-      birthday =
-        new Date(
-          year,
-          1,
-          28
-        );
-
-    } else {
-
-      birthday =
-        new Date(
-          year,
-          month,
-          day
-        );
+      nextBirthday = new Date(
+        currentYear,
+        1,
+        28
+      );
     }
 
+    nextBirthday.setHours(0, 0, 0, 0);
 
-    if (birthday < referenceDate) {
+    const currentDay = today();
 
-      year++;
+    if (nextBirthday < currentDay) {
 
+      const nextYear = currentYear + 1;
 
-      if (
-        month === 1 &&
-        day === 29 &&
-        !isLeapYear(year)
-      ) {
-
-        birthday =
-          new Date(
-            year,
-            1,
-            28
-          );
-
-      } else {
-
-        birthday =
-          new Date(
-            year,
-            month,
-            day
-          );
-      }
-    }
-
-
-    return birthday;
-  }
-
-
-  /* =========================================================
-     MAIN CALCULATION
-  ========================================================= */
-
-  function calculateAge() {
-
-    const birthDate =
-      validateBirthDate();
-
-
-    if (!birthDate) {
-      hideResults();
-      return;
-    }
-
-
-    selectedBirthDate =
-      birthDate;
-
-
-    const currentDate =
-      today();
-
-
-    const age =
-      calculateExactAge(
-        birthDate,
-        currentDate
-      );
-
-
-    const days =
-      getTotalDays(
-        birthDate,
-        currentDate
-      );
-
-
-    const months =
-      age.years * 12 +
-      age.months;
-
-
-    const weeks =
-      Math.floor(
-        days / 7
-      );
-
-
-    const hours =
-      days * 24;
-
-
-    const minutes =
-      hours * 60;
-
-
-    /* Exact age */
-
-    ageYears.textContent =
-      formatNumber(age.years);
-
-    ageMonths.textContent =
-      formatNumber(age.months);
-
-    ageDays.textContent =
-      formatNumber(age.days);
-
-
-    exactAge.textContent =
-      `${age.years} years, ${age.months} months, ${age.days} days`;
-
-
-    /* Time lived */
-
-    totalMonths.textContent =
-      formatNumber(months);
-
-    totalWeeks.textContent =
-      formatNumber(weeks);
-
-    totalDays.textContent =
-      formatNumber(days);
-
-    totalHours.textContent =
-      formatNumber(hours);
-
-    totalMinutes.textContent =
-      formatNumber(minutes);
-
-
-    /* Birthday information */
-
-    const month =
-      birthDate.getMonth() + 1;
-
-    const day =
-      birthDate.getDate();
-
-
-    birthWeekday.textContent =
-      WEEKDAYS[
-        birthDate.getDay()
-      ];
-
-
-    zodiacSign.textContent =
-      getZodiac(
+      nextBirthday = new Date(
+        nextYear,
         month,
         day
       );
 
-
-    birthstone.textContent =
-      getBirthstone(month);
-
-
-    birthSeason.textContent =
-      getBirthSeason(month);
-
-
-    /* Next birthday */
-
-    const nextBirthday =
-      getNextBirthday(
-        birthDate,
-        currentDate
-      );
-
-
-    nextBirthdayDate.textContent =
-      formatDate(
-        nextBirthday
-      );
-
-
-    nextBirthdayWeekday.textContent =
-      WEEKDAYS[
-        nextBirthday.getDay()
-      ];
-
-
-    nextBirthdayText.textContent =
-      `Your next birthday is ${formatDate(nextBirthday)}.`;
-
-
-    /* Show sections */
-
-    resultSection.hidden =
-      false;
-
-    birthdayCountdown.hidden =
-      false;
-
-    birthdayInformation.hidden =
-      false;
-
-    timeLived.hidden =
-      false;
-
-    liveAgeSection.hidden =
-      false;
-
-
-    /* Start live features */
-
-    startBirthdayCountdown(
-      birthDate
-    );
-
-
-    startLiveAge(
-      birthDate
-    );
-
-
-    /* Scroll */
-
-    setTimeout(() => {
-
-      resultSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-    }, 100);
-  }
-
-
-  /* =========================================================
-     BIRTHDAY COUNTDOWN
-  ========================================================= */
-
-  function startBirthdayCountdown(
-    birthDate
-  ) {
-
-    stopBirthdayCountdown();
-
-    updateBirthdayCountdown(
-      birthDate
-    );
-
-
-    countdownTimer =
-      setInterval(() => {
-
-        updateBirthdayCountdown(
-          birthDate
+      if (
+        month === 1 &&
+        day === 29 &&
+        !isLeapYear(nextYear)
+      ) {
+        nextBirthday = new Date(
+          nextYear,
+          1,
+          28
         );
+      }
 
-      }, 1000);
-  }
-
-
-  function stopBirthdayCountdown() {
-
-    if (countdownTimer) {
-
-      clearInterval(
-        countdownTimer
-      );
-
-      countdownTimer =
-        null;
+      nextBirthday.setHours(0, 0, 0, 0);
     }
+
+    return nextBirthday;
   }
 
 
-  function updateBirthdayCountdown(
-    birthDate
-  ) {
+  function updateBirthdayCountdown() {
 
-    const now =
-      new Date();
-
-
-    const todayDate =
-      new Date(
-        now.getFullYear(),
-        now.getMonth(),
-        now.getDate()
-      );
-
-
-    const nextBirthday =
-      getNextBirthday(
-        birthDate,
-        todayDate
-      );
-
-
-    const birthdayStart =
-      new Date(
-        nextBirthday.getFullYear(),
-        nextBirthday.getMonth(),
-        nextBirthday.getDate()
-      );
-
-
-    let difference =
-      birthdayStart.getTime() -
-      now.getTime();
-
-
-    const birthdayToday =
-      nextBirthday.getFullYear() ===
-        now.getFullYear() &&
-      nextBirthday.getMonth() ===
-        now.getMonth() &&
-      nextBirthday.getDate() ===
-        now.getDate();
-
-
-    if (birthdayToday) {
-
-      birthdayMessage.textContent =
-        "🎉 Happy Birthday! Today is your birthday.";
-
-      countdownDays.textContent =
-        "0";
-
-      countdownHours.textContent =
-        "00";
-
-      countdownMinutes.textContent =
-        "00";
-
-      countdownSeconds.textContent =
-        "00";
-
+    if (!selectedBirthDate) {
       return;
     }
 
+    const now = new Date();
 
-    difference =
-      Math.max(
-        0,
-        difference
-      );
+    const nextBirthday =
+      getNextBirthday(selectedBirthDate);
 
+    const difference =
+      nextBirthday.getTime() - now.getTime();
 
-    const totalSeconds =
-      Math.floor(
-        difference / 1000
-      );
+    const totalSeconds = Math.max(
+      0,
+      Math.floor(difference / 1000)
+    );
 
+    const days = Math.floor(
+      totalSeconds / 86400
+    );
 
-    const days =
-      Math.floor(
-        totalSeconds / 86400
-      );
+    const hours = Math.floor(
+      (totalSeconds % 86400) / 3600
+    );
 
-
-    const hours =
-      Math.floor(
-        (totalSeconds % 86400) /
-        3600
-      );
-
-
-    const minutes =
-      Math.floor(
-        (totalSeconds % 3600) /
-        60
-      );
-
+    const minutes = Math.floor(
+      (totalSeconds % 3600) / 60
+    );
 
     const seconds =
       totalSeconds % 60;
 
+    setText(countdownDays, days);
+    setText(countdownHours, hours);
+    setText(countdownMinutes, minutes);
+    setText(countdownSeconds, seconds);
 
-    countdownDays.textContent =
-      formatNumber(days);
+    setText(
+      nextBirthdayText,
+      days === 0
+        ? "Your birthday is today!"
+        : `${days} day${days === 1 ? "" : "s"} until your next birthday`
+    );
 
+    setText(
+      nextBirthdayDate,
+      formatDate(nextBirthday)
+    );
 
-    countdownHours.textContent =
-      String(hours)
-        .padStart(2, "0");
+    setText(
+      nextBirthdayWeekday,
+      WEEKDAYS[nextBirthday.getDay()]
+    );
 
-
-    countdownMinutes.textContent =
-      String(minutes)
-        .padStart(2, "0");
-
-
-    countdownSeconds.textContent =
-      String(seconds)
-        .padStart(2, "0");
-
-
-    birthdayMessage.textContent =
-      `${days} days until your next birthday.`;
+    setText(
+      birthdayMessage,
+      days === 0
+        ? "Happy Birthday!"
+        : `Your next birthday is on ${formatDate(nextBirthday)}.`
+    );
   }
 
 
@@ -1183,383 +970,310 @@ document.addEventListener("DOMContentLoaded", () => {
      LIVE AGE
   ========================================================= */
 
-  function startLiveAge(
-    birthDate
-  ) {
+  function updateLiveAge() {
 
-    stopLiveAge();
-
-    updateLiveAge(
-      birthDate
-    );
-
-
-    liveAgeTimer =
-      setInterval(() => {
-
-        updateLiveAge(
-          birthDate
-        );
-
-      }, 1000);
-  }
-
-
-  function stopLiveAge() {
-
-    if (liveAgeTimer) {
-
-      clearInterval(
-        liveAgeTimer
-      );
-
-      liveAgeTimer =
-        null;
+    if (!selectedBirthDate) {
+      return;
     }
-  }
 
+    const now = new Date();
 
-  function updateLiveAge(
-    birthDate
-  ) {
-
-    const now =
-      new Date();
-
-
-    const age =
-      calculateExactAge(
-        birthDate,
-        new Date(
-          now.getFullYear(),
-          now.getMonth(),
-          now.getDate()
-        )
-      );
-
-
-    const anniversary =
+    const birth =
       new Date(
-        birthDate.getFullYear() +
-          age.years,
-        birthDate.getMonth(),
-        birthDate.getDate()
+        selectedBirthDate.getFullYear(),
+        selectedBirthDate.getMonth(),
+        selectedBirthDate.getDate()
       );
 
+    const difference =
+      Math.max(0, now.getTime() - birth.getTime());
 
-    let difference =
-      now.getTime() -
-      anniversary.getTime();
+    const totalSeconds =
+      Math.floor(difference / 1000);
 
-
-    if (difference < 0) {
-      difference = 0;
-    }
-
+    const days =
+      Math.floor(totalSeconds / 86400);
 
     const hours =
-      Math.floor(
-        difference / 3600000
-      );
-
+      Math.floor((totalSeconds % 86400) / 3600);
 
     const minutes =
-      Math.floor(
-        (difference % 3600000) /
-        60000
-      );
-
+      Math.floor((totalSeconds % 3600) / 60);
 
     const seconds =
-      Math.floor(
-        (difference % 60000) /
-        1000
-      );
+      totalSeconds % 60;
+
+    setText(
+      liveAge,
+      `${days.toLocaleString("en-US")} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`
+    );
+
+    setText(
+      liveAgeTime,
+      `Last updated: ${now.toLocaleTimeString("en-US")}`
+    );
+  }
 
 
-    liveAge.textContent =
-      `${age.years} years, ${age.months} months, ${age.days} days`;
+  function startCountdownTimer() {
+
+    if (countdownTimer) {
+      clearInterval(countdownTimer);
+    }
+
+    countdownTimer = setInterval(
+      updateBirthdayCountdown,
+      1000
+    );
+  }
 
 
-    liveAgeTime.textContent =
-      `${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+  function startLiveAgeTimer() {
+
+    if (liveAgeTimer) {
+      clearInterval(liveAgeTimer);
+    }
+
+    liveAgeTimer = setInterval(
+      updateLiveAge,
+      1000
+    );
   }
 
 
   /* =========================================================
-     COPY RESULT
+     BIRTHDAY DROPDOWN ACTION
   ========================================================= */
 
-  copyButton.addEventListener(
-    "click",
-    async () => {
+  if (applyBirthdayButton) {
 
-      if (!selectedBirthDate) {
-        return;
+    applyBirthdayButton.addEventListener(
+      "click",
+      () => {
+
+        const month =
+          Number(birthMonth?.value);
+
+        const day =
+          Number(birthDay?.value);
+
+        const year =
+          Number(birthYear?.value);
+
+        if (!month || !day || !year) {
+
+          showBirthDateError(
+            "Please select your birth month, day, and year."
+          );
+
+          return;
+        }
+
+        const date = new Date(
+          year,
+          month - 1,
+          day
+        );
+
+        if (
+          date.getFullYear() !== year ||
+          date.getMonth() !== month - 1 ||
+          date.getDate() !== day
+        ) {
+
+          showBirthDateError(
+            "Please select a valid birthday."
+          );
+
+          return;
+        }
+
+        if (date > today()) {
+
+          showBirthDateError(
+            "Your date of birth cannot be in the future."
+          );
+
+          return;
+        }
+
+        if (birthDateInput) {
+          birthDateInput.value =
+            dateToInput(date);
+        }
+
+        clearBirthDateError();
+        displayAgeResults(date);
       }
-
-
-      const currentDate =
-        today();
-
-
-      const age =
-        calculateExactAge(
-          selectedBirthDate,
-          currentDate
-        );
-
-
-      const days =
-        getTotalDays(
-          selectedBirthDate,
-          currentDate
-        );
-
-
-      const nextBirthday =
-        getNextBirthday(
-          selectedBirthDate,
-          currentDate
-        );
-
-
-      const text =
-`Age Calculator Result
-
-Date of Birth: ${formatDate(selectedBirthDate)}
-
-Exact Age: ${age.years} years, ${age.months} months, ${age.days} days
-
-Total Months: ${formatNumber(
-  age.years * 12 + age.months
-)}
-
-Total Weeks: ${formatNumber(
-  Math.floor(days / 7)
-)}
-
-Total Days: ${formatNumber(days)}
-
-Total Hours: ${formatNumber(
-  days * 24
-)}
-
-Total Minutes: ${formatNumber(
-  days * 24 * 60
-)}
-
-Born On: ${WEEKDAYS[
-  selectedBirthDate.getDay()
-]}
-
-Zodiac Sign: ${getZodiac(
-  selectedBirthDate.getMonth() + 1,
-  selectedBirthDate.getDate()
-)}
-
-Birthstone: ${getBirthstone(
-  selectedBirthDate.getMonth() + 1
-)}
-
-Birth Season: ${getBirthSeason(
-  selectedBirthDate.getMonth() + 1
-)}
-
-Next Birthday: ${formatDate(nextBirthday)}
-
-Next Birthday Day: ${WEEKDAYS[
-  nextBirthday.getDay()
-]}`;
-
-
-      const success =
-        await copyText(text);
-
-
-      if (success) {
-
-        copyStatus.textContent =
-          "Result copied!";
-
-      } else {
-
-        copyStatus.textContent =
-          "Could not copy the result.";
-
-      }
-
-
-      setTimeout(() => {
-
-        copyStatus.textContent =
-          "";
-
-      }, 2500);
-    }
-  );
-
-
-  /* =========================================================
-     COPY FUNCTION
-  ========================================================= */
-
-  async function copyText(text) {
-
-    try {
-
-      if (
-        navigator.clipboard &&
-        window.isSecureContext
-      ) {
-
-        await navigator.clipboard.writeText(
-          text
-        );
-
-        return true;
-      }
-
-    } catch (error) {
-      /* Use fallback */
-    }
-
-
-    try {
-
-      const textarea =
-        document.createElement(
-          "textarea"
-        );
-
-
-      textarea.value =
-        text;
-
-
-      textarea.style.position =
-        "fixed";
-
-      textarea.style.left =
-        "-9999px";
-
-
-      document.body.appendChild(
-        textarea
-      );
-
-
-      textarea.focus();
-
-      textarea.select();
-
-
-      const success =
-        document.execCommand(
-          "copy"
-        );
-
-
-      textarea.remove();
-
-
-      return success;
-
-    } catch (error) {
-
-      return false;
-    }
+    );
   }
 
 
   /* =========================================================
-     CLEAR
+     CALCULATOR FORM SUBMISSION
   ========================================================= */
 
-  clearButton.addEventListener(
-    "click",
-    () => {
+  if (form) {
 
-      form.reset();
+    form.addEventListener(
+      "submit",
+      (event) => {
 
-      clearError();
+        event.preventDefault();
 
-      selectedBirthDate =
-        null;
+        const birthDate =
+          getValidBirthDate();
 
+        if (!birthDate) {
+          return;
+        }
 
-      stopBirthdayCountdown();
-
-      stopLiveAge();
-
-
-      resultSection.hidden =
-        true;
-
-      birthdayCountdown.hidden =
-        true;
-
-      birthdayInformation.hidden =
-        true;
-
-      timeLived.hidden =
-        true;
-
-      liveAgeSection.hidden =
-        true;
-
-
-      copyStatus.textContent =
-        "";
-
-
-      birthDay.innerHTML =
-        '<option value="">Day</option>';
-
-
-      birthYear.value =
-        "";
-
-
-      birthMonth.value =
-        "";
-
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
-  );
+        displayAgeResults(birthDate);
+      }
+    );
+  }
 
 
   /* =========================================================
-     FORM SUBMIT
+     CLEAR CALCULATOR
   ========================================================= */
 
-  form.addEventListener(
-    "submit",
-    (event) => {
+  if (clearButton) {
 
-      event.preventDefault();
+    clearButton.addEventListener(
+      "click",
+      () => {
 
-      calculateAge();
-    }
-  );
+        if (form) {
+          form.reset();
+        }
+
+        if (birthDateInput) {
+          birthDateInput.value = "";
+        }
+
+        if (birthMonth) {
+          birthMonth.value = "";
+        }
+
+        if (birthDay) {
+          birthDay.value = "";
+        }
+
+        if (birthYear) {
+          birthYear.value = "";
+        }
+
+        selectedBirthDate = null;
+
+        clearBirthDateError();
+
+        [
+          resultSection,
+          birthdayCountdown,
+          birthdayInformation,
+          timeLived,
+          liveAgeSection
+        ].forEach((section) => {
+
+          if (section) {
+            section.hidden = true;
+          }
+        });
+
+        if (countdownTimer) {
+          clearInterval(countdownTimer);
+          countdownTimer = null;
+        }
+
+        if (liveAgeTimer) {
+          clearInterval(liveAgeTimer);
+          liveAgeTimer = null;
+        }
+
+        if (copyStatus) {
+          copyStatus.textContent = "";
+        }
+
+        if (birthDateInput) {
+          birthDateInput.focus();
+        }
+      }
+    );
+  }
 
 
   /* =========================================================
-     CLEANUP
+     COPY AGE RESULT
   ========================================================= */
 
-  window.addEventListener(
-    "beforeunload",
-    () => {
+  if (copyButton) {
 
-      stopBirthdayCountdown();
+    copyButton.addEventListener(
+      "click",
+      async () => {
 
-      stopLiveAge();
+        if (!selectedBirthDate) {
+          setText(
+            copyStatus,
+            "Calculate your age first."
+          );
+
+          return;
+        }
+
+        const age =
+          calculateAge(selectedBirthDate);
+
+        if (!age) {
+          return;
+        }
+
+        const textToCopy =
+          `My age is ${age.years} years, ${age.months} months, and ${age.days} days.`;
+
+        try {
+
+          await navigator.clipboard.writeText(
+            textToCopy
+          );
+
+          setText(
+            copyStatus,
+            "Age result copied!"
+          );
+
+        } catch (error) {
+
+          setText(
+            copyStatus,
+            "Copy is unavailable in this browser. Please copy the result manually."
+          );
+        }
+      }
+    );
+  }
+
+
+  /* =========================================================
+     INITIAL SETUP
+  ========================================================= */
+
+  if (birthDateError) {
+    birthDateError.hidden = true;
+  }
+
+  [
+    resultSection,
+    birthdayCountdown,
+    birthdayInformation,
+    timeLived,
+    liveAgeSection
+  ].forEach((section) => {
+
+    if (section) {
+      section.hidden = true;
     }
-  );
+  });
 
 });
