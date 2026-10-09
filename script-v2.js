@@ -732,14 +732,21 @@ function initializeCalculatorSearch() {
         }
 
 
-        const matches = CALCULATORS.filter(calculator => {
+      
 
-            return (
-                calculator.name.toLowerCase().includes(query) ||
-                calculator.category.toLowerCase().includes(query)
-            );
+const normalizedQuery = query.trim().toLowerCase();
 
-        });
+const exactMatches = CALCULATORS.filter(calculator => {
+    return calculator.name.toLowerCase() === normalizedQuery;
+});
+
+const matches = exactMatches.length > 0
+    ? exactMatches
+    : CALCULATORS.filter(calculator => {
+        return calculator.name.toLowerCase().includes(normalizedQuery);
+    });
+
+
 
 
         if (matches.length === 0) {
