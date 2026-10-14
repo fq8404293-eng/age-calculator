@@ -592,13 +592,13 @@ const CALCULATORS = [
     {
         name: "Water Reminder Calculator",
         category: "Lifestyle",
-        url: "/water-reminder-calculator.html"
+       url: "/water-reminder.html"
     },
 
     {
         name: "Daily Habit Tracker Calculator",
         category: "Lifestyle",
-        url: "/daily-habit-tracker-calculator.html"
+      url: "/daily-habit-tracker.html"
     },
 
     {
