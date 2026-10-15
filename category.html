@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style-v2.css">
+<link rel="stylesheet" href="category-directory.css">
+<title>Calculator Categories | CalclyWorld</title>
+<meta name="description" content="Browse CalclyWorld's free online calculators by category. Find finance, math, everyday, automotive, travel, and other useful tools.">
+</head>
+<body>
+<header class="site-header">
+
+  <div class="container header-container">
+
+    <a href="index.html" class="logo">
+      <img
+        src="favicon.png"
+        alt="CalclyWorld Logo"
+        width="42"
+        height="42"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async">
+      <span>CalclyWorld</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="#calculator-directory">Calculators</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button
+      id="theme-toggle"
+      class="btn btn-secondary"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false">
+      🌙 Dark Mode
+    </button>
+
+  </div>
+
+</header>
+<main id="main-content" class="cw-category-layout">
+  <a class="cw-back-link" href="index.html#calculator-directory">← All calculator categories</a>
+  <h1 id="cat-title">Calculator Categories</h1>
+  <p id="cat-intro" class="cw-category-intro">Choose a calculator from this category.</p>
+  <section class="cw-link-section" aria-labelledby="list-title">
+    <h2 id="list-title">Calculators</h2>
+    <div id="link-grid" class="cw-link-grid"></div>
+  </section>
+</main>
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+
+    <div class="footer-column">
+
+      <h3>CalclyWorld</h3>
+
+      <p>
+        CalclyWorld provides free online calculators for finance,
+        everyday life, math, home construction, automotive,
+        technology, conversion, travel, lifestyle, and utility needs.
+        Every calculator is designed to be simple, useful, and easy to use.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+
+        <li>
+          <a href="">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About Us</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact Us</a>
+        </li>
+
+        <li>
+          <a href="privacy.html">Privacy Policy</a>
+        </li>
+
+        <li>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Popular Calculators</h3>
+
+      <ul>
+
+        <li>
+          <a href="age-calculator.html">
+            Age Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="emi-calculator.html">
+            EMI Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="gst-calculator.html">
+            GST Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="mortgage-calculator.html">
+            Mortgage Calculator
+          </a>
+        </li>
+
+        <li>
+          <a href="compound-interest-calculator.html">
+            Compound Interest Calculator
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Calculator Categories</h3>
+
+      <ul>
+
+        <li>
+          <a href="#finance">Finance</a>
+        </li>
+
+        <li>
+          <a href="#everyday">Everyday</a>
+        </li>
+
+        <li>
+          <a href="#math">Math</a>
+        </li>
+
+        <li>
+          <a href="#home-construction">
+            Home &amp; Construction
+          </a>
+        </li>
+
+        <li>
+          <a href="#automotive">Automotive</a>
+        </li>
+
+        <li>
+          <a href="#technology">Technology</a>
+        </li>
+
+        <li>
+          <a href="#conversion">Conversion</a>
+        </li>
+
+        <li>
+          <a href="#travel">Travel</a>
+        </li>
+
+        <li>
+          <a href="#lifestyle">Lifestyle</a>
+        </li>
+
+        <li>
+          <a href="#utility">Utility</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span data-current-year></span> CalclyWorld.
+      All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+<script>
+const categories = [{"id": "finance", "name": "Finance Calculators", "links": [{"href": "sip-calculator.html", "label": "SIP Calculator"}, {"href": "savings-calculator.html", "label": "Savings Calculator"}, {"href": "fixed-deposit-calculator.html", "label": "Fixed Deposit Calculator"}, {"href": "recurring-deposit-calculator.html", "label": "Recurring Deposit Calculator"}, {"href": "personal-loan-calculator.html", "label": "Personal Loan Calculator"}, {"href": "loan-calculator.html", "label": "Loan Calculator"}, {"href": "car-loan-calculator.html", "label": "Car Loan Calculator"}, {"href": "home-loan-emi-calculator.html", "label": "Home Loan EMI Calculator"}, {"href": "credit-card-payoff-calculator.html", "label": "Credit Card Payoff Calculator"}, {"href": "debt-payoff-calculator.html", "label": "Debt Payoff Calculator"}, {"href": "investment-return-calculator.html", "label": "Investment Return Calculator"}, {"href": "inflation-calculator.html", "label": "Inflation Calculator"}, {"href": "currency-converter.html", "label": "Currency Converter"}, {"href": "tax-calculator.html", "label": "Tax Calculator"}, {"href": "salary-calculator.html", "label": "Salary Calculator"}, {"href": "net-worth-calculator.html", "label": "Net Worth Calculator"}]}, {"id": "everyday", "name": "Everyday Calculators", "links": [{"href": "date-calculator.html", "label": "Date Calculator"}, {"href": "time-duration-calculator.html", "label": "Time Duration Calculator"}, {"href": "age-difference-calculator.html", "label": "Age Difference Calculator"}, {"href": "countdown-calculator.html", "label": "Countdown Calculator"}, {"href": "work-hours-calculator.html", "label": "Work Hours Calculator"}, {"href": "time-zone-converter.html", "label": "Time Zone Converter"}, {"href": "unit-price-calculator.html", "label": "Unit Price Calculator"}, {"href": "discount-calculator.html", "label": "Discount Calculator"}, {"href": "average-calculator.html", "label": "Average Calculator"}, {"href": "gpa-calculator.html", "label": "GPA Calculator"}, {"href": "grade-calculator.html", "label": "Grade Calculator"}, {"href": "percentage-increase-calculator.html", "label": "Percentage Increase Calculator"}, {"href": "percentage-decrease-calculator.html", "label": "Percentage Decrease Calculator"}, {"href": "ratio-calculator.html", "label": "Ratio Calculator"}, {"href": "random-number-generator.html", "label": "Random Number Generator"}]}, {"id": "math", "name": "Math Calculators", "links": [{"href": "scientific-calculator.html", "label": "Scientific Calculator"}, {"href": "fraction-calculator.html", "label": "Fraction Calculator"}, {"href": "decimal-calculator.html", "label": "Decimal Calculator"}, {"href": "exponent-calculator.html", "label": "Exponent Calculator"}, {"href": "square-root-calculator.html", "label": "Square Root Calculator"}, {"href": "prime-number-calculator.html", "label": "Prime Number Calculator"}, {"href": "lcm-calculator.html", "label": "LCM Calculator"}, {"href": "gcd-calculator.html", "label": "GCD Calculator"}, {"href": "standard-deviation-calculator.html", "label": "Standard Deviation Calculator"}, {"href": "mean-median-mode-calculator.html", "label": "Mean Median Mode Calculator"}]}, {"id": "home-construction", "name": "Home &amp; Construction Calculators", "links": [{"href": "paint-calculator.html", "label": "Paint Calculator"}, {"href": "tile-calculator.html", "label": "Tile Calculator"}, {"href": "flooring-calculator.html", "label": "Flooring Calculator"}, {"href": "concrete-calculator.html", "label": "Concrete Calculator"}, {"href": "cement-calculator.html", "label": "Cement Calculator"}, {"href": "brick-calculator.html", "label": "Brick Calculator"}, {"href": "sand-calculator.html", "label": "Sand Calculator"}, {"href": "gravel-calculator.html", "label": "Gravel Calculator"}, {"href": "roofing-calculator.html", "label": "Roofing Calculator"}, {"href": "square-foot-calculator.html", "label": "Square Foot Calculator"}]}, {"id": "automotive", "name": "Automotive Calculators", "links": [{"href": "fuel-cost-calculator.html", "label": "Fuel Cost Calculator"}, {"href": "fuel-consumption-calculator.html", "label": "Fuel Consumption Calculator"}, {"href": "mileage-calculator.html", "label": "Mileage Calculator"}, {"href": "ev-charging-cost-calculator.html", "label": "EV Charging Cost Calculator"}, {"href": "road-trip-cost-calculator.html", "label": "Road Trip Cost Calculator"}, {"href": "car-depreciation-calculator.html", "label": "Car Depreciation Calculator"}, {"href": "tire-size-calculator.html", "label": "Tire Size Calculator"}, {"href": "engine-compression-ratio-calculator.html", "label": "Engine Compression Ratio Calculator"}]}, {"id": "technology", "name": "Technology Calculators", "links": [{"href": "download-time-calculator.html", "label": "Download Time Calculator"}, {"href": "file-size-calculator.html", "label": "File Size Calculator"}, {"href": "battery-runtime-calculator.html", "label": "Battery Runtime Calculator"}, {"href": "screen-size-calculator.html", "label": "Screen Size Calculator"}, {"href": "tv-size-calculator.html", "label": "TV Size Calculator"}, {"href": "internet-speed-converter.html", "label": "Internet Speed Converter"}, {"href": "storage-converter.html", "label": "Storage Converter"}]}, {"id": "conversion", "name": "Conversion Calculators", "links": [{"href": "length-converter.html", "label": "Length Converter"}, {"href": "weight-converter.html", "label": "Weight Converter"}, {"href": "temperature-converter.html", "label": "Temperature Converter"}, {"href": "volume-converter.html", "label": "Volume Converter"}, {"href": "speed-converter.html", "label": "Speed Converter"}]}, {"id": "travel", "name": "Travel Calculators", "links": [{"href": "travel-budget-calculator.html", "label": "Travel Budget Calculator"}, {"href": "hotel-cost-calculator.html", "label": "Hotel Cost Calculator"}, {"href": "trip-fuel-calculator.html", "label": "Trip Fuel Calculator"}, {"href": "flight-time-calculator.html", "label": "Flight Time Calculator"}, {"href": "currency-exchange-calculator.html", "label": "Currency Exchange Calculator"}]}, {"id": "lifestyle", "name": "Lifestyle Calculators", "links": [{"href": "recipe-converter.html", "label": "Recipe Converter"}, {"href": "water-reminder.html", "label": "Water Reminder Calculator"}, {"href": "daily-habit-tracker.html", "label": "Daily Habit Tracker Calculator"}, {"href": "reading-time-calculator.html", "label": "Reading Time Calculator"}, {"href": "pet-age-calculator.html", "label": "Pet Age Calculator"}]}, {"id": "utility", "name": "Utility Calculators", "links": [{"href": "password-generator.html", "label": "Password Generator"}, {"href": "qr-code-generator.html", "label": "QR Code Generator"}, {"href": "binary-converter.html", "label": "Binary Converter"}, {"href": "hexadecimal-converter.html", "label": "Hexadecimal Converter"}, {"href": "roman-numeral-converter.html", "label": "Roman Numeral Converter"}]}, {"id": "additional-calculators", "name": "More Popular Calculators", "links": [{"href": "tip-calculator.html", "label": "Tip Calculator"}, {"href": "percentage-calculator.html", "label": "Percentage Calculator"}, {"href": "retirement-calculator.html", "label": "Retirement Calculator"}]}];
+const params = new URLSearchParams(window.location.search);
+const selected = params.get('category');
+const cat = categories.find(c => c.id === selected) || categories[0];
+document.title = cat.name + ' | CalclyWorld';
+document.getElementById('cat-title').textContent = cat.name;
+document.getElementById('list-title').textContent = cat.name;
+document.getElementById('cat-intro').textContent = 'Explore ' + cat.links.length + ' calculators in ' + cat.name.toLowerCase() + '. Choose a tool below to open it.';
+const grid = document.getElementById('link-grid');
+cat.links.forEach(item => {
+  const a = document.createElement('a');
+  a.className = 'cw-tool-link';
+  a.href = item.href;
+  a.textContent = item.label;
+  grid.appendChild(a);
+});
+</script>
+<script src="script-v2.js"></script>
+</body>
+</html>
