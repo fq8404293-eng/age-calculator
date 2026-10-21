@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Static calculator category directory -->
+  <url>
+    <loc>https://calclyworld.com/category.html</loc>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Finance Calculators -->
   <url><loc>https://calclyworld.com/loan-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://calclyworld.com/sip-calculator.html</loc><priority>0.8</priority></url>
@@ -97,7 +103,6 @@
   <url><loc>https://calclyworld.com/hotel-cost-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://calclyworld.com/trip-fuel-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://calclyworld.com/flight-time-calculator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://calclyworld.com/currency-exchange-calculator.html</loc><priority>0.8</priority></url>
 
   <!-- Lifestyle -->
   <url><loc>https://calclyworld.com/recipe-converter.html</loc><priority>0.8</priority></url>
@@ -108,7 +113,6 @@
 
   <!-- Utility -->
   <url><loc>https://calclyworld.com/password-generator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://calclyworld.com/qr-code-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://calclyworld.com/binary-converter.html</loc><priority>0.8</priority></url>
   <url><loc>https://calclyworld.com/hexadecimal-converter.html</loc><priority>0.8</priority></url>
   <url><loc>https://calclyworld.com/roman-numeral-converter.html</loc><priority>0.8</priority></url>

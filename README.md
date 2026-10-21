@@ -97,7 +97,6 @@ CalclyWorld provides a growing collection of calculators organized into useful c
 - Hotel Cost Calculator
 - Trip Fuel Calculator
 - Flight Time Calculator
-- Currency Exchange Calculator
 
 ### Lifestyle
 - Recipe Converter
@@ -108,7 +107,6 @@ CalclyWorld provides a growing collection of calculators organized into useful c
 
 ### Utility
 - Password Generator
-- QR Code Generator
 - Binary Converter
 - Hexadecimal Converter
 - Roman Numeral Converter
@@ -122,6 +120,11 @@ CalclyWorld provides a growing collection of calculators organized into useful c
 - Mortgage Calculator
 - Percentage Calculator
 - Retirement Calculator
+
+## Calculator notes
+
+- Currency Converter is an offline/manual-rate tool. Visitors enter an exchange rate from a source they trust; the site does not fetch live exchange rates.
+- The former Currency Exchange Calculator and QR Code Generator pages were removed from the current release because they required external runtime dependencies.
 
 ## Features
 

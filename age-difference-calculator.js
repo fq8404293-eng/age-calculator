@@ -100,68 +100,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function calculateDateDifference(startDate, endDate) {
 
-        let years = endDate.getFullYear() - startDate.getFullYear();
+        let years =
+            endDate.getFullYear() -
+            startDate.getFullYear();
 
         let anniversary = addYearsSafe(
             startDate,
             years
         );
 
-        /*
-         * If the anniversary is after the end date,
-         * one full year has not yet been completed.
-         */
         if (anniversary > endDate) {
-
             years--;
-
             anniversary = addYearsSafe(
                 startDate,
                 years
             );
         }
 
-        let months = 0;
-        let monthDate = new Date(anniversary);
+        let months =
+            endDate.getMonth() -
+            anniversary.getMonth();
 
-        while (true) {
+        let days =
+            endDate.getDate() -
+            anniversary.getDate();
 
-            const nextMonth = new Date(
-                monthDate.getFullYear(),
-                monthDate.getMonth() + 1,
-                monthDate.getDate()
-            );
+        if (days < 0) {
+            months--;
 
-            /*
-             * Handle dates such as January 31 → February.
-             */
-            if (
-                nextMonth.getDate() !== monthDate.getDate()
-            ) {
-
-                nextMonth.setDate(
-                    daysInMonth(
-                        nextMonth.getFullYear(),
-                        nextMonth.getMonth()
-                    )
-                );
-            }
-
-            if (nextMonth > endDate) {
-                break;
-            }
-
-            monthDate = nextMonth;
-            months++;
+            // Number of days in the month immediately before endDate's month.
+            days += new Date(
+                endDate.getFullYear(),
+                endDate.getMonth(),
+                0
+            ).getDate();
         }
 
-        const millisecondsPerDay =
-            24 * 60 * 60 * 1000;
-
-        const days = Math.round(
-            (endDate - monthDate) /
-            millisecondsPerDay
-        );
+        if (months < 0) {
+            months += 12;
+        }
 
         return {
             years,

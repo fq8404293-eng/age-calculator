@@ -40,6 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
      Error handling
   --------------------------------------- */
 
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[character]);
+  }
+
   function showError(message) {
     errorBox.textContent = message;
     errorBox.hidden = false;
@@ -272,6 +282,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const displayHabitName =
       habitName || "Your habit";
 
+    const escapedHabitName =
+      escapeHTML(displayHabitName);
+
 
     /* ---------------------------------------
        Main result
@@ -364,22 +377,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (completionRate === 100) {
 
       message =
-        `<p><strong>${displayHabitName}</strong> was completed on all planned days during this tracking period.</p>`;
+        `<p><strong>${escapedHabitName}</strong> was completed on all planned days during this tracking period.</p>`;
 
     } else if (completionRate >= 80) {
 
       message =
-        `<p><strong>${displayHabitName}</strong> has a completion rate of <strong>${formattedCompletionRate}%</strong> across the planned days.</p>`;
+        `<p><strong>${escapedHabitName}</strong> has a completion rate of <strong>${formattedCompletionRate}%</strong> across the planned days.</p>`;
 
     } else if (completionRate >= 50) {
 
       message =
-        `<p><strong>${displayHabitName}</strong> was completed on <strong>${formattedCompletionRate}%</strong> of the planned days.</p>`;
+        `<p><strong>${escapedHabitName}</strong> was completed on <strong>${formattedCompletionRate}%</strong> of the planned days.</p>`;
 
     } else {
 
       message =
-        `<p><strong>${displayHabitName}</strong> was completed on <strong>${formattedCompletionRate}%</strong> of the planned days.</p>`;
+        `<p><strong>${escapedHabitName}</strong> was completed on <strong>${formattedCompletionRate}%</strong> of the planned days.</p>`;
 
     }
 

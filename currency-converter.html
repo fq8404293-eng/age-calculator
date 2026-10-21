@@ -11,12 +11,12 @@
     >
 
     <title>
-        Currency Converter | Live Exchange Rates | CalclyWorld
+        Currency Converter | Manual Exchange Rate Calculator | CalclyWorld
     </title>
 
     <meta
         name="description"
-        content="Use the free CalclyWorld Currency Converter to convert money between world currencies using current exchange rates. Compare exchange rates for USD, EUR, GBP, INR, JPY, CAD, AUD, and many more currencies."
+        content="Use CalclyWorld’s free offline Currency Converter to convert amounts between currencies using an exchange rate you enter. No live rates or external API are required."
     >
 
     <meta
@@ -76,7 +76,7 @@
 
     <meta
         property="og:description"
-        content="Convert between world currencies using current exchange rates with the free CalclyWorld Currency Converter."
+        content="Convert currencies with CalclyWorld’s free manual-rate Currency Converter. Enter an exchange rate from a source you trust; no live rates are fetched."
     >
 
     <meta
@@ -116,7 +116,7 @@
 
     <meta
         name="twitter:description"
-        content="Convert money between world currencies using current exchange rates."
+        content="Convert money between currencies using an exchange rate you enter yourself."
     >
 
     <meta
@@ -131,21 +131,21 @@
 
     <link
         rel="icon"
-        href="/favicon.png"
+        href="favicon.png"
         sizes="32x32"
         type="image/png"
     >
 
     <link
         rel="icon"
-        href="/favicon.png"
+        href="favicon.png"
         sizes="192x192"
         type="image/png"
     >
 
     <link
         rel="apple-touch-icon"
-        href="/apple-touch-icon.png"
+        href="apple-touch-icon.png"
     >
 
 
@@ -169,7 +169,7 @@
         "@type": "WebPage",
         "name": "Currency Converter",
         "url": "https://calclyworld.com/currency-converter.html",
-        "description": "A free online currency converter for converting amounts between world currencies using exchange rates.",
+        "description": "A free offline currency converter that uses an exchange rate entered by the visitor.",
         "isPartOf": {
             "@type": "WebSite",
             "name": "CalclyWorld",
@@ -275,12 +275,12 @@
 
 
             <a
-                href="/"
+                href=""
                 class="logo"
             >
 
                 <img
-                    src="/favicon.png"
+                    src="favicon.png"
                     alt="CalclyWorld Logo"
                     width="42"
                     height="42"
@@ -301,19 +301,19 @@
                 aria-label="Primary Navigation"
             >
 
-                <a href="/">
+                <a href="">
                     Home
                 </a>
 
-                <a href="/#calculator-directory">
+                <a href="index.html#calculator-directory">
                     Calculators
                 </a>
 
-                <a href="/about.html">
+                <a href="about.html">
                     About
                 </a>
 
-                <a href="/contact.html">
+                <a href="contact.html">
                     Contact
                 </a>
 
@@ -354,7 +354,7 @@
 
             <div class="content">
 
-                <a href="/">
+                <a href="">
                     Home
                 </a>
 
@@ -385,13 +385,17 @@
 
                 <p>
                     Convert money between world currencies using
-                    current exchange rates.
+                    a manual exchange rate you enter.
                 </p>
 
                 <p>
-                    Select your source and target currencies,
-                    enter an amount, and see the estimated
-                    converted value instantly.
+                    Select your source and target currencies, enter an amount,
+                    and provide the exchange rate you want to use.
+                </p>
+
+                <p class="small-text">
+                    This calculator works offline and does not fetch live rates.
+                    Check your bank or exchange provider for a current rate.
                 </p>
 
             </div>
@@ -664,6 +668,27 @@
 
                         </select>
 
+                        <!-- Manual Exchange Rate -->
+                        <label for="currency-rate-input">
+                            Exchange Rate (destination units per 1 source unit)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="currency-rate-input"
+                            name="currency-rate-input"
+                            min="0"
+                            step="any"
+                            inputmode="decimal"
+                            placeholder="Example: 83.25"
+                            aria-describedby="currency-rate-help"
+                        >
+
+                        <small id="currency-rate-help" class="form-help">
+                            Enter the rate yourself. For example, if 1 USD equals 83.25 INR,
+                            enter 83.25 when converting USD to INR. Same-currency conversions use 1:1.
+                        </small>
+
 
                         <!-- Error -->
 
@@ -836,7 +861,7 @@
                         <p>
 
                             <strong>
-                                Rate Updated
+                                Rate Source
                             </strong>
 
                             <br>
@@ -852,10 +877,9 @@
                     <p class="small-text">
 
                         Exchange rates can change over time.
-                        The displayed conversion is an estimate
-                        and may differ from the rate offered by
-                        banks, card providers, or currency
-                        exchange services.
+                        The result is based only on the manual rate you enter.
+                        It does not fetch live rates or include fees charged by
+                        banks, card providers, or currency exchange services.
 
                     </p>
 
@@ -950,7 +974,7 @@
 
                     <p>
 
-                        This calculator uses an exchange rate between
+                        This calculator uses the exchange rate you enter between
                         the selected source currency and destination
                         currency.
 
@@ -1015,8 +1039,7 @@
                         <strong>
                             Convert Currency
                         </strong>
-                        to calculate the estimated converted
-                        amount.
+                        to calculate the converted amount using your entered rate.
 
                     </p>
 
@@ -1027,7 +1050,7 @@
 
                     <p>
 
-                        The result also shows the exchange rate
+                        The result shows the manual exchange rate
                         used for the conversion so that you can
                         understand how the converted amount was
                         calculated.
@@ -1292,10 +1315,8 @@
                     </h2>
 
                     <p>
-                        The exchange rate displayed by a currency
-                        converter is not necessarily the same rate
-                        you will receive when you exchange money
-                        through a bank or payment provider.
+                        The rate you enter may differ from the rate you receive
+                        when exchanging money through a bank or payment provider.
                     </p>
 
                     <p>
@@ -1549,7 +1570,7 @@
 
                         </p>
 
-                        <a href="/sip-calculator.html">
+                        <a href="sip-calculator.html">
                             Open Calculator →
                         </a>
 
@@ -1570,7 +1591,7 @@
 
                         </p>
 
-                        <a href="/investment-return-calculator.html">
+                        <a href="investment-return-calculator.html">
                             Open Calculator →
                         </a>
 
@@ -1591,7 +1612,7 @@
 
                         </p>
 
-                        <a href="/savings-calculator.html">
+                        <a href="savings-calculator.html">
                             Open Calculator →
                         </a>
 
@@ -1612,7 +1633,7 @@
 
                         </p>
 
-                        <a href="/fixed-deposit-calculator.html">
+                        <a href="fixed-deposit-calculator.html">
                             Open Calculator →
                         </a>
 
@@ -1633,7 +1654,7 @@
 
                         </p>
 
-                        <a href="/inflation-calculator.html">
+                        <a href="inflation-calculator.html">
                             Open Calculator →
                         </a>
 
@@ -1654,7 +1675,7 @@
 
                         </p>
 
-                        <a href="/home-loan-emi-calculator.html">
+                        <a href="home-loan-emi-calculator.html">
                             Open Calculator →
                         </a>
 
@@ -1921,31 +1942,31 @@
                 <ul>
 
                     <li>
-                        <a href="/">
+                        <a href="">
                             Home
                         </a>
                     </li>
 
                     <li>
-                        <a href="/about.html">
+                        <a href="about.html">
                             About Us
                         </a>
                     </li>
 
                     <li>
-                        <a href="/contact.html">
+                        <a href="contact.html">
                             Contact Us
                         </a>
                     </li>
 
                     <li>
-                        <a href="/privacy.html">
+                        <a href="privacy.html">
                             Privacy Policy
                         </a>
                     </li>
 
                     <li>
-                        <a href="/terms.html">
+                        <a href="terms.html">
                             Terms &amp; Conditions
                         </a>
                     </li>
@@ -1964,31 +1985,31 @@
                 <ul>
 
                     <li>
-                        <a href="/age-calculator.html">
+                        <a href="age-calculator.html">
                             Age Calculator
                         </a>
                     </li>
 
                     <li>
-                        <a href="/emi-calculator.html">
+                        <a href="emi-calculator.html">
                             EMI Calculator
                         </a>
                     </li>
 
                     <li>
-                        <a href="/mortgage-calculator.html">
+                        <a href="mortgage-calculator.html">
                             Mortgage Calculator
                         </a>
                     </li>
 
                     <li>
-                        <a href="/compound-interest-calculator.html">
+                        <a href="compound-interest-calculator.html">
                             Compound Interest Calculator
                         </a>
                     </li>
 
                     <li>
-                        <a href="/personal-loan-calculator.html">
+                        <a href="personal-loan-calculator.html">
                             Personal Loan Calculator
                         </a>
                     </li>
@@ -2004,61 +2025,61 @@
 
   <ul>
     <li>
-      <a href="category.html?category=finance">
+      <a href="category.html#finance">
         Finance
       </a>
     </li>
 
     <li>
-      <a href="category.html?category=everyday">
+      <a href="category.html#everyday">
         Everyday
       </a>
     </li>
 
     <li>
-      <a href="category.html?category=math">
+      <a href="category.html#math">
         Math
       </a>
     </li>
 
     <li>
-      <a href="category.html?category=home-construction">
+      <a href="category.html#home-construction">
         Home &amp; Construction
       </a>
     </li>
 
     <li>
-      <a href="category.html?category=automotive">
+      <a href="category.html#automotive">
         Automotive
       </a>
     </li>
 
     <li>
-      <a href="category.html?category=technology">
+      <a href="category.html#technology">
         Technology
       </a>
     </li>
 
     <li>
-      <a href="category.html?category=conversion">
+      <a href="category.html#conversion">
         Conversion
       </a>
     </li>
 
     <li>
-      <a href="category.html?category=travel">
+      <a href="category.html#travel">
         Travel
       </a>
     </li>
 
     <li>
-      <a href="category.html?category=lifestyle">
+      <a href="category.html#lifestyle">
         Lifestyle
       </a>
     </li>
 
     <li>
-      <a href="category.html?category=utility">
+      <a href="category.html#utility">
         Utility
       </a>
     </li>

@@ -191,8 +191,9 @@ clearError();
 const vehiclePrice =
 parseFloat(vehiclePriceInput.value);
 
+const downPaymentRaw = downPaymentInput.value.trim();
 const downPayment =
-parseFloat(downPaymentInput.value) || 0;
+downPaymentRaw === "" ? 0 : parseFloat(downPaymentRaw);
 
 const annualRate =
 parseFloat(interestRateInput.value);
@@ -206,7 +207,7 @@ parseInt(loanTermInput.value);
 ========================================================== */
 
 if(
-isNaN(vehiclePrice) ||
+!Number.isFinite(vehiclePrice) ||
 vehiclePrice <= 0
 ){
 
@@ -218,6 +219,7 @@ return;
 
 
 if(
+!Number.isFinite(downPayment) ||
 downPayment < 0
 ){
 
@@ -240,11 +242,12 @@ return;
 
 
 if(
-isNaN(annualRate) ||
-annualRate < 0
+!Number.isFinite(annualRate) ||
+annualRate < 0 ||
+annualRate > 100
 ){
 
-showError("Please enter a valid annual interest rate.");
+showError("Please enter an annual interest rate between 0% and 100%.");
 
 return;
 
@@ -252,11 +255,12 @@ return;
 
 
 if(
-isNaN(years) ||
-years <= 0
+!Number.isFinite(years) ||
+years < 1 ||
+years > 10
 ){
 
-showError("Please enter a valid loan term.");
+showError("Please enter a loan term between 1 and 10 years.");
 
 return;
 

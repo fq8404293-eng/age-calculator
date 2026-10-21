@@ -287,280 +287,92 @@ if (
 ======================================================= */
 
 const periodsPerYear =
-    getPeriodsPerYear(
-        compoundingFrequency
-    );
+    getPeriodsPerYear(compoundingFrequency);
 
 const contributionIntervalMonths =
-    contributionFrequency === "monthly"
-        ? 1
-        : 12;
+    contributionFrequency === "monthly" ? 1 : 12;
 
 const totalMonths =
     investmentYears * 12;
 
-const totalPeriods =
-    investmentYears *
-    periodsPerYear;
-
 /*
-   Convert annual return to the selected
-   compounding period.
-
-   Example:
-
-   8% annual return with monthly compounding:
-
-   (1 + 0.08)^(1/12) - 1
+   Treat the entered annual return as a nominal annual rate.
+   The selected frequency determines the effective annual return.
+   Applying the equivalent monthly growth factor avoids giving a
+   contribution made late in a quarter/year a full period of growth.
 */
 
 const periodicRate =
+    annualReturn / 100 / periodsPerYear;
+
+const monthlyGrowthFactor =
     annualReturn === 0
-        ? 0
+        ? 1
         : Math.pow(
-            1 + annualReturn / 100,
-            1 / periodsPerYear
-        ) - 1;
+            1 + periodicRate,
+            periodsPerYear / 12
+        );
 
-/*
-   Contribution is added according to
-   the selected contribution frequency.
+const monthlyGrowthRate =
+    monthlyGrowthFactor - 1;
 
-   Monthly:
-   contribution is added every month.
-
-   Yearly:
-   contribution is added once every 12 months.
-*/
-
-let currentBalance =
-    initialInvestment;
-
-let totalContributions =
-    initialInvestment;
-
-let totalInterest =
-    0;
-
+let currentBalance = initialInvestment;
+let totalContributions = initialInvestment;
 const yearlyBreakdown = [];
 
-/*
-   Track the next contribution month.
-*/
+// First contribution is made at the start of month 1 (yearly: once per year thereafter).
+let nextContributionMonth = 1;
 
-let nextContributionMonth =
-    contributionIntervalMonths;
+for (let month = 1; month <= totalMonths; month++) {
 
-/*
-   Track the number of completed
-   compounding periods.
-*/
-
-let completedPeriods = 0;
-
-/*
-   For monthly compounding:
-   one calculation every month.
-
-   For quarterly:
-   one calculation every 3 months.
-
-   For yearly:
-   one calculation every 12 months.
-*/
-
-for (
-    let month = 1;
-    month <= totalMonths;
-    month++
-) {
-
-    /*
-       Add contributions at the beginning
-       of the selected contribution interval.
-
-       This means a monthly contribution is
-       added at the start of each month.
-
-       A yearly contribution is added at
-       the start of each investment year.
-    */
-
+    // Contributions are added at the beginning of each selected interval.
     if (
         regularContribution > 0 &&
         month === nextContributionMonth
     ) {
-
-        currentBalance +=
-            regularContribution;
-
-        totalContributions +=
-            regularContribution;
-
-        nextContributionMonth +=
-            contributionIntervalMonths;
-
+        currentBalance += regularContribution;
+        totalContributions += regularContribution;
+        nextContributionMonth += contributionIntervalMonths;
     }
 
-    /*
-       Apply investment growth only when
-       the selected compounding period ends.
-    */
+    const growthThisMonth =
+        currentBalance * monthlyGrowthRate;
 
-    const shouldCompound =
-        month %
-        (
-            12 /
-            periodsPerYear
-        ) === 0;
-
-    if (shouldCompound) {
-
-        const growthThisPeriod =
-            currentBalance *
-            periodicRate;
-
-        currentBalance +=
-            growthThisPeriod;
-
-        totalInterest +=
-            growthThisPeriod;
-
-        completedPeriods++;
-
-    }
-
-    /*
-       Save a yearly snapshot.
-
-       Because the calculator accepts
-       whole investment years, the table
-       will contain one row per year.
-    */
-
-    if (
-        month % 12 === 0
-    ) {
-
-        const currentYear =
-            month / 12;
-
+    currentBalance += growthThisMonth;
+    if (month % 12 === 0) {
         yearlyBreakdown.push({
-
-            year:
-                currentYear,
-
-            contributions:
-                totalContributions,
-
-            growth:
-                currentBalance -
-                totalContributions,
-
-            balance:
-                currentBalance
-
+            year: month / 12,
+            contributions: totalContributions,
+            growth: currentBalance - totalContributions,
+            balance: currentBalance
         });
-
     }
-
 }
 
-/* ======================================================
-   FINAL CALCULATION
-======================================================= */
-
-const futureValue =
-    currentBalance;
-
-const totalInvestmentGrowth =
-    futureValue -
-    totalContributions;
-
-/*
-   Small floating-point corrections.
-*/
+const futureValue = currentBalance;
+const totalInvestmentGrowth = futureValue - totalContributions;
 
 const cleanedTotalGrowth =
-    Math.abs(
-        totalInvestmentGrowth
-    ) < 0.005
+    Math.abs(totalInvestmentGrowth) < 0.005
         ? 0
         : totalInvestmentGrowth;
 
 const calculationData = {
-
-    currency:
-        currency,
-
-    initialInvestment:
-        initialInvestment,
-
-    regularContribution:
-        regularContribution,
-
-    contributionFrequency:
-        contributionFrequency,
-
-    annualReturn:
-        annualReturn,
-
-    investmentYears:
-        investmentYears,
-
-    compoundingFrequency:
-        compoundingFrequency,
-
-    totalContributions:
-        totalContributions,
-
-    totalInvestmentGrowth:
-        cleanedTotalGrowth,
-
-    futureValue:
-        futureValue,
-
-    totalPeriods:
-        completedPeriods,
-
-    yearlyBreakdown:
-        yearlyBreakdown
-
+    currency,
+    initialInvestment,
+    regularContribution,
+    contributionFrequency,
+    annualReturn,
+    investmentYears,
+    compoundingFrequency,
+    totalContributions,
+    totalInvestmentGrowth: cleanedTotalGrowth,
+    futureValue,
+    totalPeriods: investmentYears * periodsPerYear,
+    yearlyBreakdown
 };
 
-displayInvestmentReturnResults(
-    calculationData
-);
-
-
-}
-
-/* ==========================================================
-PERIODS PER YEAR
-========================================================== */
-
-function getPeriodsPerYear(
-compoundingFrequency
-) {
-
-
-if (
-    compoundingFrequency === "monthly"
-) {
-
-    return 12;
-
-}
-
-if (
-    compoundingFrequency === "quarterly"
-) {
-
-    return 4;
-
-}
-
-return 1;
+displayInvestmentReturnResults(calculationData);
 
 
 }

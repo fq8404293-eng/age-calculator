@@ -41,3 +41,5 @@ a.cw-tool-link:hover {text-decoration:underline;}
   .cw-link-grid{grid-template-columns:1fr}
   .cw-category-intro{font-size:15px}
 }
+
+.cw-category-layout .cw-link-section + .cw-link-section { margin-top: 18px; }

@@ -375,209 +375,76 @@ document.addEventListener("DOMContentLoaded", () => {
       compoundFrequency
     } = data;
 
+    const annualRate = interestRate / 100;
+    const totalMonths = Math.round(investmentYears * 12);
 
-    const annualRate =
-      interestRate / 100;
-
-
-    const totalMonths =
-      investmentYears * 12;
-
-
-    let balance =
-      initialInvestment;
-
-
-    let totalContributed =
-      initialInvestment;
-
-
+    let balance = initialInvestment;
+    let totalContributed = initialInvestment;
     const yearlyResults = [];
-
-
-    let yearlyContributions =
-      0;
-
-
-    let yearlyInterest =
-      0;
-
+    let yearlyContributions = 0;
+    let yearlyInterest = 0;
 
     /*
-      We calculate month by month so that regular
-      monthly contributions can be included.
-
-      Contributions are added at the beginning
-      of each month.
-
-      Interest is then applied according to
-      the selected compounding frequency.
+      Contributions are added at the beginning of each month.
+      To model the selected nominal annual rate and compounding
+      frequency without giving late-in-quarter contributions a
+      full quarter of interest, use the equivalent monthly growth
+      factor. Over 12 months, this factor reproduces the selected
+      periodic compounding for the starting balance.
     */
 
-    for (
-      let month = 1;
-      month <= totalMonths;
-      month++
-    ) {
+    let monthlyGrowthFactor = 1;
 
-      /*
-        Monthly contribution
-      */
-
-      if (
-        monthlyContribution > 0
-      ) {
-
-        balance +=
-          monthlyContribution;
-
-        totalContributed +=
-          monthlyContribution;
-
-        yearlyContributions +=
-          monthlyContribution;
-      }
-
-
-      let interest = 0;
-
-
-      /*
-        Daily compounding
-      */
-
-      if (
-        compoundFrequency === 365
-      ) {
-
-        const dailyRate =
-          annualRate / 365;
-
-
-        const averageDaysPerMonth =
-          365 / 12;
-
-
-        interest =
-          balance *
-          (
-            Math.pow(
-              1 + dailyRate,
-              averageDaysPerMonth
-            ) - 1
-          );
-
-
-        balance +=
-          interest;
-
-
-        yearlyInterest +=
-          interest;
-
+    if (annualRate > 0) {
+      if (compoundFrequency === 365) {
+        monthlyGrowthFactor = Math.pow(
+          1 + annualRate / 365,
+          365 / 12
+        );
       } else {
-
-        /*
-          Number of months between
-          compounding events.
-        */
-
-        const monthsPerPeriod =
-          12 /
-          compoundFrequency;
-
-
-        const shouldCompound =
-          month %
-            monthsPerPeriod ===
-          0;
-
-
-        if (
-          shouldCompound
-        ) {
-
-          const periodicRate =
-            annualRate /
-            compoundFrequency;
-
-
-          interest =
-            balance *
-            periodicRate;
-
-
-          balance +=
-            interest;
-
-
-          yearlyInterest +=
-            interest;
-        }
-      }
-
-
-      /*
-        End of year
-      */
-
-      if (
-        month % 12 === 0
-      ) {
-
-        const year =
-          month / 12;
-
-
-        yearlyResults.push({
-          year,
-          contributions:
-            yearlyContributions,
-          interest:
-            yearlyInterest,
-          balance
-        });
-
-
-        yearlyContributions =
-          0;
-
-
-        yearlyInterest =
-          0;
+        monthlyGrowthFactor = Math.pow(
+          1 + annualRate / compoundFrequency,
+          compoundFrequency / 12
+        );
       }
     }
 
+    for (let month = 1; month <= totalMonths; month++) {
 
-    const interestEarned =
-      balance -
-      totalContributed;
+      if (monthlyContribution > 0) {
+        balance += monthlyContribution;
+        totalContributed += monthlyContribution;
+        yearlyContributions += monthlyContribution;
+      }
 
+      const interest = balance * (monthlyGrowthFactor - 1);
+      balance += interest;
+      yearlyInterest += interest;
 
-    const interestShare =
-      balance > 0
-        ? (
-            interestEarned /
-            balance
-          ) * 100
-        : 0;
+      if (month % 12 === 0) {
+        yearlyResults.push({
+          year: month / 12,
+          contributions: yearlyContributions,
+          interest: yearlyInterest,
+          balance
+        });
 
+        yearlyContributions = 0;
+        yearlyInterest = 0;
+      }
+    }
+
+    const interestEarned = balance - totalContributed;
+    const interestShare = balance > 0
+      ? (interestEarned / balance) * 100
+      : 0;
 
     return {
-      futureValue:
-        balance,
-
-      totalContributed:
-        totalContributed,
-
-      interestEarned:
-        interestEarned,
-
-      interestShare:
-        interestShare,
-
-      yearlyResults:
-        yearlyResults
+      futureValue: balance,
+      totalContributed,
+      interestEarned,
+      interestShare,
+      yearlyResults
     };
   }
 

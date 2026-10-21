@@ -103,7 +103,18 @@ document.addEventListener("DOMContentLoaded", () => {
        SHOW ERROR
     ========================================================== */
 
-    function showError(message) {
+    function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[character]);
+}
+
+
+function showError(message) {
 
         errorMessage.textContent = message;
         errorMessage.hidden = false;
@@ -215,6 +226,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const productLabel =
             productName || "Product";
 
+        const escapedProductLabel =
+            escapeHTML(productLabel);
+
 
         /* ------------------------------------------------------
            RESULT
@@ -266,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3>Product</h3>
 
                     <p>
-                        ${productLabel}
+                        ${escapedProductLabel}
                     </p>
 
                 </div>

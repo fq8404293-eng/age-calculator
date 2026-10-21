@@ -89,98 +89,98 @@ const CALCULATORS = [
     {
         name: "SIP Calculator",
         category: "Finance",
-        url: "/sip-calculator.html"
+        url: "sip-calculator.html"
     },
 
     {
         name: "Savings Calculator",
         category: "Finance",
-        url: "/savings-calculator.html"
+        url: "savings-calculator.html"
     },
 
     {
         name: "Fixed Deposit Calculator",
         category: "Finance",
-        url: "/fixed-deposit-calculator.html"
+        url: "fixed-deposit-calculator.html"
     },
 
     {
         name: "Recurring Deposit Calculator",
         category: "Finance",
-        url: "/recurring-deposit-calculator.html"
+        url: "recurring-deposit-calculator.html"
     },
 
     {
         name: "Personal Loan Calculator",
         category: "Finance",
-        url: "/personal-loan-calculator.html"
+        url: "personal-loan-calculator.html"
     },
 
         {
         name: "Loan Calculator",
         category: "Finance",
-        url: "/loan-calculator.html"
+        url: "loan-calculator.html"
     },
 
 
     {
         name: "Car Loan Calculator",
         category: "Finance",
-        url: "/car-loan-calculator.html"
+        url: "car-loan-calculator.html"
     },
 
     {
         name: "Home Loan EMI Calculator",
         category: "Finance",
-        url: "/home-loan-emi-calculator.html"
+        url: "home-loan-emi-calculator.html"
     },
 
     {
         name: "Credit Card Payoff Calculator",
         category: "Finance",
-        url: "/credit-card-payoff-calculator.html"
+        url: "credit-card-payoff-calculator.html"
     },
 
     {
         name: "Debt Payoff Calculator",
         category: "Finance",
-        url: "/debt-payoff-calculator.html"
+        url: "debt-payoff-calculator.html"
     },
 
     {
         name: "Investment Return Calculator",
         category: "Finance",
-        url: "/investment-return-calculator.html"
+        url: "investment-return-calculator.html"
     },
 
     {
         name: "Inflation Calculator",
         category: "Finance",
-        url: "/inflation-calculator.html"
+        url: "inflation-calculator.html"
     },
 
     {
         name: "Currency Converter",
         category: "Finance",
-        url: "/currency-converter.html"
+        url: "currency-converter.html"
     },
 
     {
         name: "Tax Calculator",
         category: "Finance",
-        url: "/tax-calculator.html"
+        url: "tax-calculator.html"
     },
 
     {
         name: "Salary Calculator",
         category: "Finance",
-        url: "/salary-calculator.html"
+        url: "salary-calculator.html"
     },
 
     {
         name: "Net Worth Calculator",
         category: "Finance",
-        url: "/net-worth-calculator.html"
+        url: "net-worth-calculator.html"
     },
 
 
@@ -191,91 +191,91 @@ const CALCULATORS = [
     {
         name: "Date Calculator",
         category: "Everyday",
-        url: "/date-calculator.html"
+        url: "date-calculator.html"
     },
 
     {
         name: "Time Duration Calculator",
         category: "Everyday",
-        url: "/time-duration-calculator.html"
+        url: "time-duration-calculator.html"
     },
 
     {
         name: "Age Difference Calculator",
         category: "Everyday",
-        url: "/age-difference-calculator.html"
+        url: "age-difference-calculator.html"
     },
 
     {
         name: "Countdown Calculator",
         category: "Everyday",
-        url: "/countdown-calculator.html"
+        url: "countdown-calculator.html"
     },
 
     {
         name: "Work Hours Calculator",
         category: "Everyday",
-        url: "/work-hours-calculator.html"
+        url: "work-hours-calculator.html"
     },
 
     {
         name: "Time Zone Converter",
         category: "Everyday",
-        url: "/time-zone-converter.html"
+        url: "time-zone-converter.html"
     },
 
     {
         name: "Unit Price Calculator",
         category: "Everyday",
-        url: "/unit-price-calculator.html"
+        url: "unit-price-calculator.html"
     },
 
     {
         name: "Discount Calculator",
         category: "Everyday",
-        url: "/discount-calculator.html"
+        url: "discount-calculator.html"
     },
 
     {
         name: "Average Calculator",
         category: "Everyday",
-        url: "/average-calculator.html"
+        url: "average-calculator.html"
     },
 
     {
         name: "GPA Calculator",
         category: "Everyday",
-        url: "/gpa-calculator.html"
+        url: "gpa-calculator.html"
     },
 
     {
         name: "Grade Calculator",
         category: "Everyday",
-        url: "/grade-calculator.html"
+        url: "grade-calculator.html"
     },
 
     {
         name: "Percentage Increase Calculator",
         category: "Everyday",
-        url: "/percentage-increase-calculator.html"
+        url: "percentage-increase-calculator.html"
     },
 
     {
         name: "Percentage Decrease Calculator",
         category: "Everyday",
-        url: "/percentage-decrease-calculator.html"
+        url: "percentage-decrease-calculator.html"
     },
 
     {
         name: "Ratio Calculator",
         category: "Everyday",
-        url: "/ratio-calculator.html"
+        url: "ratio-calculator.html"
     },
 
     {
         name: "Random Number Generator",
         category: "Everyday",
-        url: "/random-number-generator.html"
+        url: "random-number-generator.html"
     },
 
 
@@ -286,61 +286,61 @@ const CALCULATORS = [
     {
         name: "Scientific Calculator",
         category: "Math",
-        url: "/scientific-calculator.html"
+        url: "scientific-calculator.html"
     },
 
     {
         name: "Fraction Calculator",
         category: "Math",
-        url: "/fraction-calculator.html"
+        url: "fraction-calculator.html"
     },
 
     {
         name: "Decimal Calculator",
         category: "Math",
-        url: "/decimal-calculator.html"
+        url: "decimal-calculator.html"
     },
 
     {
         name: "Exponent Calculator",
         category: "Math",
-        url: "/exponent-calculator.html"
+        url: "exponent-calculator.html"
     },
 
     {
         name: "Square Root Calculator",
         category: "Math",
-        url: "/square-root-calculator.html"
+        url: "square-root-calculator.html"
     },
 
     {
         name: "Prime Number Calculator",
         category: "Math",
-        url: "/prime-number-calculator.html"
+        url: "prime-number-calculator.html"
     },
 
     {
         name: "LCM Calculator",
         category: "Math",
-        url: "/lcm-calculator.html"
+        url: "lcm-calculator.html"
     },
 
     {
         name: "GCD Calculator",
         category: "Math",
-        url: "/gcd-calculator.html"
+        url: "gcd-calculator.html"
     },
 
     {
         name: "Standard Deviation Calculator",
         category: "Math",
-        url: "/standard-deviation-calculator.html"
+        url: "standard-deviation-calculator.html"
     },
 
     {
         name: "Mean Median Mode Calculator",
         category: "Math",
-        url: "/mean-median-mode-calculator.html"
+        url: "mean-median-mode-calculator.html"
     },
 
 
@@ -351,61 +351,61 @@ const CALCULATORS = [
     {
         name: "Paint Calculator",
         category: "Home & Construction",
-        url: "/paint-calculator.html"
+        url: "paint-calculator.html"
     },
 
     {
         name: "Tile Calculator",
         category: "Home & Construction",
-        url: "/tile-calculator.html"
+        url: "tile-calculator.html"
     },
 
     {
         name: "Flooring Calculator",
         category: "Home & Construction",
-        url: "/flooring-calculator.html"
+        url: "flooring-calculator.html"
     },
 
     {
         name: "Concrete Calculator",
         category: "Home & Construction",
-        url: "/concrete-calculator.html"
+        url: "concrete-calculator.html"
     },
 
     {
         name: "Cement Calculator",
         category: "Home & Construction",
-        url: "/cement-calculator.html"
+        url: "cement-calculator.html"
     },
 
     {
         name: "Brick Calculator",
         category: "Home & Construction",
-        url: "/brick-calculator.html"
+        url: "brick-calculator.html"
     },
 
     {
         name: "Sand Calculator",
         category: "Home & Construction",
-        url: "/sand-calculator.html"
+        url: "sand-calculator.html"
     },
 
     {
         name: "Gravel Calculator",
         category: "Home & Construction",
-        url: "/gravel-calculator.html"
+        url: "gravel-calculator.html"
     },
 
     {
         name: "Roofing Calculator",
         category: "Home & Construction",
-        url: "/roofing-calculator.html"
+        url: "roofing-calculator.html"
     },
 
     {
         name: "Square Foot Calculator",
         category: "Home & Construction",
-        url: "/square-foot-calculator.html"
+        url: "square-foot-calculator.html"
     },
 
 
@@ -416,49 +416,49 @@ const CALCULATORS = [
     {
         name: "Fuel Cost Calculator",
         category: "Automotive",
-        url: "/fuel-cost-calculator.html"
+        url: "fuel-cost-calculator.html"
     },
 
     {
         name: "Fuel Consumption Calculator",
         category: "Automotive",
-        url: "/fuel-consumption-calculator.html"
+        url: "fuel-consumption-calculator.html"
     },
 
     {
         name: "Mileage Calculator",
         category: "Automotive",
-        url: "/mileage-calculator.html"
+        url: "mileage-calculator.html"
     },
 
     {
         name: "EV Charging Cost Calculator",
         category: "Automotive",
-        url: "/ev-charging-cost-calculator.html"
+        url: "ev-charging-cost-calculator.html"
     },
 
     {
         name: "Road Trip Cost Calculator",
         category: "Automotive",
-        url: "/road-trip-cost-calculator.html"
+        url: "road-trip-cost-calculator.html"
     },
 
     {
         name: "Car Depreciation Calculator",
         category: "Automotive",
-        url: "/car-depreciation-calculator.html"
+        url: "car-depreciation-calculator.html"
     },
 
     {
         name: "Tire Size Calculator",
         category: "Automotive",
-        url: "/tire-size-calculator.html"
+        url: "tire-size-calculator.html"
     },
 
     {
         name: "Engine Compression Ratio Calculator",
         category: "Automotive",
-        url: "/engine-compression-ratio-calculator.html"
+        url: "engine-compression-ratio-calculator.html"
     },
 
 
@@ -469,43 +469,43 @@ const CALCULATORS = [
     {
         name: "Download Time Calculator",
         category: "Technology",
-        url: "/download-time-calculator.html"
+        url: "download-time-calculator.html"
     },
 
     {
         name: "File Size Calculator",
         category: "Technology",
-        url: "/file-size-calculator.html"
+        url: "file-size-calculator.html"
     },
 
     {
         name: "Battery Runtime Calculator",
         category: "Technology",
-        url: "/battery-runtime-calculator.html"
+        url: "battery-runtime-calculator.html"
     },
 
     {
         name: "Screen Size Calculator",
         category: "Technology",
-        url: "/screen-size-calculator.html"
+        url: "screen-size-calculator.html"
     },
 
     {
         name: "TV Size Calculator",
         category: "Technology",
-        url: "/tv-size-calculator.html"
+        url: "tv-size-calculator.html"
     },
 
     {
         name: "Internet Speed Converter",
         category: "Technology",
-        url: "/internet-speed-converter.html"
+        url: "internet-speed-converter.html"
     },
 
     {
         name: "Storage Converter",
         category: "Technology",
-        url: "/storage-converter.html"
+        url: "storage-converter.html"
     },
 
 
@@ -516,66 +516,60 @@ const CALCULATORS = [
     {
         name: "Length Converter",
         category: "Conversion",
-        url: "/length-converter.html"
+        url: "length-converter.html"
     },
 
     {
         name: "Weight Converter",
         category: "Conversion",
-        url: "/weight-converter.html"
+        url: "weight-converter.html"
     },
 
     {
         name: "Temperature Converter",
         category: "Conversion",
-        url: "/temperature-converter.html"
+        url: "temperature-converter.html"
     },
 
     {
         name: "Volume Converter",
         category: "Conversion",
-        url: "/volume-converter.html"
+        url: "volume-converter.html"
     },
 
     {
         name: "Speed Converter",
         category: "Conversion",
-        url: "/speed-converter.html"
+        url: "speed-converter.html"
     },
 
 
     /* ======================================================
-       TRAVEL — 5
+       TRAVEL — 4
     ====================================================== */
 
     {
         name: "Travel Budget Calculator",
         category: "Travel",
-        url: "/travel-budget-calculator.html"
+        url: "travel-budget-calculator.html"
     },
 
     {
         name: "Hotel Cost Calculator",
         category: "Travel",
-        url: "/hotel-cost-calculator.html"
+        url: "hotel-cost-calculator.html"
     },
 
     {
         name: "Trip Fuel Calculator",
         category: "Travel",
-        url: "/trip-fuel-calculator.html"
+        url: "trip-fuel-calculator.html"
     },
 
     {
         name: "Flight Time Calculator",
         category: "Travel",
-        url: "/flight-time-calculator.html"
-    },
-
-    {
-        name: "Currency Exchange Calculator",
-        category: "Travel",
-        url: "/currency-exchange-calculator.html"
+        url: "flight-time-calculator.html"
     },
 
 
@@ -586,66 +580,60 @@ const CALCULATORS = [
     {
         name: "Recipe Converter",
         category: "Lifestyle",
-        url: "/recipe-converter.html"
+        url: "recipe-converter.html"
     },
 
     {
         name: "Water Reminder Calculator",
         category: "Lifestyle",
-       url: "/water-reminder.html"
+       url: "water-reminder.html"
     },
 
     {
         name: "Daily Habit Tracker Calculator",
         category: "Lifestyle",
-      url: "/daily-habit-tracker.html"
+      url: "daily-habit-tracker.html"
     },
 
     {
         name: "Reading Time Calculator",
         category: "Lifestyle",
-        url: "/reading-time-calculator.html"
+        url: "reading-time-calculator.html"
     },
 
     {
         name: "Pet Age Calculator",
         category: "Lifestyle",
-        url: "/pet-age-calculator.html"
+        url: "pet-age-calculator.html"
     },
 
 
     /* ======================================================
-       UTILITY — 5
+       UTILITY — 4
     ====================================================== */
 
     {
         name: "Password Generator",
         category: "Utility",
-        url: "/password-generator.html"
-    },
-
-    {
-        name: "QR Code Generator",
-        category: "Utility",
-        url: "/qr-code-generator.html"
+        url: "password-generator.html"
     },
 
     {
         name: "Binary Converter",
         category: "Utility",
-        url: "/binary-converter.html"
+        url: "binary-converter.html"
     },
 
     {
         name: "Hexadecimal Converter",
         category: "Utility",
-        url: "/hexadecimal-converter.html"
+        url: "hexadecimal-converter.html"
     },
 
     {
         name: "Roman Numeral Converter",
         category: "Utility",
-        url: "/roman-numeral-converter.html"
+        url: "roman-numeral-converter.html"
     },
 
 
@@ -657,49 +645,49 @@ const CALCULATORS = [
     {
         name: "Tip Calculator",
         category: "Finance",
-        url: "/tip-calculator.html"
+        url: "tip-calculator.html"
     },
 
     {
         name: "Age Calculator",
         category: "Everyday",
-        url: "/age-calculator.html"
+        url: "age-calculator.html"
     },
 
     {
         name: "Compound Interest Calculator",
         category: "Finance",
-        url: "/compound-interest-calculator.html"
+        url: "compound-interest-calculator.html"
     },
 
     {
         name: "EMI Calculator",
         category: "Finance",
-        url: "/emi-calculator.html"
+        url: "emi-calculator.html"
     },
 
     {
         name: "GST Calculator",
         category: "Finance",
-        url: "/gst-calculator.html"
+        url: "gst-calculator.html"
     },
 
     {
         name: "Mortgage Calculator",
         category: "Finance",
-        url: "/mortgage-calculator.html"
+        url: "mortgage-calculator.html"
     },
 
     {
         name: "Percentage Calculator",
         category: "Everyday",
-        url: "/percentage-calculator.html"
+        url: "percentage-calculator.html"
     },
 
     {
         name: "Retirement Calculator",
         category: "Finance",
-        url: "/retirement-calculator.html"
+        url: "retirement-calculator.html"
     }
 
 ];

@@ -315,16 +315,7 @@ function calculateRecurringDeposit() {
         getCompoundingPeriodsPerYear(
             compoundingFrequency
         );
-
-
-    const totalCompoundingPeriods =
-        Math.round(
-            investmentYears *
-            periodsPerYear
-        );
-
-
-    const totalMonths =
+const totalMonths =
         Math.round(
             investmentYears *
             12
@@ -512,6 +503,15 @@ function calculateRecurringDeposit() {
         0;
 
 
+    const monthlyGrowthFactor =
+        annualRateDecimal === 0
+            ? 1
+            : Math.pow(
+                1 + annualRateDecimal / periodsPerYear,
+                periodsPerYear / 12
+            );
+
+
     for (
         let month = 1;
         month <= totalMonths;
@@ -575,41 +575,19 @@ function calculateRecurringDeposit() {
         =================================================== */
 
 
-        const shouldCompound =
-            month % (
-                12 /
-                periodsPerYear
-            ) === 0;
+        /*
+           Apply an equivalent monthly growth factor. This preserves
+           the nominal annual rate and selected compounding frequency
+           over a full year while ensuring a deposit made later in a
+           quarter/year does not receive interest for time before it
+           was deposited.
+        */
 
+        const interestThisMonth =
+            currentBalance * (monthlyGrowthFactor - 1);
 
-        if (
-            shouldCompound
-        ) {
-
-            const periodicRate =
-                Math.pow(
-                    1 +
-                    annualRateDecimal,
-
-                    1 /
-                    periodsPerYear
-                ) -
-                1;
-
-
-            const interestThisPeriod =
-                currentBalance *
-                periodicRate;
-
-
-            currentBalance +=
-                interestThisPeriod;
-
-
-            interestTotal +=
-                interestThisPeriod;
-
-        }
+        currentBalance += interestThisMonth;
+        interestTotal += interestThisMonth;
 
 
         /* ==================================================

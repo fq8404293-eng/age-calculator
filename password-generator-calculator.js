@@ -77,22 +77,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (
-      window.crypto &&
-      typeof window.crypto.getRandomValues === "function"
+      !window.crypto ||
+      typeof window.crypto.getRandomValues !== "function"
     ) {
-      const randomArray = new Uint32Array(1);
-
-      const maxUint32 = 4294967296;
-      const limit = maxUint32 - (maxUint32 % max);
-
-      do {
-        window.crypto.getRandomValues(randomArray);
-      } while (randomArray[0] >= limit);
-
-      return randomArray[0] % max;
+      throw new Error("Secure random number generation is not available.");
     }
 
-    return Math.floor(Math.random() * max);
+    const randomArray = new Uint32Array(1);
+    const maxUint32 = 4294967296;
+    const limit = maxUint32 - (maxUint32 % max);
+
+    do {
+      window.crypto.getRandomValues(randomArray);
+    } while (randomArray[0] >= limit);
+
+    return randomArray[0] % max;
   }
 
   function randomCharacter(characters) {
@@ -220,10 +219,17 @@ document.addEventListener("DOMContentLoaded", () => {
       characterSets
     } = validation;
 
-    const password = generatePassword(
-      length,
-      characterSets
-    );
+    let password;
+
+    try {
+      password = generatePassword(length, characterSets);
+    } catch (error) {
+      characterTypesError.textContent =
+        "Secure password generation is unavailable in this browser. Please use an up-to-date browser over HTTPS and try again.";
+      characterTypesError.hidden = false;
+      result.hidden = true;
+      return;
+    }
 
     const characterTypeNames = characterSets
       .map(set => set.name)

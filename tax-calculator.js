@@ -585,7 +585,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ) {
 
             showError(
-                "Please enter valid additional deductions of $0 or more."
+                "Please enter an eligible additional-deduction amount of $0 or more."
             );
 
 
@@ -1112,7 +1112,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>
 
                     <strong>
-                        Additional Deductions:
+                        Eligible Additional Deductions:
                     </strong>
 
                     ${formatCurrency(

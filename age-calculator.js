@@ -422,86 +422,64 @@ document.addEventListener("DOMContentLoaded", () => {
     if (
       !(birthDate instanceof Date) ||
       Number.isNaN(birthDate.getTime()) ||
+      !(referenceDate instanceof Date) ||
+      Number.isNaN(referenceDate.getTime()) ||
       birthDate > referenceDate
     ) {
       return null;
     }
 
-    let years =
-      referenceDate.getFullYear() -
-      birthDate.getFullYear();
+    // Use calendar dates rather than elapsed milliseconds for age components.
+    function clampedDate(year, monthIndex, day) {
+      const lastDay = new Date(year, monthIndex + 1, 0).getDate();
+      return new Date(year, monthIndex, Math.min(day, lastDay));
+    }
 
-    let months =
-      referenceDate.getMonth() -
-      birthDate.getMonth();
-
-    let days =
-      referenceDate.getDate() -
-      birthDate.getDate();
-
-
-    if (days < 0) {
-
-      months--;
-
-      const previousMonth =
-        referenceDate.getMonth() === 0
-          ? 12
-          : referenceDate.getMonth();
-
-      const previousMonthYear =
-        referenceDate.getMonth() === 0
-          ? referenceDate.getFullYear() - 1
-          : referenceDate.getFullYear();
-
-      days += daysInMonth(
-        previousMonthYear,
-        previousMonth
+    function utcDayNumber(date) {
+      return Math.floor(
+        Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86400000
       );
     }
 
+    let years = referenceDate.getFullYear() - birthDate.getFullYear();
 
-    if (months < 0) {
+    let lastBirthday = clampedDate(
+      birthDate.getFullYear() + years,
+      birthDate.getMonth(),
+      birthDate.getDate()
+    );
+
+    // A February 29 birthday is treated as February 28 in non-leap years.
+    if (lastBirthday > referenceDate) {
       years--;
-      months += 12;
-    }
-
-
-    /*
-      Handle February 29 birthdays in non-leap years.
-      This uses the common February 28 convention.
-    */
-
-    const birthdayThisYear =
-      new Date(
-        referenceDate.getFullYear(),
+      lastBirthday = clampedDate(
+        birthDate.getFullYear() + years,
         birthDate.getMonth(),
         birthDate.getDate()
       );
-
-    if (
-      birthDate.getMonth() === 1 &&
-      birthDate.getDate() === 29 &&
-      !isLeapYear(referenceDate.getFullYear())
-    ) {
-      birthdayThisYear.setDate(28);
     }
 
+    let months = referenceDate.getMonth() - lastBirthday.getMonth();
+    let days = referenceDate.getDate() - lastBirthday.getDate();
+
+    if (days < 0) {
+      months--;
+      days += new Date(
+        referenceDate.getFullYear(),
+        referenceDate.getMonth(),
+        0
+      ).getDate();
+    }
+
+    if (months < 0) {
+      months += 12;
+    }
 
     return {
       years,
       months,
       days,
-      totalDays: Math.floor(
-        (
-          referenceDate.getTime() -
-          new Date(
-            birthDate.getFullYear(),
-            birthDate.getMonth(),
-            birthDate.getDate()
-          ).getTime()
-        ) / 86400000
-      )
+      totalDays: utcDayNumber(referenceDate) - utcDayNumber(birthDate)
     };
   }
 
@@ -924,6 +902,27 @@ document.addEventListener("DOMContentLoaded", () => {
       totalSeconds / 86400
     );
 
+    // Calendar-day distance avoids calling tomorrow's birthday "today"
+    // when fewer than 24 hours remain until midnight.
+    const currentDay = today();
+    const calendarDaysUntilBirthday = Math.max(
+      0,
+      Math.round(
+        (
+          Date.UTC(
+            nextBirthday.getFullYear(),
+            nextBirthday.getMonth(),
+            nextBirthday.getDate()
+          ) -
+          Date.UTC(
+            currentDay.getFullYear(),
+            currentDay.getMonth(),
+            currentDay.getDate()
+          )
+        ) / 86400000
+      )
+    );
+
     const hours = Math.floor(
       (totalSeconds % 86400) / 3600
     );
@@ -942,9 +941,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setText(
       nextBirthdayText,
-      days === 0
+      calendarDaysUntilBirthday === 0
         ? "Your birthday is today!"
-        : `${days} day${days === 1 ? "" : "s"} until your next birthday`
+        : calendarDaysUntilBirthday === 1
+          ? "Your birthday is tomorrow!"
+          : `${calendarDaysUntilBirthday} days until your next birthday`
     );
 
     setText(
@@ -959,7 +960,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setText(
       birthdayMessage,
-      days === 0
+      calendarDaysUntilBirthday === 0
         ? "Happy Birthday!"
         : `Your next birthday is on ${formatDate(nextBirthday)}.`
     );
