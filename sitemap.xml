@@ -133,4 +133,6 @@
   <url><loc>https://calclyworld.com/privacy.html</loc><priority>0.5</priority></url>
   <url><loc>https://calclyworld.com/terms.html</loc><priority>0.5</priority></url>
 
+  <url><loc>https://calclyworld.com/resume-maker.html</loc><priority>0.7</priority></url>
+  <url><loc>https://calclyworld.com/category.html</loc><priority>0.7</priority></url>
 </urlset>

@@ -688,6 +688,13 @@ const CALCULATORS = [
         name: "Retirement Calculator",
         category: "Finance",
         url: "retirement-calculator.html"
+    },
+
+    {
+        name: "Resume Maker",
+        category: "Career & Jobs",
+        url: "resume-maker.html",
+        keywords: ["resume", "cv", "curriculum vitae", "resume builder", "cv maker", "career", "job application"]
     }
 
 ];
@@ -724,15 +731,20 @@ function initializeCalculatorSearch() {
 
 const normalizedQuery = query.trim().toLowerCase();
 
+const searchableText = calculator => [
+    calculator.name,
+    calculator.category,
+    ...(calculator.keywords || [])
+].join(" ").toLowerCase();
+
 const exactMatches = CALCULATORS.filter(calculator => {
-    return calculator.name.toLowerCase() === normalizedQuery;
+    return calculator.name.toLowerCase() === normalizedQuery ||
+        (calculator.keywords || []).some(keyword => keyword.toLowerCase() === normalizedQuery);
 });
 
 const matches = exactMatches.length > 0
     ? exactMatches
-    : CALCULATORS.filter(calculator => {
-        return calculator.name.toLowerCase().includes(normalizedQuery);
-    });
+    : CALCULATORS.filter(calculator => searchableText(calculator).includes(normalizedQuery));
 
 
 
@@ -742,7 +754,7 @@ const matches = exactMatches.length > 0
             results.innerHTML = `
                 <div class="search-result-item">
                     <span class="search-result-title">
-                        No calculators found
+                        No calculators or tools found
                     </span>
                 </div>
             `;
